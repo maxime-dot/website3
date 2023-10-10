@@ -1,0 +1,65 @@
+default:
+  tags:
+  - web
+
+workflow:
+  rules:
+    - if: $CI_COMMIT_BRANCH != "develop"
+# && $CI_PIPELINE_SOURCE != "merge_request_event"
+      when: never
+    - when: always
+
+stages:
+  - test
+  - build
+  - deploy
+
+variables:
+  IMAGE_NAME: $CI_REGISTRY_IMAGEE
+  IMAGE_TAG: "1.0"
+  HOST: 151.80.136.113
+  PASSWORD_SERVER: $PASSWORD_SERVER
+  DEV_ENDPOINT: https://dev.goavana.com
+
+run_unit_tests:
+  stage: test
+  script:
+    - echo "Running unit test"
+
+build_image:
+  stage: build
+  before_script:
+    - export PVERSION=$(cat package.json | jq -r .version)
+    - export VERSION=$PVERSION.$CI_PIPELINE_ID
+    - echo $VERSION > version.txt
+  script:
+    - docker build -t $IMAGE_NAME:$VERSION .
+  artifacts:
+    paths:
+      - version.txt
+
+push_image:
+  stage: build
+  needs:
+    - build_image
+  before_script:
+    - export VERSION=$(cat version.txt)
+    - docker login -u $CI_REGISTRY_USERNAME -p $CI_REGISTRY_PASSWORDD
+  script:
+    - docker push $IMAGE_NAME:$VERSION
+
+deploy_to_dev:
+  stage: deploy
+  before_script:
+    - export VERSION=$(cat version.txt)
+  script:
+    - sshpass -p $PASSWORD_SERVER ssh -o StrictHostKeyChecking=no -l ubuntu $HOST "
+        docker login -u $CI_REGISTRY_USERNAME -p $CI_REGISTRY_PASSWORDD &&
+        export IMAGE_NAMEE=$IMAGE_NAME &&
+        export IMAGE_TAGG=$VERSION &&
+        docker-compose down &&
+        docker-compose up -d "
+  environment:
+    name: development
+    url: $DEV_ENDPOINT
+
