@@ -28,3 +28,13 @@ html,
 body {
   font-family: var(--font);
 }
+
+.akata-title-strong {
+  max-width: 546px;
+  color: var(--goavana-blue, #001751);
+  font: normal 900 50px/62.4px "Poppins", sans-serif;
+  text-transform: uppercase;
+  span {
+    color: var(--goavana-yellow);
+  }
+}
