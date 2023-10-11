@@ -1,0 +1,8 @@
+version: "3.3"
+services:
+  web:
+    image: ${IMAGE_NAMEE}:${IMAGE_TAGG}
+    container_name: web.3.0
+    ports:
+      - "3001:3000"
+
