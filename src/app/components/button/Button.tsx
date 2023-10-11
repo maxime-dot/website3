@@ -3,10 +3,11 @@ import "./button.scss";
 
 interface ButtonProps {
   title: string;
+  hoverType: string;
 }
 
-const Button: React.FC<ButtonProps> = ({ title }) => {
-  return <button className="akata-button">{title}</button>;
+const Button: React.FC<ButtonProps> = ({ title, hoverType }) => {
+  return <button className={`akata-button ${hoverType}`}>{title}</button>;
 };
 
 export default Button;
