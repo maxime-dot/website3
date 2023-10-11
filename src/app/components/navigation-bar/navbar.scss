@@ -27,17 +27,27 @@
 
       a {
         text-decoration: none;
-        color: var(--primary-dark, #222);
+        color: var(--goavana-blue);
         font: normal 400 12px / normal "Poppins", sans-serif;
         letter-spacing: 0.036px;
         text-transform: uppercase;
         position: relative;
         transition: all 0.2s ease-in-out;
-
+        opacity: 0.5;
         &.active {
-          color: red;
+          opacity: 1;
+          &:before {
+            position: absolute;
+            content: "";
+            width: 100%;
+            height: 4px;
+            background: var(--goavana-blue);
+            left: 0;
+            bottom: -25px;
+          }
         }
         &:hover {
+          opacity: 1;
           &:before {
             position: absolute;
             content: "";
