@@ -72,3 +72,40 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
+
+/* When screen width is less than 575px, make the container full width */
+@media screen and (width < 575px) {
+  .container {
+    width: 100%;
+  }
+}
+
+/* When screen width is between 576px and 767px, make the container 90% width */
+@media screen and (576px < width < 767px) {
+  .container {
+    width: 90%;
+  }
+}
+
+/* When screen width is between 767px and 991px, make the container 98% width */
+@media screen and (767px < width < 991px) {
+  .container {
+    width: 98%;
+  }
+}
+
+/* When screen width is between 992px and 1199px, make the container 98% width */
+@media screen and (992px < width < 1199px) {
+  .container {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+/* When screen width is less than 1200px, make the container 80% width */
+@media screen and (width < 1200px) {
+  .container {
+    width: 80%;
+  }
+}

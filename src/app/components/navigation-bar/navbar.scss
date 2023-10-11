@@ -5,11 +5,12 @@
   position: fixed;
   top: 0;
   left: 0;
-
   // style
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   background: var(--light, #fff);
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
   .navbar-content {
     display: flex;
     justify-content: space-between;
