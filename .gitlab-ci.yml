@@ -17,7 +17,8 @@ stages:
 variables:
   IMAGE_NAME: $CI_REGISTRY_IMAGEE
   IMAGE_TAG: "1.0"
-  HOST: 151.80.136.113
+  USERNAME: $USERNAME
+  HOST: $HOST
   PASSWORD_SERVER: $PASSWORD_SERVER
   DEV_ENDPOINT: https://dev.goavana.com
 
@@ -53,7 +54,7 @@ deploy_to_dev:
   before_script:
     - export VERSION=$(cat version.txt)
   script:
-    - sshpass -p $PASSWORD_SERVER ssh -o StrictHostKeyChecking=no -l ubuntu $HOST "
+    - sshpass -p $PASSWORD_SERVER ssh -o StrictHostKeyChecking=no -l $USERNAME $HOST "
         docker login -u $CI_REGISTRY_USERNAME -p $CI_REGISTRY_PASSWORDD &&
         export IMAGE_NAMEE=$IMAGE_NAME &&
         export IMAGE_TAGG=$VERSION &&
