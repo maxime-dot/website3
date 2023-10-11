@@ -58,7 +58,7 @@ deploy_to_dev:
         export IMAGE_NAMEE=$IMAGE_NAME &&
         export IMAGE_TAGG=$VERSION &&
         docker-compose down &&
-        docker rmi $(docker images | grep cicdakatagoavana/web.3.0 | tr -s " " | cut -d " " -f3)
+        docker rmi $(docker images | grep cicdakatagoavana/web.3.0 | tr -s " " | cut -d " " -f3) &&
         docker-compose up -d "
   environment:
     name: development
