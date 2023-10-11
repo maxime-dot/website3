@@ -15,18 +15,38 @@
     justify-content: space-between;
     align-items: center;
     height: inherit;
-    .navlink {
+    position: relative;
+    .navbar-links {
+      position: absolute;
       display: inline-flex;
       align-items: flex-start;
       gap: 40px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
       a {
         text-decoration: none;
         color: var(--primary-dark, #222);
         font: normal 400 12px / normal "Poppins", sans-serif;
         letter-spacing: 0.036px;
         text-transform: uppercase;
+        position: relative;
+        transition: all 0.2s ease-in-out;
+
         &.active {
           color: red;
+        }
+        &:hover {
+          &:before {
+            position: absolute;
+            content: "";
+            width: 100%;
+            height: 4px;
+            background: var(--goavana-blue);
+            left: 0;
+            bottom: -25px;
+          }
         }
       }
     }
