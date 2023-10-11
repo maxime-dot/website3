@@ -38,3 +38,13 @@ body {
     color: var(--goavana-yellow);
   }
 }
+
+.akata-title-medium {
+  max-width: 546px;
+  color: var(--goavana-blue, #001751);
+  text-transform: uppercase;
+  font: normal 900 20px/28px "Poppins", sans-serif;
+  span {
+    color: var(--goavana-yellow);
+  }
+}
