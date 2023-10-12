@@ -1,31 +1,29 @@
 .akata-navbar {
-  // layout
   width: 100%;
   height: 70px;
   position: fixed;
   top: 0;
   left: 0;
-
-  // style
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   background: var(--light, #fff);
   display: flex;
   justify-content: center;
   align-items: center;
+
   .navbar-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: inherit;
     position: relative;
-    .navbar-brand {
-      .brand {
-        width: 49px;
-        height: 49px;
-        -o-object-fit: cover;
-        object-fit: cover;
-      }
+
+    .navbar-brand .brand {
+      width: 49px;
+      height: 49px;
+      -o-object-fit: cover;
+      object-fit: cover;
     }
+
     .navbar-links {
       position: absolute;
       display: inline-flex;
@@ -44,18 +42,8 @@
         position: relative;
         transition: opacity 0.2s ease-in-out;
         opacity: 0.6;
-        &.active {
-          opacity: 1;
-          &:before {
-            position: absolute;
-            content: "";
-            width: 100%;
-            height: 4px;
-            background: var(--goavana-blue);
-            left: 0;
-            bottom: -25px;
-          }
-        }
+
+        &.active,
         &:hover {
           opacity: 1;
           &:before {
@@ -70,28 +58,25 @@
         }
       }
     }
+
     .navbar-dropdown-button {
       display: none;
     }
 
-    // menu for mobile design
     .navbar-dropdown-menu {
       display: none;
       position: absolute;
-      width: calc(98% - 0.5rem);
-      height: auto;
-      max-width: 400px;
-
-      background: var(--card-background);
-      border: 1px solid var(--border-color);
       top: 70px;
       right: 0.5rem;
-      -webkit-animation: open-dropdown-menu 0.2s forwards;
-      animation: open-dropdown-menu ease-out 0.2s forwards;
-
+      width: calc(98% - 0.5rem);
+      max-width: 400px;
+      background: var(--card-background);
+      border: 1px solid var(--border-color);
       justify-content: center;
       align-items: center;
       flex-direction: column;
+      -webkit-animation: open-dropdown-menu 0.2s ease-out forwards;
+      animation: open-dropdown-menu 0.2s ease-out forwards;
 
       a {
         width: 100%;
@@ -100,13 +85,14 @@
         text-align: center;
         text-decoration: none;
         color: var(--primary-dark);
-        font-family: "Poppins", sans-serif;
-        font-size: 14px;
+        font: 14px "Poppins", sans-serif;
         position: relative;
         opacity: 0.6;
+
         &.active {
           opacity: 1;
           color: var(--goavana-blue);
+
           &:before {
             content: "";
             width: 5px;
@@ -123,65 +109,40 @@
 }
 
 @media (max-width: 1024px) {
-  .akata-navbar {
-    .navbar-content {
-      .navbar-brand {
-        .brand {
-          width: 42px;
-          height: 42%;
-        }
-      }
-      .navbar-links {
-        display: none;
-      }
-      .akata-button {
-        display: none;
-      }
-      .navbar-dropdown-button {
-        display: block;
-        width: 42px;
-        height: 42px;
-        border-radius: var(--border-radius);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border: 1px solid var(--border-color);
-        outline: 0;
-        background: var(--card-background);
-        transition: all 0.2s ease-in-out;
-        .button-icon {
-          font-size: 20px;
-          color: var(--primary-dark);
-        }
-        &:active {
-          transform: scale(0.8);
-        }
-      }
-      .navbar-dropdown-menu {
-        display: flex;
-      }
+  .akata-navbar .navbar-content .navbar-brand .brand {
+    width: 42px;
+    height: 42px;
+  }
+
+  .akata-navbar .navbar-content .navbar-links,
+  .akata-navbar .akata-button {
+    display: none;
+  }
+
+  .akata-navbar .navbar-content .navbar-dropdown-button {
+    display: block;
+    width: 42px;
+    height: 42px;
+    border-radius: var(--border-radius);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--border-color);
+    outline: 0;
+    background: var(--card-background);
+    transition: all 0.2s ease-in-out;
+
+    .button-icon {
+      font-size: 18px;
+      color: var(--primary-dark);
+    }
+
+    &:active {
+      transform: scale(0.8);
     }
   }
-}
 
-@-webkit-keyframes open-dropdown-menu {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes open-dropdown-menu {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  .akata-navbar .navbar-content .navbar-dropdown-menu {
+    display: flex;
   }
 }
