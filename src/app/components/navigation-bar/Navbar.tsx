@@ -32,6 +32,11 @@ const Navbar: React.FC = () => {
   const closeModal = () => {
     setIsModalOpen(false);
   };
+
+  const openModal = () => {
+    setIsModalOpen(true);
+    setIsDropdownMenuOpen(false);
+  };
   const renderLinks = () => {
     return Links.map(({ name, path }, index) => (
       <Link
@@ -60,11 +65,7 @@ const Navbar: React.FC = () => {
           />
         </Link>
         <div className="navbar-links">{renderLinks()}</div>
-        <Button
-          title="LET'S TALK"
-          hoverType="solid"
-          onClick={() => setIsModalOpen(true)}
-        />
+        <Button title="LET'S TALK" hoverType="solid" onClick={openModal} />
         <button
           className="navbar-dropdown-button d-flex-center"
           onClick={toggleDropdownMenu}
@@ -77,10 +78,7 @@ const Navbar: React.FC = () => {
         {isDropdownMenuOpen && (
           <div className="navbar-dropdown-menu">
             {renderLinks()}
-            <button
-              className="akata-button-custom"
-              onClick={toggleDropdownMenu}
-            >
+            <button className="akata-button-custom" onClick={openModal}>
               LET&apos;S TALK
               <FontAwesomeIcon icon={faArrowRight} className="icon-button" />
             </button>
