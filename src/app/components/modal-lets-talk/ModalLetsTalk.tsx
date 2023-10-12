@@ -1,7 +1,9 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faXmark } from "@fortawesome/free-solid-svg-icons";
+import { faXmark, faUser, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import "./modal-lets-talk.scss";
+import Button from "../button/Button";
+import ButtonOutline from "../button-outline/ButtonOutline";
 
 interface ModalLetsTalkProps {
   onClose: () => void;
@@ -10,7 +12,7 @@ interface ModalLetsTalkProps {
 const ModalLetsTalk: React.FC<ModalLetsTalkProps> = ({ onClose }) => {
   return (
     <div className="akata-modal d-flex-center">
-      <div className="modal-content animate-up">
+      <div className="modal-content animate-up d-flex flex-col">
         <div className="modal-header d-flex flex-col">
           <button
             className="modal-button-close d-flex-center"
@@ -27,7 +29,36 @@ const ModalLetsTalk: React.FC<ModalLetsTalkProps> = ({ onClose }) => {
             We look forward to working with you!
           </p>
         </div>
-        <p></p>
+        <div className="modal-body">
+          <form action="#" className="body-form d-flex flex-col">
+            <div className="form-item d-flex flex-col">
+              <label htmlFor="full_name" className="akata-text-medium">
+                Full name
+              </label>
+              <FontAwesomeIcon icon={faUser} className="form-icon" />
+              <input
+                type="text"
+                placeholder="ex: Jhon Doe, Lissa Meetson"
+                name="full_name"
+              />
+            </div>
+            <div className="form-item d-flex flex-col">
+              <label htmlFor="full_name" className="akata-text-medium">
+                Email
+              </label>
+              <FontAwesomeIcon icon={faEnvelope} className="form-icon" />
+              <input
+                type="text"
+                placeholder="ex: account.me@goavana.com"
+                name="full_name"
+                required
+              />
+            </div>
+          </form>
+        </div>
+        <div className="modal-bottom d-flex flex-row">
+          <ButtonOutline title="Abord" onClick={onClose} />
+        </div>
       </div>
     </div>
   );
