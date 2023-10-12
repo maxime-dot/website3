@@ -1,0 +1,194 @@
+.akata-navbar {
+  width: 100%;
+  height: 70px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  background: var(--light, #fff);
+
+  .navbar-content {
+    height: inherit;
+    position: relative;
+
+    .navbar-brand .brand {
+      width: 49px;
+      height: 49px;
+      -o-object-fit: cover;
+      object-fit: cover;
+    }
+
+    .navbar-links {
+      position: absolute;
+      display: inline-flex;
+      align-items: flex-start;
+      gap: 40px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      a {
+        text-decoration: none;
+        color: var(--goavana-blue);
+        font: normal 400 12px / normal "Poppins", sans-serif;
+        letter-spacing: 0.036px;
+        text-transform: uppercase;
+        position: relative;
+        transition: opacity 0.2s ease-in-out;
+        opacity: 0.6;
+
+        &.active,
+        &:hover {
+          opacity: 1;
+          &:before {
+            position: absolute;
+            content: "";
+            width: 100%;
+            height: 4px;
+            background: var(--goavana-blue);
+            left: 0;
+            bottom: -25px;
+          }
+        }
+      }
+    }
+
+    .navbar-dropdown-button {
+      display: none;
+    }
+
+    .navbar-dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 70px;
+      right: 0.5rem;
+      width: calc(98% - 0.5rem);
+      max-width: 400px;
+      background: var(--card-background);
+      border: 1px solid var(--border-color);
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      -webkit-animation: open-dropdown-menu 0.2s ease-out forwards;
+      animation: open-dropdown-menu 0.2s ease-out forwards;
+
+      a {
+        width: 100%;
+        padding: 12px 0;
+        border-bottom: 1px solid var(--border-color);
+        text-align: center;
+        text-decoration: none;
+        color: var(--primary-dark);
+        font: 14px "Poppins", sans-serif;
+        position: relative;
+        opacity: 0.6;
+
+        &.active {
+          opacity: 1;
+          color: var(--goavana-blue);
+
+          &:before {
+            content: "";
+            width: 5px;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: var(--goavana-blue);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .akata-navbar .navbar-content .navbar-brand .brand {
+    width: 42px;
+    height: 42px;
+  }
+
+  .akata-navbar .navbar-content .navbar-links,
+  .akata-navbar .akata-button {
+    display: none;
+  }
+
+  .akata-navbar .navbar-content .navbar-dropdown-button {
+    display: block;
+    width: 42px;
+    height: 42px;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color);
+    outline: 0;
+    background: var(--card-background);
+    transition: all 0.2s ease-in-out;
+
+    .button-icon {
+      font-size: 18px;
+      color: var(--primary-dark);
+    }
+
+    &:active {
+      transform: scale(0.8);
+    }
+  }
+
+  .akata-navbar .navbar-content .navbar-dropdown-menu {
+    display: flex;
+  }
+}
+
+@-webkit-keyframes open-dropdown-menu {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes open-dropdown-menu {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.akata-button-custom {
+  // layout
+  padding: 12px 30px;
+  outline: 0;
+  cursor: pointer;
+  width: 100%;
+  position: relative;
+
+  // style
+  border-radius: 4px;
+  background: var(--goavana-blue, #001751);
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.15);
+  // border: 1px solid var(--goavana-blue, #001751);
+
+  border: 0;
+  transition: all 0.2s ease-in-out;
+
+  &:active {
+    transform: scale(0.8);
+  }
+
+  // typography
+  color: var(--light);
+  font: normal 700 14px "Poppins", sans-serif;
+  .icon-button {
+    color: var(--light);
+    position: absolute;
+    font-size: 16px;
+    top: calc(50% - 8px);
+    right: 30px;
+  }
+}

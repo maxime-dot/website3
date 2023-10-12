@@ -1,6 +1,6 @@
 .akata-button {
   // layout
-  padding: 12px 30px;
+  padding: 12px 36px;
   border: 0;
   outline: 0;
   cursor: pointer;
@@ -11,6 +11,10 @@
   box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.15);
   border: 1px solid var(--goavana-blue, #001751);
   transition: all 0.2s ease-in-out;
+
+  &:active {
+    transform: scale(0.8);
+  }
 
   &.shadowed {
     &:hover {
