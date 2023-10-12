@@ -10,6 +10,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import "./navbar.scss";
 import Button from "../button/Button";
+import ModalLetsTalk from "../modal-lets-talk/ModalLetsTalk";
 
 const Links: { name: string; path: string }[] = [
   { name: "Home", path: "#" },
@@ -79,6 +80,7 @@ const Navbar: React.FC = () => {
           </div>
         )}
       </div>
+      <ModalLetsTalk />
     </nav>
   );
 };
