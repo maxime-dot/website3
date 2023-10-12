@@ -59,7 +59,7 @@ body {
 .akata-text-medium {
   @extend .akata-text-big;
   font-size: 14px;
-  line-height: 19.2px;
+  line-height: 19.6px;
 }
 
 .akata-text-small {
@@ -79,6 +79,10 @@ body {
 
 .hidden {
   display: none;
+}
+
+.d-flex {
+  display: flex;
 }
 
 .d-flex-center {
@@ -140,5 +144,32 @@ body {
 @media (max-width: 475px) {
   .container {
     width: 100%;
+  }
+}
+
+.animate-up {
+  -webkit-animation: open-up 0.2s ease-out forwards;
+  animation: open-up 0.2s ease-out forwards;
+}
+
+@-webkit-keyframes open-up {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes open-up {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

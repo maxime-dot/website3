@@ -4,10 +4,15 @@ import "./button.scss";
 interface ButtonProps {
   title: string;
   hoverType: string;
+  onClick: () => void;
 }
 
-const Button: React.FC<ButtonProps> = ({ title, hoverType }) => {
-  return <button className={`akata-button ${hoverType}`}>{title}</button>;
+const Button: React.FC<ButtonProps> = ({ title, hoverType, onClick }) => {
+  return (
+    <button className={`akata-button ${hoverType}`} onClick={onClick}>
+      {title}
+    </button>
+  );
 };
 
 export default Button;

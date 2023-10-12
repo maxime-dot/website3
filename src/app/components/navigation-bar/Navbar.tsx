@@ -24,11 +24,14 @@ const Links: { name: string; path: string }[] = [
 const Navbar: React.FC = () => {
   const [hash, setHash] = useState("#");
   const [isDropdownMenuOpen, setIsDropdownMenuOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const toggleDropdownMenu = () => {
     setIsDropdownMenuOpen(!isDropdownMenuOpen);
   };
-
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
   const renderLinks = () => {
     return Links.map(({ name, path }, index) => (
       <Link
@@ -57,7 +60,11 @@ const Navbar: React.FC = () => {
           />
         </Link>
         <div className="navbar-links">{renderLinks()}</div>
-        <Button title="LET'S TALK" hoverType="solid" />
+        <Button
+          title="LET'S TALK"
+          hoverType="solid"
+          onClick={() => setIsModalOpen(true)}
+        />
         <button
           className="navbar-dropdown-button d-flex-center"
           onClick={toggleDropdownMenu}
@@ -80,7 +87,7 @@ const Navbar: React.FC = () => {
           </div>
         )}
       </div>
-      <ModalLetsTalk />
+      {isModalOpen && <ModalLetsTalk onClose={closeModal} />}
     </nav>
   );
 };
