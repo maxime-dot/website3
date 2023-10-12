@@ -19,9 +19,28 @@ const Links: { name: string; path: string }[] = [
   { name: "Articles", path: "#articles" },
   { name: "Contacts", path: "#contacts" },
 ];
+
 const Navbar: React.FC = () => {
   const [hash, setHash] = useState("#");
   const [isDropdownMenuOpen, setIsDropdownMenuOpen] = useState(false);
+
+  const toggleDropdownMenu = () => {
+    setIsDropdownMenuOpen(!isDropdownMenuOpen);
+  };
+
+  const renderLinks = () => {
+    return Links.map(({ name, path }, index) => (
+      <Link
+        key={index}
+        href={path}
+        title={`Akata ${name}`}
+        onClick={() => setHash(path)}
+        className={hash === path ? "active" : ""}
+      >
+        {name}
+      </Link>
+    ));
+  };
 
   return (
     <nav className="akata-navbar">
@@ -36,57 +55,26 @@ const Navbar: React.FC = () => {
             className="brand"
           />
         </Link>
-        <div className="navbar-links">
-          {Links &&
-            Links.length > 0 &&
-            Links.map(({ name, path }, index) => (
-              <Link
-                key={index}
-                href={path}
-                title={`Akata ${name}`}
-                onClick={() => setHash(path)}
-                className={hash === path ? "active" : ""}
-              >
-                {name}
-              </Link>
-            ))}
-        </div>
+        <div className="navbar-links">{renderLinks()}</div>
         <Button title="LET'S TALK" hoverType="solid" />
-        <button
-          className="navbar-dropdown-button"
-          onClick={() => setIsDropdownMenuOpen(!isDropdownMenuOpen)}
-        >
-          {isDropdownMenuOpen ? (
-            <FontAwesomeIcon icon={faXmark} className="button-icon" />
-          ) : (
-            <FontAwesomeIcon icon={faBars} className="button-icon" />
-          )}
+        <button className="navbar-dropdown-button" onClick={toggleDropdownMenu}>
+          <FontAwesomeIcon
+            icon={isDropdownMenuOpen ? faXmark : faBars}
+            className="button-icon"
+          />
         </button>
-
-        {isDropdownMenuOpen ? (
+        {isDropdownMenuOpen && (
           <div className="navbar-dropdown-menu">
-            {Links &&
-              Links.length > 0 &&
-              Links.map(({ name, path }, index) => (
-                <Link
-                  key={index}
-                  href={path}
-                  title={`Akata ${name}`}
-                  onClick={() => setHash(path)}
-                  className={hash === path ? "active" : ""}
-                >
-                  {name}
-                </Link>
-              ))}
+            {renderLinks()}
             <button
               className="akata-button-custom"
-              onClick={() => setIsDropdownMenuOpen(!isDropdownMenuOpen)}
+              onClick={toggleDropdownMenu}
             >
               LET&apos;S TALK
               <FontAwesomeIcon icon={faArrowRight} className="icon-button" />
             </button>
           </div>
-        ) : null}
+        )}
       </div>
     </nav>
   );
