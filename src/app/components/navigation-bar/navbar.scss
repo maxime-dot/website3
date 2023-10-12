@@ -5,6 +5,7 @@
   position: fixed;
   top: 0;
   left: 0;
+
   // style
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   background: var(--light, #fff);
@@ -69,18 +70,118 @@
         }
       }
     }
+    .navbar-dropdown-button {
+      display: none;
+    }
+
+    // menu for mobile design
+    .navbar-dropdown-menu {
+      display: none;
+      position: absolute;
+      width: calc(98% - 0.5rem);
+      height: auto;
+      max-width: 400px;
+
+      background: var(--card-background);
+      border: 1px solid var(--border-color);
+      top: 70px;
+      right: 0.5rem;
+      -webkit-animation: open-dropdown-menu 0.2s forwards;
+      animation: open-dropdown-menu ease-out 0.2s forwards;
+
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+
+      a {
+        width: 100%;
+        padding: 12px 0;
+        border-bottom: 1px solid var(--border-color);
+        text-align: center;
+        text-decoration: none;
+        color: var(--primary-dark);
+        font-family: "Poppins", sans-serif;
+        font-size: 14px;
+        position: relative;
+        opacity: 0.6;
+        &.active {
+          opacity: 1;
+          color: var(--goavana-blue);
+          &:before {
+            content: "";
+            width: 5px;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: var(--goavana-blue);
+          }
+        }
+      }
+    }
   }
 }
 
 @media (max-width: 1024px) {
   .akata-navbar {
     .navbar-content {
+      .navbar-brand {
+        .brand {
+          width: 42px;
+          height: 42%;
+        }
+      }
       .navbar-links {
         display: none;
       }
       .akata-button {
         display: none;
       }
+      .navbar-dropdown-button {
+        display: block;
+        width: 42px;
+        height: 42px;
+        border-radius: var(--border-radius);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid var(--border-color);
+        outline: 0;
+        background: var(--card-background);
+        transition: all 0.2s ease-in-out;
+        .button-icon {
+          font-size: 20px;
+          color: var(--primary-dark);
+        }
+        &:active {
+          transform: scale(0.8);
+        }
+      }
+      .navbar-dropdown-menu {
+        display: flex;
+      }
     }
+  }
+}
+
+@-webkit-keyframes open-dropdown-menu {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes open-dropdown-menu {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
