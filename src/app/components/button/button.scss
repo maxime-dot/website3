@@ -1,0 +1,32 @@
+.akata-button {
+  // layout
+  padding: 12px 30px;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+
+  // style
+  border-radius: 4px;
+  background: var(--goavana-blue, #001751);
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.15);
+  border: 1px solid var(--goavana-blue, #001751);
+  transition: all 0.2s ease-in-out;
+
+  &.shadowed {
+    &:hover {
+      box-shadow: 10px 10px 0px 0px #ffba13;
+    }
+  }
+
+  &.solid {
+    &:hover {
+      background: var(--goavana-yellow);
+      color: var(--goavana-blue);
+      border: 1px solid var(--goavana-yellow);
+    }
+  }
+
+  // typography
+  color: var(--light);
+  font: normal 700 14px "Poppins", sans-serif;
+}

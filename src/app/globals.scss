@@ -28,3 +28,41 @@ html,
 body {
   font-family: var(--font);
 }
+
+.akata-title-strong {
+  max-width: 546px;
+  color: var(--goavana-blue, #001751);
+  font: normal 900 50px/62.4px "Poppins", sans-serif;
+  text-transform: uppercase;
+  span {
+    color: var(--goavana-yellow);
+  }
+}
+
+.akata-title-medium {
+  max-width: 546px;
+  color: var(--goavana-blue, #001751);
+  text-transform: uppercase;
+  font: normal 900 20px/28px "Poppins", sans-serif;
+  span {
+    color: var(--goavana-yellow);
+  }
+}
+
+.akata-text-big {
+  max-width: 546px;
+  color: var(--text-dark, #505d68);
+  font: normal 400 16px/28px "Poppins", sans-serif;
+}
+
+.akata-text-medium {
+  @extend .akata-text-big;
+  font-size: 14px;
+  line-height: 19.2px;
+}
+
+.akata-text-small {
+  @extend .akata-text-medium;
+  font-size: 12px;
+  line-height: 18.8px;
+}

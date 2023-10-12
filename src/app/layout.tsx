@@ -1,3 +1,5 @@
+import "@fortawesome/fontawesome-svg-core/styles.css";
+import { config } from "@fortawesome/fontawesome-svg-core";
 import "./globals.scss";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
@@ -9,7 +11,7 @@ export const metadata: Metadata = {
   description:
     "Discover AKATA GOAVANA's innovative digital solutions to boost your online business. Affordable, but more than efficient for many businesses - and why not yours?",
 };
-
+config.autoAddCss = false;
 export default function RootLayout({
   children,
 }: {

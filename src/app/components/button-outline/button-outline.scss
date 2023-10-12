@@ -1,0 +1,21 @@
+.akata-button-outline {
+  // layout
+  padding: 12px 30px;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+
+  // style
+  border-radius: 4px;
+  background: var(--light);
+  border: 1px solid var(--goavana-blue, #001751);
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    background: var(--goavana-yellow);
+    border: 1px solid var(--goavana-yellow);
+  }
+
+  // typography
+  color: var(--goavana-blue);
+  font: normal 700 14px "Poppins", sans-serif;
+}
