@@ -14,6 +14,9 @@
     background: var(--goavana-yellow);
     border: 1px solid var(--goavana-yellow);
   }
+  &:active {
+    transform: scale(0.8);
+  }
 
   // typography
   color: var(--goavana-blue);
