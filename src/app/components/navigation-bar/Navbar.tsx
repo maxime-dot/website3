@@ -18,13 +18,14 @@ const Navbar: React.FC = () => {
   return (
     <nav className="akata-navbar">
       <div className="container navbar-content">
-        <Link href={"/"}>
+        <Link href={"/"} className="navbar-brand">
           <Image
             priority
             src={"/images/logo-akata.png"}
             alt="Logo Akata"
             width={49}
             height={49}
+            className="brand"
           />
         </Link>
 
