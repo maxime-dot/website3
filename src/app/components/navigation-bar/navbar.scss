@@ -17,6 +17,14 @@
     align-items: center;
     height: inherit;
     position: relative;
+    .navbar-brand {
+      .brand {
+        width: 49px;
+        height: 49px;
+        -o-object-fit: cover;
+        object-fit: cover;
+      }
+    }
     .navbar-links {
       position: absolute;
       display: inline-flex;
@@ -33,8 +41,8 @@
         letter-spacing: 0.036px;
         text-transform: uppercase;
         position: relative;
-        transition: all 0.2s ease-in-out;
-        opacity: 0.5;
+        transition: opacity 0.2s ease-in-out;
+        opacity: 0.6;
         &.active {
           opacity: 1;
           &:before {
@@ -59,6 +67,20 @@
             bottom: -25px;
           }
         }
+      }
+    }
+  }
+}
+
+* {
+  border: 1px solid red;
+}
+
+@media (max-width: 1024px) {
+  .akata-navbar {
+    .navbar-content {
+      .navbar-links {
+        display: none;
       }
     }
   }
