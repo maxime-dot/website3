@@ -72,14 +72,13 @@
   }
 }
 
-* {
-  border: 1px solid red;
-}
-
 @media (max-width: 1024px) {
   .akata-navbar {
     .navbar-content {
       .navbar-links {
+        display: none;
+      }
+      .akata-button {
         display: none;
       }
     }
