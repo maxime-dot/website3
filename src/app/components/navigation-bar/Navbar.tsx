@@ -43,8 +43,8 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <nav className="akata-navbar">
-      <div className="container navbar-content">
+    <nav className="akata-navbar d-flex-center">
+      <div className="container navbar-content d-flex-space-between">
         <Link href={"/"} className="navbar-brand">
           <Image
             priority
@@ -57,7 +57,10 @@ const Navbar: React.FC = () => {
         </Link>
         <div className="navbar-links">{renderLinks()}</div>
         <Button title="LET'S TALK" hoverType="solid" />
-        <button className="navbar-dropdown-button" onClick={toggleDropdownMenu}>
+        <button
+          className="navbar-dropdown-button d-flex-center"
+          onClick={toggleDropdownMenu}
+        >
           <FontAwesomeIcon
             icon={isDropdownMenuOpen ? faXmark : faBars}
             className="button-icon"

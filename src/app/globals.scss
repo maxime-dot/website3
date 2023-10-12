@@ -76,6 +76,30 @@ body {
   padding-left: 0.5rem;
 }
 
+.hidden {
+  display: none;
+}
+
+.d-flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.d-flex-space-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
 // 2xl
 @media (max-width: 1536px) {
   .container {

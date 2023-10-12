@@ -6,14 +6,8 @@
   left: 0;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   background: var(--light, #fff);
-  display: flex;
-  justify-content: center;
-  align-items: center;
 
   .navbar-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     height: inherit;
     position: relative;
 
@@ -124,9 +118,6 @@
     width: 42px;
     height: 42px;
     border-radius: var(--border-radius);
-    display: flex;
-    justify-content: center;
-    align-items: center;
     border: 1px solid var(--border-color);
     outline: 0;
     background: var(--card-background);
