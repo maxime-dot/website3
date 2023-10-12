@@ -3,7 +3,11 @@ import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
+import {
+  faBars,
+  faXmark,
+  faArrowRight,
+} from "@fortawesome/free-solid-svg-icons";
 import "./navbar.scss";
 import Button from "../button/Button";
 
@@ -74,6 +78,13 @@ const Navbar: React.FC = () => {
                   {name}
                 </Link>
               ))}
+            <button
+              className="akata-button-custom"
+              onClick={() => setIsDropdownMenuOpen(!isDropdownMenuOpen)}
+            >
+              LET&apos;S TALK
+              <FontAwesomeIcon icon={faArrowRight} className="icon-button" />
+            </button>
           </div>
         ) : null}
       </div>
