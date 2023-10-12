@@ -65,7 +65,9 @@ const Navbar: React.FC = () => {
           />
         </Link>
         <div className="navbar-links">{renderLinks()}</div>
-        <Button title="LET'S TALK" hoverType="solid" onClick={openModal} />
+        <div className="navbar-call-to-action">
+          <Button title="LET'S TALK" hoverType="solid" onClick={openModal} />
+        </div>
         <button
           className="navbar-dropdown-button d-flex-center"
           onClick={toggleDropdownMenu}
