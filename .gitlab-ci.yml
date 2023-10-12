@@ -47,6 +47,8 @@ push_image:
     - docker login -u $CI_REGISTRY_USERNAME -p $CI_REGISTRY_PASSWORDD
   script:
     - docker push $IMAGE_NAME:$VERSION
+  after_script:
+    - docker rmi $IMAGE_NAME:$VERSION
 
 deploy_to_dev:
   stage: deploy
