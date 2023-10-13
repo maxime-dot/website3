@@ -12,6 +12,7 @@ interface ModalLetsTalkProps {
 const ModalLetsTalk: React.FC<ModalLetsTalkProps> = ({ onClose }) => {
   return (
     <div className="akata-modal d-flex-center">
+      <div className="modal-layer" onClick={onClose} />
       <div className="modal-content animate-up d-flex flex-col">
         <div className="modal-header d-flex flex-col">
           <button
@@ -57,6 +58,7 @@ const ModalLetsTalk: React.FC<ModalLetsTalkProps> = ({ onClose }) => {
           </form>
         </div>
         <div className="modal-bottom d-flex flex-row">
+          <Button title="Send" hoverType="solid" onClick={onClose} />
           <ButtonOutline title="Abord" onClick={onClose} />
         </div>
       </div>
