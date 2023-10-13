@@ -111,6 +111,7 @@ body {
   background: var(--card-background);
   border: 1px solid var(--border-color);
   border-radius: var(--border-radius);
+  cursor: pointer;
   gap: 17px;
   .drop-file-icon {
     font-size: 50px;

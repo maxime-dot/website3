@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faXmark,
@@ -18,13 +18,16 @@ interface ModalLetsTalkProps {
 
 const services = [
   "UI/UX Design",
-  "Consulting",
+  "Consultation",
   "Database Management",
   "Web App Development",
-  "Other...",
+  "E-commerce & CMS",
+  "Mobile Apps",
+  "Desktop Applications",
 ];
 
 const ModalLetsTalk: React.FC<ModalLetsTalkProps> = ({ onClose }) => {
+  const [droppedFiles, setDroppedFiles] = useState<File[]>([]);
   const handleFormSubmit = () => {
     console.log("sended");
   };
@@ -43,9 +46,12 @@ const ModalLetsTalk: React.FC<ModalLetsTalkProps> = ({ onClose }) => {
     };
   }, []);
 
-  const handleDropFile = (file) => {
-    console.log(file);
+  const handleDropFile = (files: File[]) => {
+    // Utilisez le type File[] pour les fichiers
+    setDroppedFiles([...droppedFiles, ...files]);
+    console.log("files: ", droppedFiles);
   };
+
   return (
     <div className="akata-modal d-flex-center">
       <div className="modal-layer" onClick={onClose} />
