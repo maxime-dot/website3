@@ -12,6 +12,7 @@ import { Formik } from "formik";
 import "./modal-lets-talk.scss";
 import Button from "../button/Button";
 import ButtonOutline from "../button-outline/ButtonOutline";
+import { TruncateText } from "@/app/helpers/truncate";
 
 interface ModalLetsTalkProps {
   onClose: () => void;
@@ -47,6 +48,11 @@ const ModalLetsTalk: React.FC<ModalLetsTalkProps> = ({ onClose }) => {
   const handleDropFile = (files: File[]) => {
     setDroppedFiles([...droppedFiles, ...files]);
     console.log("files: ", droppedFiles);
+  };
+  const handleRemoveFile = (indexToRemove) => {
+    setDroppedFiles((prevFiles) =>
+      prevFiles.filter((_, index) => index !== indexToRemove)
+    );
   };
 
   return (
@@ -156,10 +162,7 @@ const ModalLetsTalk: React.FC<ModalLetsTalkProps> = ({ onClose }) => {
 
                 {/* request user choice based on services */}
                 <div className="form-item d-flex flex-col">
-                  <label
-                    htmlFor="selected-services"
-                    className="akata-text-medium"
-                  >
+                  <label htmlFor="theme" className="akata-text-medium">
                     Choose what you want to talk about.
                   </label>
                   <select
@@ -214,6 +217,39 @@ const ModalLetsTalk: React.FC<ModalLetsTalkProps> = ({ onClose }) => {
                       </section>
                     )}
                   </Dropzone>
+                </div>
+
+                {/* send file content*/}
+                <div className="files d-flex flex-col">
+                  {droppedFiles.map((file, index) => (
+                    <div key={index} className="file d-flex-space-between">
+                      {/* Add content for each dropped file here */}
+                      <div className="file-info d-flex animate-up">
+                        <div className="info-icon d-flex-center">
+                          <FontAwesomeIcon
+                            icon={faFile}
+                            className="inner-icon"
+                          />
+                        </div>
+                        <div className="info-text d-flex flex-col">
+                          <span className="info-text-name akata-text-small">
+                            {TruncateText(file.name)}
+                          </span>
+                          <span className="info-text-taille akata-text-small">
+                            {(file.size / 1024 / 1024).toFixed(2)} MB
+                          </span>
+                        </div>
+                      </div>
+                      <button
+                        type="button"
+                        className="btn-remove-file d-flex-center"
+                        data-index={index}
+                        onClick={() => handleRemoveFile(index)}
+                      >
+                        <FontAwesomeIcon icon={faXmark} className="icon-file" />
+                      </button>
+                    </div>
+                  ))}
                 </div>
 
                 {/* call to action button for modal */}

@@ -22,6 +22,8 @@
     max-width: 513px;
     padding: 35px 28px;
     gap: 48px;
+    max-height: 95vh;
+    overflow: auto;
 
     // style
     border-radius: 4px;
@@ -129,6 +131,62 @@
           }
           &.send-file {
             margin-top: 25px;
+          }
+        }
+        .files {
+          width: 100%;
+          margin-top: 27px;
+          gap: 20px;
+
+          .file {
+            width: 100%;
+            align-items: flex-start;
+            padding-bottom: 18px;
+            border-bottom: 1px solid var(--border-color);
+            .file-info {
+              gap: 10px;
+              .info-icon {
+                width: 45px;
+                height: 45px;
+                flex-shrink: 0;
+                border-radius: 5px;
+                background: var(--card-background, #f2f3f6);
+                border: 1px solid var(--border-color);
+              }
+              .info-text {
+                justify-content: space-between;
+                .info-text-name {
+                  font-weight: 600;
+                  color: var(--primary-dark);
+                }
+                .info-text-taille {
+                  font-weight: 600;
+                  color: var(--text-dark);
+                }
+              }
+            }
+            .btn-remove-file {
+              border: 0;
+              background: 0;
+              outline: 0;
+              transition: all 0.2s ease-in-out;
+
+              border-radius: var(--border-radius);
+              cursor: pointer;
+              &:active {
+                transform: scale(0.8);
+              }
+              &:hover {
+                background: var(--goavana-blue);
+                .icon-file {
+                  color: var(--light);
+                }
+              }
+              .icon-file {
+                font-size: 20px;
+                color: var(--primary-dark);
+              }
+            }
           }
         }
 
