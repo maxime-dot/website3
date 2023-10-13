@@ -1,7 +1,13 @@
 "use client";
 import React, { useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faXmark, faUser, faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import {
+  faXmark,
+  faUser,
+  faEnvelope,
+  faFile,
+} from "@fortawesome/free-solid-svg-icons";
+import Dropzone from "react-dropzone";
 import "./modal-lets-talk.scss";
 import Button from "../button/Button";
 import ButtonOutline from "../button-outline/ButtonOutline";
@@ -36,6 +42,10 @@ const ModalLetsTalk: React.FC<ModalLetsTalkProps> = ({ onClose }) => {
       document.removeEventListener("keydown", handleEspaceKeyPress);
     };
   }, []);
+
+  const handleDropFile = (file) => {
+    console.log(file);
+  };
   return (
     <div className="akata-modal d-flex-center">
       <div className="modal-layer" onClick={onClose} />
@@ -98,7 +108,11 @@ const ModalLetsTalk: React.FC<ModalLetsTalkProps> = ({ onClose }) => {
                 name="selected-services"
                 className="select-area akata-text-medium"
               >
-                <option value="" disabled selected>
+                <option
+                  value=""
+                  disabled
+                  defaultValue="Choose what do you want to talking about."
+                >
                   {" "}
                   Choose what do you want to talking about.
                 </option>
@@ -115,14 +129,34 @@ const ModalLetsTalk: React.FC<ModalLetsTalkProps> = ({ onClose }) => {
               <label htmlFor="email" className="akata-text-medium">
                 Project brief file:
               </label>
-              <FontAwesomeIcon icon={faEnvelope} className="form-icon" />
-              <input
-                type="email"
-                placeholder="ex: account.me@goavana.com"
-                name="email"
-                required
-                className="akata-text-medium"
-              />
+              <Dropzone onDrop={(uploadedFile) => handleDropFile(uploadedFile)}>
+                {({ getRootProps, getInputProps }) => (
+                  <section className="drop-zone-section">
+                    <div
+                      {...getRootProps()}
+                      className="input-drop d-flex-center flex-col"
+                    >
+                      <input {...getInputProps()} />
+                      <FontAwesomeIcon
+                        icon={faFile}
+                        className="drop-file-icon"
+                      />
+                      <p className="akata-text-medium drop-file-indicator">
+                        Drag and drop your file here or{" "}
+                        <span className="important-text">choose file</span>
+                      </p>
+                    </div>
+                    <div className="file-type-indicator d-flex-space-between">
+                      <p className="akata-text-small">
+                        Supported format: DOCX, PDF, XLS
+                      </p>
+                      <p className="akata-text-small">
+                        Maximum file size: 40Mb
+                      </p>
+                    </div>
+                  </section>
+                )}
+              </Dropzone>
             </div>
 
             {/* call to action button for modal */}

@@ -105,6 +105,33 @@ body {
   flex-direction: row;
 }
 
+.input-drop {
+  width: 100%;
+  min-height: 154px;
+  background: var(--card-background);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  gap: 17px;
+  .drop-file-icon {
+    font-size: 50px;
+    color: var(--text-dark);
+    opacity: 0.5;
+  }
+
+  .drop-file-indicator {
+    .important-text {
+      color: var(--goavana-blue);
+      text-decoration: underline;
+    }
+  }
+}
+
+.drop-zone-section {
+  .file-type-indicator {
+    margin-top: 13px;
+  }
+}
+
 // 2xl
 @media (max-width: 1536px) {
   .container {
