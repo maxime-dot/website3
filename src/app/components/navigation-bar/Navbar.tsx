@@ -44,7 +44,7 @@ const Navbar: React.FC = () => {
         href={path}
         title={`Akata ${name}`}
         onClick={() => setHash(path)}
-        className={hash === path ? "active w-100" : "w-100"}
+        className={"w-100 " + (hash === path ? "active" : "")}
       >
         {name}
       </Link>
