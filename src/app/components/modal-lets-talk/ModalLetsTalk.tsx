@@ -79,12 +79,16 @@ const ModalLetsTalk: React.FC<ModalLetsTalkProps> = ({ onClose }) => {
             }}
             validate={(values) => {
               const errors = {};
+              if (!values.name) {
+                errors.name = "Ooops!Full name is missing. Please provide it..";
+              }
               if (!values.email) {
-                errors.email = "Required";
+                errors.email = "Email address is required. Please specify it.";
               } else if (
                 !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
               ) {
-                errors.email = "Invalid email address";
+                errors.email =
+                  "Invalid email format. Use a valid format (e.g., example@example.com).";
               }
               return errors;
             }}
@@ -117,13 +121,17 @@ const ModalLetsTalk: React.FC<ModalLetsTalkProps> = ({ onClose }) => {
                   <FontAwesomeIcon icon={faUser} className="form-icon" />
                   <input
                     type="text"
-                    placeholder="ex: Jhone Doe, Maria Smith,.."
+                    placeholder="eg: Jhone Doe, Maria Smith,.."
                     name="name"
                     className="akata-text-medium"
                     onChange={handleChange}
                     onBlur={handleBlur}
                     value={values.name}
                   />
+                  <p className="akata-text-small error-message">
+                    {" "}
+                    {errors.name && touched.name && errors.name}
+                  </p>
                 </div>
 
                 {/* request user email */}
@@ -140,6 +148,10 @@ const ModalLetsTalk: React.FC<ModalLetsTalkProps> = ({ onClose }) => {
                     onBlur={handleBlur}
                     value={values.email}
                   />
+                  <p className="akata-text-small error-message">
+                    {" "}
+                    {errors.email && touched.email && errors.email}
+                  </p>
                 </div>
 
                 {/* request user choice based on services */}
@@ -212,7 +224,9 @@ const ModalLetsTalk: React.FC<ModalLetsTalkProps> = ({ onClose }) => {
                     onClick={handleSubmit}
                     type="submit"
                   />
-                  <ButtonOutline title="Abort" onClick={onClose} />
+                  {!isSubmitting && (
+                    <ButtonOutline title="Abort" onClick={onClose} />
+                  )}
                 </div>
               </form>
             )}

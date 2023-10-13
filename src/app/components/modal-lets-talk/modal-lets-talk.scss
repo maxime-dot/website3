@@ -64,10 +64,11 @@
         .form-item {
           gap: 8px;
           position: relative;
+
           .form-icon {
             position: absolute;
             left: 20px;
-            bottom: 21px;
+            top: 48px;
             font-size: 18px;
             color: var(--text-dark);
           }

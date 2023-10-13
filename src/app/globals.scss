@@ -10,6 +10,7 @@
   --goavana-yellow: #ffba13;
   --card-background: #f2f3f6;
   --layer-background: rgba(0, 0, 0, 0.7);
+  --goavana-danger: #e74c3c;
   --light: #ffffff;
   --primary-dark: #222222;
   --text-dark: #505d68;
@@ -17,6 +18,7 @@
     "Segoe UI Mono", "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace",
     "Source Code Pro", "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
   --border-radius: 4px;
+  --goavana-success: #2ecc71;
 }
 
 * {
@@ -66,6 +68,9 @@ body {
   @extend .akata-text-medium;
   font-size: 12px;
   line-height: 18.8px;
+  &.error-message {
+    color: var(--goavana-danger);
+  }
 }
 
 .container {
