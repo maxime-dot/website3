@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, KeyboardEvent } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faXmark,
@@ -8,6 +8,7 @@ import {
   faFile,
 } from "@fortawesome/free-solid-svg-icons";
 import Dropzone from "react-dropzone";
+import { Formik } from "formik";
 import "./modal-lets-talk.scss";
 import Button from "../button/Button";
 import ButtonOutline from "../button-outline/ButtonOutline";
@@ -28,26 +29,22 @@ const services = [
 
 const ModalLetsTalk: React.FC<ModalLetsTalkProps> = ({ onClose }) => {
   const [droppedFiles, setDroppedFiles] = useState<File[]>([]);
-  const handleFormSubmit = () => {
-    console.log("sended");
-  };
 
-  const handleEspaceKeyPress = (event: KeyboardEvent) => {
+  const handleEscapeKeyPress = (event: KeyboardEvent) => {
     if (event.keyCode === 27) {
       onClose();
     }
   };
 
   useEffect(() => {
-    document.addEventListener("keydown", handleEspaceKeyPress);
+    document.addEventListener("keydown", handleEscapeKeyPress);
 
     return () => {
-      document.removeEventListener("keydown", handleEspaceKeyPress);
+      document.removeEventListener("keydown", handleEscapeKeyPress);
     };
   }, []);
 
   const handleDropFile = (files: File[]) => {
-    // Utilisez le type File[] pour les fichiers
     setDroppedFiles([...droppedFiles, ...files]);
     console.log("files: ", droppedFiles);
   };
@@ -73,108 +70,153 @@ const ModalLetsTalk: React.FC<ModalLetsTalkProps> = ({ onClose }) => {
           </p>
         </div>
         <div className="modal-body">
-          <form action="#" className="body-form d-flex flex-col">
-            {/* request user full name */}
-            <div className="form-item d-flex flex-col">
-              <label htmlFor="name" className="akata-text-medium">
-                Full name
-              </label>
-              <FontAwesomeIcon icon={faUser} className="form-icon" />
-              <input
-                type="text"
-                placeholder="ex: Jhon Doe, Lissa Meetson"
-                name="name"
-                required
-                className="akata-text-medium"
-              />
-            </div>
-
-            {/* request user email */}
-            <div className="form-item d-flex flex-col">
-              <label htmlFor="email" className="akata-text-medium">
-                Email
-              </label>
-              <FontAwesomeIcon icon={faEnvelope} className="form-icon" />
-              <input
-                type="email"
-                placeholder="ex: account.me@goavana.com"
-                name="email"
-                required
-                className="akata-text-medium"
-              />
-            </div>
-
-            {/* request user choice based on services */}
-            <div className="form-item d-flex flex-col">
-              <label
-                htmlFor="selected-services"
-                className="akata-text-medium"
-              ></label>
-              <select
-                name="selected-services"
-                className="select-area akata-text-medium"
+          <Formik
+            initialValues={{
+              name: "",
+              email: "",
+              files: droppedFiles,
+              theme: "",
+            }}
+            validate={(values) => {
+              const errors = {};
+              if (!values.email) {
+                errors.email = "Required";
+              } else if (
+                !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
+              ) {
+                errors.email = "Invalid email address";
+              }
+              return errors;
+            }}
+            onSubmit={(values, { setSubmitting }) => {
+              setTimeout(() => {
+                alert(JSON.stringify(values, null, 2));
+                setSubmitting(false);
+              }, 400);
+            }}
+          >
+            {({
+              values,
+              errors,
+              touched,
+              handleChange,
+              handleBlur,
+              handleSubmit,
+              isSubmitting,
+              /* and other goodies */
+            }) => (
+              <form
+                onSubmit={handleSubmit}
+                className="body-form d-flex flex-col"
               >
-                <option
-                  value=""
-                  disabled
-                  defaultValue="Choose what do you want to talking about."
-                >
-                  {" "}
-                  Choose what do you want to talking about.
-                </option>
-                {services.map((service, index) => (
-                  <option key={index} value={service}>
-                    {service}
-                  </option>
-                ))}
-              </select>
-            </div>
+                {/* request user full name */}
+                <div className="form-item d-flex flex-col">
+                  <label htmlFor="name" className="akata-text-medium">
+                    Full name
+                  </label>
+                  <FontAwesomeIcon icon={faUser} className="form-icon" />
+                  <input
+                    type="text"
+                    placeholder="ex: Jhone Doe, Maria Smith,.."
+                    name="name"
+                    className="akata-text-medium"
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    value={values.name}
+                  />
+                </div>
 
-            {/* request user  project brief */}
-            <div className="form-item d-flex flex-col send-file">
-              <label htmlFor="email" className="akata-text-medium">
-                Project brief file:
-              </label>
-              <Dropzone onDrop={(uploadedFile) => handleDropFile(uploadedFile)}>
-                {({ getRootProps, getInputProps }) => (
-                  <section className="drop-zone-section">
-                    <div
-                      {...getRootProps()}
-                      className="input-drop d-flex-center flex-col"
-                    >
-                      <input {...getInputProps()} />
-                      <FontAwesomeIcon
-                        icon={faFile}
-                        className="drop-file-icon"
-                      />
-                      <p className="akata-text-medium drop-file-indicator">
-                        Drag and drop your file here or{" "}
-                        <span className="important-text">choose file</span>
-                      </p>
-                    </div>
-                    <div className="file-type-indicator d-flex-space-between">
-                      <p className="akata-text-small">
-                        Supported format: DOCX, PDF, XLS
-                      </p>
-                      <p className="akata-text-small">
-                        Maximum file size: 40Mb
-                      </p>
-                    </div>
-                  </section>
-                )}
-              </Dropzone>
-            </div>
+                {/* request user email */}
+                <div className="form-item d-flex flex-col">
+                  <label htmlFor="email" className="akata-text-medium">
+                    Email
+                  </label>
+                  <FontAwesomeIcon icon={faEnvelope} className="form-icon" />
+                  <input
+                    type="email"
+                    name="email"
+                    onChange={handleChange}
+                    placeholder="ex: account.me@goavana.com"
+                    onBlur={handleBlur}
+                    value={values.email}
+                  />
+                </div>
 
-            {/* call to action button for modal */}
-            <div className="modal-action-button d-flex flex-row">
-              <Button
-                title="Send"
-                hoverType="solid"
-                onClick={handleFormSubmit}
-              />
-              <ButtonOutline title="Abord" onClick={onClose} />
-            </div>
-          </form>
+                {/* request user choice based on services */}
+                <div className="form-item d-flex flex-col">
+                  <label
+                    htmlFor="selected-services"
+                    className="akata-text-medium"
+                  >
+                    Choose what you want to talk about.
+                  </label>
+                  <select
+                    name="theme"
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    className="select-area akata-text-medium"
+                  >
+                    <option value="" disabled>
+                      Choose what you want to talk about.
+                    </option>
+                    {services.map((service, index) => (
+                      <option key={index} value={service}>
+                        {service}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+
+                {/* request user project brief */}
+                <div className="form-item d-flex flex-col send-file">
+                  <label htmlFor="email" className="akata-text-medium">
+                    Project brief file:
+                  </label>
+                  <Dropzone
+                    onDrop={(uploadedFile) => handleDropFile(uploadedFile)}
+                  >
+                    {({ getRootProps, getInputProps }) => (
+                      <section className="drop-zone-section">
+                        <div
+                          {...getRootProps()}
+                          className="input-drop d-flex-center flex-col"
+                        >
+                          <input {...getInputProps()} />
+                          <FontAwesomeIcon
+                            icon={faFile}
+                            className="drop-file-icon"
+                          />
+                          <p className="akata-text-medium drop-file-indicator">
+                            Drag and drop your file here or{" "}
+                            <span className="important-text">choose file</span>
+                          </p>
+                        </div>
+                        <div className="file-type-indicator d-flex-space-between">
+                          <p className="akata-text-small">
+                            Supported formats: DOCX, PDF, XLS
+                          </p>
+                          <p className="akata-text-small">
+                            Maximum file size: 40MB
+                          </p>
+                        </div>
+                      </section>
+                    )}
+                  </Dropzone>
+                </div>
+
+                {/* call to action button for modal */}
+                <div className="modal-action-button d-flex flex-row">
+                  <Button
+                    title="Send"
+                    hoverType="solid"
+                    onClick={handleSubmit}
+                    type="submit"
+                  />
+                  <ButtonOutline title="Abort" onClick={onClose} />
+                </div>
+              </form>
+            )}
+          </Formik>
         </div>
       </div>
     </div>
