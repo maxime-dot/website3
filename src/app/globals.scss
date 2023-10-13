@@ -9,6 +9,8 @@
   --goavana-blue: #001751;
   --goavana-yellow: #ffba13;
   --card-background: #f2f3f6;
+  --layer-background: rgba(0, 0, 0, 0.7);
+  --goavana-danger: #e74c3c;
   --light: #ffffff;
   --primary-dark: #222222;
   --text-dark: #505d68;
@@ -16,6 +18,7 @@
     "Segoe UI Mono", "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace",
     "Source Code Pro", "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
   --border-radius: 4px;
+  --goavana-success: #2ecc71;
 }
 
 * {
@@ -58,13 +61,16 @@ body {
 .akata-text-medium {
   @extend .akata-text-big;
   font-size: 14px;
-  line-height: 19.2px;
+  line-height: 19.6px;
 }
 
 .akata-text-small {
   @extend .akata-text-medium;
   font-size: 12px;
   line-height: 18.8px;
+  &.error-message {
+    color: var(--goavana-danger);
+  }
 }
 
 .container {
@@ -78,6 +84,10 @@ body {
 
 .hidden {
   display: none;
+}
+
+.d-flex {
+  display: flex;
 }
 
 .d-flex-center {
@@ -98,6 +108,54 @@ body {
 
 .flex-row {
   flex-direction: row;
+}
+
+.input-drop {
+  width: 100%;
+  min-height: 154px;
+  background: var(--card-background);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  gap: 17px;
+  .drop-file-icon {
+    font-size: 50px;
+    color: var(--text-dark);
+    opacity: 0.5;
+  }
+
+  .drop-file-indicator {
+    .important-text {
+      color: var(--goavana-blue);
+      text-decoration: underline;
+    }
+  }
+}
+
+.drop-zone-section {
+  .file-type-indicator {
+    margin-top: 13px;
+  }
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 
 // 2xl
@@ -139,5 +197,32 @@ body {
 @media (max-width: 475px) {
   .container {
     width: 100%;
+  }
+}
+
+.animate-up {
+  -webkit-animation: open-up 0.2s ease-out forwards;
+  animation: open-up 0.2s ease-out forwards;
+}
+
+@-webkit-keyframes open-up {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes open-up {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

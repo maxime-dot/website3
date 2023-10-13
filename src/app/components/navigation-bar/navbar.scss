@@ -36,6 +36,7 @@
         position: relative;
         transition: opacity 0.2s ease-in-out;
         opacity: 0.6;
+        padding: 0 5px;
 
         &.active,
         &:hover {
@@ -109,7 +110,7 @@
   }
 
   .akata-navbar .navbar-content .navbar-links,
-  .akata-navbar .akata-button {
+  .akata-navbar .navbar-call-to-action {
     display: none;
   }
 

@@ -4,10 +4,25 @@ import "./button.scss";
 interface ButtonProps {
   title: string;
   hoverType: string;
+  onClick: () => void;
+  type: "button" | "submit" | "reset"; // Updated type definition
 }
 
-const Button: React.FC<ButtonProps> = ({ title, hoverType }) => {
-  return <button className={`akata-button ${hoverType}`}>{title}</button>;
+const Button: React.FC<ButtonProps> = ({
+  title,
+  hoverType,
+  onClick,
+  type = "button",
+}) => {
+  return (
+    <button
+      className={`akata-button ${hoverType}`}
+      onClick={onClick}
+      type={type}
+    >
+      {title}
+    </button>
+  );
 };
 
 export default Button;
