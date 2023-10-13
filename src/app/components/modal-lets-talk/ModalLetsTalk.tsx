@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark, faUser, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import "./modal-lets-talk.scss";
@@ -9,7 +10,32 @@ interface ModalLetsTalkProps {
   onClose: () => void;
 }
 
+const services = [
+  "UI/UX Design",
+  "Consulting",
+  "Database Management",
+  "Web App Development",
+  "Other...",
+];
+
 const ModalLetsTalk: React.FC<ModalLetsTalkProps> = ({ onClose }) => {
+  const handleFormSubmit = () => {
+    console.log("sended");
+  };
+
+  const handleEspaceKeyPress = (event: KeyboardEvent) => {
+    if (event.keyCode === 27) {
+      onClose();
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("keydown", handleEspaceKeyPress);
+
+    return () => {
+      document.removeEventListener("keydown", handleEspaceKeyPress);
+    };
+  }, []);
   return (
     <div className="akata-modal d-flex-center">
       <div className="modal-layer" onClick={onClose} />
@@ -32,34 +58,83 @@ const ModalLetsTalk: React.FC<ModalLetsTalkProps> = ({ onClose }) => {
         </div>
         <div className="modal-body">
           <form action="#" className="body-form d-flex flex-col">
+            {/* request user full name */}
             <div className="form-item d-flex flex-col">
-              <label htmlFor="full_name" className="akata-text-medium">
+              <label htmlFor="name" className="akata-text-medium">
                 Full name
               </label>
               <FontAwesomeIcon icon={faUser} className="form-icon" />
               <input
                 type="text"
                 placeholder="ex: Jhon Doe, Lissa Meetson"
-                name="full_name"
+                name="name"
+                required
+                className="akata-text-medium"
               />
             </div>
+
+            {/* request user email */}
             <div className="form-item d-flex flex-col">
-              <label htmlFor="full_name" className="akata-text-medium">
+              <label htmlFor="email" className="akata-text-medium">
                 Email
               </label>
               <FontAwesomeIcon icon={faEnvelope} className="form-icon" />
               <input
-                type="text"
+                type="email"
                 placeholder="ex: account.me@goavana.com"
-                name="full_name"
+                name="email"
                 required
+                className="akata-text-medium"
               />
             </div>
+
+            {/* request user choice based on services */}
+            <div className="form-item d-flex flex-col">
+              <label
+                htmlFor="selected-services"
+                className="akata-text-medium"
+              ></label>
+              <select
+                name="selected-services"
+                className="select-area akata-text-medium"
+              >
+                <option value="" disabled selected>
+                  {" "}
+                  Choose what do you want to talking about.
+                </option>
+                {services.map((service, index) => (
+                  <option key={index} value={service}>
+                    {service}
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            {/* request user  project brief */}
+            <div className="form-item d-flex flex-col send-file">
+              <label htmlFor="email" className="akata-text-medium">
+                Project brief file:
+              </label>
+              <FontAwesomeIcon icon={faEnvelope} className="form-icon" />
+              <input
+                type="email"
+                placeholder="ex: account.me@goavana.com"
+                name="email"
+                required
+                className="akata-text-medium"
+              />
+            </div>
+
+            {/* call to action button for modal */}
+            <div className="modal-action-button d-flex flex-row">
+              <Button
+                title="Send"
+                hoverType="solid"
+                onClick={handleFormSubmit}
+              />
+              <ButtonOutline title="Abord" onClick={onClose} />
+            </div>
           </form>
-        </div>
-        <div className="modal-bottom d-flex flex-row">
-          <Button title="Send" hoverType="solid" onClick={onClose} />
-          <ButtonOutline title="Abord" onClick={onClose} />
         </div>
       </div>
     </div>
