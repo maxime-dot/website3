@@ -170,17 +170,14 @@
               background: 0;
               outline: 0;
               transition: all 0.2s ease-in-out;
-
+              opacity: 0.5;
               border-radius: var(--border-radius);
               cursor: pointer;
               &:active {
                 transform: scale(0.8);
               }
               &:hover {
-                background: var(--goavana-blue);
-                .icon-file {
-                  color: var(--light);
-                }
+                opacity: 1;
               }
               .icon-file {
                 font-size: 20px;
