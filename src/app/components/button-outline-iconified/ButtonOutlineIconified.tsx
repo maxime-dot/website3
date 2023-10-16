@@ -5,11 +5,17 @@ import { faCirclePlay } from "@fortawesome/free-solid-svg-icons";
 
 interface ButtonProps {
   title: string;
+  onClick: () => void;
+  name: string;
 }
 
-const ButtonOutlineIconified: React.FC<ButtonProps> = ({ title }) => {
+const ButtonOutlineIconified: React.FC<ButtonProps> = ({
+  title,
+  onClick,
+  name,
+}) => {
   return (
-    <button className="akata-button-outline">
+    <button className="akata-button-outline" name={name} onClick={onClick}>
       {title}{" "}
       <FontAwesomeIcon icon={faCirclePlay} style={{ marginLeft: "14px" }} />{" "}
     </button>
