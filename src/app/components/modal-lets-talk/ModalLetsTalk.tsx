@@ -18,6 +18,12 @@ interface ModalLetsTalkProps {
   onClose: () => void;
 }
 
+interface FormValues {
+  name: string;
+  email: string;
+  // Add more fields if necessary
+}
+
 const services = [
   "UI/UX Design",
   "Consultation",
@@ -79,7 +85,7 @@ const ModalLetsTalk: React.FC<ModalLetsTalkProps> = ({ onClose }) => {
               theme: "",
             }}
             validate={(values) => {
-              const errors = {};
+              const errors: Partial<FormValues> = {};
               if (!values.name) {
                 errors.name = "Ooops!Full name is missing. Please provide it..";
               }
@@ -256,7 +262,13 @@ const ModalLetsTalk: React.FC<ModalLetsTalkProps> = ({ onClose }) => {
                 </div>
 
                 {/* call to action button for modal */}
-                <div className="modal-action-button d-flex flex-row">
+                <div
+                  className={
+                    errors.name || errors.email
+                      ? "modal-action-button d-none"
+                      : "modal-action-button d-flex flex-row"
+                  }
+                >
                   <Button
                     title="Send"
                     hoverType="solid"
