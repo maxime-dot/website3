@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState, KeyboardEvent } from "react";
+import React, { useState, KeyboardEvent } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faXmark,
@@ -31,32 +31,24 @@ const services = [
 const ModalLetsTalk: React.FC<ModalLetsTalkProps> = ({ onClose }) => {
   const [droppedFiles, setDroppedFiles] = useState<File[]>([]);
 
-  const handleEscapeKeyPress = (event: KeyboardEvent) => {
+  const handleKeyDown = (event: KeyboardEvent) => {
     if (event.keyCode === 27) {
       onClose();
     }
+    console.log(event);
   };
-
-  useEffect(() => {
-    document.addEventListener("keydown", handleEscapeKeyPress);
-
-    return () => {
-      document.removeEventListener("keydown", handleEscapeKeyPress);
-    };
-  }, []);
-
   const handleDropFile = (files: File[]) => {
     setDroppedFiles([...droppedFiles, ...files]);
     console.log("files: ", droppedFiles);
   };
-  const handleRemoveFile = (indexToRemove) => {
+  const handleRemoveFile = (indexToRemove: number) => {
     setDroppedFiles((prevFiles) =>
       prevFiles.filter((_, index) => index !== indexToRemove)
     );
   };
 
   return (
-    <div className="akata-modal w-100 d-flex-center">
+    <div className="akata-modal w-100 d-flex-center" onKeyDown={handleKeyDown}>
       <div className="modal-layer fill-view" onClick={onClose} />
       <div className="modal-content w-100 animate-up d-flex flex-col">
         <div className="modal-header d-flex flex-col">
@@ -133,6 +125,8 @@ const ModalLetsTalk: React.FC<ModalLetsTalkProps> = ({ onClose }) => {
                     onChange={handleChange}
                     onBlur={handleBlur}
                     value={values.name}
+                    id="name"
+                    autoComplete="true"
                   />
                   <p className="akata-text-small error-message">
                     {" "}
@@ -153,6 +147,8 @@ const ModalLetsTalk: React.FC<ModalLetsTalkProps> = ({ onClose }) => {
                     placeholder="ex: account.me@goavana.com"
                     onBlur={handleBlur}
                     value={values.email}
+                    id="email"
+                    autoComplete="true"
                   />
                   <p className="akata-text-small error-message">
                     {" "}
@@ -170,6 +166,7 @@ const ModalLetsTalk: React.FC<ModalLetsTalkProps> = ({ onClose }) => {
                     onChange={handleChange}
                     onBlur={handleBlur}
                     className="select-area akata-text-medium"
+                    id="theme"
                   >
                     <option value="" disabled>
                       Choose what you want to talk about.
