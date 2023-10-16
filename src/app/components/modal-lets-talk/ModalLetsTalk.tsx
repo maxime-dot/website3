@@ -56,9 +56,9 @@ const ModalLetsTalk: React.FC<ModalLetsTalkProps> = ({ onClose }) => {
   };
 
   return (
-    <div className="akata-modal d-flex-center">
-      <div className="modal-layer" onClick={onClose} />
-      <div className="modal-content animate-up d-flex flex-col">
+    <div className="akata-modal w-100 d-flex-center">
+      <div className="modal-layer fill-view" onClick={onClose} />
+      <div className="modal-content w-100 animate-up d-flex flex-col">
         <div className="modal-header d-flex flex-col">
           <button
             className="modal-button-close d-flex-center"
@@ -75,7 +75,7 @@ const ModalLetsTalk: React.FC<ModalLetsTalkProps> = ({ onClose }) => {
             We look forward to working with you!
           </p>
         </div>
-        <div className="modal-body">
+        <div className="modal-body w-100">
           <Formik
             initialValues={{
               name: "",
@@ -220,9 +220,12 @@ const ModalLetsTalk: React.FC<ModalLetsTalkProps> = ({ onClose }) => {
                 </div>
 
                 {/* send file content*/}
-                <div className="files d-flex flex-col">
+                <div className="files  w-100 d-flex flex-col">
                   {droppedFiles.map((file, index) => (
-                    <div key={index} className="file d-flex-space-between">
+                    <div
+                      key={index}
+                      className="file w-100 d-flex-space-between"
+                    >
                       {/* Add content for each dropped file here */}
                       <div className="file-info d-flex animate-up">
                         <div className="info-icon d-flex-center">

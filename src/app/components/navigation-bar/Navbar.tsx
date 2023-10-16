@@ -44,7 +44,7 @@ const Navbar: React.FC = () => {
         href={path}
         title={`Akata ${name}`}
         onClick={() => setHash(path)}
-        className={hash === path ? "active" : ""}
+        className={"w-100 " + (hash === path ? "active" : "")}
       >
         {name}
       </Link>
@@ -52,7 +52,7 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <nav className="akata-navbar d-flex-center">
+    <nav className="akata-navbar d-flex-center w-100">
       <div className="container navbar-content d-flex-space-between">
         <Link href={"/"} className="navbar-brand">
           <Image
@@ -85,7 +85,7 @@ const Navbar: React.FC = () => {
         {isDropdownMenuOpen && (
           <div className="navbar-dropdown-menu">
             {renderLinks()}
-            <button className="akata-button-custom" onClick={openModal}>
+            <button className="akata-button-custom w-100" onClick={openModal}>
               LET&apos;S TALK
               <FontAwesomeIcon icon={faArrowRight} className="icon-button" />
             </button>

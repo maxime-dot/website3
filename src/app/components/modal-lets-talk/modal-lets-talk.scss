@@ -1,5 +1,4 @@
 .akata-modal {
-  width: 100%;
   min-height: 100vh;
   position: fixed;
   top: 0;
@@ -10,15 +9,12 @@
 }
 
 .modal-layer {
-  width: 100%;
-  height: 100vh;
   position: fixed;
   top: 0;
   left: 0;
 }
 
 .modal-content {
-  width: 100%;
   max-width: 513px;
   padding: 35px 28px;
   gap: 48px;
@@ -62,10 +58,6 @@
 
 .close-icon {
   font-size: 26px;
-}
-
-.modal-body {
-  width: 100%;
 }
 
 .body-form {
@@ -130,13 +122,11 @@ input::placeholder {
 }
 
 .files {
-  width: 100%;
   margin-top: 27px;
   gap: 20px;
 }
 
 .file {
-  width: 100%;
   align-items: flex-start;
   padding: 15px 0;
   border-bottom: 1px solid var(--border-color);

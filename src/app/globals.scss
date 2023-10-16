@@ -132,6 +132,15 @@ body {
   }
 }
 
+.w-100 {
+  width: 100%;
+}
+
+.fill-view {
+  width: 100%;
+  height: 100vh;
+}
+
 .drop-zone-section {
   .file-type-indicator {
     margin-top: 13px;
