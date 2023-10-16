@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import Image from "next/image";
 import "./header.scss";
 import Button from "../button/Button";
 import ModalLetsTalk from "../modal-lets-talk/ModalLetsTalk";
@@ -9,7 +10,7 @@ const Header: React.FC = () => {
   return (
     <header className="akata-header fill-view d-flex-space-between container">
       {isModalOpen && <ModalLetsTalk onClose={() => setIsModalOpen(false)} />}
-      <div className="header-content d-flex flex-col">
+      <div className="header-content d-flex flex-col w-100">
         <div className="content-text d-flex flex-col">
           <h1 className="akata-title-strong">
             lET’S US TURN YOU <span>DREAM</span> INTO REALITY
@@ -29,6 +30,16 @@ const Header: React.FC = () => {
           />
           <ButtonOutlineIconified title="Get to Know Us Better" />
         </div>
+      </div>
+      <div className="header-hero d-flex-center w-100">
+        <Image
+          src={"/images/maki.svg"}
+          alt="Akata goavana, hero image"
+          className="hero-image"
+          width={100}
+          height={100}
+          layout="responsive"
+        />
       </div>
     </header>
   );
