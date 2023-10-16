@@ -76,6 +76,7 @@ const Navbar: React.FC = () => {
         <button
           className="navbar-dropdown-button d-flex-center"
           onClick={toggleDropdownMenu}
+          name="Menu"
         >
           <FontAwesomeIcon
             icon={isDropdownMenuOpen ? faXmark : faBars}
@@ -85,7 +86,11 @@ const Navbar: React.FC = () => {
         {isDropdownMenuOpen && (
           <div className="navbar-dropdown-menu">
             {renderLinks()}
-            <button className="akata-button-custom w-100" onClick={openModal}>
+            <button
+              className="akata-button-custom w-100"
+              name="let's talk"
+              onClick={openModal}
+            >
               LET&apos;S TALK
               <FontAwesomeIcon icon={faArrowRight} className="icon-button" />
             </button>
