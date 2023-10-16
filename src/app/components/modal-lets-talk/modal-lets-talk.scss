@@ -185,3 +185,16 @@ input::placeholder {
 .modal-action-button {
   gap: 25px;
 }
+
+@media (max-width: 475px) {
+  .modal-action-button {
+    flex-direction: column;
+
+    .akata-button {
+      width: 100%;
+    }
+  }
+  .drop-file-indicator {
+    text-align: center;
+  }
+}
