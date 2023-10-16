@@ -35,7 +35,6 @@ const ModalLetsTalk: React.FC<ModalLetsTalkProps> = ({ onClose }) => {
     if (event.keyCode === 27) {
       onClose();
     }
-    console.log(event);
   };
   const handleDropFile = (files: File[]) => {
     setDroppedFiles([...droppedFiles, ...files]);
@@ -48,7 +47,11 @@ const ModalLetsTalk: React.FC<ModalLetsTalkProps> = ({ onClose }) => {
   };
 
   return (
-    <div className="akata-modal w-100 d-flex-center" onKeyDown={handleKeyDown}>
+    <div
+      className="akata-modal w-100 d-flex-center"
+      tabIndex={0}
+      onKeyDown={handleKeyDown}
+    >
       <div className="modal-layer fill-view" onClick={onClose} />
       <div className="modal-content w-100 animate-up d-flex flex-col">
         <div className="modal-header d-flex flex-col">
