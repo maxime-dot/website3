@@ -16,7 +16,7 @@ const ButtonCaFloat: React.FC<FloatButtonProps> = ({
 }) => {
   return (
     <button className="btn-float" aria-label={ariaLabel} onClick={onClick}>
-      <FontAwesomeIcon icon={FontAwesome} />
+      <FontAwesomeIcon icon={FontAwesome} className="btn-icon" />
     </button>
   );
 };
