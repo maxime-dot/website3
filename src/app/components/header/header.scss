@@ -1,0 +1,51 @@
+.akata-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
+  .header-content {
+    gap: 68px;
+    .content-text {
+      gap: 28px;
+    }
+    .content-ca-button {
+      gap: 42px;
+    }
+  }
+  .header-hero {
+    overflow: hidden;
+    .hero-image {
+      height: auto;
+      //margin-top: 40px;
+      transform: scale(1.3) translateX(40px);
+      -o-object-fit: cover;
+      object-fit: cover;
+      z-index: -1;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .akata-header {
+    grid-template-columns: 1fr;
+    .header-hero {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 475px) {
+  .akata-header {
+    margin-top: 90px;
+    padding: 30px;
+    .header-content {
+      .content-text {
+        gap: 16px;
+      }
+      gap: calc(16px * 3);
+      .content-ca-button {
+        flex-direction: column;
+        gap: 30px;
+      }
+    }
+  }
+}
