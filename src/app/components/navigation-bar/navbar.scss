@@ -29,7 +29,7 @@
       a {
         text-decoration: none;
         color: var(--goavana-blue);
-        font: normal 400 12px / normal "Poppins", sans-serif;
+        font: normal 400 12px / normal var(--font-poppins);
         letter-spacing: 0.036px;
         text-transform: uppercase;
         position: relative;
@@ -78,7 +78,7 @@
         text-align: center;
         text-decoration: none;
         color: var(--primary-dark);
-        font: 14px "Poppins", sans-serif;
+        font: 14px var(--font-poppins);
         position: relative;
         opacity: 0.6;
 
@@ -170,7 +170,6 @@
   border-radius: 4px;
   background: var(--goavana-blue, #001751);
   box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.15);
-  // border: 1px solid var(--goavana-blue, #001751);
 
   border: 0;
   transition: all 0.2s ease-in-out;
@@ -181,7 +180,7 @@
 
   // typography
   color: var(--light);
-  font: normal 700 14px "Poppins", sans-serif;
+  font: normal 700 14px var(--font-poppins);
   .icon-button {
     color: var(--light);
     position: absolute;

@@ -1,11 +1,12 @@
 "use client";
 import React, { useState } from "react";
+import dynamic from "next/dynamic";
 import Image from "next/image";
 import "./header.scss";
-import Button from "../button/Button";
-import ModalLetsTalk from "../modal-lets-talk/ModalLetsTalk";
+const Button = dynamic(() => import("../button/Button"));
+const ModalLetsTalk = dynamic(() => import("../modal-lets-talk/ModalLetsTalk"));
 import ButtonOutlineIconified from "../button-outline-iconified/ButtonOutlineIconified";
-import VideoPlayer from "../video-player/VideoPlayer";
+const VideoPlayer = dynamic(() => import("../video-player/VideoPlayer"));
 const Header: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [playVideo, setPlayVideo] = useState(false);
@@ -49,12 +50,12 @@ const Header: React.FC = () => {
       </div>
       <div className="header-hero d-flex-center w-100">
         <Image
-          src={"/images/maki.svg"}
+          src={"/images/maki.webp"}
           alt="Akata goavana, hero image"
           className="hero-image"
-          width={100}
-          height={100}
-          layout="responsive"
+          priority={true}
+          width={600}
+          height={600}
         />
       </div>
     </header>

@@ -5,7 +5,7 @@ interface ButtonProps {
   title: string;
   hoverType: string;
   onClick: () => void;
-  type: "button" | "submit" | "reset"; // Updated type definition
+  type: "button" | "submit" | "reset";
 }
 
 const Button: React.FC<ButtonProps> = ({
