@@ -49,7 +49,7 @@ const Header: React.FC = () => {
       </div>
       <div className="header-hero d-flex-center w-100">
         <Image
-          src={"/images/maki.png"}
+          src={"/images/maki.webp"}
           alt="Akata goavana, hero image"
           className="hero-image"
           priority={true}
