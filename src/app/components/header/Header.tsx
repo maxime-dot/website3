@@ -2,10 +2,12 @@
 import React, { useState } from "react";
 import dynamic from "next/dynamic";
 import Image from "next/image";
+import { faRocket } from "@fortawesome/free-solid-svg-icons";
 import "./header.scss";
 const Button = dynamic(() => import("../button/Button"));
 const ModalLetsTalk = dynamic(() => import("../modal-lets-talk/ModalLetsTalk"));
 import ButtonOutlineIconified from "../button-outline-iconified/ButtonOutlineIconified";
+import ButtonCaFloat from "../button-ca-float/ButtonCaFloat";
 const VideoPlayer = dynamic(() => import("../video-player/VideoPlayer"));
 const Header: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -22,6 +24,11 @@ const Header: React.FC = () => {
           onClose={() => setPlayVideo(false)}
         />
       )}
+      <ButtonCaFloat
+        FontAwesome={faRocket}
+        ariaLabel="Submit project requirement"
+        onClick={() => setIsModalOpen(true)}
+      />
       {isModalOpen && <ModalLetsTalk onClose={() => setIsModalOpen(false)} />}
       <div className="header-content d-flex flex-col w-100">
         <div className="content-text d-flex flex-col">
