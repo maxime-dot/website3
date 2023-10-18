@@ -15,7 +15,7 @@ const TestimonialCard: React.FC<CardProps> = ({
 }) => {
   return (
     <div className="testimonial-card d-flex flex-col">
-      <p className="akata-text-small">{testimonials}</p>
+      <p className="akata-text-small testimonial">{testimonials}</p>
       <div className="customer-info d-flex flex-row">
         <Image
           src={profile}
