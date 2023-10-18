@@ -5,8 +5,13 @@ import Image from "next/image";
 import "./testimonial.scss";
 import Button from "../../button/normal/Button";
 import ButtonOutline from "../../button/outline/ButtonOutline";
+import LoadingModal from "../../modal-lets-talk/LoadingModal";
+import TestimonialCard from "../../cards/testimonial/TestimonialCard";
 const ModalLetsTalk = dynamic(
-  () => import("../../modal-lets-talk/ModalLetsTalk")
+  () => import("../../modal-lets-talk/ModalLetsTalk"),
+  {
+    loading: () => <LoadingModal />,
+  }
 );
 
 const Testimonial: React.FC = () => {
@@ -60,7 +65,17 @@ const Testimonial: React.FC = () => {
             />
           </div>
         </div>
-        <div className="testimonial-customer">E</div>
+        <div className="testimonial-customer">
+          <div className="customer d-flex flex-col">
+            <TestimonialCard />
+            <TestimonialCard />
+          </div>
+          <div className="customer d-flex flex-col">
+            <TestimonialCard />
+            <TestimonialCard />
+            <TestimonialCard />
+          </div>
+        </div>
       </div>
     </section>
   );
