@@ -11,8 +11,14 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import "./navbar.scss";
 import Button from "../button/normal/Button";
+import LoadingModal from "../modal-lets-talk/LoadingModal";
 
-const ModalLetsTalk = dynamic(() => import("../modal-lets-talk/ModalLetsTalk"));
+const ModalLetsTalk = dynamic(
+  () => import("../modal-lets-talk/ModalLetsTalk"),
+  {
+    loading: () => <LoadingModal />,
+  }
+);
 
 const Links: { name: string; path: string }[] = [
   { name: "Home", path: "#" },

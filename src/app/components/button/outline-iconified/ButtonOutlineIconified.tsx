@@ -19,7 +19,7 @@ const ButtonOutlineIconified: React.FC<ButtonProps> = ({
       className="akata-button-outline"
       name={name}
       onClick={onClick}
-      aria-label="Open akata video show"
+      aria-label="Get to Know Us Better"
     >
       {title}{" "}
       <FontAwesomeIcon icon={faCirclePlay} style={{ marginLeft: "14px" }} />{" "}
