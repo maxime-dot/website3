@@ -18,8 +18,8 @@
     background: var(--light);
     border: 1px solid var(--border-color);
     opacity: 0;
-    -webkit-animation: animate-open 0.2s 0.2s ease-in-out forwards;
-    animation: animate-open 0.2s 0.1s ease-in-out forwards;
+    -webkit-animation: animate-open 0.2s ease-in-out forwards;
+    animation: animate-open 0.2s ease-in-out forwards;
     border-radius: var(--border-radius);
     position: relative;
     .player-btn-close {
@@ -47,21 +47,21 @@
 @-webkit-keyframes animate-open {
   from {
     opacity: 0;
-    transform: scale(0.6);
+    transform: translateY(40px);
   }
   to {
     opacity: 1;
-    transform: scale(1);
+    transform: translateY(0);
   }
 }
 
 @keyframes animate-open {
   from {
     opacity: 0;
-    transform: scale(0.6);
+    transform: translateY(40px);
   }
   to {
     opacity: 1;
-    transform: scale(1);
+    transform: translateY(0);
   }
 }

@@ -6,11 +6,17 @@ import { faRocket } from "@fortawesome/free-solid-svg-icons";
 import "./header.scss";
 const Button = dynamic(() => import("../../button/normal/Button"));
 const ModalLetsTalk = dynamic(
-  () => import("../../modal-lets-talk/ModalLetsTalk")
+  () => import("../../modal-lets-talk/ModalLetsTalk"),
+  {
+    loading: () => <LoadingModal />,
+  }
 );
 import ButtonOutlineIconified from "../../button/outline-iconified/ButtonOutlineIconified";
 import ButtonCaFloat from "../../button/ca-float/ButtonCaFloat";
-const VideoPlayer = dynamic(() => import("../../video-player/VideoPlayer"));
+import LoadingModal from "../../modal-lets-talk/LoadingModal";
+const VideoPlayer = dynamic(() => import("../../video-player/VideoPlayer"), {
+  loading: () => <LoadingModal />,
+});
 const Header: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [playVideo, setPlayVideo] = useState(false);
