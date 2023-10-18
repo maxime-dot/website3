@@ -5,7 +5,7 @@
   left: 0;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   background: var(--light, #fff);
-
+  z-index: 6;
   .navbar-content {
     height: inherit;
     position: relative;
