@@ -10,7 +10,7 @@ import {
   faArrowRight,
 } from "@fortawesome/free-solid-svg-icons";
 import "./navbar.scss";
-import Button from "../button/Button";
+import Button from "../button/normal/Button";
 
 const ModalLetsTalk = dynamic(() => import("../modal-lets-talk/ModalLetsTalk"));
 

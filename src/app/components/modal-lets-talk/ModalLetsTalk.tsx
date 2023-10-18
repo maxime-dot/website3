@@ -10,8 +10,8 @@ import {
 import Dropzone from "react-dropzone";
 import { Formik } from "formik";
 import "./modal-lets-talk.scss";
-import Button from "../button/Button";
-import ButtonOutline from "../button-outline/ButtonOutline";
+import Button from "../button/normal/Button";
+import ButtonOutline from "../button/outline/ButtonOutline";
 import { TruncateText } from "@/app/helpers/truncate";
 
 interface ModalLetsTalkProps {
