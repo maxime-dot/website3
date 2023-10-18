@@ -39,6 +39,7 @@ const Navbar: React.FC = () => {
     setIsModalOpen(true);
     setIsDropdownMenuOpen(false);
   };
+
   const renderLinks = () => {
     return Links.map(({ name, path }, index) => (
       <Link

@@ -1,17 +1,26 @@
 .akata-testimonial {
   position: relative;
-  .testimonial-info {
-    gap: 48px;
-    flex: 0.4;
-    justify-content: center;
-    .text-group {
-      gap: 16px;
-    }
-    .button-group {
-      gap: 25px;
-    }
+  .testimonial-decorator {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 250px;
+    height: auto;
   }
-  .testimonial-customer {
-    flex: 0.6;
+  .testimonial-content {
+    .testimonial-info {
+      gap: 48px;
+      flex: 0.4;
+      justify-content: center;
+      .text-group {
+        gap: 16px;
+      }
+      .button-group {
+        gap: 25px;
+      }
+    }
+    .testimonial-customer {
+      flex: 0.6;
+    }
   }
 }
