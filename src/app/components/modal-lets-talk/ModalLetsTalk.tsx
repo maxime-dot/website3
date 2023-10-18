@@ -270,13 +270,19 @@ const ModalLetsTalk: React.FC<ModalLetsTalkProps> = ({ onClose }) => {
                   }
                 >
                   <Button
-                    title="Send"
+                    content="Send"
                     hoverType="solid"
                     onClick={handleSubmit}
                     type="submit"
+                    ariaLabel="Send project requirement"
                   />
                   {!isSubmitting && (
-                    <ButtonOutline title="Abort" onClick={onClose} />
+                    <ButtonOutline
+                      ariaLabel="Abord sending project requirement"
+                      content="Abord"
+                      onClick={onClose}
+                      title="Abord sending project requirement"
+                    />
                   )}
                 </div>
               </form>

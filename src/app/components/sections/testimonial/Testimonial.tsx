@@ -1,18 +1,28 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
+import dynamic from "next/dynamic";
 import "./testimonial.scss";
 import Button from "../../button/normal/Button";
 import ButtonOutline from "../../button/outline/ButtonOutline";
+const ModalLetsTalk = dynamic(
+  () => import("../../modal-lets-talk/ModalLetsTalk")
+);
 
 const Testimonial: React.FC = () => {
+  const [openModal, setOpenModal] = useState(false);
   const handleOpenModal = () => {
-    console.log("open log...");
+    setOpenModal(true);
+  };
+
+  const handleCloseModal = () => {
+    setOpenModal(false);
   };
   return (
     <section
       className="akata-testimonial fill-view  container d-flex flex-row"
       id="#testimonal"
     >
+      {openModal && <ModalLetsTalk onClose={handleCloseModal} />}
       <div className="testimonial-info d-flex flex-col">
         <div className="text-group d-flex flex-col">
           <h2 className="akata-title-strong">
