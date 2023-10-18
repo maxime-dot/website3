@@ -69,16 +69,18 @@ const Navbar: React.FC = () => {
         <div className="navbar-links">{renderLinks()}</div>
         <div className="navbar-call-to-action">
           <Button
-            title="LET'S TALK"
+            content="LET'S TALK"
             hoverType="solid"
             onClick={openModal}
             type="button"
+            ariaLabel="Open let's talk modal to submit your project requirement"
           />
         </div>
         <button
           className="navbar-dropdown-button d-flex-center"
           onClick={toggleDropdownMenu}
           name="Menu"
+          aria-label="Open extended menu"
         >
           <FontAwesomeIcon
             icon={isDropdownMenuOpen ? faXmark : faBars}
@@ -92,6 +94,7 @@ const Navbar: React.FC = () => {
               className="akata-button-custom w-100"
               name="let's talk"
               onClick={openModal}
+              aria-label="Open let's talk modal to submit your project requirement"
             >
               LET&apos;S TALK
               <FontAwesomeIcon icon={faArrowRight} className="icon-button" />

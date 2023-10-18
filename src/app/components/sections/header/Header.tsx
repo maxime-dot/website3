@@ -46,9 +46,10 @@ const Header: React.FC = () => {
         <div className="content-ca-button d-flex flex-row">
           <Button
             type="button"
-            title="LET'S TALK"
+            content="LET'S TALK"
             hoverType="shadowed"
             onClick={() => setIsModalOpen(true)}
+            ariaLabel="Open let's talk modal to submit your project requirement"
           />
           <ButtonOutlineIconified
             title="Get to Know Us Better"
