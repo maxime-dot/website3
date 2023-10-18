@@ -15,12 +15,12 @@
     .img {
       min-width: 53px;
       min-height: 53px;
-      background: var(--goavana-blue);
       border-radius: 100%;
     }
     .info-perso {
       .name {
         line-height: auto;
+        text-transform: uppercase;
       }
     }
   }
