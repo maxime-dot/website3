@@ -1,2 +1,17 @@
 .akata-testimonial {
+  margin-top: 70px;
+  .testimonial-info {
+    gap: 48px;
+    flex: 0.4;
+    justify-content: center;
+    .text-group {
+      gap: 16px;
+    }
+    .button-group {
+      gap: 25px;
+    }
+  }
+  .testimonial-customer {
+    flex: 0.6;
+  }
 }

@@ -2,23 +2,26 @@ import React from "react";
 import "./button-outline.scss";
 
 interface ButtonProps {
-  title: string;
+  content: string;
   onClick: () => void;
   ariaLabel: string;
+  title: string;
 }
 
 const ButtonOutline: React.FC<ButtonProps> = ({
-  title,
+  content,
   onClick,
   ariaLabel,
+  title,
 }) => {
   return (
     <button
       className="akata-button-outline"
       aria-label={ariaLabel}
       onClick={onClick}
+      title={title}
     >
-      {title}
+      {content}
     </button>
   );
 };
