@@ -117,38 +117,26 @@ const Testimonial: React.FC = () => {
         </div>
         <div className="testimonial-customer d-flex">
           <div className="card-container d-flex flex-col">
-            <TestimonialCard
-              name="casey harding"
-              post="Manager of system & people - Far Frontier Studio"
-              profile="/images/customer/casey-harding.png"
-              testimonials="« We greatly appreciate having you all with us as well. We all seem to not only work well together which is important, but any of our requests, your group jumps right in without hesitation. Pety has been helping out with some systems stuff and I think has even been learning a little on that end overall for myself, I know I have learned a lot from the group. Beyond client/developer relations, I do enjoy and value the unique partnership we all have formed and think it is great when we can also pick up knowledge along the way 🙂 »."
-            />
-            <TestimonialCard
-              name="EDOUARD DELGATTE"
-              post="Founder of Indemnflight"
-              profile="/images/customer/casey-harding.png"
-              testimonials="« I’ve been working with Akata and its founder for over two years now to evolve our site indemnflight.com (WordPress/Php) as well as backoffice APIs (nodeJS) that allow us to treat air traffic data. Everything has always gone well. Akata works independently and knows how to make itself available for emergencies. Thanks to the whole team. »"
-            />
+            {testimonialData.slice(0, 2).map((testimonial, index) => (
+              <TestimonialCard
+                key={index}
+                name={testimonial.name}
+                post={testimonial.post}
+                profile={testimonial.profile}
+                testimonials={testimonial.testimonials}
+              />
+            ))}
           </div>
           <div className="card-container d-flex flex-col">
-            <TestimonialCard
-              name="casey harding"
-              post="Manager of system & people - Far Frontier Studio"
-              profile="/images/customer/casey-harding.png"
-              testimonials="« We greatly appreciate having you all with us as well. We all seem to not only work well together which is important, but any of our requests, your group jumps right in without hesitation. Pety has been helping out with some systems stuff and I think has even been learning a little on that end overall for myself, I know I have learned a lot from the group. Beyond client/developer relations, I do enjoy and value the unique partnership we all have formed and think it is great when we can also pick up knowledge along the way 🙂 »."
-            />
-            <TestimonialCard
-              name="casey harding"
-              post="Manager of system & people - Far Frontier Studio"
-              profile="/images/customer/casey-harding.png"
-              testimonials="« We greatly appreciate having you all with us as well. We all seem to not only work well together which is important, but any of our requests, your group jumps right in without hesitation. Pety has been helping out with some systems stuff and I think has even been learning a little on that end overall for myself, I know I have learned a lot from the group. Beyond client/developer relations, I do enjoy and value the unique partnership we all have formed and think it is great when we can also pick up knowledge along the way 🙂 »."
-            />
-            <TestimonialCard
-              name="casey harding"
-              post="Manager of system & people - Far Frontier Studio"
-              profile="/images/customer/casey-harding.png"
-              testimonials="« We greatly appreciate having you all with us as well. We all seem to not only work well together which is important, but any of our requests, your group jumps right in without hesitation. Pety has been helping out with some systems stuff and I think has even been learning a little on that end overall for myself, I know I have learned a lot from the group. Beyond client/developer relations, I do enjoy and value the unique partnership we all have formed and think it is great when we can also pick up knowledge along the way 🙂 »."
-            />
+            {testimonialData.slice(2, 5).map((testimonial, index) => (
+              <TestimonialCard
+                key={index}
+                name={testimonial.name}
+                post={testimonial.post}
+                profile={testimonial.profile}
+                testimonials={testimonial.testimonials}
+              />
+            ))}
           </div>
         </div>
       </div>
