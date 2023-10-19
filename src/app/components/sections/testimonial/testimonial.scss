@@ -1,0 +1,112 @@
+$card_width: 300px;
+.akata-testimonial {
+  position: relative;
+  .testimonial-decorator {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 250px;
+    height: auto;
+    transition: all 0.3s ease-in-out;
+  }
+  .testimonial-content {
+    margin-top: 200px;
+    .testimonial-info {
+      gap: 48px;
+      flex: 0.4;
+      .card-slides {
+        display: none;
+      }
+      .text-group {
+        gap: 16px;
+        .description {
+          max-width: 441px;
+        }
+      }
+      .button-group {
+        gap: 25px;
+      }
+    }
+    .testimonial-customer {
+      flex: 0.6;
+      justify-content: flex-end;
+      gap: 30px;
+      .card-container {
+        gap: 30px;
+        &:nth-child(2) {
+          transform: translateY(-80px);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 475px) {
+  .akata-testimonial {
+    .testimonial-decorator {
+      display: none;
+    }
+    .testimonial-content {
+      .testimonial-info {
+        .button-group {
+          flex-direction: column;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .akata-testimonial {
+    .testimonial-decorator {
+      width: 150px;
+    }
+    .testimonial-content {
+      margin-top: 0;
+      .testimonial-info {
+        flex: 1;
+        width: 100%;
+        .card-slides {
+          width: 100%;
+          display: flex;
+          flex-wrap: nowrap;
+          overflow-x: scroll;
+          gap: 20px;
+          max-width: inherit;
+          -ms-scroll-snap-type: x mandatory;
+          scroll-snap-type: x mandatory;
+          padding: 10px;
+          scroll-behavior: smooth;
+          .testimonial {
+            order: 2;
+          }
+          .testimonial-card {
+            min-width: $card_width;
+            max-width: $card_width;
+            scroll-snap-align: start;
+            position: relative;
+            margin-top: 30px;
+            .customer-info {
+              position: relative;
+              order: 1;
+              margin-top: 20px;
+              .img {
+                position: absolute;
+                top: -65px;
+              }
+            }
+          }
+        }
+      }
+      .testimonial-customer {
+        display: none;
+      }
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  .akata-testimonial {
+    padding: 30px;
+  }
+}

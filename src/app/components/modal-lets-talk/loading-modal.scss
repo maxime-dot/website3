@@ -1,0 +1,74 @@
+@mixin loading-animation($total-dots, $animation-delay) {
+  $duration: 0.6s;
+  $keyframe-delay: $animation-delay;
+
+  width: 10px;
+  height: 10px;
+  background: var(--light);
+  border-radius: 100%;
+  -webkit-animation: loading $duration linear infinite;
+  animation: loading $duration linear infinite;
+
+  @for $i from 1 through $total-dots {
+    &:nth-child(#{$i}) {
+      animation-delay: $keyframe-delay;
+      -webkit-animation-delay: $keyframe-delay;
+    }
+    $keyframe-delay: $keyframe-delay + $animation-delay;
+  }
+}
+
+.modal-loader {
+  min-height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: var(--layer-background);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  z-index: 10;
+
+  .modal-layer {
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+
+  .loader-indicator {
+    gap: 5px;
+
+    .dot {
+      @include loading-animation(5, 0.4s);
+    }
+  }
+}
+
+@-webkit-keyframes loading {
+  0% {
+    background: var(--light);
+    transform: scale(0.8);
+  }
+  50% {
+    background: var(--goavana-yellow);
+    transform: scale(1);
+  }
+  100% {
+    background: var(--light);
+    transform: scale(0.8);
+  }
+}
+
+@keyframes loading {
+  0% {
+    background: var(--light);
+    transform: scale(0.8);
+  }
+  50% {
+    background: var(--goavana-yellow);
+    transform: scale(1);
+  }
+  100% {
+    background: var(--light);
+    transform: scale(0.8);
+  }
+}

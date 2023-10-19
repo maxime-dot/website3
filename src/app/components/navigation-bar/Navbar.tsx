@@ -10,9 +10,15 @@ import {
   faArrowRight,
 } from "@fortawesome/free-solid-svg-icons";
 import "./navbar.scss";
-import Button from "../button/Button";
+import Button from "../button/normal/Button";
+import LoadingModal from "../modal-lets-talk/LoadingModal";
 
-const ModalLetsTalk = dynamic(() => import("../modal-lets-talk/ModalLetsTalk"));
+const ModalLetsTalk = dynamic(
+  () => import("../modal-lets-talk/ModalLetsTalk"),
+  {
+    loading: () => <LoadingModal />,
+  }
+);
 
 const Links: { name: string; path: string }[] = [
   { name: "Home", path: "#" },
@@ -39,6 +45,7 @@ const Navbar: React.FC = () => {
     setIsModalOpen(true);
     setIsDropdownMenuOpen(false);
   };
+
   const renderLinks = () => {
     return Links.map(({ name, path }, index) => (
       <Link
@@ -69,16 +76,18 @@ const Navbar: React.FC = () => {
         <div className="navbar-links">{renderLinks()}</div>
         <div className="navbar-call-to-action">
           <Button
-            title="LET'S TALK"
+            content="LET'S TALK"
             hoverType="solid"
             onClick={openModal}
             type="button"
+            ariaLabel="Open let's talk modal to submit your project requirement"
           />
         </div>
         <button
           className="navbar-dropdown-button d-flex-center"
           onClick={toggleDropdownMenu}
           name="Menu"
+          aria-label="Open extended menu"
         >
           <FontAwesomeIcon
             icon={isDropdownMenuOpen ? faXmark : faBars}
@@ -92,6 +101,7 @@ const Navbar: React.FC = () => {
               className="akata-button-custom w-100"
               name="let's talk"
               onClick={openModal}
+              aria-label="Open let's talk modal to submit your project requirement"
             >
               LET&apos;S TALK
               <FontAwesomeIcon icon={faArrowRight} className="icon-button" />

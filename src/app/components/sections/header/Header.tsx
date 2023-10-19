@@ -4,11 +4,19 @@ import dynamic from "next/dynamic";
 import Image from "next/image";
 import { faRocket } from "@fortawesome/free-solid-svg-icons";
 import "./header.scss";
-const Button = dynamic(() => import("../button/Button"));
-const ModalLetsTalk = dynamic(() => import("../modal-lets-talk/ModalLetsTalk"));
-import ButtonOutlineIconified from "../button-outline-iconified/ButtonOutlineIconified";
-import ButtonCaFloat from "../button-ca-float/ButtonCaFloat";
-const VideoPlayer = dynamic(() => import("../video-player/VideoPlayer"));
+const Button = dynamic(() => import("../../button/normal/Button"));
+const ModalLetsTalk = dynamic(
+  () => import("../../modal-lets-talk/ModalLetsTalk"),
+  {
+    loading: () => <LoadingModal />,
+  }
+);
+import ButtonOutlineIconified from "../../button/outline-iconified/ButtonOutlineIconified";
+import ButtonCaFloat from "../../button/ca-float/ButtonCaFloat";
+import LoadingModal from "../../modal-lets-talk/LoadingModal";
+const VideoPlayer = dynamic(() => import("../../video-player/VideoPlayer"), {
+  loading: () => <LoadingModal />,
+});
 const Header: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [playVideo, setPlayVideo] = useState(false);
@@ -44,9 +52,10 @@ const Header: React.FC = () => {
         <div className="content-ca-button d-flex flex-row">
           <Button
             type="button"
-            title="LET'S TALK"
+            content="LET'S TALK"
             hoverType="shadowed"
             onClick={() => setIsModalOpen(true)}
+            ariaLabel="Open let's talk modal to submit your project requirement"
           />
           <ButtonOutlineIconified
             title="Get to Know Us Better"

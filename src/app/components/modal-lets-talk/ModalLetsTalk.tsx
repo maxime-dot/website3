@@ -10,8 +10,8 @@ import {
 import Dropzone from "react-dropzone";
 import { Formik } from "formik";
 import "./modal-lets-talk.scss";
-import Button from "../button/Button";
-import ButtonOutline from "../button-outline/ButtonOutline";
+import Button from "../button/normal/Button";
+import ButtonOutline from "../button/outline/ButtonOutline";
 import { TruncateText } from "@/app/helpers/truncate";
 
 interface ModalLetsTalkProps {
@@ -270,13 +270,19 @@ const ModalLetsTalk: React.FC<ModalLetsTalkProps> = ({ onClose }) => {
                   }
                 >
                   <Button
-                    title="Send"
+                    content="Send"
                     hoverType="solid"
                     onClick={handleSubmit}
                     type="submit"
+                    ariaLabel="Send project requirement"
                   />
                   {!isSubmitting && (
-                    <ButtonOutline title="Abort" onClick={onClose} />
+                    <ButtonOutline
+                      ariaLabel="Abord sending project requirement"
+                      content="Abord"
+                      onClick={onClose}
+                      title="Abord sending project requirement"
+                    />
                   )}
                 </div>
               </form>
