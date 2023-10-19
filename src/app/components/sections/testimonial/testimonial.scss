@@ -1,3 +1,4 @@
+$card_width: 300px;
 .akata-testimonial {
   position: relative;
   .testimonial-decorator {
@@ -71,15 +72,30 @@
           display: flex;
           flex-wrap: nowrap;
           overflow-x: scroll;
-          gap: 30px;
+          gap: 20px;
           max-width: inherit;
           -ms-scroll-snap-type: x mandatory;
           scroll-snap-type: x mandatory;
           padding: 10px;
           scroll-behavior: smooth;
+          .testimonial {
+            order: 2;
+          }
           .testimonial-card {
-            min-width: 340px;
+            min-width: $card_width;
+            max-width: $card_width;
             scroll-snap-align: start;
+            position: relative;
+            margin-top: 30px;
+            .customer-info {
+              position: relative;
+              order: 1;
+              margin-top: 20px;
+              .img {
+                position: absolute;
+                top: -65px;
+              }
+            }
           }
         }
       }
