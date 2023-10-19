@@ -7,6 +7,7 @@ import Button from "../../button/normal/Button";
 import ButtonOutline from "../../button/outline/ButtonOutline";
 import LoadingModal from "../../modal-lets-talk/LoadingModal";
 import TestimonialCard from "../../cards/testimonial/TestimonialCard";
+import TestimonialCardSkeleton from "../../cards/testimonial/TestimonialSkeleton";
 const ModalLetsTalk = dynamic(
   () => import("../../modal-lets-talk/ModalLetsTalk"),
   {
