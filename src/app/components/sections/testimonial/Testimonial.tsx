@@ -7,6 +7,7 @@ import Button from "../../button/normal/Button";
 import ButtonOutline from "../../button/outline/ButtonOutline";
 import LoadingModal from "../../modal-lets-talk/LoadingModal";
 import TestimonialCard from "../../cards/testimonial/TestimonialCard";
+import TestimonialSlider from "../../sliders/testimonial-slider/TestimonialSlider";
 
 const ModalLetsTalk = dynamic(
   () => import("../../modal-lets-talk/ModalLetsTalk"),
@@ -55,12 +56,21 @@ const testimonialData = [
 
 const Testimonial: React.FC = () => {
   const [openModal, setOpenModal] = useState(false);
+  const [openSlider, setOpenSlider] = useState(false);
   const handleOpenModal = () => {
     setOpenModal(true);
   };
 
   const handleCloseModal = () => {
     setOpenModal(false);
+  };
+
+  const handleOpenSlider = () => {
+    setOpenSlider(true);
+  };
+
+  const handleSliderClose = () => {
+    setOpenSlider(false);
   };
   return (
     <section
@@ -75,6 +85,7 @@ const Testimonial: React.FC = () => {
         className="testimonial-decorator"
         priority={true}
       />
+      <TestimonialSlider onClose={handleSliderClose} isOpen={openSlider} />
       {openModal && <ModalLetsTalk onClose={handleCloseModal} />}
       <div className="container testimonial-content d-flex flex-row">
         <div className="testimonial-info d-flex flex-col">
@@ -110,7 +121,7 @@ const Testimonial: React.FC = () => {
             />
             <ButtonOutline
               ariaLabel="Read more about customer testimonial"
-              onClick={handleOpenModal}
+              onClick={handleOpenSlider}
               title="Read more about customer testimonial"
               content="READ MORE"
             />

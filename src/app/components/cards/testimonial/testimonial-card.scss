@@ -8,15 +8,8 @@
   gap: 30px;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
-  &:nth-child(even) {
-    &:hover {
-      border: 1px solid var(--goavana-yellow);
-      transform: scale(1.01);
-    }
-  }
   &:hover {
     border: 1px solid var(--goavana-blue);
-    transform: scale(1.01);
   }
   .customer-info {
     width: 100%;

@@ -1,0 +1,15 @@
+.testimonial-slider {
+  position: fixed;
+  background: var(--light);
+  top: 0;
+  left: 0;
+  z-index: 10;
+  .slider-content {
+    border: 1px solid red;
+    padding-top: 30px;
+    align-items: center;
+    .slider-title {
+      gap: 10px;
+    }
+  }
+}
