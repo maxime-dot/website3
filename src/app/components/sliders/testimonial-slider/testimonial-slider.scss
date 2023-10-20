@@ -5,9 +5,23 @@
   left: 0;
   z-index: 10;
   .slider-content {
-    border: 1px solid red;
     padding-top: 30px;
     align-items: center;
+    position: relative;
+    .close-button {
+      width: 40px;
+      height: 40px;
+      position: absolute;
+      top: 21px;
+      background: 0;
+      border: 0;
+      color: var(--goavana-blue);
+      right: 0;
+      cursor: pointer;
+      .close-button-icon {
+        font-size: 30px;
+      }
+    }
     .slider-title {
       gap: 10px;
     }

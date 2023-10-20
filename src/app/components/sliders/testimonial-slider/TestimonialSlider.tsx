@@ -1,6 +1,7 @@
 import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import "./testimonial-slider.scss";
 
 interface SliderProps {
@@ -27,8 +28,9 @@ const TestimonialSlider: React.FC<SliderProps> = ({ onClose, isOpen }) => {
               type="button"
               onClick={onClose}
               aria-label="Close customer testminial slider"
+              className="close-button"
             >
-              close
+              <FontAwesomeIcon icon={faTimes} className="close-button-icon" />
             </button>
             <div className="slider-title d-flex-center flex-col">
               <h1 className=" akata-title-medium slider-top-title">
