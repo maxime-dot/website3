@@ -13,15 +13,24 @@ interface SliderProps {
   isOpen: boolean;
   selectedCustomer: TestimonialDataType;
 }
+
 const TestimonialSlider: React.FC<SliderProps> = ({
   onClose,
   isOpen,
   selectedCustomer,
 }) => {
+  const handleKeyDown = (event: React.KeyboardEvent) => {
+    if (event.keyCode === 27) {
+      onClose();
+    }
+  };
+
   return (
     <AnimatePresence>
       {isOpen && (
         <motion.div
+          tabIndex={3}
+          onKeyDown={handleKeyDown}
           className="testimonial-slider fill-view"
           initial="close"
           animate="open"
