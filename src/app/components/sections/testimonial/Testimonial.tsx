@@ -22,9 +22,21 @@ const ModalLetsTalk = dynamic(
   }
 );
 
+// Initial state
+const initialSelectedCustomer: TestimonialDataType = {
+  id: "",
+  name: "",
+  post: "",
+  profile: "",
+  testimonials: "",
+};
+
 const Testimonial: React.FC = () => {
   const [openModal, setOpenModal] = useState(false);
   const [openSlider, setOpenSlider] = useState(false);
+  const [selectedCustomer, setSelectedCustomer] = useState<TestimonialDataType>(
+    initialSelectedCustomer
+  );
   const handleOpenModal = () => {
     setOpenModal(true);
   };
@@ -35,7 +47,7 @@ const Testimonial: React.FC = () => {
 
   const handleOpenSlider = (data: TestimonialDataType) => {
     setOpenSlider(true);
-    console.log(data);
+    setSelectedCustomer(data);
   };
 
   const handleSliderClose = () => {
@@ -54,7 +66,11 @@ const Testimonial: React.FC = () => {
         className="testimonial-decorator"
         priority={true}
       />
-      <TestimonialSlider onClose={handleSliderClose} isOpen={openSlider} />
+      <TestimonialSlider
+        onClose={handleSliderClose}
+        isOpen={openSlider}
+        selectedCustomer={selectedCustomer}
+      />
       {openModal && <ModalLetsTalk onClose={handleCloseModal} />}
       <div className="container testimonial-content d-flex flex-row">
         <div className="testimonial-info d-flex flex-col">
