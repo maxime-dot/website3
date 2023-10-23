@@ -38,7 +38,10 @@ const initialSelectedCustomer: TestimonialDataType = testimonials[0]
       },
     };
 
-const Testimonial: React.FC = () => {
+interface testimonialPropos {
+  onOpenSlider: () => void;
+}
+const Testimonial: React.FC<testimonialPropos> = ({ onOpenSlider }) => {
   const [openModal, setOpenModal] = useState(false);
   const [openSlider, setOpenSlider] = useState(false);
   const [selectedCustomer, setSelectedCustomer] = useState<TestimonialDataType>(
@@ -55,6 +58,8 @@ const Testimonial: React.FC = () => {
   const handleOpenSlider = (data: TestimonialDataType) => {
     setSelectedCustomer(data);
     setOpenSlider(true);
+    // Notify the parent component of the openSlider state change
+    onOpenSlider();
   };
 
   const handleSliderClose = () => {
