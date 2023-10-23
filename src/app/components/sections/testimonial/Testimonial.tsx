@@ -3,6 +3,12 @@ import React, { useState } from "react";
 import dynamic from "next/dynamic";
 import Image from "next/image";
 import "./testimonial.scss";
+
+// data
+import testimonials from "../../../data/testimonials.json";
+import { TestimonialDataType } from "../../../types/testimonial.type";
+
+// components
 import Button from "../../button/normal/Button";
 import ButtonOutline from "../../button/outline/ButtonOutline";
 import LoadingModal from "../../modal-lets-talk/LoadingModal";
@@ -16,51 +22,6 @@ const ModalLetsTalk = dynamic(
   }
 );
 
-const testimonialData = [
-  {
-    name: "casey harding",
-    post: "Manager of system & people - Far Frontier Studio",
-    profile: "/images/customer/casey-harding.png",
-    testimonials:
-      "« We greatly appreciate having you all with us as well. We all seem to not only work well together which is important, but any of our requests, your group jumps right in without hesitation. Pety has been helping out with some systems stuff and I think has even been learning a little on that end overall for myself, I know I have learned a lot from the group. Beyond client/developer relations, I do enjoy and value the unique partnership we all have formed and think it is great when we can also pick up knowledge along the way 🙂 ».",
-  },
-  {
-    name: "EDOUARD DELGATTE",
-    post: "Founder of Indemnflight",
-    profile: "/images/customer/edouward-delegate.png",
-    testimonials:
-      "« « I’ve been working with Akata and its founder for over two years now to evolve our site indemnflight.com (WordPress/Php) as well as backoffice APIs (nodeJS) that allow us to treat air traffic data. Everything has always gone well. Akata works independently and knows how to make itself available for emergencies. Thanks to the whole team. » ».",
-  },
-  {
-    name: "PAUL GEE",
-    post: "CEO Top Loan Canada",
-    profile: "/images/customer/paul-gee.png",
-    testimonials:
-      "« I had a great experience working with Bodge and his team. For the budget that was provided, the value was great, and most importantly I felt ongoing communication from him and his team as they were providing updates & making adjustments when necessary. Thanks guys!».",
-  },
-  {
-    name: "CHRISTIAN AGUILA",
-    post: "Founder & Lead Developer - Far Frontier Studio",
-    profile: "/images/customer/christian-aguila.png",
-    testimonials:
-      "« We’ve been working with Akata for over 3 years now and have been a critical part in our project, they’ve created and maintained the backend infrastructure of our Unreal Engine 4 MMO game, which contains a wordpress website with an account dashboard, a backend server, an admin panel that allows writing and deploying cloud code, and other projects. They’ve been easy to work with, always deliver in time and are available if needed for critical moments. »",
-  },
-  {
-    name: "DAMIEN B.",
-    post: "CEO Power Digital",
-    profile: "/images/customer/damine-b.png",
-    testimonials:
-      "« We collaborate with the Akata agency on specific missions like the development of WordPress plugins or interfacing with external webservices for example. The quality of the work and code delivered is always of good quality, in compliance with industry standards. Teams and management are agile and reactive. We are fully satisfied with this collaboration, which allows us to strengthen our internal team when necessary while maintaining significant agility. »",
-  },
-];
-
-interface TestimonialData {
-  name: string;
-  post: string;
-  profile: string;
-  testimonials: string;
-}
-
 const Testimonial: React.FC = () => {
   const [openModal, setOpenModal] = useState(false);
   const [openSlider, setOpenSlider] = useState(false);
@@ -72,7 +33,7 @@ const Testimonial: React.FC = () => {
     setOpenModal(false);
   };
 
-  const handleOpenSlider = (data: TestimonialData) => {
+  const handleOpenSlider = (data: TestimonialDataType) => {
     setOpenSlider(true);
     console.log(data);
   };
@@ -109,9 +70,9 @@ const Testimonial: React.FC = () => {
           </div>
 
           <div className="card-slides">
-            {testimonialData.map((testimonial, index) => (
+            {testimonials.map((testimonial: TestimonialDataType) => (
               <TestimonialCard
-                key={index}
+                key={`testimonail-${testimonial.id}`}
                 name={testimonial.name}
                 post={testimonial.post}
                 profile={testimonial.profile}
@@ -138,28 +99,32 @@ const Testimonial: React.FC = () => {
         </div>
         <div className="testimonial-customer d-flex">
           <div className="card-container d-flex flex-col">
-            {testimonialData.slice(0, 2).map((testimonial, index) => (
-              <TestimonialCard
-                onClick={() => handleOpenSlider(testimonial)}
-                key={index}
-                name={testimonial.name}
-                post={testimonial.post}
-                profile={testimonial.profile}
-                testimonials={testimonial.testimonials}
-              />
-            ))}
+            {testimonials
+              .slice(0, 2)
+              .map((testimonial: TestimonialDataType) => (
+                <TestimonialCard
+                  onClick={() => handleOpenSlider(testimonial)}
+                  key={`testimonial-${testimonial.id}`}
+                  name={testimonial.name}
+                  post={testimonial.post}
+                  profile={testimonial.profile}
+                  testimonials={testimonial.testimonials}
+                />
+              ))}
           </div>
           <div className="card-container d-flex flex-col">
-            {testimonialData.slice(2, 5).map((testimonial, index) => (
-              <TestimonialCard
-                onClick={() => handleOpenSlider(testimonial)}
-                key={index}
-                name={testimonial.name}
-                post={testimonial.post}
-                profile={testimonial.profile}
-                testimonials={testimonial.testimonials}
-              />
-            ))}
+            {testimonials
+              .slice(2, 5)
+              .map((testimonial: TestimonialDataType) => (
+                <TestimonialCard
+                  onClick={() => handleOpenSlider(testimonial)}
+                  key={`"testimonial-"${testimonial.id}`}
+                  name={testimonial.name}
+                  post={testimonial.post}
+                  profile={testimonial.profile}
+                  testimonials={testimonial.testimonials}
+                />
+              ))}
           </div>
         </div>
       </div>
