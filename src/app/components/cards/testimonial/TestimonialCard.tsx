@@ -6,15 +6,17 @@ interface CardProps {
   profile: string;
   testimonials: string;
   post: string;
+  onClick: () => void;
 }
 const TestimonialCard: React.FC<CardProps> = ({
   name,
   profile,
   post,
   testimonials,
+  onClick,
 }) => {
   return (
-    <div className="testimonial-card d-flex flex-col">
+    <div className="testimonial-card d-flex flex-col" onClick={onClick}>
       <p className="akata-text-small testimonial">{testimonials}</p>
       <div className="customer-info d-flex flex-row">
         <Image

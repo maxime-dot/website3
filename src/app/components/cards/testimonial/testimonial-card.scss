@@ -6,6 +6,11 @@
   border: 1px solid var(--border-color);
   padding: 20px;
   gap: 30px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    border: 1px solid var(--goavana-blue);
+  }
   .customer-info {
     width: 100%;
     min-height: 54px;

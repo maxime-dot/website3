@@ -13,21 +13,15 @@ import "./navbar.scss";
 import Button from "../button/normal/Button";
 import LoadingModal from "../modal-lets-talk/LoadingModal";
 
+import { LinksType } from "@/app/types/navlink.type";
+import Links from "../../data/navigation-links.json";
+
 const ModalLetsTalk = dynamic(
   () => import("../modal-lets-talk/ModalLetsTalk"),
   {
     loading: () => <LoadingModal />,
   }
 );
-
-const Links: { name: string; path: string }[] = [
-  { name: "Home", path: "#" },
-  { name: "Services", path: "#services" },
-  { name: "Teams", path: "#teams" },
-  { name: "Projects", path: "#projects" },
-  { name: "Articles", path: "#articles" },
-  { name: "Contacts", path: "#contacts" },
-];
 
 const Navbar: React.FC = () => {
   const [hash, setHash] = useState("#");
@@ -47,15 +41,15 @@ const Navbar: React.FC = () => {
   };
 
   const renderLinks = () => {
-    return Links.map(({ name, path }, index) => (
+    return Links.map((data: LinksType, index) => (
       <Link
         key={index}
-        href={path}
-        title={`Akata ${name}`}
-        onClick={() => setHash(path)}
-        className={"w-100 " + (hash === path ? "active" : "")}
+        href={data.path}
+        title={`Akata ${data.name}`}
+        onClick={() => setHash(data.path)}
+        className={"w-100 " + (hash === data.path ? "active" : "")}
       >
-        {name}
+        {data.name}
       </Link>
     ));
   };
