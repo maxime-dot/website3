@@ -6,6 +6,7 @@ import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import "./testimonial-slider.scss";
 
 import { TestimonialDataType } from "@/app/types/testimonial.type";
+import Link from "next/link";
 
 interface SliderProps {
   onClose: () => void;
@@ -31,7 +32,7 @@ const TestimonialSlider: React.FC<SliderProps> = ({
           }}
           transition={{ duration: 0.3 }}
         >
-          <div className="container slider-content fill-view d-flex flex-col">
+          <div className="container slider-content fill-view d-flex-space-between flex-col">
             <button
               type="button"
               onClick={onClose}
@@ -50,7 +51,6 @@ const TestimonialSlider: React.FC<SliderProps> = ({
                 trust us with their technology needs.
               </p>
             </div>
-
             <div className="customer-content w-100">
               <div className="content-words">
                 <Image
@@ -76,7 +76,16 @@ const TestimonialSlider: React.FC<SliderProps> = ({
                       {selectedCustomer.name}
                     </span>
                     <span className="akata-text-big">
-                      {selectedCustomer.post}
+                      {selectedCustomer.post} -{" "}
+                      <Link
+                        href={selectedCustomer.society.website}
+                        passHref={true}
+                        target="_blank"
+                        className="slide-society-link"
+                      >
+                        {" "}
+                        {selectedCustomer.society.name}
+                      </Link>
                     </span>
                   </div>
                 </div>
@@ -107,6 +116,7 @@ const TestimonialSlider: React.FC<SliderProps> = ({
                 </div>
               </div>
             </div>
+            <div className="slider-control"></div>
           </div>
         </motion.div>
       )}

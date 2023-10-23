@@ -2,42 +2,66 @@
     {
       "id": "4f8cc558-9a38-4f4e-830b-444e20048b12",
       "name": "Casey Harding",
-      "post": "Manager of System & People - Far Frontier Studio",
+      "post": "Manager of System & People",
       "profile": "/images/customer/casey-harding.png",
       "profileLarge": "/images/customer/testimonial-slider/casey-harding.png",
-      "testimonials": "We greatly appreciate having you all with us as well. We all seem to not only work well together which is important, but any of our requests, your group jumps right in without hesitation. Pety has been helping out with some systems stuff and I think has even been learning a little on that end overall for myself, I know I have learned a lot from the group. Beyond client/developer relations, I do enjoy and value the unique partnership we all have formed and think it is great when we can also pick up knowledge along the way."
+      "testimonials": "We greatly appreciate having you all with us as well. We all seem to not only work well together which is important, but any of our requests, your group jumps right in without hesitation. Pety has been helping out with some systems stuff and I think has even been learning a little on that end overall for myself, I know I have learned a lot from the group. Beyond client/developer relations, I do enjoy and value the unique partnership we all have formed and think it is great when we can also pick up knowledge along the way.",
+      "society": {
+          "name" : "Far Frontier Studio",
+          "website": "https://farfrontierstudios.com/"
+      }
     },
     {
       "id": "b89f475f-82b7-49cb-aede-1c779c10aebf",
       "name": "Edouard Delgatte",
-      "post": "Founder of Indemniflight",
+      "post": "Founder",
       "profile": "/images/customer/edouward-delegate.png",
       "profileLarge": "/images/customer/testimonial-slider/edouard-delgatte.png",
       "testimonials": "I’ve been working with Akata and its founder for over two years now to evolve our site indemniflight.com (WordPress/Php) as well as backoffice APIs (nodeJS) that allow us to treat air traffic data. Everything has always gone well. Akata works independently and knows how to make itself available for emergencies. Thanks to the whole team."
+      ,
+      "society": {
+          "name" : "Indemniflight",
+          "website": "https://www.indemniflight.com/"
+      }
     },
     {
       "id": "a647865a-2a7f-475c-bbce-ee6c9da1b483",
       "name": "Paul Gee",
-      "post": "CEO Top Loan Canada",
+      "post": "CEO ",
       "profile": "/images/customer/paul-gee.png",
       "profileLarge" : "/images/customer/testimonial-slider/paul-gee.png",
       "testimonials": "I had a great experience working with Bodge and his team. For the budget that was provided, the value was great, and most importantly I felt ongoing communication from him and his team as they were providing updates & making adjustments when necessary. Thanks guys!"
+      ,
+      "society": {
+          "name" : "Top Loan Canada",
+          "website": "https://loanscanada.ca/"
+      }
     },
     {
       "id": "c20e2e83-0171-45f0-9de1-470b610d65c0",
       "name": "Christian Aguila",
-      "post": "Founder & Lead Developer - Far Frontier Studio",
+      "post": "Founder & Lead Developer",
       "profile": "/images/customer/christian-aguila.png",
       "profileLarge": "/images/customer/testimonial-slider/christian-aguila.png",
       "testimonials": "We’ve been working with Akata for over 3 years now and have been a critical part in our project, they’ve created and maintained the backend infrastructure of our Unreal Engine 4 MMO game, which contains a WordPress website with an account dashboard, a backend server, an admin panel that allows writing and deploying cloud code, and other projects. They’ve been easy to work with, always deliver in time and are available if needed for critical moments."
+      ,
+      "society": {
+          "name" : "Far Frontier Studio",
+          "website": "https://farfrontierstudios.com/"
+      }
     },
     {
       "id": "28ac4640-d3cd-4821-89ab-9c32eb801d3f",
       "name": "Damien B.",
-      "post": "CEO Power Digital",
+      "post": "CEO",
       "profile": "/images/customer/damine-b.png",
       "profileLarge" : "/images/customer/testimonial-slider/damien-b.png",
       "testimonials": "We collaborate with the Akata agency on specific missions like the development of WordPress plugins or interfacing with external web services, for example. The quality of the work and code delivered is always of good quality, in compliance with industry standards. Teams and management are agile and reactive. We are fully satisfied with this collaboration, which allows us to strengthen our internal team when necessary while maintaining significant agility."
+      ,
+      "society": {
+          "name" : "Power Digital",
+          "website": "https://powerdigitalmarketing.com/"
+      }
     }
   ]
   

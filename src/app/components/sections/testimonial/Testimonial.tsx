@@ -32,6 +32,10 @@ const initialSelectedCustomer: TestimonialDataType = testimonials[0]
       profile: "",
       profileLarge: "",
       testimonials: "",
+      society: {
+        name: "",
+        website: "",
+      },
     };
 
 const Testimonial: React.FC = () => {
@@ -125,7 +129,7 @@ const Testimonial: React.FC = () => {
                   onClick={() => handleOpenSlider(testimonial)}
                   key={`testimonial-${testimonial.id}`}
                   name={testimonial.name}
-                  post={testimonial.post}
+                  post={`${testimonial.post} - ${testimonial.society.name}`}
                   profile={testimonial.profile}
                   testimonials={testimonial.testimonials}
                 />
@@ -139,7 +143,7 @@ const Testimonial: React.FC = () => {
                   onClick={() => handleOpenSlider(testimonial)}
                   key={`"testimonial-"${testimonial.id}`}
                   name={testimonial.name}
-                  post={testimonial.post}
+                  post={`${testimonial.post} - ${testimonial.society.name}`}
                   profile={testimonial.profile}
                   testimonials={testimonial.testimonials}
                 />
