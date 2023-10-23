@@ -75,6 +75,20 @@ const TestimonialSlider: React.FC<SliderProps> = ({
               <div className="content-profile d-flex-center">
                 <div className="profile">
                   <Image
+                    src={"/images/shape.png"}
+                    width={70}
+                    height={60}
+                    alt={`decoration shape`}
+                    className="shape-top"
+                  />
+                  <Image
+                    src={"/images/shape.png"}
+                    width={70}
+                    height={60}
+                    alt={`decoration shape`}
+                    className="shape-bottom"
+                  />
+                  <Image
                     src={selectedCustomer.profileLarge}
                     width={300}
                     height={300}

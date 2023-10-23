@@ -32,6 +32,7 @@
       gap: 10px;
     }
     .customer-content {
+      margin-left: 15%;
       display: grid;
       grid-template-columns: 1fr 1fr;
       margin-top: 100px;
@@ -45,15 +46,23 @@
         }
         .words {
           position: relative;
+          opacity: 0;
+
+          -webkit-animation: word-animation 0.5s 0.2s ease-in-out forwards;
+
+          animation: word-animation 0.5s 0.2s ease-in-out forwards;
           &::before {
             content: "";
             position: absolute;
             left: -41px;
             top: calc(100% - 95%);
             width: 10px;
+            opacity: 0;
             height: 90%;
             background: var(--goavana-blue);
             border-radius: var(--border-radius);
+            -webkit-animation: bars-animation 0.3s 0.3s forwards;
+            animation: bars-animation 0.5s 0.3s ease-in-out forwards;
           }
         }
         .customer-info {
@@ -67,7 +76,71 @@
       .content-profile {
         width: 100%;
         height: 100%;
+        .profile {
+          position: relative;
+          .shape-top {
+            position: absolute;
+            top: -40px;
+            left: -40px;
+          }
+          .shape-bottom {
+            position: absolute;
+            bottom: -30px;
+            right: -40px;
+            transform: rotate(180deg);
+          }
+          .large-profile {
+            width: 300px;
+            height: 300px;
+            -o-object-fit: cover;
+            object-fit: cover;
+          }
+        }
       }
     }
+  }
+}
+
+@-webkit-keyframes bars-animation {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bars-animation {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes word-animation {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes word-animation {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
   }
 }
