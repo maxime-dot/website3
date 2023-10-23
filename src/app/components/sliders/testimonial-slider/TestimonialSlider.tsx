@@ -63,13 +63,22 @@ const TestimonialSlider: React.FC<SliderProps> = ({
                 <p className="akata-text-big words">
                   {selectedCustomer.testimonials}
                 </p>
-                <div className="customer-info d-flex flex-col">
-                  <span className="akata-title-medium name">
-                    {selectedCustomer.name}
-                  </span>
-                  <span className="akata-text-big">
-                    {selectedCustomer.post}
-                  </span>
+                <div className="customer-info d-flex flex-row">
+                  <Image
+                    src={selectedCustomer.profileLarge}
+                    width={70}
+                    height={70}
+                    alt={`${selectedCustomer.name} profile`}
+                    className="mini-profile"
+                  />
+                  <div className="d-flex flex-col">
+                    <span className="akata-title-medium name">
+                      {selectedCustomer.name}
+                    </span>
+                    <span className="akata-text-big">
+                      {selectedCustomer.post}
+                    </span>
+                  </div>
                 </div>
               </div>
               <div className="content-profile d-flex-center">

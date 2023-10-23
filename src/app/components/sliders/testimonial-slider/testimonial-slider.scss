@@ -4,6 +4,7 @@
   top: 0;
   left: 0;
   z-index: 10;
+  overflow: auto;
   .slider-content {
     padding-top: 30px;
     align-items: center;
@@ -67,6 +68,9 @@
         }
         .customer-info {
           margin-top: 43px;
+          .mini-profile {
+            display: none;
+          }
           .name {
             font-size: 30px;
             line-height: calc(30px * 1.4);
@@ -142,5 +146,91 @@
   to {
     opacity: 1;
     transform: translateX(0);
+  }
+}
+
+//  media responsivity
+@media (max-width: 1024px) {
+  .testimonial-slider {
+    .slider-content {
+      .customer-content {
+        .content-profile {
+          .profile {
+            .shape-top {
+              width: 50px;
+              height: auto;
+            }
+            .shape-bottom {
+              width: 50px;
+              height: auto;
+            }
+            .large-profile {
+              width: 250px;
+              height: auto;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 874px) {
+  .testimonial-slider {
+    .slider-content {
+      .customer-content {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+        .content-words {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          margin-top: 80px;
+          .words {
+            background: var(--card-background);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            border: 1px solid var(--border-color);
+            margin-top: 20px;
+            &::before {
+              display: none;
+            }
+            order: 2;
+          }
+          .customer-info {
+            gap: 10px;
+            order: 1;
+            .mini-profile {
+              border-radius: 100%;
+              display: block;
+            }
+          }
+        }
+        .content-profile {
+          width: 100%;
+          .profile {
+            .shape-top {
+              width: 50px;
+              height: auto;
+              display: none;
+            }
+            .shape-bottom {
+              width: 50px;
+              height: auto;
+              display: none;
+            }
+            .large-profile {
+              width: 250px;
+              height: auto;
+              display: none;
+            }
+          }
+        }
+      }
+    }
   }
 }
