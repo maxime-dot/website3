@@ -23,13 +23,16 @@ const ModalLetsTalk = dynamic(
 );
 
 // Initial state
-const initialSelectedCustomer: TestimonialDataType = {
-  id: "",
-  name: "",
-  post: "",
-  profile: "",
-  testimonials: "",
-};
+const initialSelectedCustomer: TestimonialDataType = testimonials[0]
+  ? testimonials[0]
+  : {
+      id: "",
+      name: "",
+      post: "",
+      profile: "",
+      profileLarge: "",
+      testimonials: "",
+    };
 
 const Testimonial: React.FC = () => {
   const [openModal, setOpenModal] = useState(false);
@@ -46,8 +49,8 @@ const Testimonial: React.FC = () => {
   };
 
   const handleOpenSlider = (data: TestimonialDataType) => {
-    setOpenSlider(true);
     setSelectedCustomer(data);
+    setOpenSlider(true);
   };
 
   const handleSliderClose = () => {
@@ -107,7 +110,7 @@ const Testimonial: React.FC = () => {
             />
             <ButtonOutline
               ariaLabel="Read more about customer testimonial"
-              onClick={handleCloseModal}
+              onClick={() => handleOpenSlider(selectedCustomer)}
               title="Read more about customer testimonial"
               content="READ MORE"
             />

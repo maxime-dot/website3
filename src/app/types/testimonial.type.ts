@@ -3,5 +3,6 @@ export interface TestimonialDataType {
     name: string;
     post: string;
     profile: string;
+    profileLarge: string;
     testimonials: string;
   }

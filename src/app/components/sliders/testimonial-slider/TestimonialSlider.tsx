@@ -1,9 +1,10 @@
 import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import "./testimonial-slider.scss";
-import Image from "next/image";
+
 import { TestimonialDataType } from "@/app/types/testimonial.type";
 
 interface SliderProps {
@@ -71,7 +72,17 @@ const TestimonialSlider: React.FC<SliderProps> = ({
                   </span>
                 </div>
               </div>
-              <div className="content-profile"></div>
+              <div className="content-profile d-flex-center">
+                <div className="profile">
+                  <Image
+                    src={selectedCustomer.profileLarge}
+                    width={300}
+                    height={300}
+                    alt={`${selectedCustomer.name} profile`}
+                    className="large-profile"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </motion.div>
