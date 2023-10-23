@@ -37,7 +37,7 @@ const TestimonialSlider: React.FC<SliderProps> = ({
       {isOpen && (
         <motion.div
           ref={sliderRef}
-          tabIndex={3}
+          tabIndex={0}
           onKeyDown={handleKeyDown}
           className="testimonial-slider fill-view"
           initial="close"
