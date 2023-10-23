@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -19,6 +19,13 @@ const TestimonialSlider: React.FC<SliderProps> = ({
   isOpen,
   selectedCustomer,
 }) => {
+  const sliderRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    if (isOpen && sliderRef.current) {
+      sliderRef.current.focus();
+    }
+  }, [isOpen]);
   const handleKeyDown = (event: React.KeyboardEvent) => {
     if (event.keyCode === 27) {
       onClose();
@@ -29,6 +36,7 @@ const TestimonialSlider: React.FC<SliderProps> = ({
     <AnimatePresence>
       {isOpen && (
         <motion.div
+          ref={sliderRef}
           tabIndex={3}
           onKeyDown={handleKeyDown}
           className="testimonial-slider fill-view"
