@@ -54,6 +54,13 @@ const testimonialData = [
   },
 ];
 
+interface TestimonialData {
+  name: string;
+  post: string;
+  profile: string;
+  testimonials: string;
+}
+
 const Testimonial: React.FC = () => {
   const [openModal, setOpenModal] = useState(false);
   const [openSlider, setOpenSlider] = useState(false);
@@ -65,8 +72,9 @@ const Testimonial: React.FC = () => {
     setOpenModal(false);
   };
 
-  const handleOpenSlider = () => {
+  const handleOpenSlider = (data: TestimonialData) => {
     setOpenSlider(true);
+    console.log(data);
   };
 
   const handleSliderClose = () => {
@@ -108,6 +116,7 @@ const Testimonial: React.FC = () => {
                 post={testimonial.post}
                 profile={testimonial.profile}
                 testimonials={testimonial.testimonials}
+                onClick={() => handleOpenSlider(testimonial)}
               />
             ))}
           </div>
@@ -121,7 +130,7 @@ const Testimonial: React.FC = () => {
             />
             <ButtonOutline
               ariaLabel="Read more about customer testimonial"
-              onClick={handleOpenSlider}
+              onClick={handleCloseModal}
               title="Read more about customer testimonial"
               content="READ MORE"
             />
@@ -131,6 +140,7 @@ const Testimonial: React.FC = () => {
           <div className="card-container d-flex flex-col">
             {testimonialData.slice(0, 2).map((testimonial, index) => (
               <TestimonialCard
+                onClick={() => handleOpenSlider(testimonial)}
                 key={index}
                 name={testimonial.name}
                 post={testimonial.post}
@@ -142,6 +152,7 @@ const Testimonial: React.FC = () => {
           <div className="card-container d-flex flex-col">
             {testimonialData.slice(2, 5).map((testimonial, index) => (
               <TestimonialCard
+                onClick={() => handleOpenSlider(testimonial)}
                 key={index}
                 name={testimonial.name}
                 post={testimonial.post}

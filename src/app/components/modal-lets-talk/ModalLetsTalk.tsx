@@ -66,7 +66,7 @@ const ModalLetsTalk: React.FC<ModalLetsTalkProps> = ({ onClose }) => {
             open: { opacity: 1, transform: "translateY(0)" },
             close: { opacity: 0, transform: "translateY(20px)" },
           }}
-          transition={{ duration: 0.3 }}
+          transition={{ duration: 0.3, delay: 0.3 }}
           className="modal-content w-100  d-flex flex-col"
         >
           <div className="modal-header d-flex flex-col">

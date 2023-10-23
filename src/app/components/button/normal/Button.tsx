@@ -4,7 +4,7 @@ import "./button.scss";
 interface ButtonProps {
   content: string;
   ariaLabel: string;
-  hoverType: "shadowed" | "solid";
+  hoverType?: "shadowed" | "solid";
   onClick: () => void;
   type: "button" | "submit" | "reset";
 }
