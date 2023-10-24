@@ -1,10 +1,33 @@
 .services {
   padding-top: 60px;
+  justify-content: flex-start;
+
   .services-intro {
-    margin-top: 80px;
+    margin: 80px 0 100px 0;
     gap: 10px;
     .services-intro-description {
       text-align: center;
     }
   }
+  .services-items {
+    min-height: 5px;
+    max-width: 1058px;
+    align-items: flex-end;
+
+    .item-info-text {
+      gap: 30px;
+      padding-bottom: 45px;
+      .info-title {
+        gap: 10px;
+      }
+    }
+  }
+}
+
+.servces-list-item {
+  gap: 100px;
+}
+
+* {
+  border: 1px solid red;
 }
