@@ -2,6 +2,7 @@
 import React from "react";
 import Image from "next/image";
 import style from "./not-found.module.scss";
+import Navbar from "./components/navigation-bar/Navbar";
 
 const NotFound: React.FC = () => {
   const handleBackHome = () => {
@@ -9,6 +10,7 @@ const NotFound: React.FC = () => {
   };
   return (
     <div className={style.notFound}>
+      <Navbar />
       <Image
         src="/images/not-found-hero.png"
         alt="Image hero."
