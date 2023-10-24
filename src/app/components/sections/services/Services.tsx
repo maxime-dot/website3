@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import dynamic from "next/dynamic";
 import Image from "next/image";
 import "./services.scss";
+import servicesData from "../../../data/services.json";
 const ModalLetsTalk = dynamic(
   () => import("../../modal-lets-talk/ModalLetsTalk"),
   {
@@ -11,6 +12,9 @@ const ModalLetsTalk = dynamic(
 );
 import LoadingModal from "../../modal-lets-talk/LoadingModal";
 import Button from "../../button/normal/Button";
+
+// You can now use the 'servicesData' array in your component and map over it to render the content dynamically.
+
 const Services: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const handleOpenModal = () => {
@@ -37,198 +41,40 @@ const Services: React.FC = () => {
         </p>
       </div>
 
-      <div className=" d-flex flex-col servces-list-item">
-        <div className="services-items w-100 d-flex-space-between flex-row">
-          <div className="item-info-text d-flex flex-col">
-            <div className="info-title d-flex flex-col">
-              <h3 className="akata-title-medium">
-                Streamlined <span>UI/UX Design</span>
-              </h3>
-              <p className="akata-text-medium" style={{ maxWidth: 441 }}>
-                Our UI/UX design services ensure that your digital presence is
-                not only visually appealing but also user-friendly, improving
-                customer engagement and satisfaction.
-              </p>
+      <div className="d-flex flex-col servces-list-item">
+        {servicesData.map((service, index) => (
+          <div
+            key={index}
+            className="services-items w-100 d-flex-space-between flex-row"
+          >
+            <div
+              className="item-info-text d-flex flex-col"
+              style={{ order: index % 2 === 1 ? 1 : 0 }}
+            >
+              <div className="info-title d-flex flex-col">
+                <h3 className="akata-title-medium">
+                  {service.deco} <span>{service.title}</span>
+                </h3>
+                <p className="akata-text-medium" style={{ maxWidth: 441 }}>
+                  {service.description}
+                </p>
+              </div>
+              <Button
+                ariaLabel="send the project requirement"
+                content="LET'S TALK"
+                onClick={handleOpenModal}
+                type="button"
+                hoverType="solid"
+              />
             </div>
-            <Button
-              ariaLabel="send the project requirement"
-              content="LET'S TALK"
-              onClick={handleOpenModal}
-              type="button"
-              hoverType="solid"
+            <Image
+              src={service.imageSrc}
+              width={565}
+              height={359}
+              alt={`Service ${index + 1}`}
             />
           </div>
-          <Image
-            src={"/images/services/ui-ux-design.png"}
-            width={565}
-            height={359}
-            alt="UI/UX Design services demonstration"
-          />
-        </div>
-
-        <div className="services-items w-100 d-flex-space-between flex-row">
-          <div className="item-info-text d-flex flex-col" style={{ order: 1 }}>
-            <div className="info-title d-flex flex-col">
-              <h3 className="akata-title-medium">
-                Strategic <span>Consultation</span>
-              </h3>
-              <p className="akata-text-medium" style={{ maxWidth: 441 }}>
-                We provide strategic consultation to help you navigate the
-                complex world of technology, making informed decisions that
-                drive your business forward.
-              </p>
-            </div>
-            <Button
-              ariaLabel="send the project requirement"
-              content="LET'S TALK"
-              onClick={handleOpenModal}
-              type="button"
-              hoverType="solid"
-            />
-          </div>
-          <Image
-            style={{ order: 0 }}
-            src={"/images/services/consultation.png"}
-            width={565}
-            height={359}
-            alt="UI/UX Design services demonstration"
-          />
-        </div>
-        <div className="services-items w-100 d-flex-space-between flex-row">
-          <div className="item-info-text d-flex flex-col">
-            <div className="info-title d-flex flex-col">
-              <h3 className="akata-title-medium">
-                Efficient <span>Database Management</span>
-              </h3>
-              <p className="akata-text-medium" style={{ maxWidth: 441 }}>
-                Managing data efficiently is a constant struggle. Our database
-                system management solutions keep your data secure, organized,
-                and easily accessible.
-              </p>
-            </div>
-            <Button
-              ariaLabel="send the project requirement"
-              content="LET'S TALK"
-              onClick={handleOpenModal}
-              type="button"
-              hoverType="solid"
-            />
-          </div>
-          <Image
-            src={"/images/services/database-management.png"}
-            width={565}
-            height={359}
-            alt="UI/UX Design services demonstration"
-          />
-        </div>
-        <div className="services-items w-100 d-flex-space-between flex-row">
-          <div className="item-info-text d-flex flex-col" style={{ order: 1 }}>
-            <div className="info-title d-flex flex-col">
-              <h3 className="akata-title-medium">
-                Bespoke <span>Web App Development</span>
-              </h3>
-              <p className="akata-text-medium" style={{ maxWidth: 441 }}>
-                We craft web applications tailored to your unique needs, helping
-                you automate processes and stay ahead of the competition.
-              </p>
-            </div>
-            <Button
-              ariaLabel="send the project requirement"
-              content="LET'S TALK"
-              onClick={handleOpenModal}
-              type="button"
-              hoverType="solid"
-            />
-          </div>
-          <Image
-            style={{ order: 0 }}
-            src={"/images/services/web-app-dev.png"}
-            width={565}
-            height={359}
-            alt="UI/UX Design services demonstration"
-          />
-        </div>
-        <div className="services-items w-100 d-flex-space-between flex-row">
-          <div className="item-info-text d-flex flex-col">
-            <div className="info-title d-flex flex-col">
-              <h3 className="akata-title-medium">
-                <span> E-commerce & CMS</span> Solutions
-              </h3>
-              <p className="akata-text-medium" style={{ maxWidth: 441 }}>
-                We simplify e-commerce and content management, allowing you to
-                focus on growing your business without the technical headaches.
-              </p>
-            </div>
-            <Button
-              ariaLabel="send the project requirement"
-              content="LET'S TALK"
-              onClick={handleOpenModal}
-              type="button"
-              hoverType="solid"
-            />
-          </div>
-          <Image
-            src={"/images/services/e-commerce.png"}
-            width={565}
-            height={359}
-            alt="UI/UX Design services demonstration"
-          />
-        </div>
-        <div className="services-items w-100 d-flex-space-between flex-row">
-          <div className="item-info-text d-flex flex-col" style={{ order: 1 }}>
-            <div className="info-title d-flex flex-col">
-              <h3 className="akata-title-medium">
-                Cutting-Edge <span>Mobile Apps</span>
-              </h3>
-              <p className="akata-text-medium" style={{ maxWidth: 441 }}>
-                Mobile apps are the future of engagement. Our mobile app
-                development services create user-friendly iOS and Android apps
-                to expand your reach.
-              </p>
-            </div>
-            <Button
-              ariaLabel="send the project requirement"
-              content="LET'S TALK"
-              onClick={handleOpenModal}
-              type="button"
-              hoverType="solid"
-            />
-          </div>
-          <Image
-            style={{ order: 0 }}
-            src={"/images/services/mobile-app.png"}
-            width={565}
-            height={359}
-            alt="UI/UX Design services demonstration"
-          />
-        </div>
-        <div className="services-items w-100 d-flex-space-between flex-row">
-          <div className="item-info-text d-flex flex-col">
-            <div className="info-title d-flex flex-col">
-              <h3 className="akata-title-medium">
-                Robust <span>Desktop Applications</span>
-              </h3>
-              <p className="akata-text-medium" style={{ maxWidth: 441 }}>
-                Robust Desktop Applications: Our desktop app development ensures
-                that your internal processes run seamlessly, improving
-                productivity and efficiency.
-              </p>
-            </div>
-            <Button
-              ariaLabel="send the project requirement"
-              content="LET'S TALK"
-              onClick={handleOpenModal}
-              type="button"
-              hoverType="solid"
-            />
-          </div>
-          <Image
-            src={"/images/services/desktop-app-dev.png"}
-            width={565}
-            height={359}
-            alt="UI/UX Design services demonstration"
-          />
-        </div>
+        ))}
       </div>
     </section>
   );
