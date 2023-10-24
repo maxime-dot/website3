@@ -21,7 +21,7 @@ const NotFound: React.FC = () => {
       <div className={style.notFoundInfo}>
         <div className={style.infoText}>
           <h1 className={style.title}>
-            <span>Oupps!</span> 404 Not Found
+            <span>Oups!</span> 404 Not Found
             <div className={style.titleBars} />
           </h1>
           <p className="akata-text-big">

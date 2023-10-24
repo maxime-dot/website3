@@ -1,2 +1,10 @@
 .services {
+  padding-top: 60px;
+  .services-intro {
+    margin-top: 80px;
+    gap: 10px;
+    .services-intro-description {
+      text-align: center;
+    }
+  }
 }
