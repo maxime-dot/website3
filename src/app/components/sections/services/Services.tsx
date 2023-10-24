@@ -65,13 +65,18 @@ const Services: React.FC = () => {
                 hoverType="solid"
               />
             </div>
-            <Image
-              src={service.imageSrc}
-              width={565}
-              height={359}
-              alt={`Service ${index + 1}`}
-              className="services-image"
-            />
+
+            <div className="services-image">
+              <div className="image-main">
+                <Image
+                  src={service.imageSrc}
+                  width={565}
+                  height={359}
+                  alt={`Service ${index + 1}`}
+                  className="image-demo"
+                />
+              </div>
+            </div>
           </div>
         ))}
       </div>
@@ -79,4 +84,4 @@ const Services: React.FC = () => {
   );
 };
 
-export default React.memo(Services);
+export default Services;
