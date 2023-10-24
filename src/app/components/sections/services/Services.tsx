@@ -70,6 +70,7 @@ const Services: React.FC = () => {
               width={565}
               height={359}
               alt={`Service ${index + 1}`}
+              className="services-image"
             />
           </div>
         ))}

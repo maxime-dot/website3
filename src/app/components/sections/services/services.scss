@@ -13,10 +13,15 @@
     min-height: 5px;
     max-width: 1058px;
     align-items: flex-end;
-
+    .services-image {
+      width: 100%;
+      height: auto;
+      max-width: 565px;
+      transition: all 0.2s ease-in-out;
+    }
     .item-info-text {
       gap: 30px;
-      padding-bottom: 45px;
+      padding-bottom: 25px;
       .info-title {
         gap: 10px;
       }
@@ -26,4 +31,26 @@
 
 .servces-list-item {
   gap: 100px;
+}
+
+@media (max-width: 1024px) {
+  .services {
+    .services-items {
+      .services-image {
+        max-width: 465px;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .services {
+    padding: 30px;
+    .services-items {
+      flex-direction: column;
+      .services-image {
+        display: none;
+      }
+    }
+  }
 }
