@@ -13,8 +13,6 @@ const ModalLetsTalk = dynamic(
 import LoadingModal from "../../modal-lets-talk/LoadingModal";
 import Button from "../../button/normal/Button";
 
-// You can now use the 'servicesData' array in your component and map over it to render the content dynamically.
-
 const Services: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const handleOpenModal = () => {
