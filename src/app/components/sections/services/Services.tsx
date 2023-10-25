@@ -38,7 +38,6 @@ const Services: React.FC = () => {
           digital age.
         </p>
       </div>
-
       <div className="d-flex flex-col servces-list-item">
         {servicesData.map((service, index) => (
           <div

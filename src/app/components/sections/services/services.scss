@@ -5,6 +5,9 @@
   .services-intro {
     margin: 80px 0 100px 0;
     gap: 10px;
+    .services-intro-title {
+      text-align: center;
+    }
     .services-intro-description {
       text-align: center;
     }
@@ -43,6 +46,9 @@
       }
       .item-info-text {
         gap: 30px;
+        button {
+          max-width: 154px;
+        }
         .info-title {
           gap: 10px;
         }
@@ -57,10 +63,12 @@
 
 @media (max-width: 1024px) {
   .services {
-    .services-items {
-      gap: 100px;
-      .services-image {
-        width: 350px;
+    .servces-list-item {
+      .services-items {
+        gap: 100px;
+        .services-image {
+          width: 350px;
+        }
       }
     }
   }
@@ -69,10 +77,24 @@
 @media (max-width: 768px) {
   .services {
     padding: 30px;
-    .services-items {
-      flex-direction: column;
-      .services-image {
-        display: none;
+
+    border: 1px solid red;
+
+    .servces-list-item {
+      gap: 80px;
+      .services-items {
+        flex-direction: column;
+        gap: 0;
+
+        .item-info-text {
+          background: var(--card-background);
+          border: 1px dashed var(--border-color);
+          width: 100%;
+          padding: 30px;
+        }
+        .services-image {
+          display: none;
+        }
       }
     }
   }
