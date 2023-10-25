@@ -3,7 +3,9 @@ import React from "react";
 import Image from "next/image";
 import style from "./not-found.module.scss";
 import Navbar from "./components/navigation-bar/Navbar";
-
+import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 const NotFound: React.FC = () => {
   const handleBackHome = () => {
     return;
@@ -30,6 +32,10 @@ const NotFound: React.FC = () => {
             connection problem or incorrect page navigation.
           </p>
         </div>
+        <Link href={"/"} className={style.returnLink}>
+          <FontAwesomeIcon icon={faArrowLeft} className={style.linkIcon} />
+          Back to home
+        </Link>
       </div>
     </div>
   );
