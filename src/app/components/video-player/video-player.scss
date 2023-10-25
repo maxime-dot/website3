@@ -65,3 +65,15 @@
     transform: translateY(0);
   }
 }
+
+@media (max-width: 640px) {
+  .video-player {
+    padding: 0 20px;
+    .player {
+      .player-btn-close {
+        right: -20px;
+        top: -70px;
+      }
+    }
+  }
+}
