@@ -160,4 +160,4 @@ const Testimonial: React.FC<testimonialPropos> = ({ onOpenSlider }) => {
   );
 };
 
-export default Testimonial;
+export default React.memo(Testimonial);
