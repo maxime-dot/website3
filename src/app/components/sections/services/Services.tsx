@@ -84,6 +84,15 @@ const Services: React.FC = () => {
                   className="plant"
                 />
               )}
+              {service.demoSrc && (
+                <Image
+                  src={service.demoSrc}
+                  width={565}
+                  height={359}
+                  alt={`Service ${index + 1}`}
+                  className="demo"
+                />
+              )}
 
               <div className="image-main">
                 <Image

@@ -27,7 +27,15 @@
         background: var(--card-background);
         border-radius: 0 133px 133px 0;
         position: relative;
-
+        .demo {
+          position: absolute;
+          width: 100%;
+          max-width: 200px;
+          height: auto;
+          top: -20%;
+          left: -18%;
+          z-index: 2;
+        }
         .plant {
           position: absolute;
           bottom: 0;
