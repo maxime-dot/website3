@@ -5,6 +5,7 @@ import Navbar from "./components/navigation-bar/Navbar";
 import styles from "./page.module.scss";
 import Testimonial from "./components/sections/testimonial/Testimonial";
 import Services from "./components/sections/services/Services";
+import Projects from "./components/sections/projects/Projects";
 
 export default function Home() {
   const [overflowHidden, setOverflowHidden] = useState(false);
@@ -20,6 +21,7 @@ export default function Home() {
       <Header />
       <Testimonial onOpenSlider={() => setOverflowHidden(!overflowHidden)} />
       <Services />
+      <Projects />
     </main>
   );
 }
