@@ -36,10 +36,10 @@
           height: auto;
           z-index: -1;
           &.right {
-            left: calc(100% - 140px);
+            left: calc(100% - 170px);
             width: 300px;
-            bottom: -10px;
-            transform: rotate(9.08deg);
+            bottom: 80px;
+            transform: rotate(-9.08deg);
           }
         }
         .image-main {
