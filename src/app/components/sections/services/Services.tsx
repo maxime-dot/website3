@@ -12,6 +12,7 @@ const ModalLetsTalk = dynamic(
 );
 import LoadingModal from "../../modal-lets-talk/LoadingModal";
 import Button from "../../button/normal/Button";
+import { width } from "@fortawesome/free-solid-svg-icons/fa0";
 
 const Services: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -66,6 +67,24 @@ const Services: React.FC = () => {
             </div>
 
             <div className="services-image">
+              {index % 2 === 1 ? (
+                <Image
+                  src={"/images/services/plant-big-decorator.png"}
+                  width={565}
+                  height={359}
+                  alt={`Service ${index + 1} plant decoration`}
+                  className="plant right"
+                />
+              ) : (
+                <Image
+                  src={"/images/services/plant-mini-decorator.png"}
+                  width={565}
+                  height={359}
+                  alt={`Service ${index + 1} plant decoration`}
+                  className="plant"
+                />
+              )}
+
               <div className="image-main">
                 <Image
                   src={service.imageSrc}

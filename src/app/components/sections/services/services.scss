@@ -26,7 +26,22 @@
         flex-shrink: 0;
         background: var(--card-background);
         border-radius: 0 133px 133px 0;
+        position: relative;
 
+        .plant {
+          position: absolute;
+          bottom: 0;
+          left: -150px;
+          width: 240px;
+          height: auto;
+          z-index: -1;
+          &.right {
+            left: calc(100% - 140px);
+            width: 300px;
+            bottom: -10px;
+            transform: rotate(9.08deg);
+          }
+        }
         .image-main {
           overflow: hidden;
           width: inherit;
