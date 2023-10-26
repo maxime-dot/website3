@@ -1,9 +1,23 @@
 .akata-projects {
+  min-height: 100vh;
   .project-title {
     gap: 10px;
     h1,
     p {
       text-align: center;
+    }
+  }
+  .projects-list {
+    margin-top: 83px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 30px;
+    flex-wrap: wrap;
+    .project {
+      background: var(--card-background);
+      width: 100%;
+      height: 162px;
+      border: 1px solid var(--border-color);
     }
   }
 }

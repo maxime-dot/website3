@@ -3,7 +3,7 @@ import "./projects.scss";
 const Projects: React.FC = () => {
   return (
     <section
-      className="akata-projects fill-view container d-flex-center"
+      className="akata-projects fill-view container d-flex-center flex-col"
       id="projects"
     >
       <div className="project-title d-flex-center flex-col">
@@ -17,7 +17,15 @@ const Projects: React.FC = () => {
           Join our ever-expanding client family and let us lead you toward
           digital success
         </p>
-        <p></p>
+      </div>
+      <div className="projects-list d-flex flex-row w-100">
+        <div className="project"></div>
+        <div className="project"></div>
+        <div className="project"></div>
+        <div className="project"></div>
+        <div className="project"></div>
+        <div className="project"></div>
+        <div className="project"></div>
       </div>
     </section>
   );
