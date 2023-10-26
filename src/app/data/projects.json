@@ -1,0 +1,32 @@
+[
+  {
+    "name" : "Power Digital",
+    "website": "https://powerdigitalmarketing.com/",
+    "imageSrc": "/images/customer/society-logo/power-digital-brand.png"
+  },
+  {
+    "name" : "Far Frontier Studio",
+    "website": "https://farfrontierstudios.com/",
+    "imageSrc": "/images/customer/society-logo/far-frontier-studio-brand.png"
+  },
+  {
+    "name" : "Indemniflight",
+    "website": "https://www.indemniflight.com/",
+    "imageSrc": "/images/customer/society-logo/indemnflight-brands.png"
+  },
+  {
+    "name" : "Top Loan Canada",
+    "website": "https://loanscanada.ca/",
+    "imageSrc": "/images/customer/society-logo/loans-canada-brand.png"
+  },
+  {
+    "name": "Up Skills",
+    "link": "https://www.upskils.com",
+    "imageSrc": "/images/customer/society-logo/up-skilling-brands.png"
+  },
+  {
+    "name": "Urbidesk",
+    "link": "https://www.urbidesk.com",
+    "imageSrc": "/images/customer/society-logo/urbidesk-brand.png"
+  }
+]

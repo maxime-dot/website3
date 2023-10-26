@@ -1,9 +1,12 @@
 import React from "react";
+import Image from "next/image";
 import "./projects.scss";
+import Link from "next/link";
+import projectData from "../../../data/projects.json";
 const Projects: React.FC = () => {
   return (
     <section
-      className="akata-projects fill-view container d-flex-center flex-col"
+      className="akata-projects fill-view container d-flex flex-col"
       id="projects"
     >
       <div className="project-title d-flex-center flex-col">
@@ -19,13 +22,17 @@ const Projects: React.FC = () => {
         </p>
       </div>
       <div className="projects-list d-flex flex-row w-100">
-        <div className="project"></div>
-        <div className="project"></div>
-        <div className="project"></div>
-        <div className="project"></div>
-        <div className="project"></div>
-        <div className="project"></div>
-        <div className="project"></div>
+        {projectData.map((data) => (
+          <Link className="project" href={""} key={data.name}>
+            <Image
+              src={data.imageSrc}
+              width={300}
+              height={162}
+              alt={`Service`}
+              className="project-logo"
+            />
+          </Link>
+        ))}
       </div>
     </section>
   );
