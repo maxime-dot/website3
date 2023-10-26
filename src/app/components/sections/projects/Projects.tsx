@@ -6,7 +6,7 @@ import projectData from "../../../data/projects.json";
 const Projects: React.FC = () => {
   return (
     <section
-      className="akata-projects fill-view container d-flex flex-col"
+      className="akata-projects  container d-flex-center flex-col fill-view"
       id="projects"
     >
       <div className="project-title d-flex-center flex-col">
@@ -23,7 +23,13 @@ const Projects: React.FC = () => {
       </div>
       <div className="projects-list d-flex flex-row w-100">
         {projectData.map((data) => (
-          <Link className="project" href={""} key={data.name}>
+          <Link
+            className="project"
+            href={""}
+            passHref={true}
+            key={data.name}
+            target="_blank"
+          >
             <Image
               src={data.imageSrc}
               width={300}

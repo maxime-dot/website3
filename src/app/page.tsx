@@ -10,8 +10,6 @@ import Projects from "./components/sections/projects/Projects";
 export default function Home() {
   const [overflowHidden, setOverflowHidden] = useState(false);
 
-  // Function to update the overflow state
-
   return (
     <main
       className={styles.main}
