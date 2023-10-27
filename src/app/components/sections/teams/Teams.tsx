@@ -1,10 +1,19 @@
 "use client";
 import React, { useState } from "react";
+import dynamic from "next/dynamic";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHome } from "@fortawesome/free-solid-svg-icons";
 import { faFacebook, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import Link from "next/link";
 import Image from "next/image";
+import LoadingModal from "../../modal-lets-talk/LoadingModal";
+import AdminTeamData from "../../../data/admin-teams.json";
+const ModalLetsTalk = dynamic(
+  () => import("../../modal-lets-talk/ModalLetsTalk"),
+  {
+    loading: () => <LoadingModal />,
+  }
+);
 import "./teams.scss";
 import Button from "../../button/normal/Button";
 import ButtonOutline from "../../button/outline/ButtonOutline";
@@ -14,8 +23,12 @@ const Teams: React.FC = () => {
   const handleOpenModal = () => {
     setOpenModal(true);
   };
+  const handleCloseModal = () => {
+    setOpenModal(false);
+  };
   return (
     <section className="akata-teams fill-view  container" id="teams">
+      {openModal && <ModalLetsTalk onClose={handleCloseModal} />}
       <div className="teams-intro d-flex flex-col">
         <div className="intro-title d-flex flex-col">
           <h1 className="akata-title-strong">
@@ -97,72 +110,21 @@ const Teams: React.FC = () => {
         </div>
         {/* team member list */}
         <div className="admin-teams-list d-flex flex-col">
-          <div className="team d-flex flex-row">
-            <Image
-              src={"/images/teams/mijoro.png"}
-              width={53}
-              height={53}
-              alt={`CEO Profile pics`}
-              className="profile-pics"
-            />
-            <div className="team-info d-flex flex-col">
-              <p className="info-name akata-title-medium">
-                rakotoniaina pety ialimojoro
-              </p>
-              <p className="info-post akata-text-small">
-                Chief Technology Officer - CTO
-              </p>
+          {AdminTeamData.map((data, index) => (
+            <div className="team d-flex flex-row" key={`admin-team-${index}`}>
+              <Image
+                src={data.profileSrc}
+                width={53}
+                height={53}
+                alt={`${data.name}`}
+                className="profile-pics"
+              />
+              <div className="team-info d-flex flex-col">
+                <p className="info-name akata-title-medium">{data.name}</p>
+                <p className="info-post akata-text-small">{data.post}</p>
+              </div>
             </div>
-          </div>
-          <div className="team d-flex flex-row">
-            <Image
-              src={"/images/teams/jose.png"}
-              width={53}
-              height={53}
-              alt={`CEO Profile pics`}
-              className="profile-pics"
-            />
-            <div className="team-info d-flex flex-col">
-              <p className="info-name akata-title-medium">
-                razafimandimby josé fabrice
-              </p>
-              <p className="info-post akata-text-small">
-                Marketing Director & Chief Financial Officer
-              </p>
-            </div>
-          </div>
-          <div className="team d-flex flex-row">
-            <Image
-              src={"/images/teams/andrianina.png"}
-              width={53}
-              height={53}
-              alt={`CEO Profile pics`}
-              className="profile-pics"
-            />
-            <div className="team-info d-flex flex-col">
-              <p className="info-name akata-title-medium">
-                rasamimanana ny andrianina
-              </p>
-              <p className="info-post akata-text-small">
-                Communication Manager
-              </p>
-            </div>
-          </div>
-          <div className="team d-flex flex-row">
-            <Image
-              src={"/images/teams/misa.png"}
-              width={53}
-              height={53}
-              alt={`CEO Profile pics`}
-              className="profile-pics"
-            />
-            <div className="team-info d-flex flex-col">
-              <p className="info-name akata-title-medium">
-                RAMIANDRISOA ANDRIAMANDDRANTO MICHEL
-              </p>
-              <p className="info-post akata-text-small">Accountant</p>
-            </div>
-          </div>
+          ))}
           <div className="team-ca-button d-flex flex-row">
             <Button
               type="button"

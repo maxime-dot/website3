@@ -311,4 +311,4 @@ const ModalLetsTalk: React.FC<ModalLetsTalkProps> = ({ onClose }) => {
   );
 };
 
-export default ModalLetsTalk;
+export default React.memo(ModalLetsTalk);

@@ -12,7 +12,6 @@ const ModalLetsTalk = dynamic(
 );
 import LoadingModal from "../../modal-lets-talk/LoadingModal";
 import Button from "../../button/normal/Button";
-import { width } from "@fortawesome/free-solid-svg-icons/fa0";
 
 const Services: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
