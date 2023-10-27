@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHome } from "@fortawesome/free-solid-svg-icons";
+import { faFacebook, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import Link from "next/link";
 import Image from "next/image";
 import "./teams.scss";
@@ -35,7 +36,7 @@ const Teams: React.FC = () => {
               target="_blank"
               title="Akata Goavana Facebook Account"
             >
-              <FontAwesomeIcon icon={faHome} className="link-icon" />
+              <FontAwesomeIcon icon={faFacebook} className="link-icon" />
             </Link>
             <Link
               href={"https://www.linkedin.com"}
@@ -44,7 +45,7 @@ const Teams: React.FC = () => {
               target="_blank"
               title="Akata Goavana Linkedin Account"
             >
-              <FontAwesomeIcon icon={faHome} className="link-icon" />
+              <FontAwesomeIcon icon={faLinkedin} className="link-icon" />
             </Link>
           </div>
         </div>
