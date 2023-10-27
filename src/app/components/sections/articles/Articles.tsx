@@ -1,7 +1,13 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import Image from "next/image";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRightLong } from "@fortawesome/free-solid-svg-icons";
 import "./articles.scss";
+import ArticleCard from "../../cards/articles/ArticleCard";
+import ArticleData from "../../../data/articles.json";
 const Articles: React.FC = () => {
+  const [openArticle, setOpenArticle] = useState(false);
   return (
     <section className="akata-articles fill-view" id="articles">
       <Image
@@ -25,10 +31,24 @@ const Articles: React.FC = () => {
           </p>
         </div>
         <div className="article-content-list">
-          <div className="article-card"></div>
-          <div className="article-card"></div>
-          <div className="article-card"></div>
-          <div className="article-card"></div>
+          {ArticleData.map((data, index) => (
+            <ArticleCard
+              key={index}
+              date={data.date}
+              content={data.content}
+              title={data.title}
+              readMore={() => setOpenArticle(true)}
+              imgSrc={data.imageSrc}
+            />
+          ))}
+
+          <div className="expore-article d-flex-space-between flex-col">
+            <p className="article-count">3 / 10</p>
+            <button className="btn-article-explore akata-title-medium">
+              EXPLORE MORE <span>CONTENT</span>
+              <FontAwesomeIcon icon={faArrowRightLong} className="btn-icon" />
+            </button>
+          </div>
         </div>
       </div>
     </section>
