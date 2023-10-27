@@ -1,6 +1,14 @@
 .akata-projects {
   width: 100%;
   padding: 100px 0;
+  position: relative;
+  .robot-hand {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 200px;
+    height: auto;
+  }
   .project-title {
     gap: 10px;
     h1,
@@ -37,6 +45,9 @@
 
 @media (max-width: 1024px) {
   .akata-projects {
+    .robot-hand {
+      display: none;
+    }
     padding: 30px;
     .projects-list {
       grid-template-columns: 1fr 1fr;
