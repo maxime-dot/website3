@@ -27,6 +27,7 @@
   .teams-admin-member {
     width: 100%;
     height: 100%;
+    gap: 40px;
     .admin-ceo-words {
       width: 100%;
       background: var(--card-background);
@@ -60,6 +61,39 @@
         position: absolute;
         bottom: 0;
         right: 0;
+        .profile-pics {
+          z-index: 2;
+          -o-object-fit: cover;
+          object-fit: cover;
+        }
+        .plant-pics {
+          z-index: 1;
+          transform: translateX(55%) translateY(30px);
+          -o-object-fit: cover;
+          object-fit: cover;
+        }
+      }
+    }
+    .admin-teams-list {
+      width: 100%;
+      gap: 30px;
+      .team {
+        gap: 14px;
+        .profile-pics {
+          width: 53px;
+          height: 53px;
+          border-radius: 100%;
+          -o-object-fit: cover;
+          object-fit: cover;
+        }
+        .team-info {
+          height: 100%;
+          justify-content: center;
+          .info-name {
+            color: vat(--primary-dark);
+            font-size: 14px;
+          }
+        }
       }
     }
   }

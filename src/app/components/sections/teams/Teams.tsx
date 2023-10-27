@@ -64,7 +64,7 @@ const Teams: React.FC = () => {
           />
         </div>
       </div>
-      <div className="teams-admin-member">
+      <div className="teams-admin-member d-flex flex-col">
         <div className="admin-ceo-words d-flex flex-col">
           <div className="profile-info">
             <p className="ceo-name">
@@ -85,6 +85,81 @@ const Teams: React.FC = () => {
               alt={`CEO Profile pics`}
               className="profile-pics"
             />
+            <Image
+              src={"/images/teams/bodge-plant.png"}
+              width={211}
+              height={304}
+              alt={`CEO Profile pics`}
+              className="plant-pics"
+            />
+          </div>
+        </div>
+        <div className="admin-teams-list d-flex flex-col">
+          <div className="team d-flex flex-row">
+            <Image
+              src={"/images/teams/mijoro.png"}
+              width={53}
+              height={53}
+              alt={`CEO Profile pics`}
+              className="profile-pics"
+            />
+            <div className="team-info d-flex flex-col">
+              <p className="info-name akata-title-medium">
+                rakotoniaina pety ialimojoro
+              </p>
+              <p className="info-post akata-text-small">
+                Chief Technology Officer - CTO
+              </p>
+            </div>
+          </div>
+          <div className="team d-flex flex-row">
+            <Image
+              src={"/images/teams/jose.png"}
+              width={53}
+              height={53}
+              alt={`CEO Profile pics`}
+              className="profile-pics"
+            />
+            <div className="team-info d-flex flex-col">
+              <p className="info-name akata-title-medium">
+                razafimandimby josé fabrice
+              </p>
+              <p className="info-post akata-text-small">
+                Marketing Director & Chief Financial Officer
+              </p>
+            </div>
+          </div>
+          <div className="team d-flex flex-row">
+            <Image
+              src={"/images/teams/andrianina.png"}
+              width={53}
+              height={53}
+              alt={`CEO Profile pics`}
+              className="profile-pics"
+            />
+            <div className="team-info d-flex flex-col">
+              <p className="info-name akata-title-medium">
+                rasamimanana ny andrianina
+              </p>
+              <p className="info-post akata-text-small">
+                Communication Manager
+              </p>
+            </div>
+          </div>
+          <div className="team d-flex flex-row">
+            <Image
+              src={"/images/teams/misa.png"}
+              width={53}
+              height={53}
+              alt={`CEO Profile pics`}
+              className="profile-pics"
+            />
+            <div className="team-info d-flex flex-col">
+              <p className="info-name akata-title-medium">
+                RAMIANDRISOA ANDRIAMANDDRANTO MICHEL
+              </p>
+              <p className="info-post akata-text-small">Accountant</p>
+            </div>
           </div>
         </div>
       </div>
