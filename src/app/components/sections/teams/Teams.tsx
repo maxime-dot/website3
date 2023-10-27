@@ -83,7 +83,7 @@ const Teams: React.FC = () => {
               width={211}
               height={304}
               alt={`CEO Profile pics`}
-              className="profile-pics"
+              className="profile-image"
             />
             <Image
               src={"/images/teams/bodge-plant.png"}
@@ -94,6 +94,7 @@ const Teams: React.FC = () => {
             />
           </div>
         </div>
+        {/* team member list */}
         <div className="admin-teams-list d-flex flex-col">
           <div className="team d-flex flex-row">
             <Image
@@ -160,6 +161,21 @@ const Teams: React.FC = () => {
               </p>
               <p className="info-post akata-text-small">Accountant</p>
             </div>
+          </div>
+          <div className="team-ca-button d-flex flex-row">
+            <Button
+              type="button"
+              ariaLabel="send you project requirement"
+              content="LET'S TALK"
+              onClick={handleOpenModal}
+              hoverType="shadowed"
+            />
+            <ButtonOutline
+              ariaLabel="Get better to know you teams"
+              content="ABOUT US"
+              onClick={handleOpenModal}
+              title="Get Better to know your teams"
+            />
           </div>
         </div>
       </div>
