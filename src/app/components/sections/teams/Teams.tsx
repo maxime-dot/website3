@@ -14,12 +14,23 @@ const ModalLetsTalk = dynamic(
     loading: () => <LoadingModal />,
   }
 );
+
+import AboutTeams from "../../about-teams/AboutTeams";
 import "./teams.scss";
 import Button from "../../button/normal/Button";
 import ButtonOutline from "../../button/outline/ButtonOutline";
 
 const Teams: React.FC = () => {
   const [openModal, setOpenModal] = useState(false);
+  const [openAboutTeam, setOpenAboutTeam] = useState(false);
+
+  const handleOpenAboutTteam = () => {
+    setOpenAboutTeam(true);
+  };
+
+  const handleCloseAboutTeams = () => {
+    setOpenAboutTeam(false);
+  };
   const handleOpenModal = () => {
     setOpenModal(true);
   };
@@ -29,6 +40,7 @@ const Teams: React.FC = () => {
   return (
     <section className="akata-teams fill-view  container" id="teams">
       {openModal && <ModalLetsTalk onClose={handleCloseModal} />}
+      {openAboutTeam && <AboutTeams onClose={handleCloseAboutTeams} />}
       <div className="teams-intro d-flex flex-col">
         <div className="intro-title d-flex flex-col">
           <h1 className="akata-title-strong">
@@ -73,7 +85,7 @@ const Teams: React.FC = () => {
           <ButtonOutline
             ariaLabel="Get better to know you teams"
             content="ABOUT US"
-            onClick={handleOpenModal}
+            onClick={handleOpenAboutTteam}
             title="Get Better to know your teams"
           />
         </div>
@@ -87,9 +99,9 @@ const Teams: React.FC = () => {
             <p className="ceo-post">CEO</p>
           </div>
           <p className="profile-words akata-text-medium">
-            Living one's dreams is a form of existence. By sharing these dreams
-            with others, we bring them closer to reality. The more we share our
-            dreams, the more they become concrete and achievable.
+            Living one&apos;s dreams is a form of existence. By sharing these
+            dreams with others, we bring them closer to reality. The more we
+            share our dreams, the more they become concrete and achievable.
           </p>
           <div className="profile-pics">
             <Image
@@ -136,7 +148,7 @@ const Teams: React.FC = () => {
             <ButtonOutline
               ariaLabel="Get better to know you teams"
               content="ABOUT US"
-              onClick={handleOpenModal}
+              onClick={handleOpenAboutTteam}
               title="Get Better to know your teams"
             />
           </div>
