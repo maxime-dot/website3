@@ -70,3 +70,24 @@
     }
   }
 }
+
+@media (max-width: 1024px) {
+  .akata-contacts {
+    flex-direction: column;
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+}
+@media (max-width: 768px) {
+  .akata-contacts {
+    padding: 30px;
+    flex-direction: column;
+    grid-template-columns: 1fr;
+    .contacts {
+      &.form {
+        max-width: 100%;
+        width: 100%;
+      }
+    }
+  }
+}
