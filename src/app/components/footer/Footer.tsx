@@ -11,7 +11,7 @@ import {
 import "./footer.scss";
 const Footer: React.FC = () => {
   return (
-    <footer className="akata-footer" id="footer">
+    <footer className="akata-footer d-flex-center flex-col" id="footer">
       <div className="footer-element container">
         <div className="footer-content">
           <strong>Contacts</strong>
@@ -103,6 +103,9 @@ const Footer: React.FC = () => {
         width={214}
         height={173.24}
       />
+      <span className="akata-text-small">
+        Copyright &copy; by Akata Goavana 2023
+      </span>
     </footer>
   );
 };

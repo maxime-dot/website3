@@ -3,6 +3,12 @@
   min-height: 314px;
   background: var(--goavana-blue);
   position: relative;
+  gap: 75px;
+  padding-top: 44px;
+  padding-bottom: 12px;
+  span {
+    color: var(--light);
+  }
   .footer-shape {
     position: absolute;
     bottom: 0;
@@ -17,7 +23,6 @@
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    padding-top: 44px;
 
     .footer-content {
       width: 100%;
