@@ -22,10 +22,10 @@ const NotFound: React.FC = () => {
       />
       <div className={style.notFoundInfo}>
         <div className={style.infoText}>
-          <h1 className={style.title}>
+          <h2 className={style.title}>
             <span>Oups!</span> 404 Not Found
             <div className={style.titleBars} />
-          </h1>
+          </h2>
           <p className="akata-text-big">
             Sincerely sorry, but it seems that the page you were looking for is
             either not found or unavailable. This could be due to an internet

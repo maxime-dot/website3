@@ -8,6 +8,7 @@ import Services from "./components/sections/services/Services";
 import Projects from "./components/sections/projects/Projects";
 import Teams from "./components/sections/teams/Teams";
 import Articles from "./components/sections/articles/Articles";
+import Contacts from "./components/sections/contacts/Contact";
 
 export default function Home() {
   const [overflowHidden, setOverflowHidden] = useState(false);
@@ -24,6 +25,7 @@ export default function Home() {
       <Projects />
       <Teams />
       <Articles />
+      <Contacts />
     </main>
   );
 }

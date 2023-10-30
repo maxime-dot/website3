@@ -43,9 +43,9 @@ const Teams: React.FC = () => {
       {openAboutTeam && <AboutTeams onClose={handleCloseAboutTeams} />}
       <div className="teams-intro d-flex flex-col">
         <div className="intro-title d-flex flex-col">
-          <h1 className="akata-title-strong">
+          <h2 className="akata-title-strong">
             Meet Our Exceptional <span>Team</span>
-          </h1>
+          </h2>
           <p className="akata-text-big team-intro-description">
             Get to know the talented individuals that make up the Akata Goavana
             team. Our dedicated experts bring a wealth of knowledge and passion

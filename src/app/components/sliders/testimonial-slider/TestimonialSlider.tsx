@@ -59,9 +59,9 @@ const TestimonialSlider: React.FC<SliderProps> = ({
               <FontAwesomeIcon icon={faTimes} className="close-button-icon" />
             </button>
             <div className="slider-title d-flex-center flex-col">
-              <h1 className=" akata-title-medium slider-top-title">
+              <h2 className=" akata-title-medium slider-top-title">
                 What our <span>customer</span> say about us?
-              </h1>
+              </h2>
               <p className="akata-text-small text-center">
                 Experience the love our clients have for our IT agency&apos;s
                 work. Explore their glowing testimonials and discover why they

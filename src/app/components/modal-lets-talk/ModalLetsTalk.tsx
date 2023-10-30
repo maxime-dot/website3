@@ -76,9 +76,9 @@ const ModalLetsTalk: React.FC<ModalLetsTalkProps> = ({ onClose }) => {
             >
               <FontAwesomeIcon icon={faXmark} className="close-icon" />
             </button>
-            <h1 className="akata-title-medium header-title">
+            <h2 className="akata-title-medium header-title">
               Submit Your <span>Project</span> Requirements
-            </h1>
+            </h2>
             <p className="akata-text-medium">
               Send us your project requirements, and we&apos;ll review them
               promptly. We&apos;ll reach out to you later to discuss the
