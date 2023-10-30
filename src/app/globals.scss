@@ -32,7 +32,7 @@ body {
 .akata-title-strong {
   max-width: 546px;
   color: var(--goavana-blue, #001751);
-  font: normal 900 50px/62.4px var(--font-poppins);
+  font: normal 900 50px/62.4px var(--font-poppins, sans-serif);
   text-transform: uppercase;
   span {
     color: var(--goavana-yellow);
@@ -43,7 +43,7 @@ body {
   max-width: 546px;
   color: var(--goavana-blue, #001751);
   text-transform: uppercase;
-  font: normal 900 20px/28px var(--font-poppins);
+  font: normal 900 20px/28px var(--font-poppins, sans-serif);
   span {
     color: var(--goavana-yellow);
   }
@@ -52,7 +52,7 @@ body {
 .akata-text-big {
   max-width: 546px;
   color: var(--text-dark, #505d68);
-  font: normal 400 16px/28px var(--font-poppins);
+  font: normal 400 16px/28px var(--font-poppins, sans-serif);
 }
 
 .akata-text-medium {
@@ -66,7 +66,7 @@ body {
   font-size: 12px;
   line-height: 18.8px;
   &.error-message {
-    color: var(--goavana-danger);
+    color: var(--goavana-danger, sans-serif);
   }
 }
 
