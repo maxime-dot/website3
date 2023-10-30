@@ -10,7 +10,7 @@ import {
   faMarker,
   faPhone,
 } from "@fortawesome/free-solid-svg-icons";
-import Image from "next/image";
+
 import Button from "../../button/normal/Button";
 import contactData from "../../../data/contacts.json";
 
@@ -165,14 +165,15 @@ const Contacts: React.FC = () => {
         </div>
       </div>
       <div className="contacts adress d-flex flex-col">
-        <div className="adress-map">
-          <Image
-            src={"/images/contacts/map.png"}
-            width={630}
-            height={364}
-            alt="akata goavana location"
-            className="map"
-          />
+        <div className="adress-map d-flex-center">
+          {/* <Map /> */}
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d928.3581826809302!2d47.08791706963868!3d-21.451530998769098!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x21e7bff95fe4d15f%3A0xa014a6be6e4ab6d0!2sAKATA-GOAVANA!5e0!3m2!1sfr!2smg!4v1698663351553!5m2!1sfr!2smg"
+            width="100%"
+            height="361"
+            style={{ border: 0 }}
+            loading="lazy"
+          ></iframe>
         </div>
         <ul className="adress-text">
           <li className="text-item akata-text-medium d-flex ">
@@ -194,4 +195,4 @@ const Contacts: React.FC = () => {
   );
 };
 
-export default Contacts;
+export default React.memo(Contacts);

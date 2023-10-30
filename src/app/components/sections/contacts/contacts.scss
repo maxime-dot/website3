@@ -49,15 +49,13 @@
       width: 100%;
       .adress-map {
         width: 100%;
-
-        .map {
-          width: 100%;
-          height: auto;
-          -o-object-fit: cover;
-          object-fit: cover;
-          border: 1px solid var(--border-color);
-          border-radius: var(--border-radius);
-        }
+        height: 361px;
+        -o-object-fit: cover;
+        object-fit: cover;
+        border: 1px solid var(--border-color);
+        border-radius: var(--border-radius);
+        background: var(--card-background);
+        overflow: hidden;
       }
       .adress-text {
         list-style-type: none;
