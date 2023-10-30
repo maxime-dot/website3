@@ -49,10 +49,15 @@
       width: 100%;
       .adress-map {
         width: 100%;
-        height: 364px;
-        background: var(--card-background);
-        border: 1px solid var(--border-color);
-        border-radius: var(--border-radius);
+
+        .map {
+          width: 100%;
+          height: auto;
+          -o-object-fit: cover;
+          object-fit: cover;
+          border: 1px solid var(--border-color);
+          border-radius: var(--border-radius);
+        }
       }
       .adress-text {
         list-style-type: none;
@@ -76,6 +81,19 @@
     flex-direction: column;
     grid-template-columns: 1fr;
     gap: 50px;
+    .contacts {
+      &.form {
+        max-width: 1024px;
+        width: 100%;
+        .form-body {
+          .contact-body {
+            input {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
   }
 }
 @media (max-width: 768px) {

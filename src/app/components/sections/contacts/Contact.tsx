@@ -10,6 +10,7 @@ import {
   faMarker,
   faPhone,
 } from "@fortawesome/free-solid-svg-icons";
+import Image from "next/image";
 import Button from "../../button/normal/Button";
 import contactData from "../../../data/contacts.json";
 
@@ -164,7 +165,15 @@ const Contacts: React.FC = () => {
         </div>
       </div>
       <div className="contacts adress d-flex flex-col">
-        <div className="adress-map"></div>
+        <div className="adress-map">
+          <Image
+            src={"/images/contacts/map.png"}
+            width={630}
+            height={364}
+            alt="akata goavana location"
+            className="map"
+          />
+        </div>
         <ul className="adress-text">
           <li className="text-item akata-text-medium d-flex ">
             <FontAwesomeIcon icon={faMarker} className="list-icon" />{" "}
