@@ -30,5 +30,5 @@
 
   // typography
   color: var(--light);
-  font: normal 700 14px var(--font-poppins);
+  font: normal 700 14px var(--font-poppins, sans-serif);
 }

@@ -9,6 +9,7 @@ import Projects from "./components/sections/projects/Projects";
 import Teams from "./components/sections/teams/Teams";
 import Articles from "./components/sections/articles/Articles";
 import Contacts from "./components/sections/contacts/Contact";
+import Footer from "./components/footer/Footer";
 
 export default function Home() {
   const [overflowHidden, setOverflowHidden] = useState(false);
@@ -26,6 +27,7 @@ export default function Home() {
       <Teams />
       <Articles />
       <Contacts />
+      <Footer />
     </main>
   );
 }

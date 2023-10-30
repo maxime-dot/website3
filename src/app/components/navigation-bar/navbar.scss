@@ -29,7 +29,7 @@
       a {
         text-decoration: none;
         color: var(--goavana-blue);
-        font: normal 400 12px / normal var(--font-poppins);
+        font: normal 400 12px / normal var(--font-poppins, sans-serif);
         letter-spacing: 0.036px;
         text-transform: uppercase;
         position: relative;
@@ -78,7 +78,7 @@
         text-align: center;
         text-decoration: none;
         color: var(--primary-dark);
-        font: 14px var(--font-poppins);
+        font: 14px var(--font-poppins, sans-serif);
         position: relative;
         opacity: 0.6;
 
@@ -180,7 +180,7 @@
 
   // typography
   color: var(--light);
-  font: normal 700 14px var(--font-poppins);
+  font: normal 700 14px var(--font-poppins, sans-serif);
   .icon-button {
     color: var(--light);
     position: absolute;

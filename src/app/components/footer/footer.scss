@@ -1,0 +1,69 @@
+.akata-footer {
+  width: 100%;
+  min-height: 314px;
+  background: var(--goavana-blue);
+  position: relative;
+  .footer-shape {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+  .footer-right-shape {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+  .footer-element {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    padding-top: 44px;
+
+    .footer-content {
+      width: 100%;
+      .social-link {
+        gap: 25px;
+        justify-content: flex-end;
+        text-decoration: none;
+        color: var(--light);
+        margin-top: 55px;
+        a {
+          text-decoration: none;
+          color: var(--light);
+          font-size: 30px;
+          transition: all 0.2s ease-in-out;
+          &:hover {
+            color: var(--goavana-yellow);
+          }
+        }
+      }
+      .logo {
+        gap: 40px;
+        justify-content: flex-end;
+      }
+      strong {
+        color: var(--light);
+      }
+      ul {
+        li {
+          max-width: 239px;
+          list-style-type: none;
+          color: var(--light);
+          margin-top: 10px;
+          opacity: 0.8;
+          &:nth-child(1) {
+            margin-top: 20px;
+          }
+          a {
+            text-decoration: none;
+            color: var(--light);
+            transition: all 0.3s ease-in-out;
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+  }
+}
