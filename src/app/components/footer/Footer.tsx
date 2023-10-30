@@ -100,8 +100,8 @@ const Footer: React.FC = () => {
         src={"/images/footer/right-shapre.svg"}
         alt="bird and grass shape"
         className="footer-right-shape"
-        width={214}
-        height={173.24}
+        width={200}
+        height={200}
       />
       <span className="akata-text-small">
         Copyright &copy; by Akata Goavana 2023
