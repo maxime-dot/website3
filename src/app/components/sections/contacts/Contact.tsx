@@ -11,6 +11,7 @@ import {
   faPhone,
 } from "@fortawesome/free-solid-svg-icons";
 import Button from "../../button/normal/Button";
+import contactData from "../../../data/contacts.json";
 
 interface FormValues {
   name: string;
@@ -166,17 +167,17 @@ const Contacts: React.FC = () => {
         <div className="adress-map"></div>
         <ul className="adress-text">
           <li className="text-item akata-text-medium d-flex ">
-            <FontAwesomeIcon icon={faMarker} className="list-icon" /> Lot Villa
-            Papringo , Isaha Fianarantsoa , Madagascar
+            <FontAwesomeIcon icon={faMarker} className="list-icon" />{" "}
+            {contactData[0].adress}
           </li>
           <li className="text-item akata-text-medium d-flex">
             <FontAwesomeIcon icon={faEnvelope} className="list-icon" />{" "}
-            contact-akata@goavana.com{" "}
+            {contactData[0].mail}
           </li>
           <li className="text-item akata-text-medium d-flex">
             {" "}
-            <FontAwesomeIcon icon={faPhone} className="list-icon" /> +261 34 67
-            573 84
+            <FontAwesomeIcon icon={faPhone} className="list-icon" />{" "}
+            {contactData[0].phone}
           </li>
         </ul>
       </div>
