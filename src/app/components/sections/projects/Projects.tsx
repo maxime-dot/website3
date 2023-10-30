@@ -33,7 +33,7 @@ const Projects: React.FC = () => {
           {projectData.map((data) => (
             <Link
               className="project"
-              href={""}
+              href={data.website}
               passHref={true}
               key={data.name}
               target="_blank"
