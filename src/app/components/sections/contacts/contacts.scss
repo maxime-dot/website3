@@ -2,9 +2,11 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   flex-direction: row;
+  padding-top: 150px;
   .contacts {
     width: 100%;
-    height: 100%;
+    height: auto;
+
     &.form {
       max-width: 451px;
       gap: 48px;
@@ -44,7 +46,27 @@
       }
     }
     &.adress {
-      background: rgb(149, 127, 127);
+      width: 100%;
+      .adress-map {
+        width: 100%;
+        height: 364px;
+        background: var(--card-background);
+        border: 1px solid var(--border-color);
+        border-radius: var(--border-radius);
+      }
+      .adress-text {
+        list-style-type: none;
+        .text-item {
+          margin-top: 25px;
+          color: var(--goavana-blue);
+          font-weight: 600;
+          align-items: center;
+          gap: 15px;
+          .list-icon {
+            color: var(--goavana-yellow);
+          }
+        }
+      }
     }
   }
 }

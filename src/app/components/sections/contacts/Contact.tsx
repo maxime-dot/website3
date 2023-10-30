@@ -6,6 +6,9 @@ import {
   faUser,
   faEnvelope,
   faLightbulb,
+  faPaperPlane,
+  faMarker,
+  faPhone,
 } from "@fortawesome/free-solid-svg-icons";
 import Button from "../../button/normal/Button";
 
@@ -133,7 +136,7 @@ const Contacts: React.FC = () => {
                   <label htmlFor="message" className="akata-text-medium">
                     Message
                   </label>
-                  <FontAwesomeIcon icon={faLightbulb} className="form-icon" />
+                  <FontAwesomeIcon icon={faPaperPlane} className="form-icon" />
                   <textarea
                     placeholder="ex: Asking for help, optmiser my website, ..."
                     name="message"
@@ -159,7 +162,24 @@ const Contacts: React.FC = () => {
           </Formik>
         </div>
       </div>
-      <div className="contacts adress"></div>
+      <div className="contacts adress d-flex flex-col">
+        <div className="adress-map"></div>
+        <ul className="adress-text">
+          <li className="text-item akata-text-medium d-flex ">
+            <FontAwesomeIcon icon={faMarker} className="list-icon" /> Lot Villa
+            Papringo , Isaha Fianarantsoa , Madagascar
+          </li>
+          <li className="text-item akata-text-medium d-flex">
+            <FontAwesomeIcon icon={faEnvelope} className="list-icon" />{" "}
+            contact-akata@goavana.com{" "}
+          </li>
+          <li className="text-item akata-text-medium d-flex">
+            {" "}
+            <FontAwesomeIcon icon={faPhone} className="list-icon" /> +261 34 67
+            573 84
+          </li>
+        </ul>
+      </div>
     </section>
   );
 };
