@@ -54,5 +54,10 @@
 @media (max-width: 640px) {
   .akata-header {
     padding: 30px;
+    .header-content {
+      .content-ca-button {
+        flex-direction: column;
+      }
+    }
   }
 }

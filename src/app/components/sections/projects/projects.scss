@@ -1,0 +1,67 @@
+.akata-projects {
+  width: 100%;
+  padding: 100px 0;
+  position: relative;
+  .robot-hand {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 200px;
+    height: auto;
+  }
+  .project-title {
+    gap: 10px;
+    h1,
+    p {
+      text-align: center;
+    }
+  }
+  .projects-list {
+    margin-top: 83px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 30px;
+    flex-wrap: wrap;
+    width: 100%;
+    height: auto;
+    .project {
+      width: 100%;
+      height: 162px;
+      border: 1px solid var(--border-color);
+      transition: all 0.5s ease;
+      cursor: pointer;
+      &:hover {
+        border: 1px dashed var(--goavana-blue);
+      }
+      .project-logo {
+        width: 100%;
+        height: 100%;
+
+        -o-object-fit: contain;
+
+        object-fit: contain;
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .akata-projects {
+    .robot-hand {
+      display: none;
+    }
+    padding: 30px;
+    .projects-list {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+}
+
+@media (max-width: 475px) {
+  .akata-projects {
+    padding: 30px;
+    .projects-list {
+      grid-template-columns: 1fr;
+    }
+  }
+}

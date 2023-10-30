@@ -1,10 +1,11 @@
 .akata-button {
   // layout
   padding: 12px 36px;
-  border: 0;
+  border: 1px solid var(--goavana-blue);
   outline: 0;
   cursor: pointer;
   min-width: 154px;
+  display: inline-block;
 
   // style
   border-radius: 4px;
