@@ -1,3 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+* {
+  font-family: "Poppins";
+}
 :root {
   --max-width: 1100px;
   --max-width-headlines: 600px;
@@ -12,7 +16,7 @@
   --light: #ffffff;
   --primary-dark: #222222;
   --text-dark: #505d68;
-  --font: var(--font-poppins);
+  --font: var(--font-poppins, "Poppins");
   --border-radius: 4px;
   --goavana-success: #2ecc71;
 }
@@ -25,14 +29,14 @@
 
 html,
 body {
-  font-family: var(--font-poppins);
+  font-family: "Poppins";
   scroll-behavior: smooth;
 }
 
 .akata-title-strong {
   max-width: 546px;
   color: var(--goavana-blue, #001751);
-  font: normal 900 50px/62.4px var(--font-poppins, sans-serif);
+  font: normal 900 50px/62.4px "Poppins";
   text-transform: uppercase;
   span {
     color: var(--goavana-yellow);
@@ -43,7 +47,7 @@ body {
   max-width: 546px;
   color: var(--goavana-blue, #001751);
   text-transform: uppercase;
-  font: normal 900 20px/28px var(--font-poppins, sans-serif);
+  font: normal 900 20px/28px "Poppins";
   span {
     color: var(--goavana-yellow);
   }
@@ -52,7 +56,7 @@ body {
 .akata-text-big {
   max-width: 546px;
   color: var(--text-dark, #505d68);
-  font: normal 400 16px/28px var(--font-poppins, sans-serif);
+  font: normal 400 16px/28px "Poppins";
 }
 
 .akata-text-medium {
@@ -66,7 +70,7 @@ body {
   font-size: 12px;
   line-height: 18.8px;
   &.error-message {
-    color: var(--goavana-danger, sans-serif);
+    color: var(--goavana-danger);
   }
 }
 

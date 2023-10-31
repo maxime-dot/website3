@@ -6,10 +6,21 @@ import { faArrowRightLong } from "@fortawesome/free-solid-svg-icons";
 import "./articles.scss";
 import ArticleCard from "../../cards/articles/ArticleCard";
 import ArticleData from "../../../data/articles.json";
+import ExploreArticles from "../../explore-articles/ExploreArticles";
+import Link from "next/link";
 const Articles: React.FC = () => {
   const [openArticle, setOpenArticle] = useState(false);
+  const [isExploreOpen, setIsExploreOpen] = useState(false);
+  const openExlopreArticle = () => {
+    setIsExploreOpen(true);
+  };
+
+  const closeExploreArticle = () => {
+    setIsExploreOpen(false);
+  };
   return (
     <section className="akata-articles fill-view" id="articles">
+      {isExploreOpen && <ExploreArticles onClose={closeExploreArticle} />}
       <Image
         src={"/images/hand-robot-shape-data.png"}
         width={310}
@@ -44,10 +55,13 @@ const Articles: React.FC = () => {
 
           <div className="expore-article d-flex-space-between flex-col">
             <p className="article-count">3 / 10</p>
-            <button className="btn-article-explore akata-title-medium">
+            <Link
+              href="/articles"
+              className="btn-article-explore akata-title-medium"
+            >
               EXPLORE MORE <span>CONTENT</span>
               <FontAwesomeIcon icon={faArrowRightLong} className="btn-icon" />
-            </button>
+            </Link>
           </div>
         </div>
       </div>

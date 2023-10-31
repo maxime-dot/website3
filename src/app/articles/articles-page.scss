@@ -1,0 +1,102 @@
+.akata-articles-page {
+  padding-top: 30px;
+  .return-link {
+    color: var(--goavana-blue, #001751);
+    font-family: "Poppins";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-decoration: none;
+    .link-icon {
+      margin-right: 5px;
+    }
+  }
+  .akata-article-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 109px;
+    .header-title {
+      gap: 48px;
+      button {
+        max-width: 134px;
+        min-height: 45px;
+      }
+      .title-text {
+        gap: 16px;
+        h1 {
+          max-width: 546px;
+        }
+        p {
+          max-width: 441px;
+        }
+      }
+    }
+    .header-article-suggestion {
+      align-items: flex-end;
+      .horizontal-article {
+        width: 100%;
+        max-width: 630px;
+        height: 166px;
+        flex-shrink: 0;
+        background: var(--card-background);
+        border-radius: var(--border-radius);
+        border: 1px solid var(--border-color);
+      }
+    }
+  }
+  .article-lists {
+    margin-top: 300px;
+    .list-title {
+      color: var(--goavana-blue, #001751);
+      font-family: "Poppins";
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      position: relative;
+      &::before {
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        content: "";
+        width: 0;
+        height: 5px;
+        background: var(--goavana-yellow);
+
+        -webkit-animation: width-animation 0.3s 0.4s ease-in forwards;
+
+        animation: width-animation 0.3s 0.4s ease-in forwards;
+      }
+    }
+    .list-card {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      margin-top: 45px;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+  }
+}
+
+// * {
+//   border: 1px solid red;
+// }
+
+@-webkit-keyframes width-animation {
+  from {
+    width: 0px;
+  }
+  to {
+    width: 58px;
+  }
+}
+
+@keyframes width-animation {
+  from {
+    width: 0px;
+  }
+  to {
+    width: 58px;
+  }
+}

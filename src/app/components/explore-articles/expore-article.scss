@@ -3,4 +3,14 @@
   top: 0;
   left: 0;
   background: var(--light);
+  z-index: 10;
+  .explore-articles-container {
+    border: 1px solid red;
+    padding: 30px;
+    height: 100vh;
+    overflow-y: auto;
+    .xd {
+      height: 2000px;
+    }
+  }
 }
