@@ -28,7 +28,7 @@ export default function Page() {
   return (
     <div className="akata-articles-page container">
       {isOpenModal && <ModalLetsTalk onClose={closeModal} />}
-      <Link href={"/#articles"} className="return-link">
+      <Link href={"/#articles"} className="return-link" as="button">
         <FontAwesomeIcon icon={faArrowLeft} className="link-icon" />
         Go back
       </Link>
@@ -74,7 +74,26 @@ export default function Page() {
               </p>
             </div>
           </div>
-          <div className="horizontal-article"></div>
+          <div className="horizontal-article d-flex ">
+            <Image
+              className="article-poster"
+              alt="article poster"
+              src={"/images/articles/fianara-pv.png"}
+              width={220}
+              height={166}
+            />
+            <div className="article-text-content d-flex flex-col">
+              <span className="date">december 21, 2021</span>
+              <h3 className="title">
+                Futurella Madagascar 301 office’s inauguration
+              </h3>
+              <p className="content akata-text-small">
+                “L’École d’Été PV Fianara 2021” organized by the “Centre
+                d’Employabilité Francophone”, collaborating with Fianarantsoa
+                University ....
+              </p>
+            </div>
+          </div>
         </div>
       </header>
 
