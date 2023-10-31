@@ -1,0 +1,5 @@
+User-agent: *
+
+crawl-delay: 1
+
+Sitemap: https://dev.goavana.com/sitemap.xml
