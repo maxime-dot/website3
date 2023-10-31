@@ -31,7 +31,7 @@ const Articles: React.FC = () => {
           </p>
         </div>
         <div className="article-content-list">
-          {ArticleData.map((data, index) => (
+          {ArticleData.slice(0, 3).map((data, index) => (
             <ArticleCard
               key={index}
               date={data.date}
