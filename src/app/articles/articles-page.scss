@@ -42,11 +42,45 @@
         background: var(--card-background);
         border-radius: var(--border-radius);
         border: 1px solid var(--border-color);
+        gap: 20px;
+        align-items: center;
+        overflow: hidden;
+        .article-poster {
+          -o-object-fit: cover;
+          object-fit: cover;
+          min-width: 220px;
+          min-height: inherit;
+        }
+        .article-text-content {
+          gap: 9px;
+          .date {
+            color: var(--primary-dark, #222);
+            font-family: "Poppins";
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+            text-transform: uppercase;
+          }
+          .title {
+            color: var(--primary-dark, #222);
+            font-family: "Poppins";
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            max-width: 258px;
+          }
+          .content {
+            max-width: 362px;
+          }
+        }
       }
     }
   }
   .article-lists {
     margin-top: 300px;
+    padding: 40px 0;
     .list-title {
       color: var(--goavana-blue, #001751);
       font-family: "Poppins";

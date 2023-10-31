@@ -5,12 +5,14 @@ import dynamic from "next/dynamic";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import LoadingModal from "../components/modal-lets-talk/LoadingModal";
+import Image from "next/image";
 import { useState } from "react";
 import Button from "../components/button/normal/Button";
 import ArticleData from "../data/articles.json";
 import ArticleCard from "../components/cards/articles/ArticleCard";
 const ModalLetsTalk = dynamic(
   () => import("../components/modal-lets-talk/ModalLetsTalk"),
+
   {
     loading: () => <LoadingModal />,
   }
@@ -36,7 +38,7 @@ export default function Page() {
             <h1 className="akata-title-strong">
               Explore the <span> World of Innovation</span>
             </h1>
-            <p className="akata-text-big">
+            <p className="content akata-text-big">
               Dive into our captivating articles to stay at the forefront of
               technology and innovation. Explore exciting topics and in-depth
               analyses that will inspire you to push boundaries. Join us on our
@@ -52,7 +54,26 @@ export default function Page() {
           />
         </div>
         <div className="header-article-suggestion d-flex-space-between flex-col">
-          <div className="horizontal-article"></div>
+          <div className="horizontal-article d-flex ">
+            <Image
+              className="article-poster"
+              alt="article poster"
+              src={"/images/articles/fianara-pv.png"}
+              width={220}
+              height={166}
+            />
+            <div className="article-text-content d-flex flex-col">
+              <span className="date">december 21, 2021</span>
+              <h3 className="title">
+                Futurella Madagascar 301 office’s inauguration
+              </h3>
+              <p className="content akata-text-small">
+                “L’École d’Été PV Fianara 2021” organized by the “Centre
+                d’Employabilité Francophone”, collaborating with Fianarantsoa
+                University ....
+              </p>
+            </div>
+          </div>
           <div className="horizontal-article"></div>
         </div>
       </header>
