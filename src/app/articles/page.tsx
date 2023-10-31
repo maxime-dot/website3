@@ -3,13 +3,14 @@ import Link from "next/link";
 import "./articles-page.scss";
 import dynamic from "next/dynamic";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import { faArrowLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import LoadingModal from "../components/modal-lets-talk/LoadingModal";
 import Image from "next/image";
 import { useState } from "react";
 import Button from "../components/button/normal/Button";
 import ArticleData from "../data/articles.json";
 import ArticleCard from "../components/cards/articles/ArticleCard";
+import { truncate } from "../helpers/truncate";
 const ModalLetsTalk = dynamic(
   () => import("../components/modal-lets-talk/ModalLetsTalk"),
 
@@ -54,46 +55,30 @@ export default function Page() {
           />
         </div>
         <div className="header-article-suggestion d-flex-space-between flex-col">
-          <div className="horizontal-article d-flex ">
-            <Image
-              className="article-poster"
-              alt="article poster"
-              src={"/images/articles/fianara-pv.png"}
-              width={220}
-              height={166}
-            />
-            <div className="article-text-content d-flex flex-col">
-              <span className="date">december 21, 2021</span>
-              <h3 className="title">
-                Futurella Madagascar 301 office’s inauguration
-              </h3>
-              <p className="content akata-text-small">
-                “L’École d’Été PV Fianara 2021” organized by the “Centre
-                d’Employabilité Francophone”, collaborating with Fianarantsoa
-                University ....
-              </p>
+          {ArticleData.slice(0, 2).map((data, index) => (
+            <div
+              className="horizontal-article d-flex "
+              key={`horizontal-article-${index}`}
+            >
+              <button className="read-more btn">
+                <FontAwesomeIcon icon={faChevronRight} className="btn-icon" />
+              </button>
+              <Image
+                className="article-poster"
+                alt="article poster"
+                src={data.imageSrc}
+                width={220}
+                height={166}
+              />
+              <div className="article-text-content d-flex flex-col">
+                <span className="date">{data.date}</span>
+                <h3 className="title">{data.title}</h3>
+                <p className="content akata-text-small">
+                  {truncate(data.content, 127)}
+                </p>
+              </div>
             </div>
-          </div>
-          <div className="horizontal-article d-flex ">
-            <Image
-              className="article-poster"
-              alt="article poster"
-              src={"/images/articles/fianara-pv.png"}
-              width={220}
-              height={166}
-            />
-            <div className="article-text-content d-flex flex-col">
-              <span className="date">december 21, 2021</span>
-              <h3 className="title">
-                Futurella Madagascar 301 office’s inauguration
-              </h3>
-              <p className="content akata-text-small">
-                “L’École d’Été PV Fianara 2021” organized by the “Centre
-                d’Employabilité Francophone”, collaborating with Fianarantsoa
-                University ....
-              </p>
-            </div>
-          </div>
+          ))}
         </div>
       </header>
 

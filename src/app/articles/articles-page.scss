@@ -34,16 +34,26 @@
     }
     .header-article-suggestion {
       align-items: flex-end;
+
       .horizontal-article {
+        position: relative;
         width: 100%;
         height: 166px;
         flex-shrink: 0;
         background: var(--card-background);
         border-radius: var(--border-radius);
         border: 1px solid var(--border-color);
+        cursor: pointer;
         gap: 20px;
         align-items: center;
         overflow: hidden;
+        .read-more {
+          position: absolute;
+          top: 20px;
+          right: 20px;
+          border: 0;
+          outline: 0;
+        }
         .article-poster {
           -o-object-fit: cover;
           object-fit: cover;
