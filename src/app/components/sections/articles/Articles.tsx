@@ -1,26 +1,34 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRightLong } from "@fortawesome/free-solid-svg-icons";
 import "./articles.scss";
 import ArticleCard from "../../cards/articles/ArticleCard";
 import ArticleData from "../../../data/articles.json";
-import ExploreArticles from "../../explore-articles/ExploreArticles";
 import Link from "next/link";
+import ArticleViewer from "../../article-viewer/ArticleViewer";
+
 const Articles: React.FC = () => {
   const [openArticle, setOpenArticle] = useState(false);
-  const [isExploreOpen, setIsExploreOpen] = useState(false);
-  const openExlopreArticle = () => {
-    setIsExploreOpen(true);
+  const handleOpenArticle = () => {
+    setOpenArticle(true);
   };
-
-  const closeExploreArticle = () => {
-    setIsExploreOpen(false);
+  const handleCloseArticle = () => {
+    setOpenArticle(false);
   };
+  useEffect(() => {
+    if (openArticle) {
+      document.documentElement.classList.add("global-style");
+      document.body.classList.add("global-style");
+    } else {
+      document.documentElement.classList.remove("global-style");
+      document.body.classList.remove("global-style");
+    }
+  }, [openArticle]);
   return (
     <section className="akata-articles fill-view" id="articles">
-      {isExploreOpen && <ExploreArticles onClose={closeExploreArticle} />}
+      {openArticle && <ArticleViewer onClose={handleCloseArticle} />}
       <Image
         src={"/images/hand-robot-shape-data.png"}
         width={310}
@@ -48,7 +56,7 @@ const Articles: React.FC = () => {
               date={data.date}
               content={data.content}
               title={data.title}
-              readMore={() => setOpenArticle(true)}
+              readMore={handleOpenArticle}
               imgSrc={data.imageSrc}
             />
           ))}

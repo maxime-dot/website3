@@ -29,7 +29,12 @@ export default function Page() {
   return (
     <div className="akata-articles-page container">
       {isOpenModal && <ModalLetsTalk onClose={closeModal} />}
-      <Link href={"/#articles"} className="return-link" as="button">
+      <Link
+        href={"/#articles"}
+        className="return-link"
+        as="/#articles"
+        title="Go back to home page"
+      >
         <FontAwesomeIcon icon={faArrowLeft} className="link-icon" />
         Go back
       </Link>

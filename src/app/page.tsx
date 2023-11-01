@@ -12,16 +12,11 @@ import Contacts from "./components/sections/contacts/Contact";
 import Footer from "./components/footer/Footer";
 
 export default function Home() {
-  const [overflowHidden, setOverflowHidden] = useState(false);
-
   return (
-    <main
-      className={styles.main}
-      style={{ overflow: overflowHidden ? "hidden" : "auto" }}
-    >
+    <main className={styles.main}>
       <Navbar />
       <Header />
-      <Testimonial onOpenSlider={() => setOverflowHidden(!overflowHidden)} />
+      <Testimonial />
       <Services />
       <Projects />
       <Teams />
