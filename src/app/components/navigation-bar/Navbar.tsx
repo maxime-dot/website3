@@ -37,7 +37,6 @@ const Navbar: React.FC = () => {
 
   const updateActiveLink = () => {
     const windowHeight = window.innerHeight;
-    const scrollPosition = window.scrollY;
 
     const halfViewport = windowHeight / 2;
 
