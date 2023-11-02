@@ -1,6 +1,5 @@
 .akata-team-page {
-  padding: 0;
-  padding-top: 22px;
+  padding: 32px 0 0;
 
   .btn-go-back {
     padding: 12px 20px 12px 0;
@@ -22,6 +21,21 @@
 
     .btn-icon {
       margin-right: 5px;
+    }
+  }
+  .team-page-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100px;
+    margin-top: 100px;
+    .content-text {
+      .text-description {
+        margin-top: 16px;
+        max-width: 500px;
+      }
+      .btn-open-modal{
+        margin-top: 46px;
+      }
     }
   }
 }
