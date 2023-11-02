@@ -1,0 +1,27 @@
+.akata-team-page {
+  padding: 0;
+  padding-top: 22px;
+
+  .btn-go-back {
+    padding: 12px 20px 12px 0;
+    background: none;
+    outline: 0;
+    border: 0;
+    z-index: 1;
+
+    // Typography
+    color: var(--goavana-blue, #001751);
+    font: {
+      family: "Poppins", sans-serif;
+      size: 16px;
+      style: normal;
+      weight: 700;
+      line-height: normal;
+    }
+    cursor: pointer;
+
+    .btn-icon {
+      margin-right: 5px;
+    }
+  }
+}

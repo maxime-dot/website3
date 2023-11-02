@@ -173,6 +173,7 @@ const Contacts: React.FC = () => {
             height="361"
             style={{ border: 0 }}
             loading="lazy"
+            title="Akata Goavana position in Maps. "
           ></iframe>
         </div>
         <ul className="adress-text">
