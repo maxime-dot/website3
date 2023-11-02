@@ -24,7 +24,7 @@ const ModalLetsTalk = dynamic(
 );
 
 const Navbar: React.FC = () => {
-  const [hash, setHash] = useState("#");
+  const [hash, setHash] = useState("#home");
   const [isDropdownMenuOpen, setIsDropdownMenuOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
 

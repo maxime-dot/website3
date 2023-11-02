@@ -1,5 +1,5 @@
 [
-    { "name": "Home", "path": "#" },
+    { "name": "Home", "path": "#home" },
     { "name": "Services", "path": "#services" },
     { "name": "Projects", "path": "#projects" },
     { "name": "Teams", "path": "#teams" },
