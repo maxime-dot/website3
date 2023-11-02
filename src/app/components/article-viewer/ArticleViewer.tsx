@@ -1,5 +1,5 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import "./article-viewer.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -73,6 +73,7 @@ const ArticleViewer: React.FC<ArticleViewerProps> = ({ onClose }) => {
                       key={`article-item-${index}`}
                       initial={{ opacity: 0, x: 100 }}
                       whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 0.5 }}
                       viewport={{ once: true }}
                     >
                       {" "}
