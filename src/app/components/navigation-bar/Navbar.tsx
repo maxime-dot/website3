@@ -1,36 +1,94 @@
 "use client";
-import React, { useState } from "react";
-import dynamic from "next/dynamic";
-import Link from "next/link";
+
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
+import dynamic from "next/dynamic";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faBars,
-  faXmark,
-  faArrowRight,
-} from "@fortawesome/free-solid-svg-icons";
+import Link from "next/link";
 import "./navbar.scss";
-import Button from "../button/normal/Button";
-import LoadingModal from "../modal-lets-talk/LoadingModal";
-
-import { LinksType } from "@/app/types/navlink.type";
-import Links from "../../data/navigation-links.json";
-
 const ModalLetsTalk = dynamic(
   () => import("../modal-lets-talk/ModalLetsTalk"),
   {
     loading: () => <LoadingModal />,
   }
 );
+import {
+  faArrowRight,
+  faBars,
+  faXmark,
+} from "@fortawesome/free-solid-svg-icons";
+import Button from "../button/normal/Button";
+import LoadingModal from "../modal-lets-talk/LoadingModal";
+
+const navigationLinks = [
+  { name: "Home", path: "#home" },
+  { name: "Services", path: "#services" },
+  { name: "Projects", path: "#projects" },
+  { name: "Teams", path: "#teams" },
+  { name: "Articles", path: "#articles" },
+  { name: "Contacts", path: "#contacts" },
+];
 
 const Navbar: React.FC = () => {
-  const [hash, setHash] = useState("#home");
+  const [hash, setHash] = useState("#");
   const [isDropdownMenuOpen, setIsDropdownMenuOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [activeLink, setActiveLink] = useState("");
+
+  const updateActiveLink = () => {
+    const windowHeight = window.innerHeight;
+    const scrollPosition = window.scrollY;
+
+    const halfViewport = windowHeight / 2;
+
+    const sections = navigationLinks;
+
+    for (const section of sections) {
+      const element = document.querySelector(section.path);
+
+      if (element) {
+        const elementTop = element.getBoundingClientRect().top;
+
+        if (
+          elementTop < halfViewport &&
+          elementTop + element.clientHeight > halfViewport
+        ) {
+          setActiveLink(section.name);
+          break;
+        }
+      }
+    }
+  };
+
+  useEffect(() => {
+    updateActiveLink();
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener("scroll", updateActiveLink);
+    return () => {
+      window.removeEventListener("scroll", updateActiveLink);
+    };
+  }, []);
+
+  const renderLinks = () => {
+    return navigationLinks.map((link, index) => (
+      <Link
+        key={index}
+        href={link.path}
+        title={`Akata ${link.name}`}
+        onClick={() => setHash(link.path)}
+        className={"w-100 " + (activeLink === link.name ? "active" : "")}
+      >
+        {link.name}
+      </Link>
+    ));
+  };
 
   const toggleDropdownMenu = () => {
     setIsDropdownMenuOpen(!isDropdownMenuOpen);
   };
+
   const closeModal = () => {
     setIsModalOpen(false);
   };
@@ -38,20 +96,6 @@ const Navbar: React.FC = () => {
   const openModal = () => {
     setIsModalOpen(true);
     setIsDropdownMenuOpen(false);
-  };
-
-  const renderLinks = () => {
-    return Links.map((data: LinksType, index) => (
-      <Link
-        key={index}
-        href={data.path}
-        title={`Akata ${data.name}`}
-        onClick={() => setHash(data.path)}
-        className={"w-100 " + (hash === data.path ? "active" : "")}
-      >
-        {data.name}
-      </Link>
-    ));
   };
 
   return (
@@ -108,4 +152,4 @@ const Navbar: React.FC = () => {
   );
 };
 
-export default React.memo(Navbar);
+export default Navbar;
