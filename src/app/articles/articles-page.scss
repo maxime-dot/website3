@@ -1,0 +1,199 @@
+.akata-articles-page {
+  padding-top: 30px;
+  .return-link {
+    color: var(--goavana-blue, #001751);
+    font-family: "Poppins";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-decoration: none;
+    .link-icon {
+      margin-right: 5px;
+    }
+  }
+  .akata-article-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 109px;
+    .header-title {
+      gap: 48px;
+      button {
+        max-width: 134px;
+        min-height: 45px;
+      }
+      .title-text {
+        gap: 16px;
+        h1 {
+          max-width: 546px;
+        }
+        p {
+          max-width: 441px;
+        }
+      }
+    }
+    .header-article-suggestion {
+      align-items: flex-end;
+
+      .horizontal-article {
+        position: relative;
+        width: 100%;
+        height: 166px;
+        flex-shrink: 0;
+        background: var(--card-background);
+        border-radius: var(--border-radius);
+        border: 1px solid var(--border-color);
+        cursor: pointer;
+        gap: 20px;
+        align-items: center;
+        overflow: hidden;
+        .read-more {
+          position: absolute;
+          top: 20px;
+          right: 20px;
+          border: 0;
+          outline: 0;
+        }
+        .article-poster {
+          -o-object-fit: cover;
+          object-fit: cover;
+          width: 220px;
+          height: 100%;
+        }
+        .article-text-content {
+          gap: 9px;
+          .date {
+            color: var(--primary-dark, #222);
+            font-family: "Poppins";
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+            text-transform: uppercase;
+          }
+          .title {
+            color: var(--primary-dark, #222);
+            font-family: "Poppins";
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            max-width: 258px;
+          }
+          .content {
+            max-width: 362px;
+          }
+        }
+      }
+    }
+  }
+  .article-lists {
+    margin-top: 300px;
+    padding: 40px 0;
+    .list-title {
+      color: var(--goavana-blue, #001751);
+      font-family: "Poppins";
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      position: relative;
+      &::before {
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        content: "";
+        width: 0;
+        height: 5px;
+        background: var(--goavana-yellow);
+
+        -webkit-animation: width-animation 0.3s 0.4s ease-in forwards;
+
+        animation: width-animation 0.3s 0.4s ease-in forwards;
+      }
+    }
+    .list-card {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      margin-top: 45px;
+      gap: 25px;
+    }
+  }
+}
+
+// * {
+//   border: 1px solid red;
+// }
+
+@-webkit-keyframes width-animation {
+  from {
+    width: 0px;
+  }
+  to {
+    width: 58px;
+  }
+}
+
+@keyframes width-animation {
+  from {
+    width: 0px;
+  }
+  to {
+    width: 58px;
+  }
+}
+
+@media (max-width: 1536px) {
+  .akata-articles-page {
+    .article-lists {
+      .list-card {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+    }
+  }
+}
+@media (max-width: 1024px) {
+  .akata-articles-page {
+    .akata-article-header {
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+      .header-article-suggestion {
+        .horizontal-article {
+          margin-top: 30px;
+          .article-poster {
+            width: 200px;
+          }
+        }
+      }
+    }
+    .article-lists {
+      .list-card {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+  }
+}
+@media (max-width: 768px) {
+  .akata-articles-page {
+    padding: 30px;
+    .akata-article-header {
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+      .header-article-suggestion {
+        .horizontal-article {
+          margin-top: 30px;
+          .article-poster {
+            width: 180px;
+          }
+        }
+      }
+    }
+    .article-lists {
+      .list-card {
+        grid-template-columns: 1fr;
+      }
+    }
+  }
+}

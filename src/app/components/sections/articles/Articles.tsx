@@ -1,15 +1,36 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRightLong } from "@fortawesome/free-solid-svg-icons";
 import "./articles.scss";
 import ArticleCard from "../../cards/articles/ArticleCard";
 import ArticleData from "../../../data/articles.json";
+import Link from "next/link";
+import ArticleViewer from "../../article-viewer/ArticleViewer";
+
 const Articles: React.FC = () => {
   const [openArticle, setOpenArticle] = useState(false);
+
+  const handleOpenArticle = () => {
+    setOpenArticle(true);
+  };
+  const handleCloseArticle = () => {
+    setOpenArticle(false);
+  };
+
+  useEffect(() => {
+    if (openArticle) {
+      document.documentElement.classList.add("global-style");
+      document.body.classList.add("global-style");
+    } else {
+      document.documentElement.classList.remove("global-style");
+      document.body.classList.remove("global-style");
+    }
+  }, [openArticle]);
   return (
     <section className="akata-articles fill-view" id="articles">
+      {openArticle && <ArticleViewer onClose={handleCloseArticle} />}
       <Image
         src={"/images/hand-robot-shape-data.png"}
         width={310}
@@ -31,23 +52,26 @@ const Articles: React.FC = () => {
           </p>
         </div>
         <div className="article-content-list">
-          {ArticleData.map((data, index) => (
+          {ArticleData.slice(0, 3).map((data, index) => (
             <ArticleCard
               key={index}
               date={data.date}
               content={data.content}
               title={data.title}
-              readMore={() => setOpenArticle(true)}
+              readMore={handleOpenArticle}
               imgSrc={data.imageSrc}
             />
           ))}
 
           <div className="expore-article d-flex-space-between flex-col">
             <p className="article-count">3 / 10</p>
-            <button className="btn-article-explore akata-title-medium">
+            <Link
+              href="/articles"
+              className="btn-article-explore akata-title-medium"
+            >
               EXPLORE MORE <span>CONTENT</span>
               <FontAwesomeIcon icon={faArrowRightLong} className="btn-icon" />
-            </button>
+            </Link>
           </div>
         </div>
       </div>

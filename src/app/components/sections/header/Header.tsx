@@ -41,7 +41,7 @@ const Header: React.FC = () => {
       <div className="header-content d-flex flex-col w-100">
         <div className="content-text d-flex flex-col">
           <h1 className="akata-title-strong">
-            lET’S US TURN YOU <span>DREAM</span> INTO REALITY
+            lET’S US TURN YOUR <span>DREAM</span> INTO REALITY
           </h1>
           <p className="akata-text-big">
             At Akata Goavana, we are dedicated to the well-being of your IT

@@ -27,7 +27,7 @@
 
         max-width: 546px;
         color: var(--goavana-blue, #001751);
-        font: normal 900 50px/62.4px var(--font-poppins);
+        font: normal 900 50px/62.4px var(--font-poppins, "Poppins");
         text-transform: uppercase;
         span {
           color: var(--goavana-yellow);
