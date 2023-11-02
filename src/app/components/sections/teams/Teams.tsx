@@ -1,8 +1,8 @@
 "use client";
 import React, { useState } from "react";
 import dynamic from "next/dynamic";
+import { useRouter } from "next/navigation";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHome } from "@fortawesome/free-solid-svg-icons";
 import { faFacebook, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import Link from "next/link";
 import Image from "next/image";
@@ -15,32 +15,28 @@ const ModalLetsTalk = dynamic(
   }
 );
 
-import AboutTeams from "../../about-teams/AboutTeams";
 import "./teams.scss";
 import Button from "../../button/normal/Button";
 import ButtonOutline from "../../button/outline/ButtonOutline";
 
 const Teams: React.FC = () => {
   const [openModal, setOpenModal] = useState(false);
-  const [openAboutTeam, setOpenAboutTeam] = useState(false);
+  const router = useRouter();
 
-  const handleOpenAboutTteam = () => {
-    setOpenAboutTeam(true);
-  };
-
-  const handleCloseAboutTeams = () => {
-    setOpenAboutTeam(false);
-  };
   const handleOpenModal = () => {
     setOpenModal(true);
   };
   const handleCloseModal = () => {
     setOpenModal(false);
   };
+
+  const handleOpenAboutTteam = () => {
+    router.push("/teams");
+  };
   return (
     <section className="akata-teams fill-view  container" id="teams">
       {openModal && <ModalLetsTalk onClose={handleCloseModal} />}
-      {openAboutTeam && <AboutTeams onClose={handleCloseAboutTeams} />}
+
       <div className="teams-intro d-flex flex-col">
         <div className="intro-title d-flex flex-col">
           <h2 className="akata-title-strong">
