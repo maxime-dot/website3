@@ -5,12 +5,10 @@ import "./article-viewer.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import ArticleMiniCard from "../cards/articles-mini-card/ArticlesMiniCard";
-import { TRUE } from "sass";
+import ArticleData from "@/app/data/articles.json";
+import { ArticleViewerProps } from "@/app/types/article-viewer.type";
 
-interface ArticleProps {
-  onClose: () => void;
-}
-const ArticleViewer: React.FC<ArticleProps> = ({ onClose }) => {
+const ArticleViewer: React.FC<ArticleViewerProps> = ({ onClose }) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 100 }}
@@ -65,67 +63,27 @@ const ArticleViewer: React.FC<ArticleProps> = ({ onClose }) => {
                     energy needs.
                   </p>
                 </div>
-                <div className="content-part d-flex flex-col">
-                  <h4 className="content-title">
-                    2 - Futurella Madagascar Office Inauguration: A New Era of
-                    Sustainability
-                  </h4>
-                  <p className="akata-text-medium">
-                    December 21, 2021, will be remembered as a significant day
-                    in Madagascar&apos;s history, marked by the inauguration of
-                    Futurella Madagascar&apos;s office, symbolizing a renewed
-                    commitment to sustainability and clean energy. This
-                    ceremony, held under the radiant sun, brought together key
-                    players in the renewable energy, education, and sustainable
-                    development sectors. The centerpiece of this day was
-                    undoubtedly the "L’École d’Été PV Fianara 2021," a
-                    remarkable initiative organized by the esteemed "Centre
-                    d’Employabilité Francophone," in close collaboration with
-                    Fianarantsoa University and the dynamic Association
-                    FianaraLab. This summer school not only highlighted the
-                    crucial importance of education in sustainable energy but
-                    also served as a platform for discussing
-                    sustainability-related issues in Madagascar. The fruitful
-                    partnership between these renowned institutions resulted in
-                    a meaningful inauguration. It symbolized the collective
-                    determination to advance the energy transition and to
-                    implement innovative solutions to meet Madagascar&apos;s
-                    energy needs.
-                  </p>
-                </div>
               </div>
               <div className="article-suggestion w-100 d-flex flex-col">
                 <h4 className="akata-title-medium recent-article-title">
                   Recent Articles
                 </h4>
                 <div className="suggestion-card d-flex flex-col">
-                  <motion.div
-                    initial={{ opacity: 0, x: 100 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.5 }}
-                    viewport={{ once: true }}
-                  >
-                    {" "}
-                    <ArticleMiniCard />
-                  </motion.div>
-                  <motion.div
-                    initial={{ opacity: 0, x: 100 }}
-                    transition={{ delay: 0.5 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                  >
-                    {" "}
-                    <ArticleMiniCard />
-                  </motion.div>
-                  <motion.div
-                    initial={{ opacity: 0, x: 100 }}
-                    transition={{ delay: 0.5 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                  >
-                    {" "}
-                    <ArticleMiniCard />
-                  </motion.div>
+                  {ArticleData.slice(0, 3).map((data, index) => (
+                    <motion.div
+                      key={`article-item-${index}`}
+                      initial={{ opacity: 0, x: 100 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                    >
+                      {" "}
+                      <ArticleMiniCard
+                        date={data.date}
+                        imgSrc={data.imageSrc}
+                        title={data.title}
+                      />
+                    </motion.div>
+                  ))}
                 </div>
               </div>
             </div>

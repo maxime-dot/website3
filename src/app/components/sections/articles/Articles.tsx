@@ -8,15 +8,26 @@ import ArticleCard from "../../cards/articles/ArticleCard";
 import ArticleData from "../../../data/articles.json";
 import Link from "next/link";
 import ArticleViewer from "../../article-viewer/ArticleViewer";
+import { ArticleViewerProps } from "@/app/types/article-viewer.type";
 
 const Articles: React.FC = () => {
   const [openArticle, setOpenArticle] = useState(false);
-  const handleOpenArticle = () => {
+  const [selectedArticle, setSelectedArticle] = useState({
+    data: {
+      date: "string",
+      title: "string",
+      imgSrc: "string",
+      content: "string",
+    },
+  });
+  const handleOpenArticle = (data: ArticleViewerProps) => {
     setOpenArticle(true);
+    setSelectedArticle(data);
   };
   const handleCloseArticle = () => {
     setOpenArticle(false);
   };
+
   useEffect(() => {
     if (openArticle) {
       document.documentElement.classList.add("global-style");
@@ -28,7 +39,9 @@ const Articles: React.FC = () => {
   }, [openArticle]);
   return (
     <section className="akata-articles fill-view" id="articles">
-      {openArticle && <ArticleViewer onClose={handleCloseArticle} />}
+      {openArticle && (
+        <ArticleViewer onClose={handleCloseArticle} data={selectedArticle} />
+      )}
       <Image
         src={"/images/hand-robot-shape-data.png"}
         width={310}
@@ -56,7 +69,7 @@ const Articles: React.FC = () => {
               date={data.date}
               content={data.content}
               title={data.title}
-              readMore={handleOpenArticle}
+              readMore={() => handleOpenArticle({ data })}
               imgSrc={data.imageSrc}
             />
           ))}
