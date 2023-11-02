@@ -48,19 +48,18 @@ const ArticleViewer: React.FC<ArticleViewerProps> = ({ onClose }) => {
                     ceremony, held under the radiant sun, brought together key
                     players in the renewable energy, education, and sustainable
                     development sectors. The centerpiece of this day was
-                    undoubtedly the "L’École d’Été PV Fianara 2021," a
-                    remarkable initiative organized by the esteemed "Centre
-                    d’Employabilité Francophone," in close collaboration with
-                    Fianarantsoa University and the dynamic Association
-                    FianaraLab. This summer school not only highlighted the
-                    crucial importance of education in sustainable energy but
-                    also served as a platform for discussing
-                    sustainability-related issues in Madagascar. The fruitful
-                    partnership between these renowned institutions resulted in
-                    a meaningful inauguration. It symbolized the collective
-                    determination to advance the energy transition and to
-                    implement innovative solutions to meet Madagascar&apos;s
-                    energy needs.
+                    undoubtedly the L’École d’Été PV Fianara 2021 a remarkable
+                    initiative organized by the esteemed Centre d’Employabilité
+                    Francophone, in close collaboration with Fianarantsoa
+                    University and the dynamic Association FianaraLab. This
+                    summer school not only highlighted the crucial importance of
+                    education in sustainable energy but also served as a
+                    platform for discussing sustainability-related issues in
+                    Madagascar. The fruitful partnership between these renowned
+                    institutions resulted in a meaningful inauguration. It
+                    symbolized the collective determination to advance the
+                    energy transition and to implement innovative solutions to
+                    meet Madagascar&apos;s energy needs.
                   </p>
                 </div>
               </div>
