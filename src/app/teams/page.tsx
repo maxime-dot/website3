@@ -80,7 +80,7 @@ export const TeamsPage: React.FC = () => {
               className="part-photo"
             >
               <Image
-                src={"/images/teams/akata-team.png"}
+                src={"/images/teams/akata-team-2.png"}
                 alt="akata-team"
                 width={300}
                 height={600}
@@ -96,7 +96,7 @@ export const TeamsPage: React.FC = () => {
               className="part-photo"
             >
               <Image
-                src={"/images/teams/akata-team.png"}
+                src={"/images/teams/akata-team-3.png"}
                 alt="akata-team"
                 width={300}
                 height={600}
@@ -110,7 +110,7 @@ export const TeamsPage: React.FC = () => {
               className="part-photo"
             >
               <Image
-                src={"/images/teams/akata-team.png"}
+                src={"/images/teams/akata-team-4.png"}
                 alt="akata-team"
                 width={300}
                 height={600}
@@ -125,7 +125,7 @@ export const TeamsPage: React.FC = () => {
               className="part-photo"
             >
               <Image
-                src={"/images/teams/akata-team.png"}
+                src={"/images/teams/akata-team-5.png"}
                 alt="akata-team"
                 width={300}
                 height={600}
