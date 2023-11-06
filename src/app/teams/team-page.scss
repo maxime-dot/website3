@@ -28,6 +28,9 @@
     grid-template-columns: 1fr 1fr;
     margin-top: 80px;
     .content-text {
+      .team-photos {
+        display: none;
+      }
       .text-description {
         margin-top: 16px;
         max-width: 500px;
@@ -103,8 +106,35 @@
     padding: 30px;
     .team-page-content {
       grid-template-columns: 1fr;
+      .content-text {
+        .team-photos {
+          margin-top: 20px;
+          display: flex;
+          flex-wrap: nowrap;
+          overflow: auto;
+          flex-direction: row;
+          width: 100%;
+          max-width: 768px;
+          height: 350px;
+          gap: 20px;
+          -ms-scroll-snap-type: x mandatory;
+          scroll-snap-type: x mandatory;
+          scroll-behavior: smooth;
+          .card-part-photo {
+            scroll-snap-align: start;
+            width: 80%;
+            height: 100%;
+            -o-object-fit: cover;
+            object-fit: cover;
+          }
+        }
+      }
       .content-gallery {
         display: none;
+        .card-part-photo {
+          width: 200px;
+          height: 400px;
+        }
         .card-part {
           .part-photo {
             &:nth-child(2) {

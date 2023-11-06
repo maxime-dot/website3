@@ -41,6 +41,36 @@ export const TeamsPage: React.FC = () => {
             bring your projects to life. Explore the people behind AKATA GOAVAN
             and discover how we can help shape your digital future.
           </motion.p>
+          <div className="team-photos">
+            <Image
+              src={"/images/teams/akata-team.png"}
+              alt="akata-team"
+              width={300}
+              height={600}
+              className="card-part-photo"
+            />
+            <Image
+              src={"/images/teams/akata-team-2.png"}
+              alt="akata-team"
+              width={300}
+              height={600}
+              className="card-part-photo"
+            />
+            <Image
+              src={"/images/teams/akata-team-3.png"}
+              alt="akata-team"
+              width={300}
+              height={600}
+              className="card-part-photo"
+            />
+            <Image
+              src={"/images/teams/akata-team-4.png"}
+              alt="akata-team"
+              width={300}
+              height={600}
+              className="card-part-photo"
+            />
+          </div>
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
