@@ -8,7 +8,7 @@ import Image from "next/image";
 import "./team-page.scss";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import Button from "../components/button/normal/Button";
-export const TeamsPage: React.FC = () => {
+export default function Page() {
   const router = useRouter();
   const openModal = () => {
     return;
@@ -167,5 +167,4 @@ export const TeamsPage: React.FC = () => {
       </div>
     </div>
   );
-};
-export default TeamsPage;
+}
