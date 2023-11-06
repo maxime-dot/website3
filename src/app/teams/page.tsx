@@ -4,6 +4,7 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 import "./team-page.scss";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import Button from "../components/button/normal/Button";
@@ -55,7 +56,84 @@ export const TeamsPage: React.FC = () => {
             />
           </motion.div>
         </div>
-        <div className="content-gallery"></div>
+        <div className="content-gallery w-100">
+          <div className="card-part">
+            <motion.div
+              initial={{ opacity: 0, y: -40, rotate: 10 }}
+              animate={{ opacity: 1, y: 0, rotate: 4 }}
+              transition={{ delay: 0.2 }}
+              whileHover={{ rotate: 0 }}
+              className="part-photo"
+            >
+              <Image
+                src={"/images/teams/akata-team.png"}
+                alt="akata-team"
+                width={300}
+                height={600}
+                className="card-part-photo"
+              />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: -40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4 }}
+              className="part-photo"
+            >
+              <Image
+                src={"/images/teams/akata-team.png"}
+                alt="akata-team"
+                width={300}
+                height={600}
+                className="card-part-photo"
+              />
+            </motion.div>
+          </div>
+          <div className="card-part">
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6 }}
+              className="part-photo"
+            >
+              <Image
+                src={"/images/teams/akata-team.png"}
+                alt="akata-team"
+                width={300}
+                height={600}
+                className="card-part-photo"
+              />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.8 }}
+              className="part-photo"
+            >
+              <Image
+                src={"/images/teams/akata-team.png"}
+                alt="akata-team"
+                width={300}
+                height={600}
+                className="card-part-photo"
+              />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0, rotate: -4 }}
+              whileHover={{ rotate: 0 }}
+              transition={{ delay: 1 }}
+              className="part-photo"
+            >
+              <Image
+                src={"/images/teams/akata-team.png"}
+                alt="akata-team"
+                width={300}
+                height={600}
+                className="card-part-photo"
+              />
+            </motion.div>
+          </div>
+        </div>
       </div>
     </div>
   );
