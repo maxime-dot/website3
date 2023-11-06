@@ -1,0 +1,148 @@
+.akata-team-page {
+  padding: 32px 0 0;
+
+  .btn-go-back {
+    padding: 12px 20px 12px 0;
+    background: none;
+    outline: 0;
+    border: 0;
+    z-index: 1;
+
+    // Typography
+    color: var(--goavana-blue, #001751);
+    font: {
+      family: "Poppins", sans-serif;
+      size: 16px;
+      style: normal;
+      weight: 700;
+      line-height: normal;
+    }
+    cursor: pointer;
+
+    .btn-icon {
+      margin-right: 5px;
+    }
+  }
+  .team-page-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 80px;
+    .content-text {
+      .team-photos {
+        display: none;
+      }
+      .text-description {
+        margin-top: 16px;
+        max-width: 500px;
+      }
+      .btn-open-modal {
+        margin-top: 46px;
+      }
+    }
+    .content-gallery {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      max-width: 707px;
+      gap: 30px;
+      .card-part {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        gap: 30px;
+        height: 688px;
+        .part-photo {
+          background: rgb(164, 154, 154);
+          border-radius: 10px;
+          overflow: hidden;
+          .card-part-photo {
+            width: 100%;
+            height: 100%;
+            -o-object-fit: cover;
+            object-fit: cover;
+            transition: all 0.3s ease-in-out;
+            &:hover {
+              transform: scale(1.1);
+            }
+          }
+        }
+        &:nth-child(2) {
+          grid-template-rows: 1fr 1fr 1fr;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1280px) {
+  .akata-team-page {
+    .team-page-content {
+      gap: 80px;
+      .content-gallery {
+        .card-part {
+          height: 500px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .akata-team-page {
+    .team-page-content {
+      .content-gallery {
+        .card-part {
+          .part-photo {
+            &:nth-child(2) {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .akata-team-page {
+    padding: 30px;
+    .team-page-content {
+      grid-template-columns: 1fr;
+      .content-text {
+        .team-photos {
+          margin-top: 20px;
+          display: flex;
+          flex-wrap: nowrap;
+          overflow: auto;
+          flex-direction: row;
+          width: 100%;
+          max-width: 768px;
+          height: 350px;
+          gap: 20px;
+          -ms-scroll-snap-type: x mandatory;
+          scroll-snap-type: x mandatory;
+          scroll-behavior: smooth;
+          .card-part-photo {
+            scroll-snap-align: start;
+            width: 80%;
+            height: 100%;
+            -o-object-fit: cover;
+            object-fit: cover;
+          }
+        }
+      }
+      .content-gallery {
+        display: none;
+        .card-part-photo {
+          width: 200px;
+          height: 400px;
+        }
+        .card-part {
+          .part-photo {
+            &:nth-child(2) {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
