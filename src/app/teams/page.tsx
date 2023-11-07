@@ -14,10 +14,14 @@ export default function Page() {
   const handleOpenGallery = () => {
     setOpenGallery(true)
   }
+
+  const handleClosGallery = () => {
+    setOpenGallery(false)
+  }
   return (
 
     <div className="akata-team-page container">
-      {openGallery &&  <Gallery/>}
+      {openGallery &&  <Gallery onClose={handleClosGallery}/>}
       <button className="btn-go-back" onClick={() => router.push("/#teams")}>
         <motion.span whileHover={{ y: 10 }}>
           <FontAwesomeIcon icon={faArrowLeft} className="btn-icon" />
