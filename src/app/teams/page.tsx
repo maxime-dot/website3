@@ -4,14 +4,20 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
+import dynamic from "next/dynamic"
 import "./team-page.scss";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import Button from "@/app/components/button/normal/Button";
 import Gallery from "@/app/components/gallery/Gallery";
+import LoadingModal from "@/app/components/modal-lets-talk/LoadingModal";
+const Modal = dynamic(() => import("@/app/components/modal-lets-talk/ModalLetsTalk"), {
+  loading: () => <LoadingModal/>
+})
 
 export default function Page() {
   const router = useRouter();
   const [openGallery, setOpenGallery] = useState(false)
+  const [isModalOpen, setIsModalOpen] = useState(false)
   const handleOpenGallery = () => {
     setOpenGallery(true)
   }
@@ -22,6 +28,7 @@ export default function Page() {
   return (
 
     <div className="akata-team-page container">
+      {isModalOpen && <Modal onClose={() => setIsModalOpen(false)} />}
       {openGallery &&  <Gallery onClose={handleClosGallery}/>}
       <button className="btn-go-back" onClick={() => router.push("/#teams")}>
         <motion.span whileHover={{ y: 10 }}>
@@ -88,7 +95,7 @@ export default function Page() {
             <Button
               ariaLabel="Let's talk about your project requirement..."
               content="LET'S TALK"
-              onClick={handleOpenGallery}
+              onClick={() => setIsModalOpen(true)}
               type="button"
               hoverType="shadowed"
             />
