@@ -6,8 +6,9 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 import "./team-page.scss";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
-import Button from "../components/button/normal/Button";
+import Button from "@/app/components/button/normal/Button";
 import Gallery from "@/app/components/gallery/Gallery";
+
 export default function Page() {
   const router = useRouter();
   const [openGallery, setOpenGallery] = useState(false)
@@ -93,7 +94,7 @@ export default function Page() {
             />
           </motion.div>
         </div>
-        <div className="content-gallery w-100">
+        <div className="content-gallery w-100" onClick={handleOpenGallery}>
           <div className="card-part">
             <motion.div
               initial={{ opacity: 0, y: -40, rotate: 10 }}
@@ -101,6 +102,7 @@ export default function Page() {
               transition={{ delay: 0.2 }}
               whileHover={{ rotate: 0 }}
               className="part-photo"
+
             >
               <Image
                 src={"/images/teams/akata-team.png"}
