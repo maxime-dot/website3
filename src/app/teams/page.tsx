@@ -15,7 +15,7 @@ export default function Page() {
   };
   return (
     <div className="akata-team-page container">
-      <button className="btn-go-back" onClick={() => router.push("/")}>
+      <button className="btn-go-back" onClick={() => router.push("/#teams")}>
         <motion.span whileHover={{ y: 10 }}>
           <FontAwesomeIcon icon={faArrowLeft} className="btn-icon" />
         </motion.span>{" "}
