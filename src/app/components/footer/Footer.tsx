@@ -4,11 +4,11 @@ import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFacebook,
-  faTwitch,
   faLinkedin,
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 import "./footer.scss";
+import contactData from "@/app/data/contacts.json"
 const Footer: React.FC = () => {
   return (
     <footer className="akata-footer d-flex-center flex-col" id="footer">
@@ -17,15 +17,15 @@ const Footer: React.FC = () => {
           <strong>Contacts</strong>
           <ul>
             <li className="akata-text-small">
-              Lot Villa Papringo , Isaha Fianarantsoa , Madagascar
+              {contactData[0].adress}
             </li>
             <li className="akata-text-small">
               <Link href={"mailto:contact-akata@goavana.com"}>
-                contact-akata@goavana.com
+                {contactData[0].mail}
               </Link>
             </li>
             <li className="akata-text-small">
-              <Link href={"tel:+261346757384"}>+261 34 67 573 84</Link>
+              <Link href={"tel:+261346757384"}>{contactData[0].phone}</Link>
             </li>
           </ul>
         </div>
