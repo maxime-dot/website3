@@ -10,6 +10,7 @@ import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import Button from "@/app/components/button/normal/Button";
 import Gallery from "@/app/components/gallery/Gallery";
 import LoadingModal from "@/app/components/modal-lets-talk/LoadingModal";
+import TeamList from "@/app/components/team-list/TeamList";
 const Modal = dynamic(() => import("@/app/components/modal-lets-talk/ModalLetsTalk"), {
   loading: () => <LoadingModal/>
 })
@@ -181,6 +182,8 @@ export default function Page() {
           </div>
         </div>
       </div>
+
+      <TeamList/>
     </div>
   );
 }
