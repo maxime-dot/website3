@@ -8,10 +8,11 @@ import dynamic from "next/dynamic"
 import "./team-page.scss";
 import {faArrowLeft} from "@fortawesome/free-solid-svg-icons";
 import Button from "@/app/components/button/normal/Button";
-import Gallery from "@/app/components/gallery/Gallery";
 import LoadingModal from "@/app/components/modal-lets-talk/LoadingModal";
 import TeamList from "@/app/components/team-list/TeamList";
-
+const Gallery = dynamic(() => import("@/app/components/gallery/Gallery"), {
+    loading: () => <LoadingModal/>
+})
 const Modal = dynamic(() => import("@/app/components/modal-lets-talk/ModalLetsTalk"), {
     loading: () => <LoadingModal/>
 })

@@ -50,7 +50,7 @@
       height: 120px;
       display: flex;
       flex-wrap: nowrap;
-      overflow: auto;
+      overflow-x: auto;
       gap: 30px;
       -ms-scroll-snap-type: x mandatory;
       scroll-snap-type: x mandatory;

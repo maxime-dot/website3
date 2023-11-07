@@ -37,8 +37,8 @@ const Gallery: React.FC<GalleryProps> = ({onClose}) => {
                                     viewport={{once: true}}
                                     animate={{opacity: 1, y: 0}}
                                     initial={{opacity: 0, y: 10}}
-                                    transition={{duration: .3, delay: .3}}
-                                    onClick={() => setSelectedImage(data.imgSrc)}
+                                                                     onClick={() => setSelectedImage(data.imgSrc)}
+                                    whileHover={{scale: 1.1}}
                         >
                             <Image
                                 src={data.imgSrc}

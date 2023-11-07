@@ -17,4 +17,4 @@ const TeamList: React.FC = () => {
         </div>
     )
 }
-export default TeamList;
+export default React.memo(TeamList);
