@@ -1,0 +1,37 @@
+.akata-gallery{
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0,0, 0,.85);
+  backdrop-filter: blur(5px);
+  color: var(--light);
+  z-index: 1;
+  .gallery-container{
+    width: 100%;
+    height: 671px;
+    max-width: 800px;
+    gap: 52px;
+    .gallery-container-shower{
+      overflow: hidden;
+      width: 100%;
+      height: 534px;
+      .shower{
+        width: 100%;
+        height: 100%;
+        .selected-image{
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+
+      }
+
+
+    }
+    .picture-list{
+      width: 100%;
+      height:150px;
+      background: var(--light);
+    }
+  }
+}

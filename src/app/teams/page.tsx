@@ -1,6 +1,5 @@
 "use client";
-
-import React from "react";
+import React, {useState} from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
@@ -8,13 +7,17 @@ import Image from "next/image";
 import "./team-page.scss";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import Button from "../components/button/normal/Button";
+import Gallery from "@/app/components/gallery/Gallery";
 export default function Page() {
   const router = useRouter();
-  const openModal = () => {
-    return;
-  };
+  const [openGallery, setOpenGallery] = useState(false)
+  const handleOpenGallery = () => {
+    setOpenGallery(true)
+  }
   return (
+
     <div className="akata-team-page container">
+      {openGallery &&  <Gallery/>}
       <button className="btn-go-back" onClick={() => router.push("/#teams")}>
         <motion.span whileHover={{ y: 10 }}>
           <FontAwesomeIcon icon={faArrowLeft} className="btn-icon" />
@@ -80,7 +83,7 @@ export default function Page() {
             <Button
               ariaLabel="Let's talk about your project requirement..."
               content="LET'S TALK"
-              onClick={openModal}
+              onClick={handleOpenGallery}
               type="button"
               hoverType="shadowed"
             />
