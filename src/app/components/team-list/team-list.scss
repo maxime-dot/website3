@@ -1,7 +1,24 @@
-.akata-team-list{
+.akata-team-list {
   margin-top: 250px;
-  .team-title-description{
+
+  .team-title-description {
     text-align: center;
     margin-top: 10px;
+
+  }
+
+  .list-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    flex-wrap: wrap;
+    gap: 70px;
+    .team-item {
+      width: 100%;
+      height: 193px;
+      background: var(--card-background);
+      margin-top: 166px;
+      border-radius: var(--border-radius);
+      border: 1px solid var(--border-color);
+    }
   }
 }
