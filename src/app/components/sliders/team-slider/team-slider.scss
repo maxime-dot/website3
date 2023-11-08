@@ -32,5 +32,32 @@
       }
 
     }
+
+    .slider-container {
+      align-items: flex-start;
+      padding-top: 150px;
+      min-height: 100vh;
+      //border: 1px solid red;
+
+      .profile-name {
+        max-width: 500px;
+        font-size: 35px;
+        line-height: 56px;
+        letter-spacing: .3px;
+        position: relative;
+
+        &:before {
+          content: "";
+          position: absolute;
+          top: 28px;
+          z-index: -1;
+          left: 0;
+          width: 60%;
+          height: 20px;
+          background: var(--goavana-yellow);
+        }
+
+      }
+    }
   }
 }
