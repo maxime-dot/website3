@@ -58,7 +58,7 @@ const TeamSlider: React.FC<SliderProps> = ({onClose}) => {
                                        className={"profile-post-acronym akata-text-medium"}>Chef Executive Officer
                         </motion.small>
                         <motion.p initial={{opacity: 0, x: 40}} animate={{opacity: 1, x: 0}}
-                                  transition={{duration: .3, delay: .4}} className={"akata-text-medium words"}>I will
+                                  transition={{delay: .4}} className={"akata-text-medium words"}>I will
                             take the Reunionese singer Blacko&apos;s
                             words: “live his dreams are about existing”. Every day offers us the opportunity to exist,
                             to expand our dreams and to grow with. Dreaming will only lead to little, but if you share
@@ -66,7 +66,7 @@ const TeamSlider: React.FC<SliderProps> = ({onClose}) => {
                             share your dream and more it becomes too close to the reality.
                         </motion.p>
                         <motion.p initial={{opacity: 0, x: 40}} animate={{opacity: 1, x: 0}}
-                                  transition={{duration: .3, delay: .5}} className={"akata-text-medium words"}>
+                                  transition={{delay: .5}} className={"akata-text-medium words"}>
                             Don’t stay in your dreams anymore. Go and share them so that they grow and become a GOAVANA
                             reality, with a GOAVANA team, during a GOAVANA journey, by writing a GOAVANA story…You need
                             heart and mind when you’re living your dream. The heart gives energy (motivation, ambition,
