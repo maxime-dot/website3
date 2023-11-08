@@ -43,13 +43,21 @@
 
       .profile-pics-container {
         position: absolute;
-        width: 480px;
+        width: 400px;
         height: 100%;
         background: var(--card-background);
         left: 50%;
         transform: translateX(-70%);
         top: 0;
         clip-path: polygon(16% 0, 100% 0, 84% 100%, 0% 100%);
+
+        .shape {
+          width: 266.315px;
+          height: auto;
+          position: absolute;
+          bottom: 0;
+          left: -30px;
+        }
 
         .main-container {
           width: 100%;
