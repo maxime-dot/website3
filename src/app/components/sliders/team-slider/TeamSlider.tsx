@@ -16,8 +16,8 @@ const TeamSlider: React.FC<SliderProps> = ({onClose}) => {
         <motion.div initial={{opacity: 0, y: 80}} animate={{opacity: 1, y: 0}} className="akata-team-slider fill-view">
             <div className="main-content">
                 <button onClick={onClose} className={"btn-close-slider"}>
-                    <FontAwesomeIcon icon={faXmark}
-                    /></button>
+                    <FontAwesomeIcon icon={faXmark}/>
+                </button>
             </div>
         </motion.div>
     )
