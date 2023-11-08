@@ -6,6 +6,7 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faFacebook, faLinkedin, faGithub, faDribbble} from "@fortawesome/free-brands-svg-icons";
 import TeamData from "@/app/data/team-list.json"
 import Link from "next/link";
+import Image from "next/image";
 
 const TeamList: React.FC = () => {
     return (
@@ -23,7 +24,9 @@ const TeamList: React.FC = () => {
 
                 {TeamData.map((data, index) => (
                     <div className="team-item d-flex-space-between flex-col" key={`team-${index}`}>
-                        <div className="profile-pics"></div>
+                        <div className="profile-pics">
+                            <Image src={"/images/teams/gallery/mr-manase-coding.png"} alt={`${data.firstName} ${data.lastName} profile`} width={600} height={600} className={"pics"}/>
+                        </div>
                         <div className="profile-info d-flex flex-col">
                             <span className={"profile-name"}>{data.firstName}  {data.lastName}</span>
                             <span className={"profile-post"}>{data.post}</span>
