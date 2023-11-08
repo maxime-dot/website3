@@ -1,21 +1,24 @@
 "use client";
-import React, {useState} from "react";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {motion} from "framer-motion";
-import {useRouter} from "next/navigation";
+import React, { useState } from "react";
 import Image from "next/image";
-import dynamic from "next/dynamic"
-import "./team-page.scss";
-import {faArrowLeft} from "@fortawesome/free-solid-svg-icons";
+import dynamic from "next/dynamic";
+import { useRouter } from "next/navigation";
+import { motion } from "framer-motion";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import Button from "@/app/components/button/normal/Button";
 import LoadingModal from "@/app/components/modal-lets-talk/LoadingModal";
 import TeamList from "@/app/components/team-list/TeamList";
+import "./team-page.scss";
+
+// Dynamically imported components
 const Gallery = dynamic(() => import("@/app/components/gallery/Gallery"), {
-    loading: () => <LoadingModal/>
-})
+    loading: () => <LoadingModal />,
+});
 const Modal = dynamic(() => import("@/app/components/modal-lets-talk/ModalLetsTalk"), {
-    loading: () => <LoadingModal/>
-})
+    loading: () => <LoadingModal />,
+});
+
 
 export default function Page() {
     const router = useRouter();
