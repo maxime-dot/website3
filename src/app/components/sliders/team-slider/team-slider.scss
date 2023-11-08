@@ -37,7 +37,46 @@
       align-items: flex-start;
       padding-top: 150px;
       min-height: 100vh;
-      //border: 1px solid red;
+
+      button {
+        max-width: 135px;
+        margin-top: 30px;
+      }
+
+      .profile-words {
+        width: 483px;
+        height: 701px;
+
+        margin-top: 55px;
+
+        .profile-post {
+          font-size: 30px;
+        }
+
+        .profile-post-acronym {
+          margin-top: 5px;
+        }
+
+        .words {
+          margin-top: 20px;
+          color: var(--primary-dark);
+
+          &:nth-child(1) {
+            margin-top: 40px;
+          }
+        }
+
+        .social-link-group {
+          margin-top: 40px;
+          gap: 20px;
+
+          .link {
+            text-decoration: none;
+            color: var(--primary-dark);
+            font-size: 25px;
+          }
+        }
+      }
 
       .profile-name {
         max-width: 500px;
