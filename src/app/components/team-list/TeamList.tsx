@@ -24,9 +24,9 @@ const TeamList: React.FC = () => {
 
                 {TeamData.map((data, index) => (
                     <motion.div initial={{opacity: 0, y: 20}} whileInView={{opacity: 1, y:0}} viewport={{once: true}} transition={{delay: .3}} className="team-item d-flex-space-between flex-col" key={`team-${index}`}>
-                        <div className="profile-pics">
-                            <Image src={"/images/teams/gallery/mr-manase-coding.png"} alt={`${data.firstName} ${data.lastName} profile`} width={600} height={600} className={"pics"}/>
-                        </div>
+                        {/*<div className="profile-pics">*/}
+                        {/*    <Image src={"/images/teams/gallery/mr-manase-coding.png"} alt={`${data.firstName} ${data.lastName} profile`} width={600} height={600} className={"pics"}/>*/}
+                        {/*</div>*/}
                         <div className="profile-info d-flex flex-col">
                             <span className={"profile-name"}>{data.firstName}  {data.lastName}</span>
                             <span className={"profile-post"}>{data.post}</span>
