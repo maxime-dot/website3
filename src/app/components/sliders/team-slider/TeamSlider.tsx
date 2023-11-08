@@ -10,6 +10,7 @@ import {faFacebook, faLinkedin, faGithub} from "@fortawesome/free-brands-svg-ico
 import Link from "next/link";
 import Button from "@/app/components/button/normal/Button";
 import LoadingModal from "@/app/components/modal-lets-talk/LoadingModal";
+import Image from "next/image";
 
 const Modal = dynamic(() => import("@/app/components/modal-lets-talk/ModalLetsTalk"), {
     loading: () => <LoadingModal/>
@@ -33,6 +34,12 @@ const TeamSlider: React.FC<SliderProps> = ({onClose}) => {
             {openModal && <Modal onClose={handleCloseMOdal}/>}
             <div className="main-content">
                 <div className="slider-container container d-flex-space-between">
+                    <div className="profile-pics-container">
+                        <div className="main-container">
+                            <Image src={"/images/teams/ceo.png"} alt={"CEO Profile..."} width={1499} height={873}
+                                   className={"picture"}/>
+                        </div>
+                    </div>
                     <strong className="akata-title-medium profile-name">RAMIANDRISOA Andriamandranto Patrick
                         (BODGE)</strong>
                     <div className="profile-words d-flex flex-col">
