@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import dynamic from "next/dynamic";
+import {motion} from "framer-motion"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 import "./navbar.scss";
@@ -98,7 +99,7 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <nav className="akata-navbar d-flex-center w-100">
+    <motion.nav initial={{opacity: 0, y: -30}}  animate={{opacity: 1, y: 0}} className="akata-navbar d-flex-center w-100">
       <div className="container navbar-content d-flex-space-between">
         <Link href={"/"} className="navbar-brand">
           <Image
@@ -147,7 +148,7 @@ const Navbar: React.FC = () => {
         )}
       </div>
       {isModalOpen && <ModalLetsTalk onClose={closeModal} />}
-    </nav>
+    </motion.nav>
   );
 };
 

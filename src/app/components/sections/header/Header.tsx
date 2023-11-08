@@ -11,6 +11,7 @@ const ModalLetsTalk = dynamic(
     loading: () => <LoadingModal />,
   }
 );
+import {motion} from "framer-motion"
 import ButtonOutlineIconified from "../../button/outline-iconified/ButtonOutlineIconified";
 import ButtonCaFloat from "../../button/ca-float/ButtonCaFloat";
 import LoadingModal from "../../modal-lets-talk/LoadingModal";
@@ -40,16 +41,16 @@ const Header: React.FC = () => {
       {isModalOpen && <ModalLetsTalk onClose={() => setIsModalOpen(false)} />}
       <div className="header-content d-flex flex-col w-100">
         <div className="content-text d-flex flex-col">
-          <h1 className="akata-title-strong">
+          <motion.h1   initial={{opacity: 0, y: 30}}  animate={{opacity: 1, y: 0}} className="akata-title-strong">
             lET’S US TURN YOUR <span>DREAM</span> INTO REALITY
-          </h1>
-          <p className="akata-text-big">
+          </motion.h1>
+          <motion.p initial={{opacity: 0, y: 30}}  animate={{opacity: 1, y: 0}} transition={{delay: .1}} className="akata-text-big">
             At Akata Goavana, we are dedicated to the well-being of your IT
             infrastructure. Our experts are here to provide exceptional care for
             your systems. Trust in our expertise to keep them running smoothly.
-          </p>
+          </motion.p>
         </div>
-        <div className="content-ca-button d-flex flex-row">
+        <motion.div initial={{opacity: 0, y: 30}}  animate={{opacity: 1, y: 0}} transition={{delay: .2}} className="content-ca-button d-flex flex-row">
           <Button
             type="button"
             content="LET'S TALK"
@@ -62,9 +63,9 @@ const Header: React.FC = () => {
             name="Play akata's video"
             onClick={() => setPlayVideo(true)}
           />
-        </div>
+        </motion.div>
       </div>
-      <div className="header-hero d-flex-center w-100">
+      <motion.div initial={{opacity: 0, y: 30}}  animate={{opacity: 1, y: 0}} transition={{delay: .2}} className="header-hero d-flex-center w-100">
         <Image
           src={"/images/maki.webp"}
           alt="Akata goavana, hero image"
@@ -73,7 +74,7 @@ const Header: React.FC = () => {
           width={600}
           height={600}
         />
-      </div>
+      </motion.div>
     </header>
   );
 };
