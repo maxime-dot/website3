@@ -23,12 +23,16 @@ const TeamList: React.FC = () => {
             <div className="list-content container">
 
                 {TeamData.map((data, index) => (
-                    <motion.div initial={{opacity: 0, y: 20}} whileInView={{opacity: 1, y:0}} viewport={{once: true}} transition={{delay: .3}} className="team-item d-flex-space-between flex-col" key={`team-${index}`}>
-                        <div className="profile-pics">
-                            <Image src={data.profileImage ? data.profileImage : "/images/teams/team-profile/default.png"} alt={`${data.firstName} ${data.lastName} profile`} width={100} height={100} className={"pics"}/>
-                        </div>
+                    <motion.div initial={{opacity: 0, y: 20}} whileInView={{opacity: 1, y: 0}} viewport={{once: true}}
+                                transition={{delay: .3}} className="team-item d-flex-space-between flex-col"
+                                key={`team-${index}`}>
+
+                        <Image src={data.profileImage ? data.profileImage : "/images/teams/team-profile/default.png"}
+                               alt={`${data.firstName} ${data.lastName} profile`} width={800} height={800}
+                               className={"pics"}/>
+
                         <div className="profile-info d-flex flex-col">
-                            <span className={"profile-name"}>{data.firstName}  {data.lastName}</span>
+                            <span className={"profile-name"}>{data.firstName} {data.lastName}</span>
                             <span className={"profile-post"}>{data.post}</span>
                         </div>
                         <div className="profile-social-link d-flex flex-row">
@@ -49,13 +53,7 @@ const TeamList: React.FC = () => {
                                     <FontAwesomeIcon icon={faGithub}/>
                                 </Link>
                             }
-                            {
-                                data.socialLink.dribble &&
-                                <Link href={data.socialLink.dribble} passHref={true} target={"_blank"}
-                                      className={"link-item"}>
-                                    <FontAwesomeIcon icon={faDribbble}/>
-                                </Link>
-                            }
+
                         </div>
                     </motion.div>
                 ))}
