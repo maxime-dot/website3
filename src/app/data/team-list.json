@@ -1,0 +1,168 @@
+[
+  {
+    "id": 1,
+    "firstName": "RAMIANDRISOA",
+    "lastName": "Andriamandranto Patrick (BODGE)",
+    "post": "CEO",
+    "socialLink": {
+      "facebook": "https://www.facebook.com",
+      "linkedin": "https://www.linkedin.com",
+      "github": "https://www.github.com"
+    }
+  },
+  {
+    "id": 1,
+    "firstName": "RABEHEVITRA",
+    "lastName": "Fitiavana Nalahatra",
+    "post": "Intern Developer & UI/UX Designer",
+    "socialLink": {
+      "facebook": "https://www.facebook.com",
+      "linkedin": "https://www.linkedin.com",
+      "github": "https://www.github.com",
+      "dribble": "https://www.dribble.com"
+    }
+  },
+  {
+    "id": 1,
+    "firstName": "RANDRIAMILASOA",
+    "lastName": "Mila Maxime",
+    "post": "Intern System & Network Administrator",
+    "socialLink": {
+      "facebook": "https://www.facebook.com",
+      "linkedin": "https://www.linkedin.com",
+      "github": "https://www.github.com"
+    }
+  },
+  {
+    "id": 1,
+    "firstName": "NIAINA",
+    "lastName": "Andriharisoa",
+    "post": "Intern System & Network Administrator",
+    "socialLink": {
+      "facebook": "https://www.facebook.com",
+      "linkedin": "https://www.linkedin.com",
+      "github": "https://www.github.com"
+    }
+  },
+  {
+    "id": 1,
+    "firstName": "RANDRIAMANALINA",
+    "lastName": "Kiady Fanantenana LoyOlan\n",
+    "post": "Intern Developer",
+    "socialLink": {
+      "facebook": "https://www.facebook.com",
+      "linkedin": "https://www.linkedin.com",
+      "github": "https://www.github.com"
+    }
+  },
+  {
+    "id": 1,
+    "firstName": "RAMIMANANA",
+    "lastName": "Ny Andrianina",
+    "post": "Communication Manager",
+    "socialLink": {
+      "facebook": "https://www.facebook.com",
+      "linkedin": "https://www.linkedin.com",
+      "github": ""
+    }
+  },
+  {
+    "id": 1,
+    "firstName": "RAKOTONIAINA",
+    "lastName": "Pety Ialimijoro",
+    "post": "Chef Technologie Officiel",
+    "socialLink": {
+      "facebook": "https://www.facebook.com",
+      "linkedin": "https://www.linkedin.com",
+      "github": "https://www.github.com"
+    }
+  },
+  {
+    "id": 1,
+    "firstName": "ANDRIAMPENO ",
+    "lastName": "Odilon Bezaniaina",
+    "post": "FullStack Developer",
+    "socialLink": {
+      "facebook": "https://www.facebook.com",
+      "linkedin": "https://www.linkedin.com",
+      "github": "https://www.github.com"
+    }
+  },
+  {
+    "id": 1,
+    "firstName": "RAMIANDRISOA ",
+    "lastName": "Andriamandranto Michel",
+    "post": "Accountant",
+    "socialLink": {
+      "facebook": "https://www.facebook.com",
+      "linkedin": "https://www.linkedin.com",
+      "github": ""
+    }
+  },
+  {
+    "id": 1,
+    "firstName": "RANDRIANANTENAINA ",
+    "lastName": "Jean Jacques Augustin",
+    "post": "FullStack Developer",
+    "socialLink": {
+      "facebook": "https://www.facebook.com",
+      "linkedin": "https://www.linkedin.com",
+      "github": ""
+    }
+  },
+  {
+    "id": 1,
+    "firstName": "RANDRIAMORASOA ",
+    "lastName": "Fetra Manase",
+    "post": "Team Lead Developer",
+    "socialLink": {
+      "facebook": "https://www.facebook.com",
+      "linkedin": "https://www.linkedin.com",
+      "github": ""
+    }
+  },
+  {
+    "id": 1,
+    "firstName": "RAKOTONOMENJANAHARY ",
+    "lastName": "Tiavina Sahobinirina",
+    "post": "Intern Communication Manager",
+    "socialLink": {
+      "facebook": "https://www.facebook.com",
+      "linkedin": "https://www.linkedin.com",
+      "github": ""
+    }
+  },
+  {
+    "id": 1,
+    "firstName": "RANJAKASOA ",
+    "lastName": "Raphaël Marcellin",
+    "post": "Fullstack Developer",
+    "socialLink": {
+      "facebook": "https://www.facebook.com",
+      "linkedin": "https://www.linkedin.com",
+      "github": ""
+    }
+  },
+  {
+    "id": 1,
+    "firstName": "NOMENJANAHARY",
+    "lastName": "Richardé",
+    "post": "Fullstack Developer",
+    "socialLink": {
+      "facebook": "https://www.facebook.com",
+      "linkedin": "https://www.linkedin.com",
+      "github": ""
+    }
+  },
+  {
+    "id": 1,
+    "firstName": "RAFANOMEZANTSOA",
+    "lastName": "Nantenaina Alfinace",
+    "post": "Fullstack Developer",
+    "socialLink": {
+      "facebook": "https://www.facebook.com",
+      "linkedin": "https://www.linkedin.com",
+      "github": ""
+    }
+  }
+]
