@@ -4,6 +4,7 @@
     "firstName": "RAMIANDRISOA",
     "lastName": "Andriamandranto Patrick (BODGE)",
     "post": "CEO",
+    "profileImage": "",
     "socialLink": {
       "facebook": "https://www.facebook.com",
       "linkedin": "https://www.linkedin.com",
@@ -15,6 +16,20 @@
     "firstName": "RABEHEVITRA",
     "lastName": "Fitiavana Nalahatra",
     "post": "Intern Developer & UI/UX Designer",
+    "profileImage": "/images/teams/team-profile/nalahatra-akata.jpg",
+    "socialLink": {
+      "facebook": "https://www.facebook.com",
+      "linkedin": "https://www.linkedin.com",
+      "github": "https://www.github.com",
+      "dribble": "https://www.dribble.com"
+    }
+  },
+  {
+    "id": 1,
+    "firstName": "RAZAFIMANDIMBY",
+    "lastName": "Fabrice José",
+    "post": "Marketing & Financial Director",
+    "profileImage": "/images/teams/team-profile/fabrice-akata.png",
     "socialLink": {
       "facebook": "https://www.facebook.com",
       "linkedin": "https://www.linkedin.com",
@@ -27,6 +42,7 @@
     "firstName": "RANDRIAMILASOA",
     "lastName": "Mila Maxime",
     "post": "Intern System & Network Administrator",
+    "profileImage": "",
     "socialLink": {
       "facebook": "https://www.facebook.com",
       "linkedin": "https://www.linkedin.com",
@@ -38,6 +54,7 @@
     "firstName": "NIAINA",
     "lastName": "Andriharisoa",
     "post": "Intern System & Network Administrator",
+    "profileImage": "/images/teams/team-profile/niaina-akata.jpg",
     "socialLink": {
       "facebook": "https://www.facebook.com",
       "linkedin": "https://www.linkedin.com",
@@ -48,6 +65,7 @@
     "id": 1,
     "firstName": "RANDRIAMANALINA",
     "lastName": "Kiady Fanantenana LoyOlan\n",
+    "profileImage": "",
     "post": "Intern Developer",
     "socialLink": {
       "facebook": "https://www.facebook.com",
@@ -60,6 +78,7 @@
     "firstName": "RAMIMANANA",
     "lastName": "Ny Andrianina",
     "post": "Communication Manager",
+    "profileImage": "/images/teams/team-profile/ny-andrianina-akata.jpg",
     "socialLink": {
       "facebook": "https://www.facebook.com",
       "linkedin": "https://www.linkedin.com",
@@ -71,6 +90,7 @@
     "firstName": "RAKOTONIAINA",
     "lastName": "Pety Ialimijoro",
     "post": "Chef Technologie Officiel",
+    "profileImage": "/images/teams/team-profile/mijoro-akata.png",
     "socialLink": {
       "facebook": "https://www.facebook.com",
       "linkedin": "https://www.linkedin.com",
@@ -82,6 +102,7 @@
     "firstName": "ANDRIAMPENO ",
     "lastName": "Odilon Bezaniaina",
     "post": "FullStack Developer",
+    "profileImage": "",
     "socialLink": {
       "facebook": "https://www.facebook.com",
       "linkedin": "https://www.linkedin.com",
@@ -92,6 +113,7 @@
     "id": 1,
     "firstName": "RAMIANDRISOA ",
     "lastName": "Andriamandranto Michel",
+    "profileImage": "/images/teams/team-profile/michel-akata.png",
     "post": "Accountant",
     "socialLink": {
       "facebook": "https://www.facebook.com",
@@ -103,6 +125,7 @@
     "id": 1,
     "firstName": "RANDRIANANTENAINA ",
     "lastName": "Jean Jacques Augustin",
+    "profileImage": "",
     "post": "FullStack Developer",
     "socialLink": {
       "facebook": "https://www.facebook.com",
@@ -115,6 +138,7 @@
     "firstName": "RANDRIAMORASOA ",
     "lastName": "Fetra Manase",
     "post": "Team Lead Developer",
+    "profileImage": "",
     "socialLink": {
       "facebook": "https://www.facebook.com",
       "linkedin": "https://www.linkedin.com",
@@ -126,6 +150,7 @@
     "firstName": "RAKOTONOMENJANAHARY ",
     "lastName": "Tiavina Sahobinirina",
     "post": "Intern Communication Manager",
+    "profileImage": "/images/teams/team-profile/tiavina-akata.jpg",
     "socialLink": {
       "facebook": "https://www.facebook.com",
       "linkedin": "https://www.linkedin.com",
@@ -137,6 +162,7 @@
     "firstName": "RANJAKASOA ",
     "lastName": "Raphaël Marcellin",
     "post": "Fullstack Developer",
+    "profileImage": "/images/teams/team-profile/raphael-akata.jpeg",
     "socialLink": {
       "facebook": "https://www.facebook.com",
       "linkedin": "https://www.linkedin.com",
@@ -148,6 +174,7 @@
     "firstName": "NOMENJANAHARY",
     "lastName": "Richardé",
     "post": "Fullstack Developer",
+    "profileImage": "/images/teams/team-profile/richarde-akata.png",
     "socialLink": {
       "facebook": "https://www.facebook.com",
       "linkedin": "https://www.linkedin.com",
@@ -158,6 +185,7 @@
     "id": 1,
     "firstName": "RAFANOMEZANTSOA",
     "lastName": "Nantenaina Alfinace",
+    "profileImage": "",
     "post": "Fullstack Developer",
     "socialLink": {
       "facebook": "https://www.facebook.com",
