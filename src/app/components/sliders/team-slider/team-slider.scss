@@ -1,0 +1,140 @@
+.akata-team-slider {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 8;
+  background: var(--light);
+
+  .main-content {
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    .btn-close-slider {
+      width: 55px;
+      height: 55px;
+      background: var(--card-background);
+      position: absolute;
+      cursor: pointer;
+      top: 48px;
+      right: 96px;
+      border: 0;
+      outline: 0;
+      font-size: 25px;
+      transition: all .3s ease-in-out;
+
+      &:hover {
+        border: 1px solid var(--goavana-blue);
+      }
+
+      &:active {
+        transform: scale(.95);
+      }
+
+    }
+
+    .slider-container {
+
+      align-items: flex-start;
+      padding-top: 150px;
+      min-height: 100vh;
+      position: relative;
+
+
+      .profile-pics-container {
+        position: absolute;
+        width: 400px;
+        height: 100%;
+        background: var(--card-background);
+        left: 50%;
+        transform: translateX(-70%);
+        top: 0;
+        clip-path: polygon(16% 0, 100% 0, 84% 100%, 0% 100%);
+
+        .shape {
+          width: 266.315px;
+          height: auto;
+          position: absolute;
+          bottom: 0;
+          left: -30px;
+        }
+
+        .main-container {
+          width: 100%;
+          height: 100%;
+          position: relative;
+          overflow: hidden;
+
+          .picture {
+            position: absolute;
+            bottom: 0;
+            right: -140px;
+            width: 600px;
+            height: auto;
+          }
+        }
+      }
+
+
+      button {
+        max-width: 135px;
+        margin-top: 30px;
+      }
+
+      .profile-words {
+        width: 483px;
+        height: 701px;
+
+        margin-top: 55px;
+
+        .profile-post {
+          font-size: 30px;
+        }
+
+        .profile-post-acronym {
+          margin-top: 5px;
+        }
+
+        .words {
+          margin-top: 20px;
+          color: var(--primary-dark);
+
+          &:nth-child(1) {
+            margin-top: 40px;
+          }
+        }
+
+        .social-link-group {
+          margin-top: 40px;
+          gap: 20px;
+
+          .link {
+            text-decoration: none;
+            color: var(--primary-dark);
+            font-size: 25px;
+          }
+        }
+      }
+
+      .profile-name {
+        max-width: 500px;
+        font-size: 35px;
+        line-height: 56px;
+        letter-spacing: .3px;
+        position: relative;
+
+        &:before {
+          content: "";
+          position: absolute;
+          top: 28px;
+          z-index: -1;
+          left: 0;
+          width: 60%;
+          height: 20px;
+          background: var(--goavana-yellow);
+        }
+
+      }
+    }
+  }
+}

@@ -1,0 +1,61 @@
+[
+  {
+    "id": 1,
+    "firstName": "RAMIANDRISOA",
+    "lastName": "Andriamandranto Patrick (BODGE)",
+    "post": "CEO",
+    "profileImage": "/images/teams/Bodge.png",
+    "socialLink": {
+      "facebook": "https://www.facebook.com",
+      "linkedin": "https://www.linkedin.com",
+      "github": "https://www.github.com"
+    }
+  },
+  {
+    "id": 1,
+    "firstName": "RAZAFIMANDIMBY",
+    "lastName": "Fabrice José",
+    "post": "Marketing & Financial Director",
+    "profileImage": "/images/teams/team-profile/fabrice-akata.png",
+    "socialLink": {
+      "facebook": "https://www.facebook.com",
+      "linkedin": "https://www.linkedin.com"
+    }
+  },
+  {
+    "id": 1,
+    "firstName": "RAMIMANANA",
+    "lastName": "Ny Andrianina",
+    "post": "Communication Manager",
+    "profileImage": "/images/teams/team-profile/ny-andrianina-akata.jpg",
+    "socialLink": {
+      "facebook": "https://www.facebook.com",
+      "linkedin": "https://www.linkedin.com",
+      "github": ""
+    }
+  },
+  {
+    "id": 1,
+    "firstName": "RAKOTONIAINA",
+    "lastName": "Pety Ialimijoro",
+    "post": "Chef Technologie Officiel",
+    "profileImage": "/images/teams/team-profile/mijoro-akata.png",
+    "socialLink": {
+      "facebook": "https://www.facebook.com",
+      "linkedin": "https://www.linkedin.com",
+      "github": "https://www.github.com"
+    }
+  },
+  {
+    "id": 1,
+    "firstName": "RAMIANDRISOA ",
+    "lastName": "Andriamandranto Michel",
+    "profileImage": "/images/teams/team-profile/michel-akata.png",
+    "post": "Accountant",
+    "socialLink": {
+      "facebook": "https://www.facebook.com",
+      "linkedin": "https://www.linkedin.com",
+      "github": ""
+    }
+  }
+]

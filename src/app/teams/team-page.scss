@@ -30,6 +30,10 @@
     .content-text {
       .team-photos {
         display: none;
+        &::-webkit-scrollbar {
+          width: 0;
+          height: 0;
+        }
       }
       .text-description {
         margin-top: 16px;

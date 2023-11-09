@@ -1,7 +1,10 @@
+$debug-general: false;
+
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 * {
   font-family: "Poppins";
 }
+
 :root {
   --max-width: 1100px;
   --max-width-headlines: 600px;
@@ -42,6 +45,7 @@ body {
   color: var(--goavana-blue, #001751);
   font: normal 900 50px/62.4px "Poppins";
   text-transform: uppercase;
+
   span {
     color: var(--goavana-yellow);
   }
@@ -52,6 +56,7 @@ body {
   color: var(--goavana-blue, #001751);
   text-transform: uppercase;
   font: normal 900 20px/28px "Poppins";
+
   span {
     color: var(--goavana-yellow);
   }
@@ -73,6 +78,7 @@ body {
   @extend .akata-text-medium;
   font-size: 12px;
   line-height: 18.8px;
+
   &.error-message {
     color: var(--goavana-danger);
   }
@@ -118,6 +124,7 @@ body {
 .flex-row {
   flex-direction: row;
 }
+
 .text-center {
   text-align: center;
 }
@@ -130,6 +137,7 @@ body {
   border-radius: var(--border-radius);
   cursor: pointer;
   gap: 17px;
+
   .drop-file-icon {
     font-size: 50px;
     color: var(--text-dark);
@@ -247,3 +255,10 @@ body {
     transform: translateY(0);
   }
 }
+
+@if ($debug-general) {
+  * {
+    border: 1px solid red;
+  }
+}
+

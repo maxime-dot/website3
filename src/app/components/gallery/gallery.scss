@@ -1,0 +1,79 @@
+.akata-gallery {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, .85);
+  backdrop-filter: blur(5px);
+  color: var(--light);
+  z-index: 1;
+
+  .gallery-container {
+    width: 100%;
+    min-height: 671px;
+    max-width: 800px;
+    gap: 52px;
+
+    .gallery-container-shower {
+      width: 100%;
+      height: 534px;
+
+      .shower {
+        width: 100%;
+        height: 100%;
+        position: relative;
+
+        .btn-close-gallery {
+          position: absolute;
+          top: -60px;
+          right: -60px;
+          font-size: 38px;
+          background: 0;
+          outline: 0;
+          border: 0;
+          padding: 20px;
+          color: var(--light);
+        }
+
+        .selected-image {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+
+      }
+
+
+    }
+
+    .picture-list {
+      width: 100%;
+      height: 120px;
+      display: flex;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      gap: 30px;
+      -ms-scroll-snap-type: x mandatory;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      .list-thumb {
+        scroll-snap-align: start;
+        min-width: 200px;
+        width: 200px;
+        height: 100%;
+        object-fit: cover;
+      }
+
+
+      &::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: #666;
+        border-radius: 3px;
+      }
+    }
+
+  }
+}
