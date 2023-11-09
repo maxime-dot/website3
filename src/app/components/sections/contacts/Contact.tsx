@@ -13,7 +13,6 @@ import {
 
 import Button from "../../button/normal/Button";
 import contactData from "../../../data/contacts.json";
-import ContactInfo from "@/app/components/contact-info/ContactInfo";
 
 interface FormValues {
     name: string;
@@ -179,7 +178,19 @@ const Contacts: React.FC = () => {
                     ></iframe>
                 </div>
                 <ul className="adress-text">
-                    <ContactInfo/>
+                    <li className="text-item akata-text-medium d-flex ">
+                        <FontAwesomeIcon icon={faMarker} className="list-icon"/>{" "}
+                        {contactData.adress}
+                    </li>
+                    <li className="text-item akata-text-medium d-flex">
+                        <FontAwesomeIcon icon={faEnvelope} className="list-icon"/>{" "}
+                        {contactData.mail}
+                    </li>
+                    <li className="text-item akata-text-medium d-flex">
+                        {" "}
+                        <FontAwesomeIcon icon={faPhone} className="list-icon"/>{" "}
+                        {contactData.phone}
+                    </li>
                 </ul>
             </div>
         </section>
