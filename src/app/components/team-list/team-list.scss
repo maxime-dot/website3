@@ -106,3 +106,24 @@
   }
 }
 
+@media (max-width: 475px) {
+  .akata-team-list {
+    .list-content {
+      .team-item {
+        .pics {
+          width: 150px;
+        }
+
+        .profile-info {
+          .profile-name {
+            font-size: 16px;
+          }
+
+          .profile-post {
+            max-width: 150px;
+          }
+        }
+      }
+    }
+  }
+}
