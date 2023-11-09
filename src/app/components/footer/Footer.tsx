@@ -10,6 +10,10 @@ import {
 import "./footer.scss";
 import contactData from "@/app/data/contacts.json"
 
+const currentDate = new Date();
+const currentYear = currentDate.getFullYear();
+
+
 const Footer: React.FC = () => {
     return (
         <footer className="akata-footer d-flex-center flex-col" id="footer">
@@ -105,7 +109,7 @@ const Footer: React.FC = () => {
                 height={200}
             />
             <span className="akata-text-small">
-        Copyright &copy; by Akata Goavana 2023
+        Copyright &copy; by Akata Goavana {currentYear}
       </span>
         </footer>
     );
