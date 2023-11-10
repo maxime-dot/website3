@@ -1,6 +1,7 @@
 "use client";
-import React, { useState, KeyboardEvent } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import axios from "axios";
+import React, {useState, KeyboardEvent} from "react";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {
   faXmark,
   faUser,
@@ -8,12 +9,12 @@ import {
   faFile,
 } from "@fortawesome/free-solid-svg-icons";
 import Dropzone from "react-dropzone";
-import { Formik } from "formik";
-import { motion, AnimatePresence } from "framer-motion";
+import {Formik} from "formik";
+import {motion, AnimatePresence} from "framer-motion";
 import "./modal-lets-talk.scss";
 import Button from "../button/normal/Button";
 import ButtonOutline from "../button/outline/ButtonOutline";
-import { TruncateText } from "@/app/helpers/truncate";
+import {TruncateText} from "@/app/helpers/truncate";
 
 interface ModalLetsTalkProps {
   onClose: () => void;
@@ -34,7 +35,7 @@ const services = [
   "Desktop Applications",
 ];
 
-const ModalLetsTalk: React.FC<ModalLetsTalkProps> = ({ onClose }) => {
+const ModalLetsTalk: React.FC<ModalLetsTalkProps> = ({onClose}) => {
   const [droppedFiles, setDroppedFiles] = useState<File[]>([]);
 
   const handleKeyDown = (event: KeyboardEvent) => {
@@ -63,10 +64,10 @@ const ModalLetsTalk: React.FC<ModalLetsTalkProps> = ({ onClose }) => {
           animate="open"
           exit="close"
           variants={{
-            open: { opacity: 1, transform: "translateY(0)" },
-            close: { opacity: 0, transform: "translateY(20px)" },
+            open: {opacity: 1, transform: "translateY(0)"},
+            close: {opacity: 0, transform: "translateY(20px)"},
           }}
-          transition={{ duration: 0.3 }}
+          transition={{duration: 0.3}}
           className="modal-content w-100  d-flex flex-col"
         >
           <div className="modal-header d-flex flex-col">
@@ -90,8 +91,8 @@ const ModalLetsTalk: React.FC<ModalLetsTalkProps> = ({ onClose }) => {
               initialValues={{
                 name: "",
                 email: "",
-                files: droppedFiles,
                 theme: "",
+                files: droppedFiles,
               }}
               validate={(values) => {
                 const errors: Partial<FormValues> = {};
@@ -110,11 +111,38 @@ const ModalLetsTalk: React.FC<ModalLetsTalkProps> = ({ onClose }) => {
                 }
                 return errors;
               }}
-              onSubmit={(values, { setSubmitting }) => {
-                setTimeout(() => {
-                  alert(JSON.stringify(values, null, 2));
-                  setSubmitting(false);
-                }, 400);
+              onSubmit={(values, {setSubmitting}) => {
+                const mailchimpApiKey = process.env.MAILCHIMP_API_KEY;
+                const audienceId = process.env.MAILCHIMP_AUDIENCE_ID;
+
+                axios
+                  .post(
+                    `https://<dc>.api.mailchimp.com/3.0/lists/${audienceId}/members`,
+                    {
+                      email_address: values.email,
+                      status: "subscribed",
+                      merge_fields: {
+                        FNAME: values.name,
+                      },
+                    },
+                    {
+                      headers: {
+                        Authorization: `Bearer ${mailchimpApiKey}`,
+                      },
+                    }
+                  )
+                  .then((response) => {
+                    console.log(
+                      "Successfully subscribed to Mailchimp:",
+                      response.data
+                    );
+                  })
+                  .catch((error) => {
+                    console.error("Error subscribing to Mailchimp:", error);
+                  })
+                  .finally(() => {
+                    setSubmitting(false);
+                  });
               }}
             >
               {({
@@ -207,7 +235,7 @@ const ModalLetsTalk: React.FC<ModalLetsTalkProps> = ({ onClose }) => {
                     <Dropzone
                       onDrop={(uploadedFile) => handleDropFile(uploadedFile)}
                     >
-                      {({ getRootProps, getInputProps }) => (
+                      {({getRootProps, getInputProps}) => (
                         <section className="drop-zone-section">
                           <div
                             {...getRootProps()}

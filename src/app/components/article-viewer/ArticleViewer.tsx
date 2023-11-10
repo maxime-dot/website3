@@ -1,18 +1,21 @@
 import React from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import {motion, AnimatePresence} from "framer-motion";
 import Image from "next/image";
 import "./article-viewer.scss";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faArrowLeft} from "@fortawesome/free-solid-svg-icons";
 import ArticleMiniCard from "../cards/articles-mini-card/ArticlesMiniCard";
 import ArticleData from "@/app/data/articles.json";
-import { ArticleViewerProps } from "@/app/types/article-viewer.type";
+import {ArticleViewerProps} from "@/app/types/article-viewer.type";
+import {artView} from "@/app/animation/animation";
 
-const ArticleViewer: React.FC<ArticleViewerProps> = ({ onClose }) => {
+const ArticleViewer: React.FC<ArticleViewerProps> = ({onClose}) => {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 100 }}
-      animate={{ opacity: 1, y: 0 }}
+      variants={artView}
+      animate="enter"
+      exit="exit"
+      initial="initial"
       className="article-viewer fill-view "
     >
       <div className="container viewer-content">
@@ -71,10 +74,10 @@ const ArticleViewer: React.FC<ArticleViewerProps> = ({ onClose }) => {
                   {ArticleData.slice(0, 3).map((data, index) => (
                     <motion.div
                       key={`article-item-${index}`}
-                      initial={{ opacity: 0, x: 100 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 0.5 }}
-                      viewport={{ once: true }}
+                      initial={{opacity: 0, x: 100}}
+                      whileInView={{opacity: 1, x: 0}}
+                      transition={{delay: 0.5}}
+                      viewport={{once: true}}
                     >
                       {" "}
                       <ArticleMiniCard
