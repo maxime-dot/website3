@@ -117,7 +117,7 @@ const ModalLetsTalk: React.FC<ModalLetsTalkProps> = ({onClose}) => {
               onSubmit={(values, {setSubmitting}) => {
                 axios
                   .post(
-                    `https://us11.api.mailchimp.com/3.0/lists/8550331981/members`,
+                    `https://us11.api.mailchimp.com/3.0/lists/${process.env.MAILCHIMP_AUDIENCE_ID}/members`,
                     {
                       email_address: values.EMAIL,
                       status: "subscribed",
@@ -128,7 +128,7 @@ const ModalLetsTalk: React.FC<ModalLetsTalkProps> = ({onClose}) => {
                     },
                     {
                       headers: {
-                        Authorization: `Bearer 4666584e0137632a23f328cba3656452-us11`,
+                        Authorization: `Bearer ${process.env.MAILCHIMP_API_KEY}`,
                         "Content-Type": "application/json",
                       },
                     }
@@ -313,34 +313,20 @@ const ModalLetsTalk: React.FC<ModalLetsTalkProps> = ({onClose}) => {
                         : "modal-action-button d-flex flex-row"
                     }
                   >
-                    <AnimatePresence>
-                      {isSubmitting && (
-                        <motion.span
-                          initial={{opacity: 0, y: 30}}
-                          animate={{opacity: 1, y: 0}}
-                          exit={{opacity: 0, x: -200}}
-                          className="pedding-send-form akata-text-medium"
-                        >
-                          Sending ...
-                        </motion.span>
-                      )}
-                    </AnimatePresence>
+                    <Button
+                      content={isSubmitting ? "Sending..." : "Send"}
+                      hoverType="solid"
+                      onClick={handleSubmit}
+                      type="submit"
+                      ariaLabel="Send project requirement"
+                    />
                     {!isSubmitting && (
-                      <>
-                        <Button
-                          content="Send"
-                          hoverType="solid"
-                          onClick={handleSubmit}
-                          type="submit"
-                          ariaLabel="Send project requirement"
-                        />
-                        <ButtonOutline
-                          ariaLabel="Abord sending project requirement"
-                          content="Abord"
-                          onClick={onClose}
-                          title="Abord sending project requirement"
-                        />
-                      </>
+                      <ButtonOutline
+                        ariaLabel="Abord sending project requirement"
+                        content="Abord"
+                        onClick={onClose}
+                        title="Abord sending project requirement"
+                      />
                     )}
                   </div>
                 </form>
