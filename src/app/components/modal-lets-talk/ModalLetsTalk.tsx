@@ -21,8 +21,8 @@ interface ModalLetsTalkProps {
 }
 
 interface FormValues {
-  name: string;
-  email: string;
+  NAME: string;
+  EMAIL: string;
 }
 
 const services = [
@@ -34,6 +34,9 @@ const services = [
   "Mobile Apps",
   "Desktop Applications",
 ];
+
+const mailchimpApiKey = process.env.MAILCHIMP_API_KEY;
+const audienceId = process.env.MAILCHIMP_AUDIENCE_ID;
 
 const ModalLetsTalk: React.FC<ModalLetsTalkProps> = ({onClose}) => {
   const [droppedFiles, setDroppedFiles] = useState<File[]>([]);
@@ -89,53 +92,50 @@ const ModalLetsTalk: React.FC<ModalLetsTalkProps> = ({onClose}) => {
           <div className="modal-body w-100">
             <Formik
               initialValues={{
-                name: "",
-                email: "",
-                theme: "",
-                files: droppedFiles,
+                NAME: "",
+                EMAIL: "",
+                THEME: "",
+                // files: droppedFiles,
               }}
               validate={(values) => {
                 const errors: Partial<FormValues> = {};
-                if (!values.name) {
-                  errors.name =
+                if (!values.NAME) {
+                  errors.NAME =
                     "Ooops!Full name is missing. Please provide it..";
                 }
-                if (!values.email) {
-                  errors.email =
+                if (!values.EMAIL) {
+                  errors.EMAIL =
                     "Email address is required. Please specify it.";
                 } else if (
-                  !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
+                  !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.EMAIL)
                 ) {
-                  errors.email =
+                  errors.EMAIL =
                     "Invalid email format. Use a valid format (e.g., example@example.com).";
                 }
                 return errors;
               }}
               onSubmit={(values, {setSubmitting}) => {
-                const mailchimpApiKey = process.env.MAILCHIMP_API_KEY;
-                const audienceId = process.env.MAILCHIMP_AUDIENCE_ID;
-
                 axios
                   .post(
-                    `https://<dc>.api.mailchimp.com/3.0/lists/${audienceId}/members`,
+                    `https://us11.api.mailchimp.com/3.0/lists/8550331981/members`,
                     {
-                      email_address: values.email,
+                      email_address: values.EMAIL,
                       status: "subscribed",
                       merge_fields: {
-                        FNAME: values.name,
+                        NAME: values.EMAIL,
+                        THEME: values.THEME,
                       },
                     },
                     {
                       headers: {
-                        Authorization: `Bearer ${mailchimpApiKey}`,
+                        Authorization: `Bearer 4666584e0137632a23f328cba3656452-us11`,
+                        "Content-Type": "application/json",
                       },
                     }
                   )
                   .then((response) => {
-                    console.log(
-                      "Successfully subscribed to Mailchimp:",
-                      response.data
-                    );
+                    console.log("Successfully subscribed to Mailchimp:");
+                    console.log(response);
                   })
                   .catch((error) => {
                     console.error("Error subscribing to Mailchimp:", error);
@@ -168,17 +168,17 @@ const ModalLetsTalk: React.FC<ModalLetsTalkProps> = ({onClose}) => {
                     <input
                       type="text"
                       placeholder="eg: Jhone Doe, Maria Smith,.."
-                      name="name"
+                      name="NAME"
                       className="akata-text-medium"
                       onChange={handleChange}
                       onBlur={handleBlur}
-                      value={values.name}
+                      value={values.NAME}
                       id="name"
                       autoComplete="true"
                     />
                     <p className="akata-text-small error-message">
                       {" "}
-                      {errors.name && touched.name && errors.name}
+                      {errors.NAME && touched.NAME && errors.NAME}
                     </p>
                   </div>
 
@@ -190,31 +190,31 @@ const ModalLetsTalk: React.FC<ModalLetsTalkProps> = ({onClose}) => {
                     <FontAwesomeIcon icon={faEnvelope} className="form-icon" />
                     <input
                       type="email"
-                      name="email"
+                      name="EMAIL"
                       onChange={handleChange}
                       placeholder="ex: account.me@goavana.com"
                       onBlur={handleBlur}
-                      value={values.email}
+                      value={values.EMAIL}
                       id="email"
                       autoComplete="true"
                     />
                     <p className="akata-text-small error-message">
                       {" "}
-                      {errors.email && touched.email && errors.email}
+                      {errors.EMAIL && touched.EMAIL && errors.EMAIL}
                     </p>
                   </div>
 
                   {/* request user choice based on services */}
                   <div className="form-item d-flex flex-col">
-                    <label htmlFor="theme" className="akata-text-medium">
+                    <label htmlFor="THEME" className="akata-text-medium">
                       Choose what you want to talk about.
                     </label>
                     <select
-                      name="theme"
+                      name="THEME"
                       onChange={handleChange}
                       onBlur={handleBlur}
                       className="select-area akata-text-medium"
-                      id="theme"
+                      id="THEME"
                     >
                       <option value="" disabled>
                         Choose what you want to talk about.
@@ -308,25 +308,39 @@ const ModalLetsTalk: React.FC<ModalLetsTalkProps> = ({onClose}) => {
                   {/* call to action button for modal */}
                   <div
                     className={
-                      errors.name || errors.email
+                      errors.NAME || errors.EMAIL
                         ? "modal-action-button d-none"
                         : "modal-action-button d-flex flex-row"
                     }
                   >
-                    <Button
-                      content="Send"
-                      hoverType="solid"
-                      onClick={handleSubmit}
-                      type="submit"
-                      ariaLabel="Send project requirement"
-                    />
+                    <AnimatePresence>
+                      {isSubmitting && (
+                        <motion.span
+                          initial={{opacity: 0, y: 30}}
+                          animate={{opacity: 1, y: 0}}
+                          exit={{opacity: 0, x: -200}}
+                          className="pedding-send-form akata-text-medium"
+                        >
+                          Sending ...
+                        </motion.span>
+                      )}
+                    </AnimatePresence>
                     {!isSubmitting && (
-                      <ButtonOutline
-                        ariaLabel="Abord sending project requirement"
-                        content="Abord"
-                        onClick={onClose}
-                        title="Abord sending project requirement"
-                      />
+                      <>
+                        <Button
+                          content="Send"
+                          hoverType="solid"
+                          onClick={handleSubmit}
+                          type="submit"
+                          ariaLabel="Send project requirement"
+                        />
+                        <ButtonOutline
+                          ariaLabel="Abord sending project requirement"
+                          content="Abord"
+                          onClick={onClose}
+                          title="Abord sending project requirement"
+                        />
+                      </>
                     )}
                   </div>
                 </form>
