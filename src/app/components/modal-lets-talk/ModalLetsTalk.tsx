@@ -114,35 +114,61 @@ const ModalLetsTalk: React.FC<ModalLetsTalkProps> = ({onClose}) => {
                 }
                 return errors;
               }}
-              onSubmit={(values, {setSubmitting}) => {
-                axios
-                  .post(
-                    `https://us11.api.mailchimp.com/3.0/lists/${process.env.MAILCHIMP_AUDIENCE_ID}/members`,
-                    {
-                      email_address: values.EMAIL,
-                      status: "subscribed",
-                      merge_fields: {
-                        NAME: values.EMAIL,
-                        THEME: values.THEME,
-                      },
+              onSubmit={async (values, {setSubmitting}) => {
+                const response = await fetch("/mail/api", {
+                  method: "POST",
+                  headers: {
+                    "Content-Type": "application/json",
+                  },
+                  body: JSON.stringify({
+                    email_address: values.EMAIL,
+                    status: "subscribed",
+                    merge_fields: {
+                      NAME: values.EMAIL,
+                      THEME: values.THEME,
                     },
-                    {
-                      headers: {
-                        Authorization: `Bearer ${process.env.MAILCHIMP_API_KEY}`,
-                        "Content-Type": "application/json",
-                      },
-                    }
-                  )
-                  .then((response) => {
-                    console.log("Successfully subscribed to Mailchimp:");
-                    console.log(response);
-                  })
-                  .catch((error) => {
-                    console.error("Error subscribing to Mailchimp:", error);
-                  })
-                  .finally(() => {
-                    setSubmitting(false);
-                  });
+                  }),
+                });
+
+                if (response.ok) {
+                  const data = await response.json();
+                  console.log("Successfully subscribed to Mailchimp:", data);
+                  setSubmitting(false);
+                } else {
+                  console.error(
+                    "Error subscribing to Mailchimp:",
+                    response.statusText
+                  );
+                  setSubmitting(false);
+                }
+                //   axios
+                //     .post(
+                //       `https://us11.api.mailchimp.com/3.0/lists/${process.env.MAILCHIMP_AUDIENCE_ID}/members`,
+                //       {
+                //         email_address: values.EMAIL,
+                //         status: "subscribed",
+                //         merge_fields: {
+                //           NAME: values.EMAIL,
+                //           THEME: values.THEME,
+                //         },
+                //       },
+                //       {
+                //         headers: {
+                //           Authorization: `Bearer ${process.env.MAILCHIMP_API_KEY}`,
+                //           "Content-Type": "application/json",
+                //         },
+                //       }
+                //     )
+                //     .then((response) => {
+                //       console.log("Successfully subscribed to Mailchimp:");
+                //       console.log(response);
+                //     })
+                //     .catch((error) => {
+                //       console.error("Error subscribing to Mailchimp:", error);
+                //     })
+                //     .finally(() => {
+                //       setSubmitting(false);
+                //     });
               }}
             >
               {({
