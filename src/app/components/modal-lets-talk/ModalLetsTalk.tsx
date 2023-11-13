@@ -127,7 +127,7 @@ const ModalLetsTalk: React.FC<ModalLetsTalkProps> = ({onClose}) => {
                   });
 
                   if (response.status === 200) {
-                    console.log("Successfully subscribed to Mailchimp:", response.data);
+                    console.log("Successfully subscribed to Mailchimp:");
                   } else {
                     console.error("Error subscribing to Mailchimp:", response.statusText);
                   }

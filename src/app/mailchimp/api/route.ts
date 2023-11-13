@@ -23,7 +23,7 @@ export async function POST(req: NextRequest) {
 
         const responseData = await response.json();
 
-        return  NextResponse.json({"it workd": responseData})
+        return  NextResponse.json({"data": responseData})
     } catch (error) {
         return new NextResponse(error)
     }
