@@ -117,7 +117,7 @@ const ModalLetsTalk: React.FC<ModalLetsTalkProps> = ({onClose}) => {
               }}
               onSubmit={async (values, { setSubmitting }) => {
                 try {
-                  const response = await axios.post("http://localhost:5000", {
+                  const response = await axios.post("/mailchimp/api", {
                     email_address: values.EMAIL,
                     status: "subscribed",
                     merge_fields: {
