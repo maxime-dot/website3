@@ -121,7 +121,7 @@ const ModalLetsTalk: React.FC<ModalLetsTalkProps> = ({onClose}) => {
                     email_address: values.EMAIL,
                     status: "subscribed",
                     merge_fields: {
-                      NAME: values.EMAIL,
+                      NAME: values.NAME,
                       THEME: values.THEME,
                     },
                   });
