@@ -54,7 +54,8 @@ const ModalLetsTalk: React.FC<ModalLetsTalkProps> = ({onClose}) => {
     };
     const handleDropFile = (files: File[]) => {
         setDroppedFiles([...droppedFiles, ...files]);
-        console.log("files: ", droppedFiles);
+
+
     };
     const handleRemoveFile = (indexToRemove: number) => {
         setDroppedFiles((prevFiles) =>

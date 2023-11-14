@@ -9,8 +9,8 @@ export async function POST(req: NextRequest) {
             merge_fields,
         };
             const MAILCHIMP_API_URL =
-            "https://us11.api.mailchimp.com/3.0/lists/8550331981/members";
-        const MAILCHIMP_API_KEY = "4666584e0137632a23f328cba3656452-us11";
+            `https://us11.api.mailchimp.com/3.0/lists/${process.env.MAILCHIMP_AUDIENCE_ID}/members`;
+        const MAILCHIMP_API_KEY = `${process.env.MAILCHIMP_API_KEY}`;
 
         const response = await fetch(MAILCHIMP_API_URL, {
             method: "POST",
