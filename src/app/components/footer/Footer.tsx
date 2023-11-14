@@ -54,7 +54,7 @@ const Footer: React.FC = () => {
               <Link href={"#services"}>Services</Link>
             </li>
             <li className="akata-text-small">
-              <Link href={"#testimonial"}>Customer Testimonial</Link>
+              <Link href={"/#testimonial"}>Customer Testimonial</Link>
             </li>
             <li className="akata-text-small">
               <Link href={"#projects"}>Project</Link>

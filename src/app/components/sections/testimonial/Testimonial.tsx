@@ -64,7 +64,7 @@ const Testimonial: React.FC = () => {
   return (
     <section
       className="akata-testimonial w-100   d-flex flex-row"
-      id="#testimonal"
+      id="testimonial"
     >
       <Image
         src={"/images/robot-hand.png"}
