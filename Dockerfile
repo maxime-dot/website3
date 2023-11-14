@@ -1,5 +1,5 @@
 # Build Stage
-FROM node:16-alpine AS BUILD_IMAGE
+FROM node:lts-slim AS BUILD_IMAGE
 WORKDIR /app
 COPY package*.json ./
 RUN npm install
@@ -8,7 +8,7 @@ RUN npm run build
 
 
 # Production Stage
-FROM node:16-alpine AS PRODUCTION_STAGE
+FROM node:lts-slim AS PRODUCTION_STAGE
 WORKDIR /app
 COPY --from=BUILD_IMAGE /app/package*.json ./
 COPY --from=BUILD_IMAGE /app/.next ./.next
