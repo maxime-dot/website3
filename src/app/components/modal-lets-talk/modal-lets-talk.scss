@@ -102,7 +102,21 @@
   border-radius: var(--border-radius);
   border-top: 7px solid var(--goavana-yellow);
   padding: 0 20px;
-
+  position: relative;
+  .shape-right{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 150px;
+    height: auto;
+  }
+  .shape-left{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 150px;
+    height: auto;
+  }
   .check-icon{
     font-size: 50px;
     color: var(--goavana-success);
