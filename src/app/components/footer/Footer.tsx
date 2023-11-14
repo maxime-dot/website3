@@ -40,7 +40,7 @@ const Footer: React.FC = () => {
                             <Link href={`#${service.linkId}`}>{service.title}</Link>
                             </li>
                         ))}
-                        >
+
                     </ul>
                 </div>
                 <div className="footer-content">
