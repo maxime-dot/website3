@@ -44,7 +44,7 @@ const audienceId = process.env.MAILCHIMP_AUDIENCE_ID;
 const ModalLetsTalk: React.FC<ModalLetsTalkProps> = ({onClose}) => {
     const [droppedFiles, setDroppedFiles] = useState<File[]>([]);
     const [sendError, setSendError] = useState(false)
-    const [sent, setSent] = useState(true)
+    const [sent, setSent] = useState(false)
 
 
     const handleKeyDown = (event: KeyboardEvent) => {
