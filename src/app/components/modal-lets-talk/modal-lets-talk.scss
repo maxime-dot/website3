@@ -8,6 +8,7 @@
   backdrop-filter: blur(10px);
   z-index: 10;
   padding: 20px;
+  transition: all .5s ease;
 }
 
 .modal-layer {
@@ -92,9 +93,51 @@
     text-align: center;
   }
 }
-.success-send{
-  @extend .error-send-message;
-  background: var(--goavana-success);
+
+.form-sent{
+  width: 100%;
+  max-width: 513px;
+  min-height: 323px;
+  background: var(--light);
+  border-radius: var(--border-radius);
+  border-top: 7px solid var(--goavana-yellow);
+  padding: 0 20px;
+
+  .check-icon{
+    font-size: 50px;
+    color: var(--goavana-success);
+    margin-bottom: 25px;
+  }
+  p{
+    text-align: center;
+
+  }
+  .close-btn{
+    margin-top: 45px;
+    width: 153px;
+    height: 45px;
+    padding: 10px 20px;
+    background: var(--goavana-blue);
+    border: 0;
+    z-index: 10;
+    outline: 0;
+     border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+
+    // typographie
+    color: var(--light, #FFF);
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 16.8px; /* 120% */
+    &:hover{
+      background: var(--goavana-yellow);
+      color: var(--goavana-blue);
+
+    }
+  }
 }
 
 input {
