@@ -79,6 +79,24 @@
   color: var(--text-dark);
 }
 
+.error-send-message{
+  border-radius: var(--border-radius);
+  width: 100%;
+  padding: 20px;
+  min-height: 60px;
+  background: var(--goavana-danger);
+  color: var(--light);
+  span{
+    font-weight: bolder;
+    font-size: 14px;
+    text-align: center;
+  }
+}
+.success-send{
+  @extend .error-send-message;
+  background: var(--goavana-success);
+}
+
 input {
   padding: 19px 50px;
   background: var(--card-background);

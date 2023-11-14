@@ -41,7 +41,15 @@ const audienceId = process.env.MAILCHIMP_AUDIENCE_ID;
 
 const ModalLetsTalk: React.FC<ModalLetsTalkProps> = ({onClose}) => {
   const [droppedFiles, setDroppedFiles] = useState<File[]>([]);
+  const [sendError, setSendError] = useState(false)
+  const [sent, setSent] = useState(false)
 
+  const toogleSend = () => {
+    setSent(true)
+    setTimeout(() => {
+      setSent(false)
+    }, 2000)
+  }
   const handleKeyDown = (event: KeyboardEvent) => {
     if (event.keyCode === 27) {
       onClose();
@@ -56,6 +64,14 @@ const ModalLetsTalk: React.FC<ModalLetsTalkProps> = ({onClose}) => {
       prevFiles.filter((_, index) => index !== indexToRemove)
     );
   };
+
+  const toggleSendError = () => {
+    setSendError(true)
+    setTimeout(() => {
+      setSendError(false)
+    }, 2000)
+  }
+
 
   return (
     <AnimatePresence>
@@ -127,13 +143,15 @@ const ModalLetsTalk: React.FC<ModalLetsTalkProps> = ({onClose}) => {
                   });
 
                   if (response.status === 200) {
-                    console.log("Successfully subscribed to Mailchimp:");
+                   toogleSend()
                   } else {
                     console.error("Error subscribing to Mailchimp:", response.statusText);
                   }
                 } catch (error) {
+                  toggleSendError()
                   console.error("Error subscribing to Mailchimp:", error);
                 } finally {
+                    setSendError(false)
                   setSubmitting(false);
                 }
               }}
@@ -222,107 +240,121 @@ const ModalLetsTalk: React.FC<ModalLetsTalkProps> = ({onClose}) => {
                   </div>
 
                   {/* request user project brief */}
-                  <div className="form-item d-flex flex-col send-file">
-                    <label htmlFor="email" className="akata-text-medium">
-                      Project brief file:
-                    </label>
-                    <Dropzone
-                      onDrop={(uploadedFile) => handleDropFile(uploadedFile)}
-                    >
-                      {({getRootProps, getInputProps}) => (
-                        <section className="drop-zone-section">
-                          <div
-                            {...getRootProps()}
-                            className="input-drop d-flex-center flex-col"
-                          >
-                            <input {...getInputProps()} />
-                            <FontAwesomeIcon
-                              icon={faFile}
-                              className="drop-file-icon"
-                            />
-                            <p className="akata-text-medium drop-file-indicator">
-                              Drag and drop your file here or{" "}
-                              <span className="important-text">
-                                choose file
-                              </span>
-                            </p>
-                          </div>
-                          <div className="file-type-indicator d-flex-space-between">
-                            <p className="akata-text-small">
-                              Supported formats: DOCX, PDF, XLS
-                            </p>
-                            <p className="akata-text-small">
-                              Maximum file size: 40MB
-                            </p>
-                          </div>
-                        </section>
-                      )}
-                    </Dropzone>
-                  </div>
+                  {/*<div className="form-item d-flex flex-col send-file">*/}
+                  {/*  <label htmlFor="email" className="akata-text-medium">*/}
+                  {/*    Project brief file:*/}
+                  {/*  </label>*/}
+                  {/*  <Dropzone*/}
+                  {/*    onDrop={(uploadedFile) => handleDropFile(uploadedFile)}*/}
+                  {/*  >*/}
+                  {/*    {({getRootProps, getInputProps}) => (*/}
+                  {/*      <section className="drop-zone-section">*/}
+                  {/*        <div*/}
+                  {/*          {...getRootProps()}*/}
+                  {/*          className="input-drop d-flex-center flex-col"*/}
+                  {/*        >*/}
+                  {/*          <input {...getInputProps()} />*/}
+                  {/*          <FontAwesomeIcon*/}
+                  {/*            icon={faFile}*/}
+                  {/*            className="drop-file-icon"*/}
+                  {/*          />*/}
+                  {/*          <p className="akata-text-medium drop-file-indicator">*/}
+                  {/*            Drag and drop your file here or{" "}*/}
+                  {/*            <span className="important-text">*/}
+                  {/*              choose file*/}
+                  {/*            </span>*/}
+                  {/*          </p>*/}
+                  {/*        </div>*/}
+                  {/*        <div className="file-type-indicator d-flex-space-between">*/}
+                  {/*          <p className="akata-text-small">*/}
+                  {/*            Supported formats: DOCX, PDF, XLS*/}
+                  {/*          </p>*/}
+                  {/*          <p className="akata-text-small">*/}
+                  {/*            Maximum file size: 40MB*/}
+                  {/*          </p>*/}
+                  {/*        </div>*/}
+                  {/*      </section>*/}
+                  {/*    )}*/}
+                  {/*  </Dropzone>*/}
+                  {/*</div>*/}
 
                   {/* send file content*/}
-                  <div className="files  w-100 d-flex flex-col">
-                    {droppedFiles.map((file, index) => (
-                      <div
-                        key={index}
-                        className="file w-100 d-flex-space-between"
-                      >
-                        {/* Add content for each dropped file here */}
-                        <div className="file-info d-flex animate-up">
-                          <div className="info-icon d-flex-center">
-                            <FontAwesomeIcon
-                              icon={faFile}
-                              className="inner-icon"
-                            />
-                          </div>
-                          <div className="info-text d-flex flex-col">
-                            <span className="info-text-name akata-text-small">
-                              {TruncateText(file.name)}
-                            </span>
-                            <span className="info-text-taille akata-text-small">
-                              {(file.size / 1024 / 1024).toFixed(2)} MB
-                            </span>
-                          </div>
-                        </div>
-                        <button
-                          type="button"
-                          className="btn-remove-file d-flex-center"
-                          data-index={index}
-                          onClick={() => handleRemoveFile(index)}
-                        >
-                          <FontAwesomeIcon
-                            icon={faXmark}
-                            className="icon-file"
-                          />
-                        </button>
-                      </div>
-                    ))}
-                  </div>
+                  {/*<div className="files  w-100 d-flex flex-col">*/}
+                  {/*  {droppedFiles.map((file, index) => (*/}
+                  {/*    <div*/}
+                  {/*      key={index}*/}
+                  {/*      className="file w-100 d-flex-space-between"*/}
+                  {/*    >*/}
+                  {/*      /!* Add content for each dropped file here *!/*/}
+                  {/*      <div className="file-info d-flex animate-up">*/}
+                  {/*        <div className="info-icon d-flex-center">*/}
+                  {/*          <FontAwesomeIcon*/}
+                  {/*            icon={faFile}*/}
+                  {/*            className="inner-icon"*/}
+                  {/*          />*/}
+                  {/*        </div>*/}
+                  {/*        <div className="info-text d-flex flex-col">*/}
+                  {/*          <span className="info-text-name akata-text-small">*/}
+                  {/*            {TruncateText(file.name)}*/}
+                  {/*          </span>*/}
+                  {/*          <span className="info-text-taille akata-text-small">*/}
+                  {/*            {(file.size / 1024 / 1024).toFixed(2)} MB*/}
+                  {/*          </span>*/}
+                  {/*        </div>*/}
+                  {/*      </div>*/}
+                  {/*      <button*/}
+                  {/*        type="button"*/}
+                  {/*        className="btn-remove-file d-flex-center"*/}
+                  {/*        data-index={index}*/}
+                  {/*        onClick={() => handleRemoveFile(index)}*/}
+                  {/*      >*/}
+                  {/*        <FontAwesomeIcon*/}
+                  {/*          icon={faXmark}*/}
+                  {/*          className="icon-file"*/}
+                  {/*        />*/}
+                  {/*      </button>*/}
+                  {/*    </div>*/}
+                  {/*  ))}*/}
+                  {/*</div>*/}
 
                   {/* call to action button for modal */}
-                  <div
-                    className={
-                      errors.NAME || errors.EMAIL
-                        ? "modal-action-button d-none"
-                        : "modal-action-button d-flex flex-row"
+                  <AnimatePresence>
+                    {sendError &&    <motion.div initial={{opacity: 0, x: 30}} animate={{opacity: 1, x : 0}} transition={{delay: 0.3}} exit={{opacity: 0}} className="error-send-message d-flex-center">
+                      <span>There is something wrong, please retry later...</span>
+                    </motion.div>}
+                  </AnimatePresence>
+                  <AnimatePresence>
+                    {
+                      sent &&  <motion.div initial={{opacity: 0, x: 30}} animate={{opacity: 1, x : 0}} transition={{delay: 0.3}} exit={{opacity: 0, x: -40}} className="success-send d-flex-center">
+                          <span>You project requirement is send, thank you and see you soon..</span>
+                        </motion.div>
                     }
-                  >
-                    <Button
-                      content={isSubmitting ? "Sending..." : "Send"}
-                      hoverType="solid"
-                      onClick={handleSubmit}
-                      type="submit"
-                      ariaLabel="Send project requirement"
-                    />
-                    {!isSubmitting && (
-                      <ButtonOutline
-                        ariaLabel="Abord sending project requirement"
-                        content="Abord"
-                        onClick={onClose}
-                        title="Abord sending project requirement"
-                      />
-                    )}
-                  </div>
+                  </AnimatePresence>
+                  {
+                    !sendError && !sent &&  <div
+                          className={
+                            errors.NAME || errors.EMAIL
+                                ? "modal-action-button d-none"
+                                : "modal-action-button d-flex flex-row"
+                          }
+                      >
+                        <Button
+                            content={isSubmitting ? "Sending..." : "Send"}
+                            hoverType="solid"
+                            onClick={handleSubmit}
+                            type="submit"
+                            ariaLabel="Send project requirement"
+                        />
+                        {!isSubmitting && (
+                            <ButtonOutline
+                                ariaLabel="Abord sending project requirement"
+                                content="Abord"
+                                onClick={onClose}
+                                title="Abord sending project requirement"
+                            />
+                        )}
+                      </div>
+                  }
                 </form>
               )}
             </Formik>
