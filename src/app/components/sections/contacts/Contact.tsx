@@ -13,10 +13,14 @@ import {
 
 import Button from "../../button/normal/Button";
 import contactData from "../../../data/contacts.json";
+import axios from "axios";
 
 interface FormValues {
-    name: string;
-    email: string;
+    NAME: string,
+    EMAIL:string,
+    THEME: string,
+    MESSAGE: string,
+    SUBJECT: string
 }
 
 const Contacts: React.FC = () => {
@@ -36,31 +40,52 @@ const Contacts: React.FC = () => {
                 <div className="form-body d-flex flex-col">
                     <Formik
                         initialValues={{
-                            name: "",
-                            email: "",
-                            subject: "",
-                            message: "",
+                            NAME: "",
+                            EMAIL: "",
+                            THEME: "",
+                            MESSAGE: "",
+                            SUBJECT: ""
                         }}
                         validate={(values) => {
                             const errors: Partial<FormValues> = {};
-                            if (!values.name) {
-                                errors.name = "Ooops!Full name is missing. Please provide it..";
+                            if (!values.NAME) {
+                                errors.NAME = "Ooops!Full name is missing. Please provide it..";
                             }
-                            if (!values.email) {
-                                errors.email = "Email address is required. Please specify it.";
+                            if (!values.EMAIL) {
+                                errors.EMAIL = "Email address is required. Please specify it.";
                             } else if (
-                                !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
+                                !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.EMAIL)
                             ) {
-                                errors.email =
+                                errors.EMAIL =
                                     "Invalid email format. Use a valid format (e.g., example@example.com).";
                             }
                             return errors;
                         }}
-                        onSubmit={(values) => {
-                            setTimeout(() => {
-                                alert(JSON.stringify(values, null, 2));
-                            }, 400);
+                        onSubmit={async (values, {setSubmitting, resetForm}) => {
+                            try {
+                                const response = await axios.post("/mailchimp/api", {
+                                    email_address: values.EMAIL,
+                                    status: "subscribed",
+                                    merge_fields: {
+                                        NAME: values.NAME,
+                                        THEME: values.THEME,
+                                        MESSAGE: values.MESSAGE,
+                                        SUBJECT: values.SUBJECT
+                                    },
+                                });
+
+                                if (response.status === 200) {
+                                    resetForm()
+                                } else {
+
+                                }
+                            } catch (error) {
+
+                            } finally {
+                                setSubmitting(false);
+                            }
                         }}
+
                     >
                         {({
                               values,
@@ -69,7 +94,7 @@ const Contacts: React.FC = () => {
                               handleChange,
                               handleBlur,
                               handleSubmit,
-                              isSubmitting,
+
                           }) => (
                             <form
                                 onSubmit={handleSubmit}
@@ -83,17 +108,17 @@ const Contacts: React.FC = () => {
                                     <input
                                         type="text"
                                         placeholder="eg: Jhone Doe, Maria Smith,.."
-                                        name="name"
+                                        name="NAME"
                                         className="akata-text-medium"
                                         onChange={handleChange}
                                         onBlur={handleBlur}
-                                        value={values.name}
-                                        id="name"
+                                        value={values.NAME}
+                                        id="NAME"
                                         autoComplete="true"
                                     />
                                     <p className="akata-text-small error-message">
                                         {" "}
-                                        {errors.name && touched.name && errors.name}
+                                        {errors.NAME && touched.NAME && errors.NAME}
                                     </p>
                                 </div>
                                 {/* request user email */}
@@ -104,18 +129,18 @@ const Contacts: React.FC = () => {
                                     <FontAwesomeIcon icon={faEnvelope} className="form-icon"/>
                                     <input
                                         type="email"
-                                        name="email"
+                                        name="EMAIL"
                                         onChange={handleChange}
                                         placeholder="ex: account.me@goavana.com"
                                         onBlur={handleBlur}
-                                        value={values.email}
-                                        id="email"
+                                        value={values.EMAIL}
+                                        id="EMAIL"
                                         autoComplete="true"
                                         className="akata-text-medium"
                                     />
                                     <p className="akata-text-small error-message">
                                         {" "}
-                                        {errors.email && touched.email && errors.email}
+                                        {errors.EMAIL && touched.EMAIL && errors.EMAIL}
                                     </p>
                                 </div>
                                 <div className="form-item d-flex flex-col">
@@ -126,11 +151,11 @@ const Contacts: React.FC = () => {
                                     <input
                                         type="text"
                                         placeholder="ex: Asking for help, optmiser my website, ..."
-                                        name="subject"
+                                        name="SUBJECT"
                                         className="akata-text-medium"
                                         onChange={handleChange}
                                         onBlur={handleBlur}
-                                        value={values.subject}
+                                        value={values.SUBJECT}
                                         id="subject"
                                         autoComplete="true"
                                     />
@@ -142,16 +167,16 @@ const Contacts: React.FC = () => {
                                     <FontAwesomeIcon icon={faPaperPlane} className="form-icon"/>
                                     <textarea
                                         placeholder="ex: Asking for help, optmiser my website, ..."
-                                        name="message"
+                                        name="MESSAGE"
                                         className="akata-text-medium"
                                         onChange={handleChange}
                                         onBlur={handleBlur}
-                                        value={values.message}
+                                        value={values.MESSAGE}
                                         id="message"
                                         autoComplete="true"
                                     />
                                 </div>
-                                {errors.email || errors.name ? null : (
+                                {errors.NAME || errors.EMAIL ? null : (
                                     <Button
                                         ariaLabel="send project requirement"
                                         type="submit"
