@@ -1,5 +1,7 @@
-import React from "react";
+"use client"
+import React, {useState} from "react";
 import "./contacts.scss";
+import {AnimatePresence, motion} from "framer-motion"
 import {Formik} from "formik";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {
@@ -9,7 +11,9 @@ import {
     faPaperPlane,
     faMarker,
     faPhone,
-} from "@fortawesome/free-solid-svg-icons";
+    faCircleCheck,
+    faExclamationTriangle
+    } from "@fortawesome/free-solid-svg-icons";
 
 import Button from "../../button/normal/Button";
 import contactData from "../../../data/contacts.json";
@@ -17,13 +21,28 @@ import axios from "axios";
 
 interface FormValues {
     NAME: string,
-    EMAIL:string,
+    EMAIL: string,
     THEME: string,
     MESSAGE: string,
     SUBJECT: string
 }
 
 const Contacts: React.FC = () => {
+    const [submited, setSubmited] = useState(false)
+    const [error, setError] = useState(false)
+    const toogleSubmit = () => {
+        setSubmited(true)
+        setTimeout(() => {
+            setSubmited(false)
+        }, 2000)
+    }
+
+    const toogleError = () => {
+        setError(false)
+        setTimeout(() => {
+            setError(false)
+        },2000)
+    }
     return (
         <section className="akata-contacts fill-view container" id="contacts">
             <div className="contacts form d-flex flex-col">
@@ -76,11 +95,13 @@ const Contacts: React.FC = () => {
 
                                 if (response.status === 200) {
                                     resetForm()
-                                } else {
+                                    toogleSubmit()
 
+                                } else {
+                                    toogleError()
                                 }
                             } catch (error) {
-
+                                    toogleError()
                             } finally {
                                 setSubmitting(false);
                             }
@@ -94,12 +115,14 @@ const Contacts: React.FC = () => {
                               handleChange,
                               handleBlur,
                               handleSubmit,
+                              isSubmitting
 
                           }) => (
                             <form
                                 onSubmit={handleSubmit}
                                 className="contact-body d-flex flex-col"
                             >
+
                                 <div className="form-item d-flex flex-col">
                                     <label htmlFor="name" className="akata-text-medium">
                                         Full name
@@ -176,11 +199,27 @@ const Contacts: React.FC = () => {
                                         autoComplete="true"
                                     />
                                 </div>
+                                <AnimatePresence>
+                                    {submited && <motion.div initial={{opacity: 0, x: 30}} animate={{opacity: 1, x: 0}} exit={{opacity: 0, x: -30}}
+                                                             className="submit-indicator akata-text-medium d-flex flex-row">
+                                        <FontAwesomeIcon icon={faCircleCheck} className={"icon-indicator"}/>
+
+                                        Your project request is submited, thank you and see you soon...
+
+                                    </motion.div>}
+                                </AnimatePresence>
+                                {error &&  <motion.div initial={{opacity: 0, x: 30}} animate={{opacity: 1, x: 0}}
+                                                       className="submit-indicator error akata-text-medium ">
+                                    <FontAwesomeIcon icon={faExclamationTriangle} className={"icon-indicator"}/>
+
+                                    There is something wrong, please retry later...
+
+                                </motion.div>}
                                 {errors.NAME || errors.EMAIL ? null : (
                                     <Button
                                         ariaLabel="send project requirement"
                                         type="submit"
-                                        content="Send"
+                                        content={isSubmitting ? "Sending..." : "Send"}
                                         onClick={handleSubmit}
                                         hoverType="solid"
                                     />
