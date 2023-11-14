@@ -8,11 +8,11 @@ import {
     faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 import "./footer.scss";
-import contactData from "@/app/data/contacts.json"
+import contactData from "@/app/data/contacts.json";
+import serviceList from "@/app/data/services.json"
 
 const currentDate = new Date();
 const currentYear = currentDate.getFullYear();
-
 
 const Footer: React.FC = () => {
     return (
@@ -21,9 +21,7 @@ const Footer: React.FC = () => {
                 <div className="footer-content">
                     <strong>Contacts</strong>
                     <ul>
-                        <li className="akata-text-small">
-                            {contactData.adress}
-                        </li>
+                        <li className="akata-text-small">{contactData.adress}</li>
                         <li className="akata-text-small">
                             <Link href={"mailto:contact-akata@goavana.com"}>
                                 {contactData.mail}
@@ -37,11 +35,12 @@ const Footer: React.FC = () => {
                 <div className="footer-content">
                     <strong>Expertise</strong>
                     <ul>
-                        <li className="akata-text-small">UI/UX Design</li>
-                        <li className="akata-text-small">Strategie consultation</li>
-                        <li className="akata-text-small">Database Management</li>
-                        <li className="akata-text-small">Web App Development</li>
-                        <li className="akata-text-small">Mobile App Development</li>
+                        {serviceList.map((service, index) => (
+                            <li className="akata-text-small" key={`service-${index}`}>
+                            <Link href={`#${service.linkId}`}>{service.title}</Link>
+                            </li>
+                        ))}
+                        >
                     </ul>
                 </div>
                 <div className="footer-content">
@@ -57,7 +56,7 @@ const Footer: React.FC = () => {
                             <Link href={"#services"}>Services</Link>
                         </li>
                         <li className="akata-text-small">
-                            <Link href={"#testimonial"}>Customer Testimonial</Link>
+                            <Link href={"/#testimonial"}>Customer Testimonial</Link>
                         </li>
                         <li className="akata-text-small">
                             <Link href={"#projects"}>Project</Link>
@@ -109,7 +108,7 @@ const Footer: React.FC = () => {
                 height={200}
             />
             <span className="akata-text-small">
-        Copyright &copy; by Akata Goavana {currentYear}
+        Copyright &copy; by Akata Goavana 2020-{currentYear}
       </span>
         </footer>
     );

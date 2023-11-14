@@ -43,6 +43,7 @@ const Services: React.FC = () => {
           <div
             key={index}
             className="services-items w-100 d-flex-space-between flex-row"
+            id={service.linkId}
           >
             <div
               className="item-info-text d-flex flex-col"
