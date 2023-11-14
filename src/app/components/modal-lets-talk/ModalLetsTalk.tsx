@@ -44,12 +44,7 @@ const ModalLetsTalk: React.FC<ModalLetsTalkProps> = ({onClose}) => {
   const [sendError, setSendError] = useState(false)
   const [sent, setSent] = useState(false)
 
-  const toogleSend = () => {
-    setSent(true)
-    setTimeout(() => {
-      setSent(false)
-    }, 2000)
-  }
+
   const handleKeyDown = (event: KeyboardEvent) => {
     if (event.keyCode === 27) {
       onClose();
@@ -69,7 +64,15 @@ const ModalLetsTalk: React.FC<ModalLetsTalkProps> = ({onClose}) => {
     setSendError(true)
     setTimeout(() => {
       setSendError(false)
-    }, 2000)
+    }, 3000)
+
+  }
+
+  const toogleSend = () => {
+    setSent(true)
+    setTimeout(() => {
+      setSent(false)
+    }, 3000)
   }
 
 
@@ -131,7 +134,7 @@ const ModalLetsTalk: React.FC<ModalLetsTalkProps> = ({onClose}) => {
                 }
                 return errors;
               }}
-              onSubmit={async (values, { setSubmitting }) => {
+              onSubmit={async (values, { setSubmitting , resetForm }) => {
                 try {
                   const response = await axios.post("/mailchimp/api", {
                     email_address: values.EMAIL,
@@ -144,6 +147,7 @@ const ModalLetsTalk: React.FC<ModalLetsTalkProps> = ({onClose}) => {
 
                   if (response.status === 200) {
                    toogleSend()
+                    resetForm()
                   } else {
                     console.error("Error subscribing to Mailchimp:", response.statusText);
                   }
