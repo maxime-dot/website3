@@ -82,7 +82,7 @@ const Contacts: React.FC = () => {
                         }}
                         onSubmit={async (values, {setSubmitting, resetForm}) => {
                             try {
-                                const response = await axios.post("/send-mail/api", {
+                                const response = await axios.post("/send-mail/contact/api", {
                                     EMAIL: values.EMAIL,
                                     SUBJECT: values.SUBJECT,
                                     MESSAGE: values.MESSAGE,
