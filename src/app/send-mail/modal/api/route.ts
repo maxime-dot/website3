@@ -1,40 +1,45 @@
-import {NextRequest, NextResponse} from "next/server";
-import nodemailer from "nodemailer"
+import { NextRequest, NextResponse } from "next/server";
+import nodemailer from "nodemailer";
 
-const mail = process.env.MAIL_USER
-const pass = process.env.MAIL_PASSWORD
-export async  function POST(req: NextRequest) {
-    const {EMAIL, SUBJECT, MESSAGE, NAME} = await req.json();
-    const transporter  = nodemailer.createTransport({
+const mail = process.env.MAIL_USER;
+const pass = process.env.MAIL_PASSWORD;
+
+export async function POST(req: NextRequest) {
+    const { EMAIL, SERVICE, FILE, NAME } = await req.json();
+    const transporter = nodemailer.createTransport({
         service: "gmail",
         auth: {
             user: mail,
-            pass: pass
-        }
-    })
+            pass: pass,
+        },
+    });
+
+    // Create an array to store attachments
+    const files = FILE.map((file) => ({
+        filename: file.name, // Assuming the file object has a filename property
+        content: Buffer.from(URL.createObjectURL(file), 'base64'),
+        encoding: 'base64',
+    }));
 
     const mailOptions = {
         from: mail,
         to: mail,
-        subject: `AKATA-WEBSITE |  ${SUBJECT} from ${NAME}`,
+        subject: `AKATA-WEBSITE | ${SERVICE} project requirement from ${NAME}`,
         html: `
-            <div>
-                <p> 
-                    Hi, this is an email from <b> ${NAME} </b> - <i>${EMAIL}</i><br>
-                    you have an email from  who asked for ${SUBJECT}
-                </p>
-                <p>
-                    <b>This is his message: <br> </b>        
-                    ${MESSAGE}
-                </p>
-            </div>`
-    }
+      <div>
+        <p> 
+          Hi, this is an email from <b> ${NAME} </b> - <i> ${EMAIL} </i>, who wants to talk about  <b>${SERVICE} </b>                
+        </p>            
+      </div>`,
+        attachments: files,
+    };
+
     try {
         await transporter.sendMail(mailOptions);
-        console.log("mail-sent")
-        return NextResponse.json({"message" : "your mail is sent successfully"})
+        console.log("mail-sent");
+        return NextResponse.json({ message: "Your mail is sent successfully" });
     } catch (error) {
-        console.log(error)
-        return NextResponse.json({"error" : error})
+        console.log(error);
+        return NextResponse.json({ error: error });
     }
 }

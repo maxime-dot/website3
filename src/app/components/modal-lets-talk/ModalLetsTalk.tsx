@@ -26,6 +26,7 @@ interface FormValues {
     THEME: string;
     NAME: string;
     EMAIL: string;
+    files: File []
 }
 
 const services = [
@@ -53,14 +54,32 @@ const ModalLetsTalk: React.FC<ModalLetsTalkProps> = ({onClose}) => {
         }
     };
     const handleDropFile = (files: File[]) => {
-        setDroppedFiles([...droppedFiles, ...files]);
+        // Create an array to store the updated files
+        const updatedFiles: File[] = [];
 
+        // Loop through the newly dropped files
+        files.forEach((file) => {
+            // Extract file name and absolute path
+            const fileName = file.name;
+            const filePath = URL.createObjectURL(file);
 
+            // Log the file name and absolute path
+            console.log('File Name:', fileName);
+            console.log('File Path:', filePath);
+            updatedFiles.push(file);
+        });
+
+        // Set the state with the updated files
+        setDroppedFiles([...droppedFiles, ...updatedFiles]);
+
+        console.log("filels", droppedFiles)
     };
+
     const handleRemoveFile = (indexToRemove: number) => {
         setDroppedFiles((prevFiles) =>
             prevFiles.filter((_, index) => index !== indexToRemove)
         );
+
     };
 
     const toggleSendError = () => {
@@ -133,7 +152,7 @@ const ModalLetsTalk: React.FC<ModalLetsTalkProps> = ({onClose}) => {
                                     NAME: "",
                                     EMAIL: "",
                                     THEME: "",
-                                    // files: droppedFiles,
+                                    files: droppedFiles,
                                 }}
                                 validate={(values) => {
                                     const errors: Partial<FormValues> = {};
@@ -154,18 +173,27 @@ const ModalLetsTalk: React.FC<ModalLetsTalkProps> = ({onClose}) => {
                                 }}
                                 onSubmit={async (values, {setSubmitting, resetForm}) => {
                                     try {
-                                        const response = await axios.post("/mailchimp/api", {
-                                            email_address: values.EMAIL,
-                                            status: "subscribed",
-                                            merge_fields: {
-                                                NAME: values.NAME,
-                                                THEME: values.THEME,
-                                            },
+                                        const formData = new FormData();
+                                        formData.append("NAME", values.NAME);
+                                        formData.append("EMAIL", values.EMAIL);
+                                        formData.append("THEME", values.THEME);
+
+                                        values.files.forEach((file, index) => {
+                                            formData.append(`FILE[${index}]`, file);
                                         });
+                                        const response = await axios.post("/send-mail/modal/api", {
+                                            NAME: values.NAME,
+                                            EMAIL: values.EMAIL,
+                                            SERVICE: values.THEME,
+                                            FILE: droppedFiles
+                                        });
+
+
 
                                         if (response.status === 200) {
                                             toogleSend()
                                             resetForm()
+                                            setDroppedFiles([])
                                         } else {
                                             toggleSendError()
                                         }
