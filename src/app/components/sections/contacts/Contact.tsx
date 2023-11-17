@@ -82,15 +82,10 @@ const Contacts: React.FC = () => {
                         }}
                         onSubmit={async (values, {setSubmitting, resetForm}) => {
                             try {
-                                const response = await axios.post("/mailchimp/api", {
-                                    email_address: values.EMAIL,
-                                    status: "subscribed",
-                                    merge_fields: {
-                                        NAME: values.NAME,
-                                        THEME: values.THEME,
-                                        MESSAGE: values.MESSAGE,
-                                        SUBJECT: values.SUBJECT
-                                    },
+                                const response = await axios.post("/send-mail/api", {
+                                    EMAIL: values.EMAIL,
+                                    SUBJECT: values.SUBJECT,
+                                    MESSAGE: values.MESSAGE
                                 });
 
                                 if (response.status === 200) {
