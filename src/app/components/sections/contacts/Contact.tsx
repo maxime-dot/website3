@@ -85,7 +85,8 @@ const Contacts: React.FC = () => {
                                 const response = await axios.post("/send-mail/api", {
                                     EMAIL: values.EMAIL,
                                     SUBJECT: values.SUBJECT,
-                                    MESSAGE: values.MESSAGE
+                                    MESSAGE: values.MESSAGE,
+                                    NAME: values.NAME
                                 });
 
                                 if (response.status === 200) {
