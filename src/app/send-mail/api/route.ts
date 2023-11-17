@@ -20,7 +20,7 @@ export async  function POST(req: NextRequest) {
         html: `
             <div>
                 <p> 
-                    Hi, this is an email from <b>${NAME}</b> - <i>${EMAIL}</i><br>
+                    Hi, this is an email from <b> ${NAME} </b> - <i>${EMAIL}</i><br>
                     you have an email from  who asked for ${SUBJECT}
                 </p>
                 <p>
