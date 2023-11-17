@@ -89,8 +89,10 @@ const ModalLetsTalk: React.FC<ModalLetsTalkProps> = ({onClose}) => {
                         animate={{opacity: 1, y: 0}}
                         exit={{opacity: 0, x: -30}}
                         className={"form-sent d-flex-center flex-col"}>
-                        <Image src={"/images/modal/modal-shape-right.png"} alt={"modal-shape"} className={"shape-right"} width={300} height={300} />
-                        <Image src={"/images/modal/modal-shape-left.png"} alt={"modal-shape"} className={"shape-left"} width={300} height={300} />
+                        <Image src={"/images/modal/modal-shape-right.png"} alt={"modal-shape"} className={"shape-right"}
+                               width={300} height={300}/>
+                        <Image src={"/images/modal/modal-shape-left.png"} alt={"modal-shape"} className={"shape-left"}
+                               width={300} height={300}/>
                         <FontAwesomeIcon icon={faCircleCheck} className={"check-icon"}/>
                         <p className={"akata-text-medium"}>Your project brief has been successfully received. We will be
                             in touch soon for the next steps. Thank you!</p>
@@ -260,80 +262,85 @@ const ModalLetsTalk: React.FC<ModalLetsTalkProps> = ({onClose}) => {
 
 
                                         <div className="form-item d-flex flex-col send-file">
-                                          <label htmlFor="email" className="akata-text-medium">
-                                            Project brief file:
-                                          </label>
-                                          <Dropzone
-                                            onDrop={(uploadedFile) => handleDropFile(uploadedFile)}
-                                          >
-                                            {({getRootProps, getInputProps}) => (
-                                              <section className="drop-zone-section">
-                                                <div
-                                                  {...getRootProps()}
-                                                  className="input-drop d-flex-center flex-col"
-                                                >
-                                                  <input {...getInputProps()} />
-                                                  <FontAwesomeIcon
-                                                    icon={faFile}
-                                                    className="drop-file-icon"
-                                                  />
-                                                  <p className="akata-text-medium drop-file-indicator">
-                                                    Drag and drop your file here or{" "}
-                                                    <span className="important-text">
+                                            <label htmlFor="email" className="akata-text-medium">
+                                                Project brief file:
+                                            </label>
+                                            <Dropzone
+                                                onDrop={(uploadedFile) => handleDropFile(uploadedFile)}
+                                            >
+                                                {({getRootProps, getInputProps}) => (
+                                                    <section className="drop-zone-section">
+                                                        <div
+                                                            {...getRootProps()}
+                                                            className="input-drop d-flex-center flex-col"
+                                                        >
+                                                            <input {...getInputProps()} />
+                                                            <FontAwesomeIcon
+                                                                icon={faFile}
+                                                                className="drop-file-icon"
+                                                            />
+                                                            <p className="akata-text-medium drop-file-indicator">
+                                                                Drag and drop your file here or{" "}
+                                                                <span className="important-text">
                                                       choose file
                                                     </span>
-                                                  </p>
-                                                </div>
-                                                <div className="file-type-indicator d-flex-space-between">
-                                                  <p className="akata-text-small">
-                                                    Supported formats: DOCX, PDF, XLS
-                                                  </p>
-                                                  <p className="akata-text-small">
-                                                    Maximum file size: 40MB
-                                                  </p>
-                                                </div>
-                                              </section>
-                                            )}
-                                          </Dropzone>
+                                                            </p>
+                                                        </div>
+                                                        <div className="file-type-indicator d-flex-space-between">
+                                                            <p className="akata-text-small">
+                                                                Supported formats: DOCX, PDF, XLS
+                                                            </p>
+                                                            <p className="akata-text-small">
+                                                                Maximum file size: 40MB
+                                                            </p>
+                                                        </div>
+                                                    </section>
+                                                )}
+                                            </Dropzone>
                                         </div>
 
 
                                         <div className="files  w-100 d-flex flex-col">
-                                          {droppedFiles.map((file, index) => (
-                                            <div
-                                              key={index}
-                                              className="file w-100 d-flex-space-between"
-                                            >
-                                              {/* Add content for each dropped file here */}
-                                              <div className="file-info d-flex animate-up">
-                                                <div className="info-icon d-flex-center">
-                                                  <FontAwesomeIcon
-                                                    icon={faFile}
-                                                    className="inner-icon"
-                                                  />
-                                                </div>
-                                                <div className="info-text d-flex flex-col">
+                                            <AnimatePresence>
+                                                {droppedFiles.map((file, index) => (
+                                                    <motion.div
+                                                        initial={{opacity: 0, x: 30}}
+                                                        animate={{opacity: 1, x: 0}}
+                                                        exit={{opacity: 0, x: 30}}
+                                                        key={index}
+                                                        className="file w-100 d-flex-space-between"
+                                                    >
+                                                        {/* Add content for each dropped file here */}
+                                                        <div className="file-info d-flex animate-up">
+                                                            <div className="info-icon d-flex-center">
+                                                                <FontAwesomeIcon
+                                                                    icon={faFile}
+                                                                    className="inner-icon"
+                                                                />
+                                                            </div>
+                                                            <div className="info-text d-flex flex-col">
                                                   <span className="info-text-name akata-text-small">
                                                     {TruncateText(file.name)}
                                                   </span>
-                                                  <span className="info-text-taille akata-text-small">
+                                                                <span className="info-text-taille akata-text-small">
                                                     {(file.size / 1024 / 1024).toFixed(2)} MB
                                                   </span>
-                                                </div>
-                                              </div>
-                                              <button
-                                                type="button"
-                                                className="btn-remove-file d-flex-center"
-                                                data-index={index}
-                                                onClick={() => handleRemoveFile(index)}
-                                              >
-                                                <FontAwesomeIcon
-                                                  icon={faXmark}
-                                                  className="icon-file"
-                                                />
-                                              </button>
-                                            </div>
-                                          ))}
+                                                            </div>
+                                                        </div>
+                                                        <button
+                                                            type="button"
+                                                            className="btn-remove-file d-flex-center"
+                                                            data-index={index}
+                                                            onClick={() => handleRemoveFile(index)}
+                                                        >
+                                                            <FontAwesomeIcon
+                                                                icon={faXmark}
+                                                                className="icon-file"
+                                                            />
+                                                        </button>
+                                                    </motion.div>
+                                                ))}
+                                            </AnimatePresence>
                                         </div>
 
                                         <AnimatePresence>
