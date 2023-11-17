@@ -72,7 +72,7 @@ const ModalLetsTalk: React.FC<ModalLetsTalkProps> = ({onClose}) => {
         // Set the state with the updated files
         setDroppedFiles([...droppedFiles, ...updatedFiles]);
 
-        console.log("filels", droppedFiles)
+        console.log("files", droppedFiles)
     };
 
     const handleRemoveFile = (indexToRemove: number) => {
@@ -173,14 +173,7 @@ const ModalLetsTalk: React.FC<ModalLetsTalkProps> = ({onClose}) => {
                                 }}
                                 onSubmit={async (values, {setSubmitting, resetForm}) => {
                                     try {
-                                        const formData = new FormData();
-                                        formData.append("NAME", values.NAME);
-                                        formData.append("EMAIL", values.EMAIL);
-                                        formData.append("THEME", values.THEME);
 
-                                        values.files.forEach((file, index) => {
-                                            formData.append(`FILE[${index}]`, file);
-                                        });
                                         const response = await axios.post("/send-mail/modal/api", {
                                             NAME: values.NAME,
                                             EMAIL: values.EMAIL,

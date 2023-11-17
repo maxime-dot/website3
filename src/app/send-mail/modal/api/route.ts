@@ -15,12 +15,13 @@ export async function POST(req: NextRequest) {
     });
 
     // Create an array to store attachments
-    const files = FILE.map((file) => ({
-        filename: file.name, // Assuming the file object has a filename property
-        content: Buffer.from(URL.createObjectURL(file), 'base64'),
-        encoding: 'base64',
+    const files = FILE.map((file, index) => ({
+        filename: file.path, // Assuming the file object has a filename property
+       content: file.content
     }));
 
+
+    console.log("files", FILE)
     const mailOptions = {
         from: mail,
         to: mail,
