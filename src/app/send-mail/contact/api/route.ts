@@ -20,21 +20,20 @@ export async  function POST(req: NextRequest) {
         html: `
             <div>
                 <p> 
-                    Hi, this is an email from <b> ${NAME} </b> - <i>${EMAIL}</i><br>
-                    you have an email from  who asked for ${SUBJECT}
+                    Hi, this is an email from <b> ${NAME} </b> - <i>${EMAIL}</i><br> <br>
+                    <b>Subject: </b> ${SUBJECT}
                 </p>
                 <p>
                     <b>This is his message: <br> </b>        
                     ${MESSAGE}
                 </p>
+                <small>Akata Goavana, Website 3.0</small>
             </div>`
     }
     try {
         await transporter.sendMail(mailOptions);
-        console.log("mail-sent")
-        return NextResponse.json({"message" : "your mail is sent successfully"})
+        return NextResponse.json({success : true})
     } catch (error) {
-        console.log(error)
-        return NextResponse.json({"error" : error})
+        return NextResponse.json({ success : false})
     }
 }

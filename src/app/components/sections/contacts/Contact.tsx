@@ -89,7 +89,7 @@ const Contacts: React.FC = () => {
                                     NAME: values.NAME
                                 });
 
-                                if (response.status === 200) {
+                                if (response.data.success) {
                                     resetForm()
                                     toogleSubmit()
 
@@ -120,7 +120,7 @@ const Contacts: React.FC = () => {
                             >
 
                                 <div className="form-item d-flex flex-col">
-                                    <label htmlFor="name" className="akata-text-medium">
+                                    <label htmlFor="NAME" className="akata-text-medium">
                                         Full name
                                     </label>
                                     <FontAwesomeIcon icon={faUser} className="form-icon"/>
@@ -142,7 +142,7 @@ const Contacts: React.FC = () => {
                                 </div>
                                 {/* request user email */}
                                 <div className="form-item d-flex flex-col">
-                                    <label htmlFor="email" className="akata-text-medium">
+                                    <label htmlFor="EMAIL" className="akata-text-medium">
                                         Email
                                     </label>
                                     <FontAwesomeIcon icon={faEnvelope} className="form-icon"/>
@@ -163,7 +163,7 @@ const Contacts: React.FC = () => {
                                     </p>
                                 </div>
                                 <div className="form-item d-flex flex-col">
-                                    <label htmlFor="subject" className="akata-text-medium">
+                                    <label htmlFor="SUBJECT" className="akata-text-medium">
                                         Subject
                                     </label>
                                     <FontAwesomeIcon icon={faLightbulb} className="form-icon"/>
@@ -175,7 +175,7 @@ const Contacts: React.FC = () => {
                                         onChange={handleChange}
                                         onBlur={handleBlur}
                                         value={values.SUBJECT}
-                                        id="subject"
+                                        id="SUBJECT"
                                         autoComplete="true"
                                     />
                                 </div>
