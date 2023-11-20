@@ -17,6 +17,7 @@ import Button from "../button/normal/Button";
 import ButtonOutline from "../button/outline/ButtonOutline";
 import {TruncateText} from "@/app/helpers/truncate";
 import Image from "next/image";
+import FormData from "form-data";
 
 interface ModalLetsTalkProps {
     onClose: () => void;
@@ -54,32 +55,20 @@ const ModalLetsTalk: React.FC<ModalLetsTalkProps> = ({onClose}) => {
         }
     };
     const handleDropFile = (files: File[]) => {
-        // Create an array to store the updated files
         const updatedFiles: File[] = [];
 
-        // Loop through the newly dropped files
         files.forEach((file) => {
-            // Extract file name and absolute path
-            const fileName = file.name;
-            const filePath = URL.createObjectURL(file);
-
-            // Log the file name and absolute path
-            console.log('File Name:', fileName);
-            console.log('File Path:', filePath);
             updatedFiles.push(file);
         });
 
-        // Set the state with the updated files
         setDroppedFiles([...droppedFiles, ...updatedFiles]);
-
-        console.log("files", droppedFiles)
+        console.log(droppedFiles)
     };
 
     const handleRemoveFile = (indexToRemove: number) => {
         setDroppedFiles((prevFiles) =>
             prevFiles.filter((_, index) => index !== indexToRemove)
         );
-
     };
 
     const toggleSendError = () => {
@@ -172,17 +161,21 @@ const ModalLetsTalk: React.FC<ModalLetsTalkProps> = ({onClose}) => {
                                     return errors;
                                 }}
                                 onSubmit={async (values, {setSubmitting, resetForm}) => {
+
+
                                     try {
-
-                                        const response = await axios.post("/send-mail/modal/api", {
-                                            NAME: values.NAME,
-                                            EMAIL: values.EMAIL,
-                                            SERVICE: values.THEME,
-                                            FILE: droppedFiles
+                                        console.log(droppedFiles)
+                                        const data = new FormData()
+                                        data.append("NAME", values.NAME)
+                                        data.append("EMAIL", values.EMAIL)
+                                        data.append("THEME", values.THEME)
+                                        data.append("FILE", droppedFiles[0])
+                                        const response = await axios.post("/send-mail/file-upload/api", data, {
+                                            headers: {
+                                                "Content-Type": "multipart/form-data",
+                                            },
                                         });
-
-
-
+                                        console.log(droppedFiles)
                                         if (response.status === 200) {
                                             toogleSend()
                                             resetForm()
@@ -303,8 +296,8 @@ const ModalLetsTalk: React.FC<ModalLetsTalkProps> = ({onClose}) => {
                                                             <p className="akata-text-medium drop-file-indicator">
                                                                 Drag and drop your file here or{" "}
                                                                 <span className="important-text">
-                                                      choose file
-                                                    </span>
+                                                          choose file
+                                                        </span>
                                                             </p>
                                                         </div>
                                                         <div className="file-type-indicator d-flex-space-between">
@@ -331,7 +324,7 @@ const ModalLetsTalk: React.FC<ModalLetsTalkProps> = ({onClose}) => {
                                                         key={index}
                                                         className="file w-100 d-flex-space-between"
                                                     >
-                                                        {/* Add content for each dropped file here */}
+                                                        {/* Add content for each dropped files here */}
                                                         <div className="file-info d-flex animate-up">
                                                             <div className="info-icon d-flex-center">
                                                                 <FontAwesomeIcon
@@ -340,12 +333,12 @@ const ModalLetsTalk: React.FC<ModalLetsTalkProps> = ({onClose}) => {
                                                                 />
                                                             </div>
                                                             <div className="info-text d-flex flex-col">
-                                                  <span className="info-text-name akata-text-small">
-                                                    {TruncateText(file.name)}
-                                                  </span>
+                                                      <span className="info-text-name akata-text-small">
+                                                        {TruncateText(file.name)}
+                                                      </span>
                                                                 <span className="info-text-taille akata-text-small">
-                                                    {(file.size / 1024 / 1024).toFixed(2)} MB
-                                                  </span>
+                                                        {(file.size / 1024 / 1024).toFixed(2)} MB
+                                                      </span>
                                                             </div>
                                                         </div>
                                                         <button
