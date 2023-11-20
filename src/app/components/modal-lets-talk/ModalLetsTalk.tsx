@@ -170,13 +170,13 @@ const ModalLetsTalk: React.FC<ModalLetsTalkProps> = ({onClose}) => {
                                         data.append("EMAIL", values.EMAIL)
                                         data.append("THEME", values.THEME)
                                         data.append("FILE", droppedFiles[0])
-                                        const response = await axios.post("/send-mail/file-upload/api", data, {
+                                        const response = await axios.post("/send-mail/modal/api", data, {
                                             headers: {
                                                 "Content-Type": "multipart/form-data",
                                             },
                                         });
-                                        console.log(droppedFiles)
-                                        if (response.status === 200) {
+
+                                        if (response.data.success) {
                                             toogleSend()
                                             resetForm()
                                             setDroppedFiles([])
@@ -185,7 +185,7 @@ const ModalLetsTalk: React.FC<ModalLetsTalkProps> = ({onClose}) => {
                                         }
                                     } catch (error) {
                                         toggleSendError()
-                                        console.error("Error subscribing to Mailchimp:", error);
+
                                     } finally {
                                         setSubmitting(false);
                                     }
