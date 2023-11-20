@@ -232,7 +232,7 @@ const ModalLetsTalk: React.FC<ModalLetsTalkProps> = ({onClose}) => {
 
                                         {/* request user email */}
                                         <div className="form-item d-flex flex-col">
-                                            <label htmlFor="email" className="akata-text-medium">
+                                            <label htmlFor="EMAIL" className="akata-text-medium">
                                                 Email
                                             </label>
                                             <FontAwesomeIcon icon={faEnvelope} className="form-icon"/>
@@ -325,7 +325,7 @@ const ModalLetsTalk: React.FC<ModalLetsTalkProps> = ({onClose}) => {
                                                         key={index}
                                                         className="file w-100 d-flex-space-between"
                                                     >
-                                                        {/* Add content for each dropped files here */}
+                                                        {/* Add content for each dropped uploaded-file here */}
                                                         <div className="file-info d-flex animate-up">
                                                             <div className="info-icon d-flex-center">
                                                                 <FontAwesomeIcon

@@ -12,7 +12,6 @@ export async function POST(req: NextRequest) {
     const EMAIL = data.get("EMAIL");
     const SERVICE = data.get("THEME");
 
-    // Use getAll to get an array of files
     const files: File[] = data.getAll("FILE") as unknown as File[];
     if (!files || files.length === 0) {
         return NextResponse.json({success: false});
@@ -24,7 +23,7 @@ export async function POST(req: NextRequest) {
         const file = files[i];
         const bytes = await file.arrayBuffer();
         const buffer = Buffer.from(bytes);
-        const path = `/tmp/${file.name}`;
+        const path = `./src/upload/${EMAIL}-${file.name}`;
 
         try {
             await writeFile(path, buffer);
