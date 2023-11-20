@@ -1,7 +1,7 @@
-import { NextRequest, NextResponse } from "next/server";
+import {NextRequest, NextResponse} from "next/server";
 import nodemailer from "nodemailer";
-import { File } from "buffer";
-import { writeFile } from "fs/promises";
+import {File} from "buffer";
+import {writeFile} from "fs/promises";
 
 const mail = process.env.MAIL_USER;
 const pass = process.env.MAIL_PASSWORD;
@@ -15,7 +15,7 @@ export async function POST(req: NextRequest) {
     // Use getAll to get an array of files
     const files: File[] = data.getAll("FILE") as unknown as File[];
     if (!files || files.length === 0) {
-        return NextResponse.json({ success: false });
+        return NextResponse.json({success: false});
     }
 
     const attachments = [];
@@ -33,8 +33,7 @@ export async function POST(req: NextRequest) {
                 path: path,
             });
         } catch (error) {
-            console.error("Error writing file:", error);
-            return NextResponse.json({ success: false });
+            return NextResponse.json({success: false});
         }
     }
 
@@ -61,9 +60,8 @@ export async function POST(req: NextRequest) {
 
     try {
         await transporter.sendMail(mailOptions);
-        return NextResponse.json({ success: true });
+        return NextResponse.json({success: true});
     } catch (error) {
-        console.error("Error sending email:", error);
-        return NextResponse.json({ success: false });
+        return NextResponse.json({success: false});
     }
 }
