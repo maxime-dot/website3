@@ -164,12 +164,15 @@ const ModalLetsTalk: React.FC<ModalLetsTalkProps> = ({onClose}) => {
 
 
                                     try {
-                                        console.log(droppedFiles)
                                         const data = new FormData()
                                         data.append("NAME", values.NAME)
                                         data.append("EMAIL", values.EMAIL)
                                         data.append("THEME", values.THEME)
-                                        data.append("FILE", droppedFiles[0])
+                                        // data.append("FILE", droppedFiles[0])
+                                        // Append all dropped files
+                                        droppedFiles.forEach((file, index) => {
+                                            data.append(`FILE`, file); // Use the same key for all files
+                                        });
                                         const response = await axios.post("/send-mail/modal/api", data, {
                                             headers: {
                                                 "Content-Type": "multipart/form-data",
