@@ -179,7 +179,7 @@ const ModalLetsTalk: React.FC<ModalLetsTalkProps> = ({onClose}) => {
                       const data = new FormData();
                       data.append("NAME", values.NAME);
                       data.append("EMAIL", values.EMAIL);
-                      data.append("THEME", values.THEME);
+                      data.append("SERVICE", values.THEME);
 
                       droppedFiles.forEach((file, index) => {
                         data.append(`FILE`, file);
