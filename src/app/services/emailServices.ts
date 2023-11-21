@@ -2,8 +2,6 @@ import nodemailer from "nodemailer";
 import {writeFile} from "fs/promises";
 import {File} from "buffer";
 
-const receiver = process.env.MAIL_RECEIVER;
-
 const transporter = nodemailer.createTransport({
   host: process.env.SMTP_HOST,
   port: process.env.SMTP_PORT,
@@ -46,7 +44,7 @@ export async function sendEmail({
     }
   }
   const mailOptions = {
-    from: process.env.MAIL_ADDRESS,
+    from: process.env.EMAIL_FROM,
     to: process.env.MAIL_RECEIVER,
     subject: `AKATA-WEBSITE |  ${SUBJECT} from ${NAME}`,
     html: `
