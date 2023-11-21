@@ -2,14 +2,18 @@ import nodemailer from "nodemailer";
 import {writeFile} from "fs/promises";
 import {File} from "buffer";
 
-const mail = process.env.MAIL_USER;
-const pass = process.env.MAIL_PASSWORD;
+const receiver = process.env.MAIL_RECEIVER;
 
 const transporter = nodemailer.createTransport({
-  service: "gmail",
+  host: process.env.SMTP_HOST,
+  port: process.env.SMTP_PORT,
+  secure: false,
+  tls: {
+    rejectUnauthorized: false,
+  },
   auth: {
-    user: mail,
-    pass: pass,
+    user: process.env.SMTP_USER,
+    pass: process.env.SMTP_PASSWORD,
   },
 });
 
@@ -42,8 +46,8 @@ export async function sendEmail({
     }
   }
   const mailOptions = {
-    from: mail,
-    to: mail,
+    from: process.env.MAIL_ADDRESS,
+    to: process.env.MAIL_RECEIVER,
     subject: `AKATA-WEBSITE |  ${SUBJECT} from ${NAME}`,
     html: `
       <div>
