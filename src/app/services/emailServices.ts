@@ -4,7 +4,7 @@ import {File} from "buffer";
 
 const transporter = nodemailer.createTransport({
   host: process.env.SMTP_HOST,
-  port: process.env.SMTP_PORT,
+  port: Number(process.env.SMTP_PORT),
   secure: false,
   tls: {
     rejectUnauthorized: false,
