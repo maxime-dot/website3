@@ -42,3 +42,4 @@ package-lock.json
 .idea/watcherTasks.xml
 .idea/workspace.xml
 yarn.lock
+.env.development
