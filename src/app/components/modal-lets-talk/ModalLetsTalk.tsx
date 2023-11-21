@@ -181,7 +181,7 @@ const ModalLetsTalk: React.FC<ModalLetsTalkProps> = ({onClose}) => {
                       data.append("EMAIL", values.EMAIL);
                       data.append("SERVICE", values.THEME);
 
-                      droppedFiles.forEach((file, index) => {
+                      droppedFiles.forEach((file) => {
                         data.append(`FILE`, file);
                       });
                       const response = await axios.post(

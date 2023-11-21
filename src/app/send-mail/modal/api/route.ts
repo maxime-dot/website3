@@ -7,7 +7,7 @@ export async function POST(req: NextRequest) {
     const data = await req.formData();
     const NAME = data.get("NAME");
     const EMAIL = data.get("EMAIL");
-    const SERVICE = data.get("THEME");
+    const SERVICE = data.get("SERVICE");
 
     const files: File[] = data.getAll("FILE") as unknown as File[];
     if (!files || files.length === 0) {
@@ -22,7 +22,6 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({success: false});
     }
   } catch (error) {
-    console.error(error);
     return NextResponse.json({success: false});
   }
 }

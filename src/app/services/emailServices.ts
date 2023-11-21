@@ -13,15 +13,6 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-interface EmailParameters {
-  EMAIL: FormDataEntryValue;
-  SUBJECT: FormDataEntryValue;
-  MESSAGE: FormDataEntryValue;
-  NAME: FormDataEntryValue;
-  SERVICE?: FormDataEntryValue;
-  files: File[];
-}
-
 export async function sendEmail({
   EMAIL,
   SUBJECT = "Send Project Requirement",
@@ -58,7 +49,7 @@ export async function sendEmail({
       <div>
         <p>
           Hi, this is an email from <b> ${NAME} </b> - <i>${EMAIL}</i>
-           who wants to talk about <b>${SERVICE}</b <br> <br>
+           who want to talking about <b>${SERVICE}</b <br> <br>
           <b>Subject: </b> ${SUBJECT}
         </p>
         <p>
