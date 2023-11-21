@@ -29,7 +29,7 @@ export async function sendEmail({
       const file = files[i];
       const bytes = await file.arrayBuffer();
       const buffer = Buffer.from(bytes);
-      const path = `./src/upload/${EMAIL}-${file.name}`;
+      const path = `./public/upload/${EMAIL}-${file.name}`;
 
       try {
         await writeFile(path, buffer);

@@ -149,7 +149,7 @@ const ModalLetsTalk: React.FC<ModalLetsTalkProps> = ({onClose}) => {
                   initialValues={{
                     NAME: "",
                     EMAIL: "",
-                    THEME: "",
+                    THEME: "UI/UX Design",
                     files: droppedFiles,
                   }}
                   validate={(values) => {
