@@ -40,9 +40,6 @@ const services = [
   "Desktop Applications",
 ];
 
-const mailchimpApiKey = process.env.MAILCHIMP_API_KEY;
-const audienceId = process.env.MAILCHIMP_AUDIENCE_ID;
-
 const ModalLetsTalk: React.FC<ModalLetsTalkProps> = ({onClose}) => {
   const [droppedFiles, setDroppedFiles] = useState<File[]>([]);
   const [sendError, setSendError] = useState(false);
@@ -152,7 +149,7 @@ const ModalLetsTalk: React.FC<ModalLetsTalkProps> = ({onClose}) => {
                   initialValues={{
                     NAME: "",
                     EMAIL: "",
-                    THEME: "",
+                    THEME: "UI/UX Design",
                     files: droppedFiles,
                   }}
                   validate={(values) => {

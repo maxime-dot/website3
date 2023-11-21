@@ -10,10 +10,6 @@ export async function POST(req: NextRequest) {
     const SERVICE = data.get("SERVICE");
 
     const files: File[] = data.getAll("FILE") as unknown as File[];
-    if (!files || files.length === 0) {
-      return NextResponse.json({success: false});
-    }
-
     const result = await sendEmail({NAME, EMAIL, SERVICE, files});
 
     if (result.success) {
