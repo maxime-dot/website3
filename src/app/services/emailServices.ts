@@ -1,6 +1,5 @@
 import nodemailer from "nodemailer";
 import {writeFile} from "fs/promises";
-import {File} from "buffer";
 
 const transporter = nodemailer.createTransport({
   host: process.env.SMTP_HOST,
