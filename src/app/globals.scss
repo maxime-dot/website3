@@ -66,6 +66,10 @@ body {
   max-width: 546px;
   color: var(--text-dark, #505d68);
   font: normal 400 16px/28px "Poppins";
+  span {
+    color: var(--goavana-blue);
+    font-weight: bold;
+  }
 }
 
 .akata-text-medium {
@@ -261,4 +265,3 @@ body {
     border: 1px solid red;
   }
 }
-

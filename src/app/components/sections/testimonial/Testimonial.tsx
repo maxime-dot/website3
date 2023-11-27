@@ -1,13 +1,13 @@
 "use client";
-import React, { useState } from "react";
+import React, {useState} from "react";
 import dynamic from "next/dynamic";
 import Image from "next/image";
 import "./testimonial.scss";
-import {motion} from "framer-motion"
+import {motion} from "framer-motion";
 
 // data
 import testimonials from "../../../data/testimonials.json";
-import { TestimonialDataType } from "../../../types/testimonial.type";
+import {TestimonialDataType} from "../../../types/testimonial.type";
 
 // components
 import Button from "../../button/normal/Button";
@@ -83,17 +83,35 @@ const Testimonial: React.FC = () => {
       <div className="container testimonial-content d-flex flex-row">
         <div className="testimonial-info d-flex flex-col">
           <div className="text-group d-flex flex-col">
-            <motion.h2 initial={{opacity: 0, y: 30}}  whileInView={{opacity: 1, y: 0}} transition={{delay: .2}} viewport={{once: true}} className="akata-title-strong">
-              What our <span>customer</span> say about us?
+            <motion.h2
+              initial={{opacity: 0, y: 30}}
+              whileInView={{opacity: 1, y: 0}}
+              transition={{delay: 0.2}}
+              viewport={{once: true}}
+              className="akata-title-strong"
+            >
+              MORE THAN <span>customers</span> ...
             </motion.h2>
-            <motion.p initial={{opacity: 0, y: 30}}  whileInView={{opacity: 1, y: 0}} transition={{delay: .1}} viewport={{once: true}} className="akata-text-big description">
-              Experience the love our clients have for our IT agency&apos;s
-              work. Explore their glowing testimonials and discover why they
-              trust us with their technology needs.
+            <motion.p
+              initial={{opacity: 0, y: 30}}
+              whileInView={{opacity: 1, y: 0}}
+              transition={{delay: 0.1}}
+              viewport={{once: true}}
+              className="akata-text-big description"
+            >
+              <span> They are our LONG-STANDING PARTNERS</span> <br /> They have
+              been with us since the beginning of their digital adventure, AKATA
+              GOAVANA has been part of their success story for years now.
             </motion.p>
           </div>
 
-          <motion.div initial={{opacity: 0, y: 30}}  whileInView={{opacity: 1, y: 0}} transition={{delay: .2}} viewport={{once: true}}  className="card-slides">
+          <motion.div
+            initial={{opacity: 0, y: 30}}
+            whileInView={{opacity: 1, y: 0}}
+            transition={{delay: 0.2}}
+            viewport={{once: true}}
+            className="card-slides"
+          >
             {testimonials.map((testimonial: TestimonialDataType) => (
               <TestimonialCard
                 key={`testimonail-${testimonial.id}`}
@@ -105,7 +123,13 @@ const Testimonial: React.FC = () => {
               />
             ))}
           </motion.div>
-          <motion.div initial={{opacity: 0, y: 30}}  whileInView={{opacity: 1, y: 0}} transition={{delay: .2}} viewport={{once: true}}  className="button-group d-flex flex-row">
+          <motion.div
+            initial={{opacity: 0, y: 30}}
+            whileInView={{opacity: 1, y: 0}}
+            transition={{delay: 0.2}}
+            viewport={{once: true}}
+            className="button-group d-flex flex-row"
+          >
             <Button
               hoverType="shadowed"
               content="LET'S TALK"
