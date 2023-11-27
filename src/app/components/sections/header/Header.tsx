@@ -56,9 +56,10 @@ const Header: React.FC = () => {
             transition={{delay: 0.1}}
             className="akata-text-big"
           >
-            At Akata Goavana, we are dedicated to the well-being of your IT
-            infrastructure. Our experts are here to provide exceptional care for
-            your systems. Trust in our expertise to keep them running smoothly.
+            At AKATA GOAVANA, we are driving consistent and sustainable revenue
+            for your company with our innovative IT solutions. Our customized
+            solutions go beyond addressing current challenges; they proactively
+            anticipate and overcome the opportunities that lie ahead.
           </motion.p>
         </div>
         <motion.div
