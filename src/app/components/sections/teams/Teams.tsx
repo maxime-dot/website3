@@ -68,11 +68,8 @@ const Teams: React.FC = () => {
             Our Team,Your <span>success</span> guarantee
           </h2>
           <p className="akata-text-big team-intro-description">
-            Get to know the talented individuals that make up the Akata Goavana
-            team. Our dedicated experts bring a wealth of knowledge and passion
-            to every project. Together, w&apos;re committed to delivering IT
-            solutions that drive your success. Explore the faces behind our
-            innovation.
+            Secure your investment ! Our dedicated team works to maximize your
+            return on investment through attention to detail.
           </p>
           <div className="profile-social-link d-flex flex-row">
             <Link
