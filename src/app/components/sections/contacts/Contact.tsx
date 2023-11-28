@@ -48,12 +48,13 @@ const Contacts: React.FC = () => {
       <div className="contacts form d-flex flex-col">
         <div className="form-title d-flex flex-col">
           <h2 className="akata-title-medium">
-            Submit Your <span>Project</span> Requirements
+            Your <span>business</span> deserves the best : let&apos;s{" "}
+            <span>team up</span>
+            now !
           </h2>
           <p className="akata-text-medium">
-            Send us your project requirements, and we&apos;ll review them
-            promptly. We&apos;ll reach out to you later to discuss the details.
-            We look forward to working with you!
+            Dare to make a difference! We're ready to turn your aspirations into
+            measurable successes that take your business to the next level.
           </p>
         </div>
         <div className="form-body d-flex flex-col">
