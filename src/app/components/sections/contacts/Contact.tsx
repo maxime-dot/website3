@@ -49,7 +49,7 @@ const Contacts: React.FC = () => {
         <div className="form-title d-flex flex-col">
           <h2 className="akata-title-medium">
             Your <span>business</span> deserves the best : let&apos;s{" "}
-            <span>team up</span>
+            <span>team up </span>
             now !
           </h2>
           <p className="akata-text-medium">
