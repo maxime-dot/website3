@@ -7,7 +7,7 @@ import {motion} from "framer-motion";
 
 // data
 import testimonials from "@/data/testimonials.json";
-import {TestimonialDataType} from "../../../../types/testimonial.type";
+import {TestimonialDataType} from "../../../types/testimonial.type";
 
 // components
 import Button from "../../button/normal/Button";

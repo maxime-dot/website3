@@ -16,7 +16,7 @@ const ModalLetsTalk = dynamic(
   }
 );
 const TeamSlider = dynamic(
-  () => import("@/app/components/sliders/team-slider/TeamSlider"),
+  () => import("@/components/sliders/team-slider/TeamSlider"),
   {
     loading: () => <LoadingModal />,
   }
