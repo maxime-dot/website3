@@ -6,7 +6,7 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faArrowLeft} from "@fortawesome/free-solid-svg-icons";
 import ArticleMiniCard from "../cards/articles-mini-card/ArticlesMiniCard";
 import ArticleData from "@/data/articles.json";
-import {ArticleViewerProps} from "@/app/types/article-viewer.type";
+import {ArticleViewerProps} from "@/types/article-viewer.type";
 import {artView} from "@/app/animation/animation";
 
 const ArticleViewer: React.FC<ArticleViewerProps> = ({onClose}) => {

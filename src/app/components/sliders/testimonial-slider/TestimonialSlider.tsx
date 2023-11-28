@@ -1,11 +1,11 @@
-import React, { useEffect, useRef } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import React, {useEffect, useRef} from "react";
+import {motion, AnimatePresence} from "framer-motion";
 import Image from "next/image";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTimes } from "@fortawesome/free-solid-svg-icons";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faTimes} from "@fortawesome/free-solid-svg-icons";
 import "./testimonial-slider.scss";
 
-import { TestimonialDataType } from "@/app/types/testimonial.type";
+import {TestimonialDataType} from "@/types/testimonial.type";
 import Link from "next/link";
 
 interface SliderProps {
@@ -44,10 +44,10 @@ const TestimonialSlider: React.FC<SliderProps> = ({
           animate="open"
           exit="close"
           variants={{
-            open: { opacity: 1, transform: "translateY(0)" },
-            close: { opacity: 0, transform: "translateY(20px)" },
+            open: {opacity: 1, transform: "translateY(0)"},
+            close: {opacity: 0, transform: "translateY(20px)"},
           }}
-          transition={{ duration: 0.3 }}
+          transition={{duration: 0.3}}
         >
           <div className="container slider-content fill-view d-flex-space-between flex-col">
             <button

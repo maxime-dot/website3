@@ -10,7 +10,7 @@ import {useState} from "react";
 import Button from "../components/button/normal/Button";
 import ArticleData from "@/data/articles.json";
 import ArticleCard from "../components/cards/articles/ArticleCard";
-import {truncate} from "../helpers/truncate";
+import {truncate} from "../../helpers/truncate";
 const ModalLetsTalk = dynamic(
   () => import("../components/modal-lets-talk/ModalLetsTalk"),
 

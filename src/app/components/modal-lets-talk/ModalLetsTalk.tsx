@@ -15,7 +15,7 @@ import {motion, AnimatePresence} from "framer-motion";
 import "./modal-lets-talk.scss";
 import Button from "../button/normal/Button";
 import ButtonOutline from "../button/outline/ButtonOutline";
-import {TruncateText} from "@/app/helpers/truncate";
+import {TruncateText} from "@/helpers/truncate";
 import Image from "next/image";
 import FormData from "form-data";
 

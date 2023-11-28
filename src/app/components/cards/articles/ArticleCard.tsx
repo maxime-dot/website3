@@ -1,11 +1,11 @@
 import React from "react";
 import Image from "next/image";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowRightLong } from "@fortawesome/free-solid-svg-icons";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faArrowRightLong} from "@fortawesome/free-solid-svg-icons";
 import "./article-card.scss";
-import { ArticleCardProps } from "@/app/types/article-card.type";
-import { truncate } from "@/app/helpers/truncate";
+import {ArticleCardProps} from "@/types/article-card.type";
+import {truncate} from "@/helpers/truncate";
 const ArticleCard: React.FC<ArticleCardProps> = ({
   date,
   title,

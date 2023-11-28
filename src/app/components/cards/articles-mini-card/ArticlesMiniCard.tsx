@@ -1,12 +1,12 @@
 import React from "react";
 import "./articles-mini-card.scss";
-import { truncate } from "@/app/helpers/truncate";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import {truncate} from "@/helpers/truncate";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faArrowRight} from "@fortawesome/free-solid-svg-icons";
 import Image from "next/image";
-import { MiniCardProps } from "@/app/types/mini-card.type";
+import {MiniCardProps} from "@/types/mini-card.type";
 
-const ArticleMiniCard: React.FC<MiniCardProps> = ({ imgSrc, date, title }) => {
+const ArticleMiniCard: React.FC<MiniCardProps> = ({imgSrc, date, title}) => {
   return (
     <div className="article-mini-card w-100 d-flex flex-row">
       <FontAwesomeIcon icon={faArrowRight} className="arrow-icon" />
