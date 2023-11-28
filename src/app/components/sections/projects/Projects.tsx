@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import "./projects.scss";
 import Link from "next/link";
-import projectData from "../../../data/projects.json";
+import projectData from "@/data/projects.json";
 const Projects: React.FC = () => {
   return (
     <section

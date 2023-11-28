@@ -6,7 +6,7 @@ import "./testimonial.scss";
 import {motion} from "framer-motion";
 
 // data
-import testimonials from "../../../data/testimonials.json";
+import testimonials from "@/data/testimonials.json";
 import {TestimonialDataType} from "../../../types/testimonial.type";
 
 // components

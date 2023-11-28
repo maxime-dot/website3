@@ -7,7 +7,7 @@ import {faFacebook, faLinkedin} from "@fortawesome/free-brands-svg-icons";
 import Link from "next/link";
 import Image from "next/image";
 import LoadingModal from "../../modal-lets-talk/LoadingModal";
-import AdminTeamData from "../../../data/admin-teams.json";
+import AdminTeamData from "@/data/admin-teams.json";
 
 const ModalLetsTalk = dynamic(
   () => import("../../modal-lets-talk/ModalLetsTalk"),

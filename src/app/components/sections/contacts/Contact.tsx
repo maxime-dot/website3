@@ -16,7 +16,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 import Button from "../../button/normal/Button";
-import contactData from "../../../data/contacts.json";
+import contactData from "@/data/contacts.json";
 import axios from "axios";
 
 interface FormValues {
@@ -53,8 +53,8 @@ const Contacts: React.FC = () => {
             now !
           </h2>
           <p className="akata-text-medium">
-            Dare to make a difference! We're ready to turn your aspirations into
-            measurable successes that take your business to the next level.
+            Dare to make a difference! We&apos;re ready to turn your aspirations
+            into measurable successes that take your business to the next level.
           </p>
         </div>
         <div className="form-body d-flex flex-col">

@@ -3,7 +3,7 @@ import React, {useState} from "react";
 import dynamic from "next/dynamic";
 import Image from "next/image";
 import "./services.scss";
-import servicesData from "../../../data/services.json";
+import servicesData from "@/data/services.json";
 const ModalLetsTalk = dynamic(
   () => import("../../modal-lets-talk/ModalLetsTalk"),
   {

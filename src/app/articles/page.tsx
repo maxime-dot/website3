@@ -2,15 +2,15 @@
 import Link from "next/link";
 import "./articles-page.scss";
 import dynamic from "next/dynamic";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faArrowLeft, faChevronRight} from "@fortawesome/free-solid-svg-icons";
 import LoadingModal from "../components/modal-lets-talk/LoadingModal";
 import Image from "next/image";
-import { useState } from "react";
+import {useState} from "react";
 import Button from "../components/button/normal/Button";
-import ArticleData from "../data/articles.json";
+import ArticleData from "@/data/articles.json";
 import ArticleCard from "../components/cards/articles/ArticleCard";
-import { truncate } from "../helpers/truncate";
+import {truncate} from "../helpers/truncate";
 const ModalLetsTalk = dynamic(
   () => import("../components/modal-lets-talk/ModalLetsTalk"),
 

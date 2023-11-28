@@ -8,8 +8,8 @@ import {
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 import "./footer.scss";
-import contactData from "@/app/data/contacts.json";
-import serviceList from "@/app/data/services.json";
+import contactData from "@/data/contacts.json";
+import serviceList from "@/data/services.json";
 
 const currentDate = new Date();
 const currentYear = currentDate.getFullYear();

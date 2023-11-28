@@ -6,7 +6,7 @@ import {AnimatePresence} from "framer-motion";
 import {faArrowRightLong} from "@fortawesome/free-solid-svg-icons";
 import "./articles.scss";
 import ArticleCard from "../../cards/articles/ArticleCard";
-import ArticleData from "../../../data/articles.json";
+import ArticleData from "@/data/articles.json";
 import Link from "next/link";
 import ArticleViewer from "../../article-viewer/ArticleViewer";
 
