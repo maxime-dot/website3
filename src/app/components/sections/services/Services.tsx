@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, {useState} from "react";
 import dynamic from "next/dynamic";
 import Image from "next/image";
 import "./services.scss";
@@ -29,13 +29,13 @@ const Services: React.FC = () => {
       {isModalOpen && <ModalLetsTalk onClose={handleCloseModal} />}
       <div className="services-intro w-100 d-flex-center flex-col">
         <h2 className="akata-title-medium services-intro-title">
-          Solving Tech Challenges with Our <span> IT Services</span>
+          We make your business ready for <br />{" "}
+          <span>TOMORROW’s challenges</span>
         </h2>
         <p className="akata-text-medium services-intro-description">
-          In a rapidly evolving digital landscape, businesses face a multitude
-          of technology challenges. At Akata Goavana , we offer tailored
-          solutions to address these challenges and help you thrive in the
-          digital age.
+          Digital technology is advancing. Is your business keeping pace? Even
+          the smallest delay could put you out of business.  Our goal: to keep
+          you ahead of the game !
         </p>
       </div>
       <div className="d-flex flex-col servces-list-item">
@@ -47,13 +47,13 @@ const Services: React.FC = () => {
           >
             <div
               className="item-info-text d-flex flex-col"
-              style={{ order: index % 2 === 1 ? 1 : 0 }}
+              style={{order: index % 2 === 1 ? 1 : 0}}
             >
               <div className="info-title d-flex flex-col">
                 <h3 className="akata-title-medium">
                   {service.deco} <span>{service.title}</span>
                 </h3>
-                <p className="akata-text-medium" style={{ maxWidth: 441 }}>
+                <p className="akata-text-medium" style={{maxWidth: 441}}>
                   {service.description}
                 </p>
               </div>
