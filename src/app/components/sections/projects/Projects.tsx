@@ -19,14 +19,11 @@ const Projects: React.FC = () => {
       <div className="container">
         <div className="project-title d-flex-center flex-col">
           <h2 className="akata-title-medium">
-            Our Valued <span>Clients</span>
+            Our <span>customers</span>, the <span>pioneers</span> of business!
           </h2>
           <p className="akata-text-medium">
-            Meet the exceptional clients who have chosen Akata Goavana for their
-            IT needs. Our successful partnerships with these esteemed
-            organizations showcase our dedication to excellence and innovation.
-            Join our ever-expanding client family and let us lead you toward
-            digital success
+            We don&apos;t just provide solutions, we partner with you to help
+            accomplish your objectives.
           </p>
         </div>
         <div className="projects-list d-flex flex-row w-100">
