@@ -7,7 +7,7 @@ import {faArrowLeft} from "@fortawesome/free-solid-svg-icons";
 import ArticleMiniCard from "../cards/articles-mini-card/ArticlesMiniCard";
 import ArticleData from "@/data/articles.json";
 import {ArticleViewerProps} from "@/types/article-viewer.type";
-import {artView} from "@/app/animation/animation";
+import {artView} from "@/animation/animation";
 
 const ArticleViewer: React.FC<ArticleViewerProps> = ({onClose}) => {
   return (
