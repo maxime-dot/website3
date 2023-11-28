@@ -10,6 +10,21 @@
 
     .intro-title {
       gap: 16px;
+      h2 {
+        position: relative;
+        &::after {
+          position: absolute;
+          top: 36px;
+          left: -7px;
+          z-index: -1;
+          content: "";
+
+          width: 124px;
+          height: 20px;
+          flex-shrink: 0;
+          background: var(--goavana-yellow);
+        }
+      }
 
       .team-intro-description {
         max-width: 441px;
