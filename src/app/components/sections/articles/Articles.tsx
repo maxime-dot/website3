@@ -44,14 +44,11 @@ const Articles: React.FC = () => {
       <div className="article-content container d-flex-center flex-col">
         <div className="content-title d-flex-center flex-col">
           <h2 className="akata-title-medium">
-            <span>Articles</span> That Illuminate
+            EXPERIENCE <span>AKATA</span>’s adventure spirit
           </h2>
           <p className="akata-text-medium">
-            Dive into our repository of enlightening articles. Our team of
-            experts shares in-depth insights, industry trends, and cutting-edge
-            IT knowledge. Explore a wealth of information that can empower your
-            business and keep you informed about the latest developments in
-            technology
+            Every day, we go the extra mile to take on new challenges and help
+            you achieve your goals.
           </p>
         </div>
         <div className="article-content-list">
