@@ -10,6 +10,11 @@ import {
 import "./footer.scss";
 import contactData from "@/data/contacts.json";
 import serviceList from "@/data/services.json";
+import {
+  faEnvelope,
+  faMapLocationDot,
+  faPhone,
+} from "@fortawesome/free-solid-svg-icons";
 
 const currentDate = new Date();
 const currentYear = currentDate.getFullYear();
@@ -21,14 +26,34 @@ const Footer: React.FC = () => {
         <div className="footer-content">
           <strong>Contacts</strong>
           <ul>
-            <li className="akata-text-small">{contactData.adress}</li>
+            <li className="akata-text-small">
+              <FontAwesomeIcon
+                icon={faMapLocationDot}
+                className="link-icon"
+                style={{marginRight: "5px"}}
+              />{" "}
+              {contactData.adress}
+            </li>
             <li className="akata-text-small">
               <Link href={"mailto:contact-akata@goavana.com"}>
+                <FontAwesomeIcon
+                  icon={faEnvelope}
+                  className="link-icon"
+                  style={{marginRight: "5px"}}
+                />{" "}
                 {contactData.mail}
               </Link>
             </li>
             <li className="akata-text-small">
-              <Link href={"tel:+261346757384"}>{contactData.phone}</Link>
+              <Link href={"tel:+261346757384"}>
+                {" "}
+                <FontAwesomeIcon
+                  icon={faPhone}
+                  className="link-icon"
+                  style={{marginRight: "5px"}}
+                />{" "}
+                {contactData.phone}
+              </Link>
             </li>
           </ul>
         </div>
