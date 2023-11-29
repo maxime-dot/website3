@@ -1,10 +1,11 @@
 import React from "react";
 import Image from "next/image";
-
+import {motion} from "framer-motion";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faArrowRightLong} from "@fortawesome/free-solid-svg-icons";
 import "./article-card.scss";
 import {ArticleCardProps} from "@/types/article-card.type";
+import {articleCardAnimation} from "@/animation/animation";
 import {truncate} from "@/helpers/truncate";
 const ArticleCard: React.FC<ArticleCardProps> = ({
   date,
@@ -14,7 +15,15 @@ const ArticleCard: React.FC<ArticleCardProps> = ({
   imgSrc,
 }) => {
   return (
-    <div className="article-card d-flex flex-col">
+    <motion.div
+      className="article-card d-flex flex-col"
+      variants={articleCardAnimation}
+      initial="initial"
+      whileInView={"enter"}
+      exit={"exit"}
+      transition={{duration: 0.3, delay: 0.3}}
+      viewport={{once: true}}
+    >
       <Image
         src={imgSrc}
         alt="piv fianarantsoa"
@@ -35,7 +44,7 @@ const ArticleCard: React.FC<ArticleCardProps> = ({
           <FontAwesomeIcon icon={faArrowRightLong} className="button-icon" />{" "}
         </button>
       </div>
-    </div>
+    </motion.div>
   );
 };
 export default ArticleCard;
