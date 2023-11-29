@@ -28,14 +28,20 @@ const ArticleViewer: React.FC<ArticleViewerProps> = ({onClose, data}) => {
           <div className="article w-100">
             <span className="article-date">{mainData.date}</span>
             <h2 className="article-title">{mainData.title}</h2>
-            <Image
-              src={mainData.imageSrc}
-              loading="lazy"
-              width={1064}
-              height={533}
-              alt="futurella article - poster "
-              className="article-poster"
-            />
+            <motion.div
+              initial={{opacity: 0, x: 100}}
+              animate={{opacity: 1, x: 0}}
+              key={mainData.imageSrc}
+            >
+              <Image
+                src={mainData.imageSrc}
+                loading="lazy"
+                width={1064}
+                height={533}
+                alt="futurella article - poster "
+                className="article-poster"
+              />
+            </motion.div>
             <div className="article-text d-flex-space-between">
               <div className="article-text-content w-100">
                 <div className="content-part d-flex flex-col">
