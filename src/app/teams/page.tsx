@@ -26,8 +26,10 @@ export default function Page() {
   const router = useRouter();
   const [openGallery, setOpenGallery] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const handleOpenGallery = () => {
+  const [selectedPics, setSelectePics] = useState("");
+  const handleOpenGallery = (data: string) => {
     setOpenGallery(true);
+    setSelectePics(data);
   };
 
   const handleClosGallery = () => {
@@ -36,7 +38,9 @@ export default function Page() {
   return (
     <div className="akata-team-page container">
       {isModalOpen && <Modal onClose={() => setIsModalOpen(false)} />}
-      {openGallery && <Gallery onClose={handleClosGallery} />}
+      {openGallery && (
+        <Gallery onClose={handleClosGallery} initalPics={selectedPics} />
+      )}
       <button className="btn-go-back" onClick={() => router.push("/#teams")}>
         <motion.span whileHover={{y: 10}}>
           <FontAwesomeIcon icon={faArrowLeft} className="btn-icon" />
@@ -72,29 +76,29 @@ export default function Page() {
             <Image
               src={"/images/teams/akata-team.png"}
               alt="akata-team"
-              width={300}
-              height={600}
+              width={800}
+              height={800}
               className="card-part-photo"
             />
             <Image
               src={"/images/teams/akata-team-2.png"}
               alt="akata-team"
-              width={300}
-              height={600}
+              width={800}
+              height={800}
               className="card-part-photo"
             />
             <Image
               src={"/images/teams/akata-team-3.png"}
               alt="akata-team"
-              width={300}
-              height={600}
+              width={800}
+              height={800}
               className="card-part-photo"
             />
             <Image
               src={"/images/teams/akata-team-4.png"}
               alt="akata-team"
-              width={300}
-              height={600}
+              width={800}
+              height={800}
               className="card-part-photo"
             />
           </motion.div>
@@ -113,7 +117,7 @@ export default function Page() {
             />
           </motion.div>
         </div>
-        <div className="content-gallery w-100" onClick={handleOpenGallery}>
+        <div className="content-gallery w-100">
           <div className="card-part">
             <motion.div
               initial={{opacity: 0, y: -40, rotate: 10}}
@@ -125,9 +129,12 @@ export default function Page() {
               <Image
                 src={"/images/teams/akata-team.png"}
                 alt="akata-team"
-                width={300}
-                height={600}
+                width={800}
+                height={800}
                 className="card-part-photo"
+                onClick={() =>
+                  handleOpenGallery("/images/teams/akata-team.png")
+                }
               />
             </motion.div>
             <motion.div
@@ -139,9 +146,12 @@ export default function Page() {
               <Image
                 src={"/images/teams/akata-team-2.png"}
                 alt="akata-team"
-                width={300}
-                height={600}
+                width={800}
+                height={800}
                 className="card-part-photo"
+                onClick={() =>
+                  handleOpenGallery("/images/teams/akata-team-2.png")
+                }
               />
             </motion.div>
           </div>
@@ -155,9 +165,12 @@ export default function Page() {
               <Image
                 src={"/images/teams/akata-team-3.png"}
                 alt="akata-team"
-                width={300}
-                height={600}
+                width={800}
+                height={800}
                 className="card-part-photo"
+                onClick={() =>
+                  handleOpenGallery("/images/teams/akata-team-3.png")
+                }
               />
             </motion.div>
             <motion.div
@@ -172,6 +185,9 @@ export default function Page() {
                 width={300}
                 height={600}
                 className="card-part-photo"
+                onClick={() =>
+                  handleOpenGallery("/images/teams/akata-team-4.png")
+                }
               />
             </motion.div>
             <motion.div
@@ -187,6 +203,9 @@ export default function Page() {
                 width={300}
                 height={600}
                 className="card-part-photo"
+                onClick={() =>
+                  handleOpenGallery("/images/teams/akata-team-5.png")
+                }
               />
             </motion.div>
           </div>
