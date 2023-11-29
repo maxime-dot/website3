@@ -1,5 +1,6 @@
 export interface MiniCardProps {
-    title: string,
-    imgSrc: string,
-    date: string
+  title: string;
+  imgSrc: string;
+  date: string;
+  onClick: () => void;
 }

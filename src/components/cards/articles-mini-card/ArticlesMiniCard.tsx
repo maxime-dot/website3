@@ -6,9 +6,14 @@ import {faArrowRight} from "@fortawesome/free-solid-svg-icons";
 import Image from "next/image";
 import {MiniCardProps} from "@/types/mini-card.type";
 
-const ArticleMiniCard: React.FC<MiniCardProps> = ({imgSrc, date, title}) => {
+const ArticleMiniCard: React.FC<MiniCardProps> = ({
+  imgSrc,
+  date,
+  title,
+  onClick,
+}) => {
   return (
-    <div className="article-mini-card w-100 d-flex flex-row">
+    <div className="article-mini-card w-100 d-flex flex-row" onClick={onClick}>
       <FontAwesomeIcon icon={faArrowRight} className="arrow-icon" />
       <div className="mini-card-profile">
         <Image

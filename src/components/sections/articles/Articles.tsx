@@ -12,9 +12,11 @@ import ArticleViewer from "../../article-viewer/ArticleViewer";
 
 const Articles: React.FC = () => {
   const [openArticle, setOpenArticle] = useState(false);
+  const [selecteArticle, setSelectedArticle] = useState(ArticleData[0]);
 
-  const handleOpenArticle = () => {
+  const handleOpenArticle = (data: any) => {
     setOpenArticle(true);
+    setSelectedArticle(data);
   };
   const handleCloseArticle = () => {
     setOpenArticle(false);
@@ -32,7 +34,9 @@ const Articles: React.FC = () => {
   return (
     <section className="akata-articles fill-view" id="articles">
       <AnimatePresence mode="wait">
-        {openArticle && <ArticleViewer onClose={handleCloseArticle} />}
+        {openArticle && (
+          <ArticleViewer onClose={handleCloseArticle} data={selecteArticle} />
+        )}
       </AnimatePresence>
       <Image
         src={"/images/hand-robot-shape-data.png"}
@@ -58,7 +62,7 @@ const Articles: React.FC = () => {
               date={data.date}
               content={data.content}
               title={data.title}
-              readMore={handleOpenArticle}
+              readMore={() => handleOpenArticle(data)}
               imgSrc={data.imageSrc}
             />
           ))}

@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, {useState} from "react";
 import {motion} from "framer-motion";
 import Image from "next/image";
 import "./article-viewer.scss";
@@ -9,7 +10,8 @@ import ArticleData from "@/data/articles.json";
 import {ArticleViewerProps} from "@/types/article-viewer.type";
 import {artView} from "@/animation/animation";
 
-const ArticleViewer: React.FC<ArticleViewerProps> = ({onClose}) => {
+const ArticleViewer: React.FC<ArticleViewerProps> = ({onClose, data}) => {
+  const [mainData, setMainData] = useState(data);
   return (
     <motion.div
       variants={artView}
@@ -24,12 +26,10 @@ const ArticleViewer: React.FC<ArticleViewerProps> = ({onClose}) => {
         </button>
         <div className="viewer-article-body d-flex-center flex-col w-100">
           <div className="article w-100">
-            <span className="article-date">december 21, 2021</span>
-            <h2 className="article-title">
-              Futurella Madagascar 301 office’s inauguration
-            </h2>
+            <span className="article-date">{mainData.date}</span>
+            <h2 className="article-title">{mainData.title}</h2>
             <Image
-              src={"/images/articles/futurella.png"}
+              src={mainData.imageSrc}
               loading="lazy"
               width={1064}
               height={533}
@@ -39,31 +39,8 @@ const ArticleViewer: React.FC<ArticleViewerProps> = ({onClose}) => {
             <div className="article-text d-flex-space-between">
               <div className="article-text-content w-100">
                 <div className="content-part d-flex flex-col">
-                  <h4 className="content-title">
-                    1 - Futurella Madagascar Office Inauguration: A New Era of
-                    Sustainability
-                  </h4>
-                  <p className="akata-text-medium">
-                    December 21, 2021, will be remembered as a significant day
-                    in Madagascar&apos;s history, marked by the inauguration of
-                    Futurella Madagascar&apos;s office, symbolizing a renewed
-                    commitment to sustainability and clean energy. This
-                    ceremony, held under the radiant sun, brought together key
-                    players in the renewable energy, education, and sustainable
-                    development sectors. The centerpiece of this day was
-                    undoubtedly the L’École d’Été PV Fianara 2021 a remarkable
-                    initiative organized by the esteemed Centre d’Employabilité
-                    Francophone, in close collaboration with Fianarantsoa
-                    University and the dynamic Association FianaraLab. This
-                    summer school not only highlighted the crucial importance of
-                    education in sustainable energy but also served as a
-                    platform for discussing sustainability-related issues in
-                    Madagascar. The fruitful partnership between these renowned
-                    institutions resulted in a meaningful inauguration. It
-                    symbolized the collective determination to advance the
-                    energy transition and to implement innovative solutions to
-                    meet Madagascar&apos;s energy needs.
-                  </p>
+                  <h4 className="content-title">1 - {mainData.title}</h4>
+                  <p className="akata-text-medium">{mainData.content}</p>
                 </div>
               </div>
               <div className="article-suggestion w-100 d-flex flex-col">
@@ -84,6 +61,7 @@ const ArticleViewer: React.FC<ArticleViewerProps> = ({onClose}) => {
                         date={data.date}
                         imgSrc={data.imageSrc}
                         title={data.title}
+                        onClick={() => setMainData(data)}
                       />
                     </motion.div>
                   ))}
