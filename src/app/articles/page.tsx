@@ -6,12 +6,13 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faArrowLeft, faChevronRight} from "@fortawesome/free-solid-svg-icons";
 import LoadingModal from "@/components/modal-lets-talk/LoadingModal";
 import Image from "next/image";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import Button from "@/components/button/normal/Button";
 import ArticleData from "@/data/articles.json";
 import ArticleCard from "@/components/cards/articles/ArticleCard";
 import {truncate} from "@/helpers/truncate";
 import Footer from "@/components/footer/Footer";
+import ArticleViewer from "@/components/article-viewer/ArticleViewer";
 const ModalLetsTalk = dynamic(
   () => import("@/components/modal-lets-talk/ModalLetsTalk"),
 
@@ -21,14 +22,38 @@ const ModalLetsTalk = dynamic(
 );
 export default function Page() {
   const [isOpenModal, setOpenModal] = useState(false);
+  const [selectedCard, setSelectedCard] = useState(ArticleData[0]);
+  const [openViewer, setOpenViewer] = useState(false);
   const closeModal = () => {
     setOpenModal(false);
   };
   const openModal = () => {
     setOpenModal(true);
   };
+
+  const handleOpenViewer = (data: any) => {
+    setSelectedCard(data);
+    setOpenViewer(true);
+  };
+
+  const handleViewerClose = () => {
+    setOpenViewer(false);
+  };
+  useEffect(() => {
+    if (openViewer) {
+      document.documentElement.classList.add("global-style");
+      document.body.classList.add("global-style");
+    } else {
+      document.documentElement.classList.remove("global-style");
+      document.body.classList.remove("global-style");
+    }
+  }, [openViewer]);
+
   return (
     <>
+      {openViewer && (
+        <ArticleViewer data={selectedCard} onClose={handleViewerClose} />
+      )}
       <div className="akata-articles-page container">
         {isOpenModal && <ModalLetsTalk onClose={closeModal} />}
         <Link
@@ -98,8 +123,8 @@ export default function Page() {
                 date={data.date}
                 content={data.content}
                 title={data.title}
-                readMore={closeModal}
                 imgSrc={data.imageSrc}
+                readMore={() => handleOpenViewer(data)}
               />
             ))}
           </div>
