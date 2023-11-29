@@ -91,6 +91,7 @@ export default function Page() {
               <div
                 className="horizontal-article d-flex "
                 key={`horizontal-article-${index}`}
+                onClick={() => handleOpenViewer(data)}
               >
                 <button className="read-more btn">
                   <FontAwesomeIcon icon={faChevronRight} className="btn-icon" />
