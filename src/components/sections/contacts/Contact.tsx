@@ -9,10 +9,10 @@ import {
   faEnvelope,
   faLightbulb,
   faPaperPlane,
-  faMarker,
   faPhone,
   faCircleCheck,
   faExclamationTriangle,
+  faMapLocationDot,
 } from "@fortawesome/free-solid-svg-icons";
 
 import Button from "../../button/normal/Button";
@@ -259,7 +259,7 @@ const Contacts: React.FC = () => {
         </div>
         <ul className="adress-text">
           <li className="text-item akata-text-medium d-flex ">
-            <FontAwesomeIcon icon={faMarker} className="list-icon" />{" "}
+            <FontAwesomeIcon icon={faMapLocationDot} className="list-icon" />{" "}
             {contactData.adress}
           </li>
           <li className="text-item akata-text-medium d-flex">
