@@ -4,8 +4,8 @@ import Image from "next/image";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {
   faFacebook,
+  faInstagram,
   faLinkedin,
-  faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 import "./footer.scss";
 import contactData from "@/data/contacts.json";
@@ -105,14 +105,22 @@ const Footer: React.FC = () => {
             />
           </div>
           <div className="social-link d-flex-center flex-row">
-            <Link href={"/"}>
+            <Link href={contactData.socialLink.facebook} target="_blank">
               <FontAwesomeIcon icon={faFacebook} className="link-icon" />
             </Link>
-            <Link href={"/"}>
-              <FontAwesomeIcon icon={faTwitter} className="link-icon" />
+            <Link href={contactData.socialLink.instagram}>
+              <FontAwesomeIcon
+                icon={faInstagram}
+                target="_blank"
+                className="link-icon"
+              />
             </Link>
-            <Link href={"/"}>
-              <FontAwesomeIcon icon={faLinkedin} className="link-icon" />
+            <Link href={contactData.socialLink.linkedin}>
+              <FontAwesomeIcon
+                icon={faLinkedin}
+                target="_blank"
+                className="link-icon"
+              />
             </Link>
           </div>
         </div>

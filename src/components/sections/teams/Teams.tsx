@@ -12,6 +12,7 @@ import Link from "next/link";
 import Image from "next/image";
 import LoadingModal from "../../modal-lets-talk/LoadingModal";
 import AdminTeamData from "@/data/admin-teams.json";
+import ContactData from "@/data/contacts.json";
 
 const ModalLetsTalk = dynamic(
   () => import("../../modal-lets-talk/ModalLetsTalk"),
@@ -77,7 +78,7 @@ const Teams: React.FC = () => {
           </p>
           <div className="profile-social-link d-flex flex-row">
             <Link
-              href={"https://www.facebook.com/profile.php?id=100064269933528"}
+              href={ContactData.socialLink.facebook}
               passHref={true}
               className="social-link"
               target="_blank"
@@ -86,9 +87,7 @@ const Teams: React.FC = () => {
               <FontAwesomeIcon icon={faFacebook} className="link-icon" />
             </Link>
             <Link
-              href={
-                "https://www.linkedin.com/company/73925143/admin/feed/posts/"
-              }
+              href={ContactData.socialLink.linkedin}
               passHref={true}
               className="social-link"
               target="_blank"
@@ -97,7 +96,7 @@ const Teams: React.FC = () => {
               <FontAwesomeIcon icon={faLinkedin} className="link-icon" />
             </Link>
             <Link
-              href={"https://www.instagram.com/akata_goavana/"}
+              href={ContactData.socialLink.instagram}
               passHref={true}
               className="social-link"
               target="_blank"

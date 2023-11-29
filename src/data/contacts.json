@@ -1,6 +1,11 @@
 {
   "adress": "Rue Rakotozafy Alphonse, Isaha Fianarantsoa Madagascar",
   "mail": "contact-akata@goavana.com",
-  "phone": "+261 34 67 573 84"
+  "phone": "+261 34 67 573 84",
+  "socialLink": {
+    "facebook":"https://www.facebook.com/profile.php?id=100064269933528",
+    "linkedin":"https://www.linkedin.com/company/73925143/admin/feed/posts/" ,
+    "instagram": "https://www.instagram.com/akata_goavana/"
+  }
 }
 
