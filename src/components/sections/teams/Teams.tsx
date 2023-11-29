@@ -3,7 +3,11 @@ import React, {useState, useEffect} from "react";
 import dynamic from "next/dynamic";
 import {useRouter} from "next/navigation";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faFacebook, faLinkedin} from "@fortawesome/free-brands-svg-icons";
+import {
+  faFacebook,
+  faLinkedin,
+  faInstagram,
+} from "@fortawesome/free-brands-svg-icons";
 import Link from "next/link";
 import Image from "next/image";
 import LoadingModal from "../../modal-lets-talk/LoadingModal";
@@ -73,7 +77,7 @@ const Teams: React.FC = () => {
           </p>
           <div className="profile-social-link d-flex flex-row">
             <Link
-              href={"https://www.facebook.com"}
+              href={"https://www.facebook.com/profile.php?id=100064269933528"}
               passHref={true}
               className="social-link"
               target="_blank"
@@ -82,13 +86,24 @@ const Teams: React.FC = () => {
               <FontAwesomeIcon icon={faFacebook} className="link-icon" />
             </Link>
             <Link
-              href={"https://www.linkedin.com"}
+              href={
+                "https://www.linkedin.com/company/73925143/admin/feed/posts/"
+              }
               passHref={true}
               className="social-link"
               target="_blank"
               title="Akata Goavana Linkedin Account"
             >
               <FontAwesomeIcon icon={faLinkedin} className="link-icon" />
+            </Link>
+            <Link
+              href={"https://www.instagram.com/akata_goavana/"}
+              passHref={true}
+              className="social-link"
+              target="_blank"
+              title="Akata Goavana Instagram Account"
+            >
+              <FontAwesomeIcon icon={faInstagram} className="link-icon" />
             </Link>
           </div>
         </div>
