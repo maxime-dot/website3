@@ -1,6 +1,6 @@
 // Your original file (e.g., api/sendEmailWithAttachments.ts)
 import {NextRequest, NextResponse} from "next/server";
-import {sendEmail} from "@/app/services/emailServices";
+import {sendEmail} from "@/services/emailServices";
 
 export async function POST(req: NextRequest) {
   try {
