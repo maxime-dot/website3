@@ -1,5 +1,5 @@
 "use client";
-import React, {useState} from "react";
+import React, { useState } from "react";
 import dynamic from "next/dynamic";
 import Image from "next/image";
 import "./services.scss";
@@ -8,10 +8,16 @@ const ModalLetsTalk = dynamic(
   () => import("../../modal-lets-talk/ModalLetsTalk"),
   {
     loading: () => <LoadingModal />,
-  }
+  },
 );
 import LoadingModal from "../../modal-lets-talk/LoadingModal";
 import Button from "../../button/normal/Button";
+import { LazyMotion, domAnimation, m, motion } from "framer-motion";
+import {
+  serviceCardAnimation,
+  serviceCardImageAnimation,
+  titleAnimation,
+} from "@/animation/animation";
 
 const Services: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -28,15 +34,31 @@ const Services: React.FC = () => {
     >
       {isModalOpen && <ModalLetsTalk onClose={handleCloseModal} />}
       <div className="services-intro w-100 d-flex-center flex-col">
-        <h2 className="akata-title-medium services-intro-title">
-          We make your business ready for <br />{" "}
-          <span>TOMORROW’s challenges</span>
-        </h2>
-        <p className="akata-text-medium services-intro-description">
-          Digital technology is advancing. Is your business keeping pace? Even
-          the smallest delay could put you out of business.  Our goal: to keep
-          you ahead of the game !
-        </p>
+        <LazyMotion features={domAnimation}>
+          <m.h2
+            variants={titleAnimation}
+            initial={"initial"}
+            whileInView={"animate"}
+            viewport={{ once: true }}
+            className="akata-title-medium services-intro-title"
+          >
+            We make your business ready for <br />{" "}
+            <span>TOMORROW’s challenges</span>
+          </m.h2>
+        </LazyMotion>
+        <LazyMotion features={domAnimation}>
+          <m.p
+            variants={titleAnimation}
+            initial={"initial"}
+            whileInView={"animate"}
+            viewport={{ once: true }}
+            className="akata-text-medium services-intro-description"
+          >
+            Digital technology is advancing. Is your business keeping pace? Even
+            the smallest delay could put you out of business.  Our goal: to keep
+            you ahead of the game !
+          </m.p>
+        </LazyMotion>
       </div>
       <div className="d-flex flex-col servces-list-item">
         {servicesData.map((service, index) => (
@@ -45,15 +67,20 @@ const Services: React.FC = () => {
             className="services-items w-100 d-flex-space-between flex-row"
             id={service.linkId}
           >
-            <div
+            <motion.div
+              variants={serviceCardAnimation}
+              initial={"initial"}
+              whileInView={"animate"}
+              transition={{ delay: 0.2 }}
+              viewport={{ once: true }}
               className="item-info-text d-flex flex-col"
-              style={{order: index % 2 === 1 ? 1 : 0}}
+              style={{ order: index % 2 === 1 ? 1 : 0 }}
             >
               <div className="info-title d-flex flex-col">
                 <h3 className="akata-title-medium">
                   {service.deco} <span>{service.title}</span>
                 </h3>
-                <p className="akata-text-medium" style={{maxWidth: 441}}>
+                <p className="akata-text-medium" style={{ maxWidth: 441 }}>
                   {service.description}
                 </p>
               </div>
@@ -64,9 +91,16 @@ const Services: React.FC = () => {
                 type="button"
                 hoverType="solid"
               />
-            </div>
+            </motion.div>
 
-            <div className="services-image">
+            <motion.div
+              className="services-image"
+              variants={serviceCardImageAnimation}
+              initial={"initial"}
+              whileInView={"animate"}
+              transition={{ delay: 0.4 }}
+              viewport={{ once: true }}
+            >
               {index % 2 === 1 ? (
                 <Image
                   src={"/images/services/plant-big-decorator.png"}
@@ -103,7 +137,7 @@ const Services: React.FC = () => {
                   className="image-demo"
                 />
               </div>
-            </div>
+            </motion.div>
           </div>
         ))}
       </div>
