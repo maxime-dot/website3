@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFacebook,
   faInstagram,
@@ -30,7 +30,7 @@ const Footer: React.FC = () => {
               <FontAwesomeIcon
                 icon={faMapLocationDot}
                 className="link-icon"
-                style={{marginRight: "5px"}}
+                style={{ marginRight: "5px" }}
               />{" "}
               {contactData.adress}
             </li>
@@ -39,7 +39,7 @@ const Footer: React.FC = () => {
                 <FontAwesomeIcon
                   icon={faEnvelope}
                   className="link-icon"
-                  style={{marginRight: "5px"}}
+                  style={{ marginRight: "5px" }}
                 />{" "}
                 {contactData.mail}
               </Link>
@@ -50,7 +50,7 @@ const Footer: React.FC = () => {
                 <FontAwesomeIcon
                   icon={faPhone}
                   className="link-icon"
-                  style={{marginRight: "5px"}}
+                  style={{ marginRight: "5px" }}
                 />{" "}
                 {contactData.phone}
               </Link>
@@ -90,18 +90,18 @@ const Footer: React.FC = () => {
         <div className="footer-content d-flex flex-col">
           <div className="logo d-flex-center flex-row">
             <Image
-              src={"/images/footer/logo-akata.png"}
-              alt="Akata's logo"
-              className="logo-akata"
-              width={64}
-              height={64}
-            />
-            <Image
               src={"/images/footer/logo-goavana.png"}
               alt="Goavana's logo"
               className="logo-goavana"
               width={75}
               height={79}
+            />
+            <Image
+              src={"/images/footer/logo-akata.png"}
+              alt="Akata's logo"
+              className="logo-akata"
+              width={64}
+              height={64}
             />
           </div>
           <div className="social-link d-flex-center flex-row">
@@ -126,19 +126,20 @@ const Footer: React.FC = () => {
         </div>
       </div>
       <Image
-        src={"/images/footer/shape.svg"}
-        alt="bird and grass shape"
-        className="footer-shape"
-        width={214}
-        height={216}
-      />
-      <Image
         src={"/images/footer/right-shapre.svg"}
         alt="bird and grass shape"
         className="footer-right-shape"
         width={200}
         height={200}
       />
+      <Image
+        src={"/images/footer/shape.svg"}
+        alt="bird and grass shape"
+        className="footer-shape"
+        width={214}
+        height={216}
+      />
+
       <span className="akata-text-small">
         Copyright &copy; by Akata Goavana 2020-{currentYear}
       </span>
