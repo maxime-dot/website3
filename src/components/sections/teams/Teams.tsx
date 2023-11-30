@@ -1,8 +1,9 @@
 "use client";
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
-import {useRouter} from "next/navigation";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import { useRouter } from "next/navigation";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { motion } from "framer-motion";
 import {
   faFacebook,
   faLinkedin,
@@ -18,13 +19,13 @@ const ModalLetsTalk = dynamic(
   () => import("../../modal-lets-talk/ModalLetsTalk"),
   {
     loading: () => <LoadingModal />,
-  }
+  },
 );
 const TeamSlider = dynamic(
   () => import("@/components/sliders/team-slider/TeamSlider"),
   {
     loading: () => <LoadingModal />,
-  }
+  },
 );
 
 import "./teams.scss";
@@ -69,14 +70,31 @@ const Teams: React.FC = () => {
 
       <div className="teams-intro d-flex flex-col">
         <div className="intro-title d-flex flex-col">
-          <h2 className="akata-title-strong">
+          <motion.h2
+            initial={{ opacity: 0, y: 100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="akata-title-strong"
+          >
             Our Team,Your <span>success</span> guarantee
-          </h2>
-          <p className="akata-text-big team-intro-description">
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, x: 100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3 }}
+            className="akata-text-big team-intro-description"
+          >
             Secure your investment ! Our dedicated team works to maximize your
             return on investment through attention to detail.
-          </p>
-          <div className="profile-social-link d-flex flex-row">
+          </motion.p>
+          <motion.div
+            initial={{ opacity: 0, y: 100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ ease: "easeInOut", delay: 0.4 }}
+            className="profile-social-link d-flex flex-row"
+          >
             <Link
               href={ContactData.socialLink.facebook}
               passHref={true}
@@ -104,9 +122,15 @@ const Teams: React.FC = () => {
             >
               <FontAwesomeIcon icon={faInstagram} className="link-icon" />
             </Link>
-          </div>
+          </motion.div>
         </div>
-        <div className="intro-ca-button d-flex flex-row">
+        <motion.div
+          initial={{ opacity: 0, y: 100 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.5 }}
+          className="intro-ca-button d-flex flex-row"
+        >
           <Button
             type="button"
             ariaLabel="send you project requirement"
@@ -120,10 +144,14 @@ const Teams: React.FC = () => {
             onClick={handleOpenAboutTteam}
             title="Get Better to know your teams"
           />
-        </div>
+        </motion.div>
       </div>
       <div className="teams-admin-member d-flex flex-col">
-        <div
+        <motion.div
+          initial={{ opacity: 0, x: 100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ ease: "easeInOut", delay: 0.2, duration: 0.5 }}
           className="admin-ceo-words d-flex flex-col"
           onClick={handleOpenSlider}
         >
@@ -154,11 +182,22 @@ const Teams: React.FC = () => {
               className="plant-pics"
             />
           </div>
-        </div>
+        </motion.div>
         {/* team member list */}
         <div className="admin-teams-list d-flex flex-col">
           {AdminTeamData.map((data, index) => (
-            <div className="team d-flex flex-row" key={`admin-team-${index}`}>
+            <motion.div
+              initial={{ opacity: 0, x: 100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{
+                ease: "easeInOut",
+                delay: index / 10,
+                duration: 0.5,
+              }}
+              className="team d-flex flex-row"
+              key={`admin-team-${index}`}
+            >
               <Image
                 src={data.profileSrc}
                 width={53}
@@ -170,7 +209,7 @@ const Teams: React.FC = () => {
                 <p className="info-name akata-title-medium">{data.name}</p>
                 <p className="info-post akata-text-small">{data.post}</p>
               </div>
-            </div>
+            </motion.div>
           ))}
           <div className="team-ca-button d-flex flex-row">
             <Button

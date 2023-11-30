@@ -98,7 +98,6 @@ const Services: React.FC = () => {
               variants={serviceCardImageAnimation}
               initial={"initial"}
               whileInView={"animate"}
-              transition={{ delay: 0.4 }}
               viewport={{ once: true }}
             >
               {index % 2 === 1 ? (
