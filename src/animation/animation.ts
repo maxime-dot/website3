@@ -59,10 +59,12 @@ export const serviceCardAnimation = {
 export const serviceCardImageAnimation = {
   initial: {
     opacity: 0,
+    scale: 0.5,
     y: 100,
   },
   animate: {
     opacity: 1,
+    scale: 1,
     y: 0,
   },
 };
