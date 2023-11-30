@@ -24,3 +24,12 @@ export const articleCardAnimation = {
     opacity: 0,
   },
 };
+
+export const testimonialCardAnimation = {
+  initial: {
+    opacity: 0,
+  },
+  animate: {
+    opacity: 1,
+  },
+};
