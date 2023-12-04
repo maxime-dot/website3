@@ -4,7 +4,9 @@ import "./main-services.scss";
 import {LazyMotion, domAnimation, m, motion} from "framer-motion";
 import {titleAnimation} from "@/animation/animation";
 import ServiceCard from "@/components/services-card/ServiceCard";
+import {useRouter} from "next/navigation";
 const MainServices: React.FC = () => {
+  const router = useRouter();
   return (
     <section
       className="main-services fill-view container d-flex flex-col"
@@ -41,6 +43,13 @@ const MainServices: React.FC = () => {
         <ServiceCard />
         <ServiceCard />
         <ServiceCard />
+        <button
+          type="button"
+          className="btn-explore-services akata-title-medium"
+          onClick={() => router.push("/services")}
+        >
+          EXPLORE MORE <span>SERVICES</span>
+        </button>
       </div>
     </section>
   );
