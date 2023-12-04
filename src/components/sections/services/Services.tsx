@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, {useState} from "react";
 import dynamic from "next/dynamic";
 import Image from "next/image";
 import "./services.scss";
@@ -8,11 +8,11 @@ const ModalLetsTalk = dynamic(
   () => import("../../modal-lets-talk/ModalLetsTalk"),
   {
     loading: () => <LoadingModal />,
-  },
+  }
 );
 import LoadingModal from "../../modal-lets-talk/LoadingModal";
 import Button from "../../button/normal/Button";
-import { LazyMotion, domAnimation, m, motion } from "framer-motion";
+import {LazyMotion, domAnimation, m, motion} from "framer-motion";
 import {
   serviceCardAnimation,
   serviceCardImageAnimation,
@@ -39,11 +39,10 @@ const Services: React.FC = () => {
             variants={titleAnimation}
             initial={"initial"}
             whileInView={"animate"}
-            viewport={{ once: true }}
+            viewport={{once: true}}
             className="akata-title-medium services-intro-title"
           >
-            We make your business ready for <br />{" "}
-            <span>TOMORROW’s challenges</span>
+            Is your business keeping pace?
           </m.h2>
         </LazyMotion>
         <LazyMotion features={domAnimation}>
@@ -51,7 +50,7 @@ const Services: React.FC = () => {
             variants={titleAnimation}
             initial={"initial"}
             whileInView={"animate"}
-            viewport={{ once: true }}
+            viewport={{once: true}}
             className="akata-text-medium services-intro-description"
           >
             Digital technology is advancing. Is your business keeping pace? Even
@@ -71,16 +70,16 @@ const Services: React.FC = () => {
               variants={serviceCardAnimation}
               initial={"initial"}
               whileInView={"animate"}
-              transition={{ delay: 0.2 }}
-              viewport={{ once: true }}
+              transition={{delay: 0.2}}
+              viewport={{once: true}}
               className="item-info-text d-flex flex-col"
-              style={{ order: index % 2 === 1 ? 1 : 0 }}
+              style={{order: index % 2 === 1 ? 1 : 0}}
             >
               <div className="info-title d-flex flex-col">
                 <h3 className="akata-title-medium">
                   {service.deco} <span>{service.title}</span>
                 </h3>
-                <p className="akata-text-medium" style={{ maxWidth: 441 }}>
+                <p className="akata-text-medium" style={{maxWidth: 441}}>
                   {service.description}
                 </p>
               </div>
@@ -98,7 +97,7 @@ const Services: React.FC = () => {
               variants={serviceCardImageAnimation}
               initial={"initial"}
               whileInView={"animate"}
-              viewport={{ once: true }}
+              viewport={{once: true}}
             >
               {index % 2 === 1 ? (
                 <Image
