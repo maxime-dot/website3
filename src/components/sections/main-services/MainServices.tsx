@@ -3,6 +3,7 @@ import React from "react";
 import "./main-services.scss";
 import {LazyMotion, domAnimation, m, motion} from "framer-motion";
 import {titleAnimation} from "@/animation/animation";
+import ServiceCard from "@/components/services-card/ServiceCard";
 const MainServices: React.FC = () => {
   return (
     <section
@@ -34,6 +35,12 @@ const MainServices: React.FC = () => {
             you ahead of the game !
           </m.p>
         </LazyMotion>
+      </div>
+      <div className="main-services-lists w-100">
+        <ServiceCard />
+        <ServiceCard />
+        <ServiceCard />
+        <ServiceCard />
       </div>
     </section>
   );

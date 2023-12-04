@@ -6,4 +6,19 @@
       padding-bottom: 20px;
     }
   }
+  .main-services-lists {
+    margin-top: 108px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-services {
+    .main-services-lists {
+      grid-template-columns: 1fr;
+    }
+  }
 }
