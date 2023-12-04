@@ -1,17 +1,23 @@
 .services-page {
   padding: 20px 0 80px 0;
-  .return-button {
-    cursor: pointer;
-    border: 0;
-    outline: 0;
-    background: 0;
-    color: var(--goavana-blue);
-    font-family: var(--fonts-poppins, "Poppins");
-    font-weight: bold;
-    padding: 10px;
-    padding-right: 0;
-    .icon-btn {
-      margin-right: 10px;
+  .services-page-return-content {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 20px 8%;
+    .return-button {
+      cursor: pointer;
+      border: 0;
+      outline: 0;
+      background: 0;
+      color: var(--goavana-blue);
+      font-family: var(--fonts-poppins, "Poppins");
+      font-weight: bold;
+      padding: 10px;
+      padding-right: 0;
+      .icon-btn {
+        margin-right: 10px;
+      }
     }
   }
 }
