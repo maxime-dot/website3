@@ -56,6 +56,37 @@
         }
       }
     }
+    .gift-info {
+      position: absolute;
+      align-items: flex-start;
+      gap: 10px;
+      border-radius: 5px;
+      top: -80px;
+      left: 0;
+      background: var(--goavana-yellow);
+      padding: 10px;
+      max-width: 386px;
+      &::before {
+        content: "";
+        width: 15px;
+        height: 15px;
+        background: var(--goavana-yellow);
+        position: absolute;
+        left: 20px;
+        transform: rotate(45deg);
+        bottom: -7.5px;
+      }
+      span {
+        margin: 0;
+        padding: 0;
+        font-size: 12px;
+      }
+      .gift-icon {
+        font-size: 30px;
+        --fa-animation-delay: 4s;
+        --fa-animation-duration: 2s;
+      }
+    }
   }
 }
 

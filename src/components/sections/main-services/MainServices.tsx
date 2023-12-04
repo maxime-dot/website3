@@ -6,7 +6,7 @@ import {titleAnimation} from "@/animation/animation";
 import ServiceCard from "@/components/services-card/ServiceCard";
 import {useRouter} from "next/navigation";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faArrowRight, faMouse} from "@fortawesome/free-solid-svg-icons";
+import {faArrowRight, faGift, faMouse} from "@fortawesome/free-solid-svg-icons";
 const MainServices: React.FC = () => {
   const router = useRouter();
   return (
@@ -40,7 +40,21 @@ const MainServices: React.FC = () => {
           </m.p>
         </LazyMotion>
       </div>
-      <div className="main-services-lists w-100">
+      <div className="main-services-lists w-100 ">
+        {/* gift info */}
+        <motion.div
+          initial={{opacity: 0, y: 30}}
+          whileInView={{opacity: 1, y: 0}}
+          viewport={{once: true}}
+          transition={{delay: 0.5}}
+          className="gift-info d-flex-space-between"
+        >
+          <FontAwesomeIcon icon={faGift} className="gift-icon  fa-shake" />{" "}
+          <span>
+            The quote request for your project is free of charge, take advantage
+            of it.
+          </span>
+        </motion.div>
         <ServiceCard />
         <ServiceCard />
         <ServiceCard />
