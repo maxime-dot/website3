@@ -7,20 +7,20 @@
     }
   }
   .main-services-lists {
-    margin-top: 108px;
+    margin-top: 180px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     flex-wrap: wrap;
     gap: 30px;
     position: relative;
     .btn-explore-services {
+      border: 0;
       cursor: pointer;
       position: absolute;
       width: 200px;
       height: 200px;
       background: var(--light);
       border-radius: 100%;
-      border: 0;
       outline: 0;
       top: calc(50% - 100px);
       left: calc(50% - 100px);

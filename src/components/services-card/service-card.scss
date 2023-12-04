@@ -1,14 +1,39 @@
+@mixin service-card($images) {
+  background: {
+    position: center;
+    size: cover;
+    repeat: no-repeat;
+  }
+  border-radius: 10px;
+
+  @for $i from 1 through length($images) {
+    &:nth-child(#{$i}) {
+      $image: nth($images, $i);
+      background: linear-gradient(
+          to right,
+          rgba(0, 0, 0, 0.65),
+          rgba(0, 0, 0, 0.65)
+        ),
+        url($image);
+    }
+  }
+}
+
 .service-card {
   height: 311px;
+  // default value
   background: linear-gradient(
       to right,
       rgba(0, 0, 0, 0.65),
       rgba(0, 0, 0, 0.65)
     ),
-    url("./assets/ai-mastery.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+    url("./assets/dev-ops.png");
+  $backgrounds: (
+    "./assets/dev-ops.png",
+    "./assets/ui-ux-design.png",
+    "./assets/ai-mastery.png",
+    "./assets/app-development.png"
+  );
 
-  border-radius: 10px;
+  @include service-card($backgrounds);
 }
