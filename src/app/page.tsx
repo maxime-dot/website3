@@ -6,7 +6,9 @@ const Header = dynamic(() => import("@/components/sections/header/Header"));
 const Testimonial = dynamic(
   () => import("@/components/sections/testimonial/Testimonial")
 );
-
+const MainServices = dynamic(
+  () => import("@/components/sections/main-services/MainServices")
+);
 const Projects = dynamic(
   () => import("@/components/sections/projects/Projects")
 );
@@ -27,6 +29,7 @@ export default function Home() {
       <Testimonial />
       <Projects />
       <Teams />
+      <MainServices />
       <Articles />
       <Contacts />
       <Footer />
