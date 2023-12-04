@@ -27,9 +27,9 @@ export default function Home() {
       <Navbar />
       <Header />
       <Testimonial />
+      <MainServices />
       <Projects />
       <Teams />
-      <MainServices />
       <Articles />
       <Contacts />
       <Footer />
