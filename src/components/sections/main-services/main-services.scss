@@ -25,18 +25,32 @@
       top: calc(50% - 100px);
       left: calc(50% - 100px);
       transition: all 0.2s ease;
-      animation: desapear 2s linear infinite;
+      animation: fade-shadow-white 2s linear infinite;
+      padding-top: 10px;
+      transform: scale(0.9);
+      .mouse-icon {
+        display: block;
+        transform: translateY(35px);
+        transition: all 0.2s ease-in-out;
+        opacity: 0;
+      }
+
       span {
         transition: all 0.4s ease;
       }
       &:active {
-        transform: scale(0.9);
+        transform: scale(0.8);
       }
 
       &:hover {
         background: var(--goavana-yellow);
         color: var(--goavana-blue);
-        transform: scale(1.05);
+        animation: fade-shadow-yellow 2s linear infinite;
+
+        .mouse-icon {
+          opacity: 1;
+          transform: translateY(15px);
+        }
         span {
           color: var(--goavana-blue);
         }
@@ -45,18 +59,39 @@
   }
 }
 
-@keyframes desapear {
+@keyframes fade-shadow-white {
   0% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+  }
+  25% {
     box-shadow: 0 0 0px 10px rgba(255, 255, 255, 0);
   }
   50% {
-    box-shadow: 0 0 30px 10px rgba(255, 255, 255, 0.4);
-  }
-  70% {
     box-shadow: 0 0 0px 10px rgba(255, 255, 255, 0.6);
   }
+  75% {
+    box-shadow: 0 0 30px 20px rgba(255, 255, 255, 0.4);
+  }
   100% {
-    box-shadow: 0 0 0px 10px rgba(255, 255, 255, 0);
+    box-shadow: 0 0 40px 40px rgba(255, 255, 255, 0);
+  }
+}
+
+@keyframes fade-shadow-yellow {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 185, 20, 0);
+  }
+  25% {
+    box-shadow: 0 0 0px 10px rgba(255, 185, 20, 0);
+  }
+  50% {
+    box-shadow: 0 0 0px 10px rgba(255, 185, 20, 0.6);
+  }
+  75% {
+    box-shadow: 0 0 30px 20px rgba(255, 185, 20, 0.4);
+  }
+  100% {
+    box-shadow: 0 0 40px 40px rgba(255, 185, 20, 0);
   }
 }
 

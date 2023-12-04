@@ -5,6 +5,8 @@ import {LazyMotion, domAnimation, m, motion} from "framer-motion";
 import {titleAnimation} from "@/animation/animation";
 import ServiceCard from "@/components/services-card/ServiceCard";
 import {useRouter} from "next/navigation";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faArrowRight, faMouse} from "@fortawesome/free-solid-svg-icons";
 const MainServices: React.FC = () => {
   const router = useRouter();
   return (
@@ -45,10 +47,11 @@ const MainServices: React.FC = () => {
         <ServiceCard />
         <button
           type="button"
-          className="btn-explore-services akata-title-medium"
+          className="btn-explore-services akata-title-medium d-flex-center flex-col"
           onClick={() => router.push("/services")}
         >
           EXPLORE MORE <span>SERVICES</span>
+          <FontAwesomeIcon icon={faMouse} className="mouse-icon" />
         </button>
       </div>
     </section>
