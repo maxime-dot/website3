@@ -4,8 +4,12 @@ import "./services-page.scss";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faArrowLeft} from "@fortawesome/free-solid-svg-icons";
 import {useRouter} from "next/navigation";
+import CircularLoader from "@/components/circular-loader/CircularLoader";
 const Services = dynamic(
-  () => import("@/components/sections/services/Services")
+  () => import("@/components/sections/services/Services"),
+  {
+    loading: () => <CircularLoader />,
+  }
 );
 export default function Page() {
   const router = useRouter();
@@ -20,6 +24,7 @@ export default function Page() {
           <FontAwesomeIcon icon={faArrowLeft} className="icon-btn" /> go back
         </button>
       </div>
+
       <Services />
     </div>
   );
