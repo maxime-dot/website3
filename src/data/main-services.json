@@ -1,0 +1,21 @@
+[
+    {
+        "title": "UI/UX Design",
+        "description": "Our UI/UX design services ensure that your digital presence is not only visually appealing but also user-friendly, improving customer engagement and satisfaction." 
+    },
+    {
+        "title": "AI Mastery",
+        "description": "Our UI/UX design services ensure that your digital presence is not only visually appealing but also user-friendly, improving customer engagement and satisfaction."
+    }
+    ,
+    {
+        "title": "App Development",
+        "description": "Turn your ideas into reality with our expert app development. We create innovative, user-centric applications that stand out in the digital landscape. Let's craft your app journey together."
+    }
+    ,
+    {
+        "title": "DevOps Synergy",
+        "description": "Optimize collaboration, automate processes, and accelerate time-to-market with our DevOps services, fostering operational harmony and continuous improvement."
+    }
+
+]

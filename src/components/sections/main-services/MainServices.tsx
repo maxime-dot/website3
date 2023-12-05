@@ -7,6 +7,7 @@ import ServiceCard from "@/components/services-card/ServiceCard";
 import {useRouter} from "next/navigation";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faArrowRight, faGift, faMouse} from "@fortawesome/free-solid-svg-icons";
+import ServiceData from "@/data/main-services.json";
 const MainServices: React.FC = () => {
   const router = useRouter();
   return (
@@ -55,10 +56,13 @@ const MainServices: React.FC = () => {
             of it.
           </span>
         </motion.div>
-        <ServiceCard />
-        <ServiceCard />
-        <ServiceCard />
-        <ServiceCard />
+        {ServiceData.map((data) => (
+          <ServiceCard
+            key={data.title}
+            title={data.title}
+            description={data.description}
+          />
+        ))}
         <button
           type="button"
           className="btn-explore-services akata-title-medium d-flex-center flex-col"
