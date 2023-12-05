@@ -30,23 +30,43 @@
     color: var(--light);
     max-width: 441px;
   }
-  background: linear-gradient(
-      to right,
-      rgba(0, 0, 0, 0.65),
-      rgba(0, 0, 0, 0.65)
-    ),
-    url("./assets/dev-ops.png");
-  $backgrounds: (
-    "./assets/dev-ops.png",
-    "./assets/ui-ux-design.png",
-    "./assets/ai-mastery.png",
-    "./assets/app-development.png"
-  );
-  @include service-card($backgrounds);
-  &:nth-child(5),
-  &:nth-child(6) {
+
+  &:nth-child(6),
+  &:nth-child(7) {
     justify-content: flex-end;
     align-items: flex-start;
+  }
+  &:nth-child(4) {
+    background: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.65),
+        rgba(0, 0, 0, 0.65)
+      ),
+      url("./assets/ui-ux-design.png");
+  }
+  &:nth-child(5) {
+    background: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.65),
+        rgba(0, 0, 0, 0.65)
+      ),
+      url("./assets/ai-mastery.png");
+  }
+  &:nth-child(6) {
+    background: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.65),
+        rgba(0, 0, 0, 0.65)
+      ),
+      url("./assets/app-development.png");
+  }
+  &:nth-child(7) {
+    background: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.65),
+        rgba(0, 0, 0, 0.65)
+      ),
+      url("./assets/dev-ops.png");
   }
   button {
     max-width: 146px;
