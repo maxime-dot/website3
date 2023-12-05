@@ -10,6 +10,7 @@ import {faGift, faMouse} from "@fortawesome/free-solid-svg-icons";
 import ServiceData from "@/data/main-services.json";
 import dynamic from "next/dynamic";
 import LoadingModal from "@/components/modal-lets-talk/LoadingModal";
+import Image from "next/image";
 
 const ModalLetsTalk = dynamic(
   () => import("@/components/modal-lets-talk/ModalLetsTalk"),
@@ -61,6 +62,20 @@ const MainServices: React.FC = () => {
           </LazyMotion>
         </div>
         <div className="main-services-lists w-100">
+          <Image
+            src={"/images/services/main-services/plant-deco.png"}
+            className="plant-shape-palm left"
+            width={600}
+            height={600}
+            alt="plant shape"
+          />
+          <Image
+            src={"/images/services/main-services/plant-deco.png"}
+            className="plant-shape-palm right"
+            width={600}
+            height={600}
+            alt="plant shape"
+          />
           {/* gift info */}
           <motion.div
             initial={{opacity: 0, y: 30}}
@@ -75,9 +90,9 @@ const MainServices: React.FC = () => {
               advantage of it.
             </span>
           </motion.div>
-          {ServiceData.map((data) => (
+          {ServiceData.map((data, index) => (
             <ServiceCard
-              key={data.title}
+              key={`${index}-${data.title}`}
               title={data.title}
               description={data.description}
               onClick={handleOpenModal}

@@ -13,6 +13,25 @@
     flex-wrap: wrap;
     gap: 30px;
     position: relative;
+    .plant-shape-palm {
+      width: 200px;
+      height: auto;
+      position: absolute;
+
+      &.left {
+        left: -5%;
+        bottom: 40px;
+        z-index: -1;
+        transform: rotate(-30deg);
+      }
+      &.right {
+        right: -6%;
+        bottom: 40px;
+        z-index: -1;
+        transform: rotate(-256deg);
+      }
+    }
+
     .btn-explore-services {
       border: 0;
       cursor: pointer;
