@@ -48,4 +48,11 @@
     justify-content: flex-end;
     align-items: flex-start;
   }
+  button {
+    max-width: 146px;
+    text-transform: uppercase;
+    border: 1px solid var(--light);
+    background: 0;
+    margin-top: 30px;
+  }
 }
