@@ -1,0 +1,79 @@
+@mixin service-card($images) {
+  background: {
+    position: center;
+    size: cover;
+    repeat: no-repeat;
+  }
+  border-radius: 10px;
+
+  @for $i from 1 through length($images) {
+    &:nth-child(#{$i}) {
+      $image: nth($images, $i);
+      background: linear-gradient(
+          to right,
+          rgba(0, 0, 0, 0.65),
+          rgba(0, 0, 0, 0.65)
+        ),
+        url($image);
+    }
+  }
+}
+
+.service-card {
+  padding: 25px;
+  height: 311px;
+  gap: 10px;
+  border-radius: 10px;
+  .card-title {
+    color: var(--goavana-yellow);
+  }
+  .card-description {
+    color: var(--light);
+    max-width: 441px;
+  }
+
+  &:nth-child(6),
+  &:nth-child(7) {
+    justify-content: flex-end;
+    align-items: flex-start;
+  }
+  &:nth-child(4) {
+    background: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.65),
+        rgba(0, 0, 0, 0.65)
+      ),
+      url("./assets/ui-ux-design.png");
+  }
+  &:nth-child(5) {
+    background: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.65),
+        rgba(0, 0, 0, 0.65)
+      ),
+      url("./assets/ai-mastery.png");
+  }
+  &:nth-child(6) {
+    background: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.65),
+        rgba(0, 0, 0, 0.65)
+      ),
+      url("./assets/app-development.png");
+  }
+  &:nth-child(7) {
+    background: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.65),
+        rgba(0, 0, 0, 0.65)
+      ),
+      url("./assets/dev-ops.png");
+  }
+  button {
+    max-width: 146px;
+    text-transform: uppercase;
+    border: 1px solid var(--light);
+    background: 0;
+    margin-top: 30px;
+  }
+}

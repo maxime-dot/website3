@@ -1,14 +1,25 @@
-"use client";
-import Header from "@/components/sections/header/Header";
-import Navbar from "@/components/navigation-bar/Navbar";
+import dynamic from "next/dynamic";
 import styles from "./page.module.scss";
-import Testimonial from "@/components/sections/testimonial/Testimonial";
-import Services from "@/components/sections/services/Services";
-import Projects from "@/components/sections/projects/Projects";
-import Teams from "@/components/sections/teams/Teams";
-import Articles from "@/components/sections/articles/Articles";
-import Contacts from "@/components/sections/contacts/Contact";
-import Footer from "@/components/footer/Footer";
+
+const Navbar = dynamic(() => import("@/components/navigation-bar/Navbar"));
+const Header = dynamic(() => import("@/components/sections/header/Header"));
+const Testimonial = dynamic(
+  () => import("@/components/sections/testimonial/Testimonial")
+);
+const MainServices = dynamic(
+  () => import("@/components/sections/main-services/MainServices")
+);
+const Projects = dynamic(
+  () => import("@/components/sections/projects/Projects")
+);
+const Teams = dynamic(() => import("@/components/sections/teams/Teams"));
+const Articles = dynamic(
+  () => import("@/components/sections/articles/Articles")
+);
+const Contacts = dynamic(
+  () => import("@/components/sections/contacts/Contact")
+);
+const Footer = dynamic(() => import("@/components/footer/Footer"));
 
 export default function Home() {
   return (
@@ -16,7 +27,7 @@ export default function Home() {
       <Navbar />
       <Header />
       <Testimonial />
-      <Services />
+      <MainServices />
       <Projects />
       <Teams />
       <Articles />
