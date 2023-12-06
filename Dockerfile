@@ -3,6 +3,7 @@ FROM node:18-alpine AS BUILD_IMAGE
 WORKDIR /app
 COPY package*.json ./
 RUN npm install
+RUN npm install sharp
 COPY . .
 RUN mv .env.development .env
 RUN npm run build
