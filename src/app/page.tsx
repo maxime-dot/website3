@@ -30,7 +30,7 @@ export default function Home() {
       <MainServices />
       <Projects />
       <Teams />
-      {/* <Articles /> */}
+      <Articles />
       {/* <Contacts /> */}
       {/* <Footer /> */}
     </main>
