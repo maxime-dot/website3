@@ -318,10 +318,10 @@ const ModalLetsTalk: React.FC<ModalLetsTalkProps> = ({onClose}) => {
                                 </p>
                               </div>
                               <div className="file-type-indicator d-flex-space-between">
-                                <p className="akata-text-small">
+                                <p className="akata-text-small file-extension">
                                   Supported formats: DOCX, PDF, XLS
                                 </p>
-                                <p className="akata-text-small">
+                                <p className="akata-text-small file-size">
                                   Maximum file size: 40MB
                                 </p>
                               </div>

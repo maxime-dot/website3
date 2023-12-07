@@ -25,14 +25,14 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <Navbar />
-      <Header />
-      <Testimonial />
-      <MainServices />
-      <Projects />
-      <Teams />
-      <Articles />
-      <Contacts />
-      <Footer />
+      {/* <Header /> */}
+      {/* <Testimonial /> */}
+      {/* <MainServices /> */}
+      {/* <Projects /> */}
+      {/* <Teams /> */}
+      {/* <Articles /> */}
+      {/* <Contacts /> */}
+      {/* <Footer /> */}
     </main>
   );
 }
