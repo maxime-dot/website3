@@ -26,8 +26,8 @@ export default function Home() {
     <main className={styles.main}>
       <Navbar />
       <Header />
-      {/* <Testimonial /> */}
-      {/* <MainServices /> */}
+      <Testimonial />
+      <MainServices />
       {/* <Projects /> */}
       {/* <Teams /> */}
       {/* <Articles /> */}

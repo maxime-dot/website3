@@ -66,7 +66,19 @@
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
+  .video-player {
+    padding: 0 40px;
+    .player {
+      .player-btn-close {
+        right: -20px;
+        top: -70px;
+      }
+    }
+  }
+}
+
+@media (max-width: 475px) {
   .video-player {
     padding: 0 20px;
     .player {

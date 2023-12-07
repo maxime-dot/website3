@@ -2,6 +2,7 @@
   .services-intro {
     margin-top: 200px;
     text-align: center;
+    padding: 20px;
     h2 {
       padding-bottom: 20px;
     }
@@ -17,6 +18,7 @@
       width: 200px;
       height: auto;
       position: absolute;
+      display: none;
 
       &.left {
         left: -5%;
@@ -81,9 +83,10 @@
       gap: 10px;
       border-radius: 5px;
       top: -80px;
-      left: 0;
+      left: 20px;
       background: var(--goavana-yellow);
       padding: 10px;
+      width: 100%;
       max-width: 386px;
       &::before {
         content: "";
@@ -150,6 +153,22 @@
     .main-services-lists {
       padding: 20px;
       grid-template-columns: 1fr;
+    }
+  }
+}
+
+@media (max-width: 475px) {
+  .main-services {
+    .main-services-lists {
+      padding: 20px;
+      grid-template-columns: 1fr;
+      .gift-info {
+        width: calc(100% - 40px);
+        max-width: 100%;
+        left: 0;
+        right: 0;
+        margin: auto;
+      }
     }
   }
 }
