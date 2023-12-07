@@ -19,9 +19,8 @@ const ButtonCaFloat: React.FC<FloatButtonProps> = ({
 }) => {
   return (
     <motion.button
-      initial={{opacity: 0, x: 100}}
-      animate={{opacity: 1, x: 0}}
-      transition={{duration: 0.3, delay: 1}}
+      initial={{opacity: 0, y: 100}}
+      animate={{opacity: 1, y: 0}}
       className="btn-float"
       aria-label={ariaLabel}
       onClick={onClick}
