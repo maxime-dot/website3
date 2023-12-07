@@ -33,7 +33,6 @@
       width: 100%;
       align-items: flex-end;
 
-
       .social-link {
         width: 100%;
         max-width: 160px;
@@ -42,7 +41,6 @@
         color: var(--light);
         margin-top: 55px;
 
-
         a {
           text-decoration: none;
           color: var(--light);
@@ -50,7 +48,6 @@
           transition: all 0.2s ease-in-out;
 
           &:hover {
-
           }
         }
       }
@@ -154,7 +151,7 @@
           .logo {
             width: 100%;
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
           }
         }

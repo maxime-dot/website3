@@ -31,8 +31,8 @@ export default function Home() {
       <Projects />
       <Teams />
       <Articles />
-      {/* <Contacts /> */}
-      {/* <Footer /> */}
+      <Contacts />
+      <Footer />
     </main>
   );
 }
