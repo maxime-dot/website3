@@ -6,16 +6,10 @@ import "./team-slider.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import dynamic from "next/dynamic";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
-import {
-  faFacebook,
-  faLinkedin,
-  faGithub,
-} from "@fortawesome/free-brands-svg-icons";
+import { faFacebook, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import Link from "next/link";
 import Button from "@/components/button/normal/Button";
 import LoadingModal from "@/components/modal-lets-talk/LoadingModal";
-import Image from "next/image";
-
 const Modal = dynamic(
   () => import("@/components/modal-lets-talk/ModalLetsTalk"),
   {
@@ -32,7 +26,7 @@ const TeamSlider: React.FC<SliderProps> = ({ onClose }) => {
   const handleOpenModal = () => {
     setOpenModal(true);
   };
-  const handleCloseMOdal = () => {
+  const handleCloseModal = () => {
     setOpenModal(false);
   };
   return (
@@ -43,7 +37,7 @@ const TeamSlider: React.FC<SliderProps> = ({ onClose }) => {
       transition={{ duration: 0.3 }}
       className="akata-team-slider fill-view"
     >
-      {openModal && <Modal onClose={handleCloseMOdal} />}
+      {openModal && <Modal onClose={handleCloseModal} />}
 
       <div className="team-slider-content ">
         <div className="content-main container">
@@ -68,7 +62,7 @@ const TeamSlider: React.FC<SliderProps> = ({ onClose }) => {
             </div>
             <div className="info-word d-flex flex-col">
               <p className="akata-text-medium">
-                I will take the Reunionese singer Blacko's words: “live his
+                I will take the Reunionese singer Blacko&apos;s words: “live his
                 dreams are about existing”. Every day offers us the opportunity
                 to exist, to expand our dreams and to grow with. Dreaming will
                 only lead to little, but if you share your dreams with other
@@ -111,7 +105,7 @@ const TeamSlider: React.FC<SliderProps> = ({ onClose }) => {
                 <FontAwesomeIcon icon={faLinkedin} />
               </Link>
             </div>
-            <div className="info-action-button">
+            <div className="info-profile-action-button">
               <Button
                 content={"LET'S TALK"}
                 ariaLabel={"Let's talk about your project requirement"}

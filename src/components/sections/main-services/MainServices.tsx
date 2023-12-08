@@ -1,12 +1,12 @@
 "use client";
 import React from "react";
 import "./main-services.scss";
-import {LazyMotion, domAnimation, m, motion} from "framer-motion";
-import {titleAnimation} from "@/animation/animation";
+import { LazyMotion, domAnimation, m, motion } from "framer-motion";
+import { titleAnimation } from "@/animation/animation";
 import ServiceCard from "@/components/services-card/ServiceCard";
-import {useRouter} from "next/navigation";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faGift, faMouse} from "@fortawesome/free-solid-svg-icons";
+import { useRouter } from "next/navigation";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGift, faMouse } from "@fortawesome/free-solid-svg-icons";
 import ServiceData from "@/data/main-services.json";
 import dynamic from "next/dynamic";
 import LoadingModal from "@/components/modal-lets-talk/LoadingModal";
@@ -16,7 +16,7 @@ const ModalLetsTalk = dynamic(
   () => import("@/components/modal-lets-talk/ModalLetsTalk"),
   {
     loading: () => <LoadingModal />,
-  }
+  },
 );
 const MainServices: React.FC = () => {
   const router = useRouter();
@@ -41,10 +41,10 @@ const MainServices: React.FC = () => {
               variants={titleAnimation}
               initial={"initial"}
               whileInView={"animate"}
-              viewport={{once: true}}
+              viewport={{ once: true }}
               className="akata-title-medium services-intro-title"
             >
-              Is your business keeping pace?
+              Is your business <span>keeping pace </span>?
             </m.h2>
           </LazyMotion>
           <LazyMotion features={domAnimation}>
@@ -52,7 +52,7 @@ const MainServices: React.FC = () => {
               variants={titleAnimation}
               initial={"initial"}
               whileInView={"animate"}
-              viewport={{once: true}}
+              viewport={{ once: true }}
               className="akata-text-medium services-intro-description"
             >
               Digital technology is advancing. Is your business keeping pace?
@@ -78,10 +78,10 @@ const MainServices: React.FC = () => {
           />
           {/* gift info */}
           <motion.div
-            initial={{opacity: 0, y: 30}}
-            whileInView={{opacity: 1, y: 0}}
-            viewport={{once: true}}
-            transition={{delay: 0.5}}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.5 }}
             className="gift-info d-flex-space-between"
           >
             <FontAwesomeIcon icon={faGift} className="gift-icon  fa-shake" />{" "}
