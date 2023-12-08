@@ -10,6 +10,8 @@ import { faFacebook, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import Link from "next/link";
 import Button from "@/components/button/normal/Button";
 import LoadingModal from "@/components/modal-lets-talk/LoadingModal";
+import Image from "next/image";
+
 const Modal = dynamic(
   () => import("@/components/modal-lets-talk/ModalLetsTalk"),
   {
@@ -47,11 +49,24 @@ const TeamSlider: React.FC<SliderProps> = ({ onClose }) => {
           </button>
 
           {/* main container element */}
-          <h4 className={"akata-title-medium team-name"}>
+          <motion.h4
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0 }}
+            transition={{ delay: 0.2 }}
+            key={"animated-title"}
+            className={"akata-title-medium team-name"}
+          >
             RAMIANDRISOA Andriamandranto Patrick (BODGE)
-          </h4>
+          </motion.h4>
           <div className="team-more-info d-flex flex-col">
-            <div className="info-post">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0 }}
+              transition={{ delay: 0.2 }}
+              className="info-post"
+            >
               <abbr
                 title="Chef Executive Officier"
                 className={"akata-title-medium post-name"}
@@ -59,8 +74,15 @@ const TeamSlider: React.FC<SliderProps> = ({ onClose }) => {
                 CEO
               </abbr>
               <p className={"akata-text-small "}>Chef Executive Officer</p>
-            </div>
-            <div className="info-word d-flex flex-col">
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0 }}
+              transition={{ delay: 0.4 }}
+              key={"animated-title"}
+              className="info-word d-flex flex-col"
+            >
               <p className="akata-text-medium">
                 I will take the Reunionese singer Blacko&apos;s words: “live his
                 dreams are about existing”. Every day offers us the opportunity
@@ -81,8 +103,15 @@ const TeamSlider: React.FC<SliderProps> = ({ onClose }) => {
                 create means and find solutions while making plans and executing
                 actions.
               </p>
-            </div>
-            <div className="info-social-network d-flex flex-row">
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0 }}
+              transition={{ delay: 0.6 }}
+              key={"animated-title"}
+              className="info-social-network d-flex flex-row"
+            >
               <Link
                 href={"https://www.facebook.com/profile.php?id=61553836774106"}
                 className={"link"}
@@ -104,14 +133,42 @@ const TeamSlider: React.FC<SliderProps> = ({ onClose }) => {
               >
                 <FontAwesomeIcon icon={faLinkedin} />
               </Link>
-            </div>
-            <div className="info-profile-action-button">
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0 }}
+              transition={{ delay: 0.8 }}
+              key={"animated-title"}
+              className="info-profile-action-button"
+            >
               <Button
                 content={"LET'S TALK"}
                 ariaLabel={"Let's talk about your project requirement"}
                 onClick={handleOpenModal}
                 type={"button"}
                 hoverType={"solid"}
+              />
+            </motion.div>
+          </div>
+
+          {/* center element profile pics */}
+          <div className="slider-profile-center">
+            <div className="profile-center-pics">
+              <Image
+                src={"/images/teams/plant-shape.png"}
+                alt={"CEO Profile..."}
+                width={400}
+                height={400}
+                className={"shape"}
+              />
+
+              <Image
+                src={"/images/teams/ceo.png"}
+                alt={"CEO Profile..."}
+                width={680}
+                height={873}
+                className={"picture"}
               />
             </div>
           </div>
