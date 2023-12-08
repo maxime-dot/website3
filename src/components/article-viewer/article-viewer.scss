@@ -4,21 +4,23 @@
   top: 0;
   left: 0;
   z-index: 6;
-  overflow: auto;
+  overflow-x: hidden;
   max-height: 100vh;
   padding-top: 30px;
+
   .viewer-content {
+    overflow: hidden;
     .btn-close {
       border: 0;
       outline: 0;
       background: 0;
       color: var(--goavana-blue);
-      font-family: "Poppins";
+      font-family: "Poppins", sans-serif;
       font-size: 16px;
       font-style: normal;
       font-weight: 700;
       height: 40px;
-      padding: 12px 0px 12px 20px;
+      padding: 12px 0 12px 20px;
       border-radius: var(--border-radius);
       line-height: normal;
       transition: all 0.2s ease-in-out;
@@ -50,12 +52,13 @@
     }
     .viewer-article-body {
       margin-top: 78px;
+      overflow: hidden;
 
       .article {
         max-width: 1064px;
         .article-date {
           color: var(--primary-dark, #222);
-          font-family: "Poppins";
+          font-family: "Poppins", sans-serif;
           font-size: 14px;
           font-style: normal;
           font-weight: 500;
@@ -64,7 +67,7 @@
         }
         .article-title {
           color: var(--primary-dark, #222);
-          font-family: "Poppins";
+          font-family: "Poppins", sans-serif;
           font-size: 20px;
           font-style: normal;
           font-weight: 700;
