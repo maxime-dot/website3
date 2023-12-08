@@ -4,137 +4,159 @@
   left: 0;
   z-index: 8;
   background: var(--light);
+  width: 100%;
+  height: 100vh;
 
-  .main-content {
+  .team-slider-content {
     width: 100%;
-    height: 100%;
+    height: inherit;
+    overflow: auto;
     position: relative;
 
-    .btn-close-slider {
-      width: 55px;
-      height: 55px;
-      background: var(--card-background);
-      position: absolute;
-      cursor: pointer;
-      top: 48px;
-      right: 96px;
-      border: 0;
-      outline: 0;
-      font-size: 25px;
-      transition: all .3s ease-in-out;
 
-      &:hover {
-        border: 1px solid var(--goavana-blue);
-      }
-
-      &:active {
-        transform: scale(.95);
-      }
-
-    }
-
-    .slider-container {
-
-      align-items: flex-start;
-      padding-top: 150px;
-      min-height: 100vh;
+    // profile main-content
+    .content-main {
       position: relative;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      padding: 140px 0 0 0;
 
-
-      .profile-pics-container {
-        position: absolute;
-        width: 400px;
-        height: 100%;
-        background: var(--card-background);
-        left: 50%;
-        transform: translateX(-70%);
-        top: 0;
-        clip-path: polygon(16% 0, 100% 0, 84% 100%, 0% 100%);
-
-        .shape {
-          width: 266.315px;
-          height: auto;
-          position: absolute;
-          bottom: 0;
-          left: -30px;
+      .team-name {
+        color: var(--goavana-blue, #001751);
+        font-family: "Poppins", sans-serif;
+        font: {
+          size: 35px;
+          style: normal;
+          weight: 900;
         }
-
-        .main-container {
-          width: 100%;
-          height: 100%;
-          position: relative;
-          overflow: hidden;
-
-          .picture {
-            position: absolute;
-            bottom: 0;
-            right: -140px;
-            width: 600px;
-            height: auto;
-          }
-        }
-      }
-
-
-      button {
-        max-width: 135px;
-        margin-top: 30px;
-      }
-
-      .profile-words {
-        width: 483px;
-        height: 701px;
-
-        margin-top: 55px;
-
-        .profile-post {
-          font-size: 30px;
-        }
-
-        .profile-post-acronym {
-          margin-top: 5px;
-        }
-
-        .words {
-          margin-top: 20px;
-          color: var(--primary-dark);
-
-          &:nth-child(1) {
-            margin-top: 40px;
-          }
-        }
-
-        .social-link-group {
-          margin-top: 40px;
-          gap: 20px;
-
-          .link {
-            text-decoration: none;
-            color: var(--primary-dark);
-            font-size: 25px;
-          }
-        }
-      }
-
-      .profile-name {
-        max-width: 500px;
-        font-size: 35px;
-        line-height: 56px;
-        letter-spacing: .3px;
+        line-height: 56px; /* 160% */
+        letter-spacing: 0.3px;
+        text-transform: uppercase;
         position: relative;
 
+        // line shape
         &:before {
           content: "";
           position: absolute;
-          top: 28px;
-          z-index: -1;
-          left: 0;
-          width: 60%;
-          height: 20px;
+          width: 310px;
+          height: 24px;
+          flex-shrink: 0;
           background: var(--goavana-yellow);
+          left: -6px;
+          top: 25px;
+          z-index: -1;
         }
+      }
+
+      // close button
+      .btn-close-slider {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        min-width: 50px;
+        min-height: 50px;
+
+        flex-shrink: 0;
+        top: 40px;
+        right: 0;
+        background: var(--card-background);
+        outline: 0;
+        color: var(--goavana-blue);
+        border: 0;
+        font-size: 25px;
+        cursor: pointer;
+        transition: all .2s ease;
+        border-radius: 5px;
+
+        &:active {
+          transform: scale(0.95);
+        }
+
+        &:hover {
+          background: var(--goavana-blue);
+          color: var(--card-background);
+        }
+      }
+
+      // main  profile info
+      .team-more-info {
+        padding-top: 55px;
+        width: 100%;
+        max-width: 483px;
+        gap: 40px;
+
+        .info-post {
+          .post-name {
+            font-size: 30px;
+          }
+        }
+
+        .info-word {
+          gap: 30px;
+        }
+
+        .info-social-network {
+          gap: 20px;
+          a{
+            font-size: 30px;
+            color: var(--primary-dark);
+          }
+        }
+      }
+
+    }
+
+  }
+}
+
+
+@media (max-width: 1024px) {
+  .akata-team-slider {
+    .team-slider-content {
+
+      .content-main {
+        padding: 100px 0 0 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+
+        .btn-close-slider {
+          right: 20px;
+        }
+
 
       }
     }
+
   }
+
+}
+
+@media (max-width: 768px) {
+  .akata-team-slider {
+    .team-slider-content {
+      .content-main {
+        padding: 100px 20px 0 20px;
+
+        .btn-close-slider {
+          right: 20px;
+        }
+
+        .team-name {
+          font-size: 25px;
+          line-height: calc(25px * 1.4);
+
+          &:before {
+            top: 20px;
+            width: 230px;
+            height: 10px;
+          }
+        }
+      }
+    }
+
+  }
+
 }

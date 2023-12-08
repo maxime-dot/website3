@@ -3,7 +3,7 @@ import React, {useState, useEffect} from "react";
 import dynamic from "next/dynamic";
 import {useRouter} from "next/navigation";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {motion} from "framer-motion";
+import {motion, AnimatePresence} from "framer-motion";
 import {
   faFacebook,
   faLinkedin,
@@ -66,7 +66,9 @@ const Teams: React.FC = () => {
   return (
     <section className="akata-teams fill-view  container" id="teams">
       {openModal && <ModalLetsTalk onClose={handleCloseModal} />}
-      {openSlider && <TeamSlider onClose={handleCloseSlider} />}
+      <AnimatePresence>
+        {openSlider && <TeamSlider onClose={handleCloseSlider} />}
+      </AnimatePresence>
 
       <div className="teams-intro d-flex flex-col">
         <div className="intro-title d-flex flex-col">
