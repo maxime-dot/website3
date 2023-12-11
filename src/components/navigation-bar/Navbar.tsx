@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import dynamic from "next/dynamic";
-import {motion} from "framer-motion"
+import { motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 import "./navbar.scss";
@@ -11,7 +11,7 @@ const ModalLetsTalk = dynamic(
   () => import("../modal-lets-talk/ModalLetsTalk"),
   {
     loading: () => <LoadingModal />,
-  }
+  },
 );
 import {
   faArrowRight,
@@ -99,12 +99,16 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <motion.nav initial={{opacity: 0, y: -30}}  animate={{opacity: 1, y: 0}} className="akata-navbar d-flex-center w-100">
+    <motion.nav
+      initial={{ opacity: 0, y: -30 }}
+      animate={{ opacity: 1, y: 0 }}
+      className="akata-navbar d-flex-center w-100"
+    >
       <div className="container navbar-content d-flex-space-between">
         <Link href={"/"} className="navbar-brand">
           <Image
             priority
-            src={"/images/logo-akata.png"}
+            src={"/images/logo-akata.avif"}
             alt="Logo Akata"
             width={49}
             height={49}
