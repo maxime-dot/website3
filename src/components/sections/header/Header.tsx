@@ -1,8 +1,8 @@
 "use client";
-import React, {useState} from "react";
+import React, { useState } from "react";
 import dynamic from "next/dynamic";
 import Image from "next/image";
-import {faRocket} from "@fortawesome/free-solid-svg-icons";
+import { faRocket } from "@fortawesome/free-solid-svg-icons";
 import "./header.scss";
 
 const Button = dynamic(() => import("../../button/normal/Button"));
@@ -10,9 +10,9 @@ const ModalLetsTalk = dynamic(
   () => import("../../modal-lets-talk/ModalLetsTalk"),
   {
     loading: () => <LoadingModal />,
-  }
+  },
 );
-import {motion} from "framer-motion";
+import { motion } from "framer-motion";
 import ButtonOutlineIconified from "../../button/outline-iconified/ButtonOutlineIconified";
 import ButtonCaFloat from "../../button/ca-float/ButtonCaFloat";
 import LoadingModal from "../../modal-lets-talk/LoadingModal";
@@ -44,16 +44,16 @@ const Header: React.FC = () => {
       <div className="header-content d-flex flex-col w-100">
         <div className="content-text d-flex flex-col">
           <motion.h1
-            initial={{opacity: 0, y: 30}}
-            animate={{opacity: 1, y: 0}}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
             className="akata-title-strong"
           >
             THE <span>CASH COW</span> OF YOUR BUSINESS
           </motion.h1>
           <motion.p
-            initial={{opacity: 0, y: 30}}
-            animate={{opacity: 1, y: 0}}
-            transition={{delay: 0.1}}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
             className="akata-text-big"
           >
             At AKATA GOAVANA, we are driving consistent and sustainable revenue
@@ -63,9 +63,9 @@ const Header: React.FC = () => {
           </motion.p>
         </div>
         <motion.div
-          initial={{opacity: 0, y: 30}}
-          animate={{opacity: 1, y: 0}}
-          transition={{delay: 0.2}}
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2 }}
           className="content-ca-button d-flex flex-row"
         >
           <Button
@@ -83,13 +83,13 @@ const Header: React.FC = () => {
         </motion.div>
       </div>
       <motion.div
-        initial={{opacity: 0, y: 30}}
-        animate={{opacity: 1, y: 0}}
-        transition={{delay: 0.2}}
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.2 }}
         className="header-hero d-flex-center w-100"
       >
         <Image
-          src={"/images/maki.webp"}
+          src={"/images/maki.avif"}
           alt="Akata goavana, hero image"
           className="hero-image"
           priority={true}
