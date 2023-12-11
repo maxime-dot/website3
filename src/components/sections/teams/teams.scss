@@ -253,3 +253,13 @@
     }
   }
 }
+
+@media (max-width: 475px) {
+  .admin-ceo-words {
+    margin: 50px 0 20px 0;
+  }
+  .team-ca-button {
+    display: flex;
+    flex-direction: column;
+  }
+}

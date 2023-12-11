@@ -221,7 +221,7 @@ const ModalLetsTalk: React.FC<ModalLetsTalkProps> = ({onClose}) => {
                     >
                       {/* request user full name */}
                       <div className="form-item d-flex flex-col">
-                        <label htmlFor="name" className="akata-text-medium">
+                        <label htmlFor="NAME" className="akata-text-medium">
                           Full name
                         </label>
                         <FontAwesomeIcon icon={faUser} className="form-icon" />
@@ -244,7 +244,7 @@ const ModalLetsTalk: React.FC<ModalLetsTalkProps> = ({onClose}) => {
 
                       {/* request user email */}
                       <div className="form-item d-flex flex-col">
-                        <label htmlFor="EMAIL" className="akata-text-medium">
+                        <label htmlFor="email" className="akata-text-medium">
                           Email
                         </label>
                         <FontAwesomeIcon
@@ -318,10 +318,10 @@ const ModalLetsTalk: React.FC<ModalLetsTalkProps> = ({onClose}) => {
                                 </p>
                               </div>
                               <div className="file-type-indicator d-flex-space-between">
-                                <p className="akata-text-small">
+                                <p className="akata-text-small file-extension">
                                   Supported formats: DOCX, PDF, XLS
                                 </p>
-                                <p className="akata-text-small">
+                                <p className="akata-text-small file-size">
                                   Maximum file size: 40MB
                                 </p>
                               </div>

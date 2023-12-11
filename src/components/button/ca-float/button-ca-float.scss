@@ -30,3 +30,9 @@
     transform: scale(0.9);
   }
 }
+
+@media (max-width: 640px) {
+  .btn-float {
+    display: none;
+  }
+}

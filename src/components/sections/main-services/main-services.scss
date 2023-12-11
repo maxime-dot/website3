@@ -2,6 +2,7 @@
   .services-intro {
     margin-top: 200px;
     text-align: center;
+    padding: 20px;
     h2 {
       padding-bottom: 20px;
     }
@@ -81,9 +82,10 @@
       gap: 10px;
       border-radius: 5px;
       top: -80px;
-      left: 0;
+      left: 20px;
       background: var(--goavana-yellow);
       padding: 10px;
+      width: 100%;
       max-width: 386px;
       &::before {
         content: "";
@@ -148,8 +150,66 @@
 @media (max-width: 768px) {
   .main-services {
     .main-services-lists {
+      .plant-shape-palm {
+        display: none;
+      }
+      .btn-explore-services {
+        width: 170px;
+        height: 170px;
+        font-size: 16px;
+        top: calc(50% - 85px);
+        left: calc(100% - 195px);
+      }
       padding: 20px;
       grid-template-columns: 1fr;
+    }
+  }
+}
+
+@media (max-width: 1450px) {
+  .main-services {
+    .main-services-lists {
+      .plant-shape-palm {
+        width: 150px;
+
+        &.left {
+          left: -40px;
+          bottom: 90px;
+          z-index: -1;
+          transform: rotate(-30deg);
+        }
+        &.right {
+          right: -50px;
+          bottom: 90px;
+          z-index: -1;
+          transform: rotate(-256deg);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1384px) {
+  .main-services {
+    .main-services-lists {
+      .plant-shape-palm {
+        display: none;
+      }
+    }
+  }
+}
+
+@media (max-width: 475px) {
+  .main-services {
+    .main-services-lists {
+      grid-template-columns: 1fr;
+      .gift-info {
+        width: calc(100% - 40px);
+        max-width: 100%;
+        left: 0;
+        right: 0;
+        margin: auto;
+      }
     }
   }
 }

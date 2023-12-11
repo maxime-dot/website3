@@ -8,7 +8,7 @@
   backdrop-filter: blur(10px);
   z-index: 10;
   padding: 20px;
-  transition: all .5s ease;
+  transition: all 0.5s ease;
 }
 
 .modal-layer {
@@ -80,21 +80,21 @@
   color: var(--text-dark);
 }
 
-.error-send-message{
+.error-send-message {
   border-radius: var(--border-radius);
   width: 100%;
   padding: 20px;
   min-height: 60px;
   background: var(--goavana-danger);
   color: var(--light);
-  span{
+  span {
     font-weight: bolder;
     font-size: 14px;
     text-align: center;
   }
 }
 
-.form-sent{
+.form-sent {
   width: 100%;
   max-width: 513px;
   min-height: 323px;
@@ -103,30 +103,29 @@
   border-top: 7px solid var(--goavana-yellow);
   padding: 0 20px;
   position: relative;
-  .shape-right{
+  .shape-right {
     position: absolute;
     bottom: 0;
     right: 0;
     width: 150px;
     height: auto;
   }
-  .shape-left{
+  .shape-left {
     position: absolute;
     bottom: 0;
     left: 0;
     width: 150px;
     height: auto;
   }
-  .check-icon{
+  .check-icon {
     font-size: 50px;
     color: var(--goavana-success);
     margin-bottom: 25px;
   }
-  p{
+  p {
     text-align: center;
-
   }
-  .close-btn{
+  .close-btn {
     margin-top: 45px;
     width: 153px;
     height: 45px;
@@ -135,21 +134,20 @@
     border: 0;
     z-index: 10;
     outline: 0;
-     border-radius: var(--border-radius);
+    border-radius: var(--border-radius);
     cursor: pointer;
-    transition: all .3s ease-in-out;
+    transition: all 0.3s ease-in-out;
 
     // typographie
-    color: var(--light, #FFF);
+    color: var(--light, #fff);
     font-family: "Poppins", sans-serif;
     font-size: 14px;
     font-style: normal;
     font-weight: 600;
     line-height: 16.8px; /* 120% */
-    &:hover{
+    &:hover {
       background: var(--goavana-yellow);
       color: var(--goavana-blue);
-
     }
   }
 }
@@ -174,6 +172,12 @@ input::-webkit-input-placeholder {
   font-style: normal;
   font-weight: 400;
   line-height: 16.8px;
+}
+.file-type-indicator {
+  align-items: flex-start;
+  p {
+    max-width: 150px;
+  }
 }
 
 input::-webkit-input-placeholder,

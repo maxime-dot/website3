@@ -5,7 +5,8 @@
   border: 1px solid transparent;
   gap: 12px;
   position: relative;
-  transition: border 0.3s ease;
+transition: border 0.3s ease;
+
   &:hover {
     border: 1px solid var(--goavana-blue);
   }
