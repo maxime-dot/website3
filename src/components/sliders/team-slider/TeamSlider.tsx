@@ -156,7 +156,7 @@ const TeamSlider: React.FC<SliderProps> = ({ onClose }) => {
           <div className="slider-profile-center">
             <div className="profile-center-pics">
               <Image
-                src={"/images/teams/plant-shape.png"}
+                src={"/images/teams/plant-shape.avif"}
                 alt={"CEO Profile..."}
                 width={400}
                 height={400}
@@ -164,7 +164,7 @@ const TeamSlider: React.FC<SliderProps> = ({ onClose }) => {
               />
 
               <Image
-                src={"/images/teams/ceo.png"}
+                src={"/images/teams/ceo.avif"}
                 alt={"CEO Profile..."}
                 width={680}
                 height={873}

@@ -1,9 +1,9 @@
 "use client";
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
-import {useRouter} from "next/navigation";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {motion, AnimatePresence} from "framer-motion";
+import { useRouter } from "next/navigation";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   faFacebook,
   faLinkedin,
@@ -19,13 +19,13 @@ const ModalLetsTalk = dynamic(
   () => import("../../modal-lets-talk/ModalLetsTalk"),
   {
     loading: () => <LoadingModal />,
-  }
+  },
 );
 const TeamSlider = dynamic(
   () => import("@/components/sliders/team-slider/TeamSlider"),
   {
     loading: () => <LoadingModal />,
-  }
+  },
 );
 
 import "./teams.scss";
@@ -73,28 +73,28 @@ const Teams: React.FC = () => {
       <div className="teams-intro d-flex flex-col">
         <div className="intro-title d-flex flex-col">
           <motion.h2
-            initial={{opacity: 0, y: 100}}
-            whileInView={{opacity: 1, y: 0}}
-            viewport={{once: true}}
+            initial={{ opacity: 0, y: 100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
             className="akata-title-strong"
           >
             Our Team,Your <span>success</span> guarantee
           </motion.h2>
           <motion.p
-            initial={{opacity: 0, x: 100}}
-            whileInView={{opacity: 1, x: 0}}
-            viewport={{once: true}}
-            transition={{delay: 0.3}}
+            initial={{ opacity: 0, x: 100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3 }}
             className="akata-text-big team-intro-description"
           >
             Secure your investment ! Our dedicated team works to maximize your
             return on investment through attention to detail.
           </motion.p>
           <motion.div
-            initial={{opacity: 0, y: 100}}
-            whileInView={{opacity: 1, y: 0}}
-            viewport={{once: true}}
-            transition={{ease: "easeInOut", delay: 0.4}}
+            initial={{ opacity: 0, y: 100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ ease: "easeInOut", delay: 0.4 }}
             className="profile-social-link d-flex flex-row"
           >
             <Link
@@ -127,10 +127,10 @@ const Teams: React.FC = () => {
           </motion.div>
         </div>
         <motion.div
-          initial={{opacity: 0, y: 100}}
-          whileInView={{opacity: 1, y: 0}}
-          viewport={{once: true}}
-          transition={{delay: 0.5}}
+          initial={{ opacity: 0, y: 100 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.5 }}
           className="intro-ca-button d-flex flex-row"
         >
           <Button
@@ -150,10 +150,10 @@ const Teams: React.FC = () => {
       </div>
       <div className="teams-admin-member d-flex flex-col">
         <motion.div
-          initial={{opacity: 0, y: 100}}
-          whileInView={{opacity: 1, y: 0}}
-          viewport={{once: true}}
-          transition={{ease: "easeInOut", delay: 0.2, duration: 0.3}}
+          initial={{ opacity: 0, y: 100 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ ease: "easeInOut", delay: 0.2, duration: 0.3 }}
           className="admin-ceo-words d-flex flex-col"
           onClick={handleOpenSlider}
         >
@@ -170,14 +170,14 @@ const Teams: React.FC = () => {
           </p>
           <div className="profile-pics">
             <Image
-              src={"/images/teams/Bodge.png"}
+              src={"/images/teams/Bodge.avif"}
               width={211}
               height={304}
               alt={`CEO Profile pics`}
               className="profile-image"
             />
             <Image
-              src={"/images/teams/bodge-plant.png"}
+              src={"/images/teams/bodge-plant.avif"}
               width={211}
               height={304}
               alt={`CEO Profile pics`}
@@ -189,9 +189,9 @@ const Teams: React.FC = () => {
         <div className="admin-teams-list d-flex flex-col">
           {AdminTeamData.map((data, index) => (
             <motion.div
-              initial={{opacity: 0, y: 100}}
-              whileInView={{opacity: 1, y: 0}}
-              viewport={{once: true}}
+              initial={{ opacity: 0, y: 100 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
               transition={{
                 ease: "easeInOut",
                 delay: index / 10,
@@ -201,8 +201,8 @@ const Teams: React.FC = () => {
             >
               <Image
                 src={data.profileSrc}
-                width={53}
-                height={53}
+                width={600}
+                height={600}
                 alt={`${data.name}`}
                 className="profile-pics"
               />
