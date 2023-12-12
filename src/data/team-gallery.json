@@ -1,22 +1,22 @@
 [
   {
     "id": "8a0b176c-91ff-4ed1-a5b0-d3e431b9270a",
-    "imgSrc": "/images/teams/gallery/team-akata-shooting.jpg",
+    "imgSrc": "/images/teams/gallery/team-akata-shooting.avif",
     "alt": "Akata Team shooting in office"
   },
   {
     "id": "e2a23a1d-56cf-49b0-9865-6cda9c3bf5d3",
-    "imgSrc": "/images/teams/gallery/team-akata-sortie.jpg",
+    "imgSrc": "/images/teams/gallery/team-akata-sortie.avif",
     "alt": "Akata Goavana Teams"
   },
   {
     "id": "e2a23a1d-56cf-49b0-9865-6cda9c3bf5d5",
-    "imgSrc": "/images/teams/gallery/akata-cto-coding.png",
+    "imgSrc": "/images/teams/gallery/akata-cto-coding.avif",
     "alt": "Akata Goavana CTO"
   },
   {
     "id": "e2a23a1d-56cf-49b0-9865-6cda9c3bf5d6",
-    "imgSrc": "/images/teams/gallery/mr-manase-coding.png",
+    "imgSrc": "/images/teams/gallery/mr-manase-coding.avif",
     "alt": "Akata Goavana Developer"
   }
 ]

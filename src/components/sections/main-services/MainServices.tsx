@@ -55,9 +55,9 @@ const MainServices: React.FC = () => {
               viewport={{ once: true }}
               className="akata-text-medium services-intro-description"
             >
-              Digital technology is advancing. Is your business keeping pace?
-              Even the smallest delay could put you out of business. Our goal:
-              to keep you ahead of the game!
+              Digital technology is advancing. Even the smallest delay could put
+              you out of business. We make your business ready for
+              tomorrow&apos;s challenges to keep yourself ahead of the game !
             </m.p>
           </LazyMotion>
         </div>

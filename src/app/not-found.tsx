@@ -4,8 +4,8 @@ import Image from "next/image";
 import style from "./not-found.module.scss";
 import Navbar from "@/components/navigation-bar/Navbar";
 import Link from "next/link";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faArrowLeft} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 const NotFound: React.FC = () => {
   const handleBackHome = () => {
     return;
@@ -14,7 +14,7 @@ const NotFound: React.FC = () => {
     <div className={style.notFound}>
       <Navbar />
       <Image
-        src="/images/not-found-hero.png"
+        src="/images/not-found-hero.avif"
         alt="Image hero."
         width={997.62}
         height={718.46}
