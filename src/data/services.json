@@ -3,15 +3,15 @@
     "deco": "Streamlined",
     "title": " UI/UX Design",
     "description": "Our UI/UX design services ensure that your digital presence is not only visually appealing but also user-friendly, improving customer engagement and satisfaction.",
-    "imageSrc": "/images/services/ui-ux-design.png",
-    "demoSrc": "/images/services/ui-ux-design-demo.png",
+    "imageSrc": "/images/services/ui-ux-design.avif",
+    "demoSrc": "/images/services/ui-ux-design-demo.avif",
     "linkId": "uiuxdesign"
   },
   {
     "deco": "Strategic",
     "title": " Consultation",
     "description": "We provide strategic consultation to help you navigate the complex world of technology, making informed decisions that drive your business forward.",
-    "imageSrc": "/images/services/consultation.png",
+    "imageSrc": "/images/services/consultation.avif",
     "demoSrc": "",
     "linkId": "consultation"
   },
@@ -19,23 +19,23 @@
     "deco": "Efficient",
     "title": " Database Management",
     "description": "Managing data efficiently is a constant struggle. Our database system management solutions keep your data secure, organized, and easily accessible.",
-    "imageSrc": "/images/services/database-management.png",
-    "demoSrc": "/images/services/database-management-demo.png",
+    "imageSrc": "/images/services/database-management.avif",
+    "demoSrc": "/images/services/database-management-demo.avif",
     "linkId": "databaseManagement"
   },
   {
     "deco": "Bespoke",
     "title": " Web App Development",
     "description": "We craft web applications tailored to your unique needs, helping you automate processes and stay ahead of the competition.",
-    "imageSrc": "/images/services/web-app-dev.png",
-    "demoSrc":  "/images/services/web-app-dev-demo.png",
+    "imageSrc": "/images/services/web-app-dev.avif",
+    "demoSrc":  "/images/services/web-app-dev-demo.avif",
     "linkId": "webappdev"
   },
   {
     "deco": "Solutions",
     "title": "E-commerce & CMS ",
     "description": "We simplify e-commerce and content management, allowing you to focus on growing your business without the technical headaches.",
-    "imageSrc": "/images/services/e-commerce.png",
+    "imageSrc": "/images/services/e-commerce.avif",
     "demoSrc": "",
     "linkId": "ecommerce"
   },
@@ -43,15 +43,15 @@
     "deco": "Cutting-Edge",
     "title": " Mobile Apps",
     "description": "Mobile apps are the future of engagement. Our mobile app development services create user-friendly iOS and Android apps to expand your reach.",
-    "imageSrc": "/images/services/mobile-app.png",
-    "demoSrc": "/images/services/mobile-app-demo.png",
+    "imageSrc": "/images/services/mobile-app.avif",
+    "demoSrc": "/images/services/mobile-app-demo.avif",
     "linkId": "mobilapp"
   },
   {
     "deco": "Robust",
     "title": " Desktop Applications",
     "description": "Our desktop app development ensures that your internal processes run seamlessly, improving productivity and efficiency.",
-    "imageSrc": "/images/services/desktop-app-dev.png",
+    "imageSrc": "/images/services/desktop-app-dev.avif",
     "demoSrc": "",
     "linkId": "desktopapp"
   }
