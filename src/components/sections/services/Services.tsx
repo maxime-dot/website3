@@ -54,7 +54,7 @@ const Services: React.FC = () => {
             className="akata-text-medium services-intro-description"
           >
             Digital technology is advancing. Even the smallest delay could put
-            you out of business.  We make your business ready for tomorrow's
+            you out of business. We make your business ready for tomorrow&apos;s
             challenges to keep yourself ahead of the game !
           </m.p>
         </LazyMotion>
