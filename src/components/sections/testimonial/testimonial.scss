@@ -14,13 +14,19 @@ $card_width: 300px;
     .testimonial-info {
       gap: 48px;
       flex: 0.4;
+
       .card-slides {
         display: none;
       }
       .text-group {
         gap: 16px;
+
         .description {
           max-width: 441px;
+        }
+        .group-title{
+          max-width: 571px;
+
         }
       }
       .button-group {
