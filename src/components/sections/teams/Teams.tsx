@@ -164,9 +164,10 @@ const Teams: React.FC = () => {
             <p className="ceo-post">CEO</p>
           </div>
           <p className="profile-words akata-text-medium">
-            Living one&apos;s dreams is a form of existence. By sharing these
-            dreams with others, we bring them closer to reality. The more we
-            share our dreams, the more they become concrete and achievable.
+            Your most sacred dreams hold the key to an extraordinary life —
+            wealth, influence, legacy and more. Boldly share them with the right
+            people and witness their transformation into resounding success you
+            never thought possible.
           </p>
           <div className="profile-pics">
             <Image
