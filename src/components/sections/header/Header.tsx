@@ -30,7 +30,7 @@ const Header: React.FC = () => {
     >
       {playVideo && (
         <VideoPlayer
-          id="4jcOdfQxVY0"
+          id="ttbqSxLQJ6c"
           title="AKATA GOAVANA"
           onClose={() => setPlayVideo(false)}
         />
