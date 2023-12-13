@@ -1,8 +1,8 @@
 "use client";
 import React from "react";
 import "./team-list.scss";
-import {motion} from "framer-motion";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import { motion } from "framer-motion";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFacebook,
   faLinkedin,
@@ -17,33 +17,36 @@ const TeamList: React.FC = () => {
   return (
     <div className="akata-team-list d-flex-center flex-col">
       <motion.h2
-        initial={{opacity: 0, y: 20}}
-        whileInView={{opacity: 1, y: 0}}
-        transition={{delay: 0.3}}
-        viewport={{once: true}}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.3 }}
+        viewport={{ once: true }}
         className="akata-title-medium"
       >
-        Meet our exceptional <span>team</span>
+        Together towards your triumph !
       </motion.h2>
       <motion.p
-        initial={{opacity: 0, y: 20}}
-        whileInView={{opacity: 1, y: 0}}
-        transition={{delay: 0.3}}
-        viewport={{once: true}}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.3 }}
+        viewport={{ once: true }}
         className="akata-text-medium team-title-description"
       >
-        Meet the exceptional clients who have chosen Akata Goavana for their IT
-        needs. Our successful partnerships with these esteemed organizations
-        showcase our dedication to excellence and innovation. Join our
-        ever-expanding client family and let us lead you toward digital success
+        Beyond talent, our team is a dynamic force that shapes the future of
+        digital solutions. Excellence and innovation define our work ethic. Our
+        workflow is a symphony of precision and creativity. From concept to
+        execution, we immerse ourselves in your project. As we said, your
+        success is not just a goal; it's a guarantee. We are driven by a
+        singular focus – to maximize your return on investment and deliver
+        results that exceed expectations.
       </motion.p>
       <div className="list-content container">
         {TeamData.map((data, index) => (
           <motion.div
-            initial={{opacity: 0, y: 20}}
-            whileInView={{opacity: 1, y: 0}}
-            viewport={{once: true}}
-            transition={{delay: 0.3}}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3 }}
             className="team-item d-flex-space-between flex-col"
             key={`team-${index}`}
           >
