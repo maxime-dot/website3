@@ -2,15 +2,15 @@
 import Link from "next/link";
 import "./articles-page.scss";
 import dynamic from "next/dynamic";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faArrowLeft, faChevronRight} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import LoadingModal from "@/components/modal-lets-talk/LoadingModal";
 import Image from "next/image";
-import {useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 import Button from "@/components/button/normal/Button";
 import ArticleData from "@/data/articles.json";
 import ArticleCard from "@/components/cards/articles/ArticleCard";
-import {truncate} from "@/helpers/truncate";
+import { truncate } from "@/helpers/truncate";
 import Footer from "@/components/footer/Footer";
 import ArticleViewer from "@/components/article-viewer/ArticleViewer";
 const ModalLetsTalk = dynamic(
@@ -18,7 +18,7 @@ const ModalLetsTalk = dynamic(
 
   {
     loading: () => <LoadingModal />,
-  }
+  },
 );
 export default function Page() {
   const [isOpenModal, setOpenModal] = useState(false);
@@ -126,6 +126,7 @@ export default function Page() {
                 title={data.title}
                 imgSrc={data.imageSrc}
                 readMore={() => handleOpenViewer(data)}
+                smallContent={data.smallContent}
               />
             ))}
           </div>

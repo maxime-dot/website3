@@ -1,9 +1,9 @@
 "use client";
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {AnimatePresence} from "framer-motion";
-import {faArrowRightLong} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { AnimatePresence } from "framer-motion";
+import { faArrowRightLong } from "@fortawesome/free-solid-svg-icons";
 import "./articles.scss";
 import ArticleCard from "../../cards/articles/ArticleCard";
 import ArticleData from "@/data/articles.json";
@@ -64,6 +64,7 @@ const Articles: React.FC = () => {
               title={data.title}
               readMore={() => handleOpenArticle(data)}
               imgSrc={data.imageSrc}
+              smallContent={data.smallContent}
             />
           ))}
 
