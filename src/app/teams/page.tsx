@@ -73,11 +73,11 @@ export default function Page() {
             transition={{ delay: 0.1 }}
             className="akata-text-big text-description"
           >
-            That's why we embrace agile project management to deliver maximum
-            transparency and accountability every step of the way. Using scrum
-            and kanban frameworks, we establish clear project parameters upfront
-            - scope locked, budget set, timeline fixed, quality assured. This
-            eliminates any ugly surprises down the road.
+            That&apos;s why we embrace agile project management to deliver
+            maximum transparency and accountability every step of the way. Using
+            scrum and kanban frameworks, we establish clear project parameters
+            upfront - scope locked, budget set, timeline fixed, quality assured.
+            This eliminates any ugly surprises down the road.
           </motion.p>
 
           <motion.p

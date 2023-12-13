@@ -36,7 +36,7 @@ const TeamList: React.FC = () => {
         digital solutions. Excellence and innovation define our work ethic. Our
         workflow is a symphony of precision and creativity. From concept to
         execution, we immerse ourselves in your project. As we said, your
-        success is not just a goal; it's a guarantee. We are driven by a
+        success is not just a goal; it&apos;s a guarantee. We are driven by a
         singular focus – to maximize your return on investment and deliver
         results that exceed expectations.
       </motion.p>
