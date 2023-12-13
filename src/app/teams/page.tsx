@@ -1,11 +1,11 @@
 "use client";
-import React, {useState} from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import dynamic from "next/dynamic";
-import {useRouter} from "next/navigation";
-import {motion} from "framer-motion";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faArrowLeft} from "@fortawesome/free-solid-svg-icons";
+import { useRouter } from "next/navigation";
+import { motion } from "framer-motion";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import Button from "@/components/button/normal/Button";
 import LoadingModal from "@/components/modal-lets-talk/LoadingModal";
 import TeamList from "@/components/team-list/TeamList";
@@ -19,7 +19,7 @@ const Modal = dynamic(
   () => import("@/components/modal-lets-talk/ModalLetsTalk"),
   {
     loading: () => <LoadingModal />,
-  }
+  },
 );
 
 export default function Page() {
@@ -42,7 +42,7 @@ export default function Page() {
         <Gallery onClose={handleClosGallery} initalPics={selectedPics} />
       )}
       <button className="btn-go-back" onClick={() => router.push("/#teams")}>
-        <motion.span whileHover={{y: 10}}>
+        <motion.span whileHover={{ y: 10 }}>
           <FontAwesomeIcon icon={faArrowLeft} className="btn-icon" />
         </motion.span>{" "}
         Go Back
@@ -50,16 +50,16 @@ export default function Page() {
       <div className="team-page-content w-100">
         <div className="content-text">
           <motion.h1
-            initial={{opacity: 0, y: 30}}
-            animate={{opacity: 1, y: 0}}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
             className="akata-title-strong text-title"
           >
-            Our Team of Tech <span>Pioneers...</span>
+            <span>Business expansion</span>, not frustration
           </motion.h1>
           <motion.p
-            initial={{opacity: 0, y: 30}}
-            animate={{opacity: 1, y: 0}}
-            transition={{delay: 0.1}}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
             className="akata-text-big text-description"
           >
             Meet the talented minds driving AKATA GOAVAN. Our diverse team of IT
@@ -68,9 +68,9 @@ export default function Page() {
             and discover how we can help shape your digital future.
           </motion.p>
           <motion.div
-            initial={{opacity: 0, y: 30}}
-            animate={{opacity: 1, y: 0}}
-            transition={{delay: 0.2}}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
             className="team-photos"
           >
             <Image
@@ -103,9 +103,9 @@ export default function Page() {
             />
           </motion.div>
           <motion.div
-            initial={{opacity: 0, y: 30}}
-            animate={{opacity: 1, y: 0}}
-            transition={{delay: 0.2}}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
             className="btn-open-modal"
           >
             <Button
@@ -120,10 +120,10 @@ export default function Page() {
         <div className="content-gallery w-100">
           <div className="card-part">
             <motion.div
-              initial={{opacity: 0, y: -40, rotate: 10}}
-              animate={{opacity: 1, y: 0, rotate: 4}}
-              transition={{delay: 0.2}}
-              whileHover={{rotate: 0}}
+              initial={{ opacity: 0, y: -40, rotate: 10 }}
+              animate={{ opacity: 1, y: 0, rotate: 4 }}
+              transition={{ delay: 0.2 }}
+              whileHover={{ rotate: 0 }}
               className="part-photo"
             >
               <Image
@@ -138,9 +138,9 @@ export default function Page() {
               />
             </motion.div>
             <motion.div
-              initial={{opacity: 0, y: -40}}
-              animate={{opacity: 1, y: 0}}
-              transition={{delay: 0.4}}
+              initial={{ opacity: 0, y: -40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4 }}
               className="part-photo"
             >
               <Image
@@ -157,9 +157,9 @@ export default function Page() {
           </div>
           <div className="card-part">
             <motion.div
-              initial={{opacity: 0, y: 40}}
-              animate={{opacity: 1, y: 0}}
-              transition={{delay: 0.6}}
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6 }}
               className="part-photo"
             >
               <Image
@@ -174,9 +174,9 @@ export default function Page() {
               />
             </motion.div>
             <motion.div
-              initial={{opacity: 0, y: 40}}
-              animate={{opacity: 1, y: 0}}
-              transition={{delay: 0.8}}
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.8 }}
               className="part-photo"
             >
               <Image
@@ -191,10 +191,10 @@ export default function Page() {
               />
             </motion.div>
             <motion.div
-              initial={{opacity: 0, y: 40}}
-              animate={{opacity: 1, y: 0, rotate: -4}}
-              whileHover={{rotate: 0}}
-              transition={{delay: 1}}
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0, rotate: -4 }}
+              whileHover={{ rotate: 0 }}
+              transition={{ delay: 1 }}
               className="part-photo"
             >
               <Image
