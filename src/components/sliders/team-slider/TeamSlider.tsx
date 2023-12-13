@@ -84,24 +84,26 @@ const TeamSlider: React.FC<SliderProps> = ({ onClose }) => {
               className="info-word d-flex flex-col"
             >
               <p className="akata-text-medium">
-                I will take the Reunionese singer Blacko&apos;s words: “live his
-                dreams are about existing”. Every day offers us the opportunity
-                to exist, to expand our dreams and to grow with. Dreaming will
-                only lead to little, but if you share your dreams with other
-                people, you are on the right way to make them come true. The
-                more you share your dream and more it becomes too close to the
-                reality
+                Are you struggling to find the perfect IT partner? Are you
+                hopelessly looking for someone who shares your bold dreams?
+                Well, at AKATA GOAVANA we too dream big - it&apos;s in our DNA.
+                For us, ambition knows no bounds. We&apos;ve always turned even
+                our wildest visions into reality through sheer determination
               </p>
               <p className="akata-text-medium">
-                Don’t stay in your dreams anymore. Go and share them so that
-                they grow and become a <strong>GOAVANA</strong> reality, with a
-                GOAVANA team, during a GOAVANA journey, by writing a GOAVANA
-                story…You need heart and mind when you’re living your dream. The
-                heart gives energy (motivation, ambition, source, emotion…) and
-                the `mind gives quality, professionalism, improvement, rebirth,
-                questioning, contestation and clarity. The mind is there to
-                create means and find solutions while making plans and executing
-                actions.
+                We know dreams require equal parts inspiration and dedication.
+                Our role is to supply the tools, insight and support to bridge
+                the gap between vision and achievement. We pledge to walk this
+                path with you, taking purposeful steps powered by creativity,
+                passion and strategic thinking. With open communication and
+                trust, we remove doubt, unlock potential and make your goals
+                attainable.
+              </p>
+              <p className="akata-text-medium">
+                We help all dreams take root and grow. We invite you to share
+                your aspirations with us, so we can cultivate success in
+                partnership. When dreams are planted together, the harvest is
+                boundless.
               </p>
             </motion.div>
             <motion.div
