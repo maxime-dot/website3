@@ -62,10 +62,47 @@ export default function Page() {
             transition={{ delay: 0.1 }}
             className="akata-text-big text-description"
           >
-            Meet the talented minds driving AKATA GOAVAN. Our diverse team of IT
-            experts, developers, designers, and strategists collaborates to
-            bring your projects to life. Explore the people behind AKATA GOAVAN
-            and discover how we can help shape your digital future.
+            <span> Outsourced IT getting you down?</span> <br />
+            Bankruptcy-inducing budget annihilation, operations frozen dead,
+            soul-crushing incompetence - the IT horror stories are enough to
+            keep you awake at night.
+          </motion.p>
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
+            className="akata-text-big text-description"
+          >
+            That's why we embrace agile project management to deliver maximum
+            transparency and accountability every step of the way. Using scrum
+            and kanban frameworks, we establish clear project parameters upfront
+            - scope locked, budget set, timeline fixed, quality assured. This
+            eliminates any ugly surprises down the road.
+          </motion.p>
+
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
+            className="akata-text-big text-description"
+          >
+            AKATA GOAVANA&apos;s team of IT engineers, Devops and Cloud
+            specialists, QA testers, project managers, AI and Web Design experts
+            have years of experience collaborating with international clients.
+          </motion.p>
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
+            className="akata-text-big text-description"
+          >
+            AKATA GOAVANA alleviates the risks of outsourcing so you can focus
+            on growing your business, not pulling your hair out.
+            <br />
+            <span>
+              {" "}
+              Join forces with us and make IT work for you, not against you.
+            </span>
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 30 }}

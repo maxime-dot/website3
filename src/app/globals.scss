@@ -76,6 +76,10 @@ body {
   @extend .akata-text-big;
   font-size: 14px;
   line-height: 19.6px;
+  span{
+    font-weight:bold ;
+    color: var(--goavana-blue);
+  }
 }
 
 .akata-text-small {
