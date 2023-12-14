@@ -78,7 +78,7 @@ const Teams: React.FC = () => {
             viewport={{ once: true }}
             className="akata-title-strong"
           >
-            Our Team,Your <span>success</span> guarantee
+            Your <span>success</span> guarantee
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, x: 100 }}
