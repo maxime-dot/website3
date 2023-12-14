@@ -2,15 +2,15 @@
 import Link from "next/link";
 import "./articles-page.scss";
 import dynamic from "next/dynamic";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faArrowLeft, faChevronRight} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import LoadingModal from "@/components/modal-lets-talk/LoadingModal";
 import Image from "next/image";
-import {useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 import Button from "@/components/button/normal/Button";
 import ArticleData from "@/data/articles.json";
 import ArticleCard from "@/components/cards/articles/ArticleCard";
-import {truncate} from "@/helpers/truncate";
+import { truncate } from "@/helpers/truncate";
 import Footer from "@/components/footer/Footer";
 import ArticleViewer from "@/components/article-viewer/ArticleViewer";
 const ModalLetsTalk = dynamic(
@@ -18,7 +18,7 @@ const ModalLetsTalk = dynamic(
 
   {
     loading: () => <LoadingModal />,
-  }
+  },
 );
 export default function Page() {
   const [isOpenModal, setOpenModal] = useState(false);
@@ -69,13 +69,12 @@ export default function Page() {
           <div className="header-title d-flex flex-col">
             <div className="title-text d-flex flex-col">
               <h1 className="akata-title-strong">
-                Explore the <span> World of Innovation</span>
+                WHAT’s <span>New</span> !
               </h1>
               <p className="content akata-text-big">
-                Dive into our captivating articles to stay at the forefront of
-                technology and innovation. Explore exciting topics and in-depth
-                analyses that will inspire you to push boundaries. Join us on
-                our quest for knowledge and inspiration
+                Explore the latest news and updates in our dedicated section,
+                stay informed about the significant events of our company and
+                the industry.
               </p>
             </div>
             <Button
@@ -126,6 +125,7 @@ export default function Page() {
                 title={data.title}
                 imgSrc={data.imageSrc}
                 readMore={() => handleOpenViewer(data)}
+                smallContent={data.smallContent}
               />
             ))}
           </div>

@@ -1,16 +1,17 @@
 import React from "react";
 import Image from "next/image";
-import {motion} from "framer-motion";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faArrowRightLong} from "@fortawesome/free-solid-svg-icons";
+import { motion } from "framer-motion";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRightLong } from "@fortawesome/free-solid-svg-icons";
 import "./article-card.scss";
-import {ArticleCardProps} from "@/types/article-card.type";
-import {articleCardAnimation} from "@/animation/animation";
-import {truncate} from "@/helpers/truncate";
+import { ArticleCardProps } from "@/types/article-card.type";
+import { articleCardAnimation } from "@/animation/animation";
+import { truncate } from "@/helpers/truncate";
 const ArticleCard: React.FC<ArticleCardProps> = ({
   date,
   title,
   content,
+  smallContent,
   readMore,
   imgSrc,
 }) => {
@@ -21,8 +22,8 @@ const ArticleCard: React.FC<ArticleCardProps> = ({
       initial="initial"
       whileInView={"enter"}
       exit={"exit"}
-      transition={{duration: 0.3, delay: 0.3}}
-      viewport={{once: true}}
+      transition={{ duration: 0.3, delay: 0.3 }}
+      viewport={{ once: true }}
     >
       <Image
         src={imgSrc}
@@ -37,7 +38,7 @@ const ArticleCard: React.FC<ArticleCardProps> = ({
             <p className="article-card-date">{date}</p>
             <h4 className="article-card-title">{title}</h4>
           </div>
-          <p className="article-card-text">{truncate(content, 277)}</p>
+          <p className="article-card-text">{truncate(smallContent, 277)}</p>
         </div>
         <button className="btn-readmore-article" onClick={readMore}>
           READ MORE{" "}

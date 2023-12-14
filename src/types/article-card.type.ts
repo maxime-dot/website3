@@ -1,7 +1,8 @@
 export interface ArticleCardProps {
-    imgSrc: string,
-    date: string,
-    title: string,
-    content: string,
-    readMore: () => void
+  imgSrc: string;
+  date: string;
+  title: string;
+  content: string;
+  smallContent: string;
+  readMore: () => void;
 }
