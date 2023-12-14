@@ -106,7 +106,7 @@ export default function Page() {
                   <span className="date">{data.date}</span>
                   <h3 className="title">{data.title}</h3>
                   <p className="content akata-text-small">
-                    {truncate(data.content, 127)}
+                    {truncate(data.smallContent, 127)}
                   </p>
                 </div>
               </div>

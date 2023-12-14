@@ -98,7 +98,7 @@ const Testimonial: React.FC = () => {
               viewport={{ once: true }}
               className="akata-title-strong group-title"
             >
-              our long-standing <span>partners</span>
+              long-standing <span>partners</span>
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 30 }}
