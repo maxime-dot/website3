@@ -113,29 +113,29 @@ export default function Page() {
             <Image
               src={"/images/teams/akata-team.png"}
               alt="akata-team"
-              width={800}
-              height={800}
+              width={1920}
+              height={1920}
               className="card-part-photo"
             />
             <Image
-              src={"/images/teams/akata-team-2.png"}
+              src={"/images/teams/gallery/akata-cto-coding.avif"}
               alt="akata-team"
-              width={800}
-              height={800}
+              width={1920}
+              height={1920}
               className="card-part-photo"
             />
             <Image
               src={"/images/teams/akata-team-3.png"}
               alt="akata-team"
-              width={800}
-              height={800}
+              width={1920}
+              height={1920}
               className="card-part-photo"
             />
             <Image
               src={"/images/teams/akata-team-4.png"}
               alt="akata-team"
-              width={800}
-              height={800}
+              width={1920}
+              height={1920}
               className="card-part-photo"
             />
           </motion.div>
@@ -181,13 +181,15 @@ export default function Page() {
               className="part-photo"
             >
               <Image
-                src={"/images/teams/akata-team-2.png"}
+                src={"/images/teams/gallery/akata-cto-coding.avif"}
                 alt="akata-team"
-                width={800}
-                height={800}
+                width={1920}
+                height={1080}
                 className="card-part-photo"
                 onClick={() =>
-                  handleOpenGallery("/images/teams/akata-team-2.png")
+                  handleOpenGallery(
+                    "/images/teams/gallery/akata-cto-coding.avif",
+                  )
                 }
               />
             </motion.div>
@@ -200,13 +202,15 @@ export default function Page() {
               className="part-photo"
             >
               <Image
-                src={"/images/teams/akata-team-3.png"}
+                src={"/images/teams/gallery/team-akata-sortie.avif"}
                 alt="akata-team"
-                width={800}
-                height={800}
+                width={1920}
+                height={1080}
                 className="card-part-photo"
                 onClick={() =>
-                  handleOpenGallery("/images/teams/akata-team-3.png")
+                  handleOpenGallery(
+                    "/images/teams/gallery/team-akata-sortie.avif",
+                  )
                 }
               />
             </motion.div>
@@ -217,13 +221,15 @@ export default function Page() {
               className="part-photo"
             >
               <Image
-                src={"/images/teams/akata-team-4.png"}
+                src={"/images/teams/gallery/team-akata-shooting.avif"}
                 alt="akata-team"
-                width={300}
-                height={600}
+                width={1920}
+                height={1080}
                 className="card-part-photo"
                 onClick={() =>
-                  handleOpenGallery("/images/teams/akata-team-4.png")
+                  handleOpenGallery(
+                    "/images/teams/gallery/team-akata-shooting.avif",
+                  )
                 }
               />
             </motion.div>
@@ -235,13 +241,15 @@ export default function Page() {
               className="part-photo"
             >
               <Image
-                src={"/images/teams/akata-team-5.png"}
+                src={"/images/teams/gallery/mr-manase-coding.avif"}
                 alt="akata-team"
-                width={300}
-                height={600}
+                width={1920}
+                height={1080}
                 className="card-part-photo"
                 onClick={() =>
-                  handleOpenGallery("/images/teams/akata-team-5.png")
+                  handleOpenGallery(
+                    "/images/teams/gallery/mr-manase-coding.avif",
+                  )
                 }
               />
             </motion.div>
