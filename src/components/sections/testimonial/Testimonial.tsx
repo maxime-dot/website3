@@ -63,7 +63,7 @@ const Testimonial: React.FC = () => {
   };
   return (
     <section
-      className="akata-testimonial w-100   d-flex flex-row"
+      className="akata-testimonial w-100  fill-view   d-flex flex-row"
       id="testimonial"
     >
       <motion.div

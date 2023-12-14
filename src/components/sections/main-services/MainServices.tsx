@@ -32,7 +32,7 @@ const MainServices: React.FC = () => {
     <>
       {openModal && <ModalLetsTalk onClose={handleCloseModal} />}
       <section
-        className="main-services container w-100 d-flex flex-col"
+        className="main-services container w-100 fill-view d-flex flex-col"
         id="services"
       >
         <div className="services-intro w-100 d-flex-center flex-col">

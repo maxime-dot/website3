@@ -25,7 +25,7 @@ const Header: React.FC = () => {
   const [playVideo, setPlayVideo] = useState(false);
   return (
     <div
-      className="akata-header w-100 d-flex-space-between container"
+      className="akata-header fill-view d-flex-space-between container"
       id="home"
     >
       {playVideo && (
