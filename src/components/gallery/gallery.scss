@@ -21,6 +21,7 @@
         width: 100%;
         height: 100%;
         position: relative;
+        border: 1px solid #dddddd;
 
         .btn-close-gallery {
           position: absolute;
@@ -51,16 +52,26 @@
       display: flex;
       flex-wrap: nowrap;
       overflow-x: auto;
-      gap: 30px;
+      overflow-y: hidden;
+      gap: 20px;
       -ms-scroll-snap-type: x mandatory;
       scroll-snap-type: x mandatory;
       scroll-behavior: smooth;
-      .list-thumb {
-        scroll-snap-align: start;
+
+      .list-thumb-container {
+        border: 1px solid #dddddd;
         min-width: 200px;
         width: 200px;
-        height: 100%;
-        object-fit: cover;
+        height: inherit;
+        scroll-snap-align: start;
+        overflow: hidden;
+        position: relative;
+
+        .list-thumb {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
       }
 
 

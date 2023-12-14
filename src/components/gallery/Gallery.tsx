@@ -1,10 +1,10 @@
 "use client";
-import React, {useState} from "react";
+import React, { useState } from "react";
 import "./gallery.scss";
-import {AnimatePresence, motion} from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faCircleXmark} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCircleXmark } from "@fortawesome/free-solid-svg-icons";
 import GalleryData from "@/data/team-gallery.json";
 
 interface GalleryProps {
@@ -12,20 +12,20 @@ interface GalleryProps {
   initalPics: string;
 }
 
-const Gallery: React.FC<GalleryProps> = ({onClose, initalPics}) => {
+const Gallery: React.FC<GalleryProps> = ({ onClose, initalPics }) => {
   const [selectedImage, setSelectedImage] = useState(initalPics);
   return (
     <div className="akata-gallery fill-view d-flex-center">
       <motion.div
-        initial={{opacity: 0, y: 50}}
-        animate={{opacity: 1, y: 0}}
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
         className="gallery-container d-flex flex-col"
       >
         <div className="gallery-container-shower">
           <motion.div
-            initial={{opacity: 0, x: 40}}
-            animate={{opacity: 1, x: 0}}
-            exit={{opacity: 0, x: -40}}
+            initial={{ opacity: 0, x: 40 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -40 }}
             className={"shower"}
           >
             <button
@@ -37,9 +37,9 @@ const Gallery: React.FC<GalleryProps> = ({onClose, initalPics}) => {
             </button>
 
             <motion.div
-              initial={{opacity: 0}}
-              animate={{opacity: 1}}
-              exit={{opacity: 0}}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
               key={selectedImage}
               className="selected-image"
             >
@@ -59,11 +59,11 @@ const Gallery: React.FC<GalleryProps> = ({onClose, initalPics}) => {
             GalleryData.map((data) => (
               <motion.div
                 key={data.id}
-                viewport={{once: true}}
-                animate={{opacity: 1, y: 0}}
-                initial={{opacity: 0, y: 10}}
+                viewport={{ once: true }}
+                animate={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, y: 10 }}
                 onClick={() => setSelectedImage(data.imgSrc)}
-                whileHover={{scale: 1.1}}
+                className="list-thumb-container"
               >
                 <Image
                   src={data.imgSrc}
