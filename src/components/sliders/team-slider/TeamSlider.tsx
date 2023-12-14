@@ -6,7 +6,11 @@ import "./team-slider.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import dynamic from "next/dynamic";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
-import { faFacebook, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import {
+  faFacebook,
+  faLinkedin,
+  faWhatsapp,
+} from "@fortawesome/free-brands-svg-icons";
 import Link from "next/link";
 import Button from "@/components/button/normal/Button";
 import LoadingModal from "@/components/modal-lets-talk/LoadingModal";
@@ -134,6 +138,16 @@ const TeamSlider: React.FC<SliderProps> = ({ onClose }) => {
                 title={"Ramiandrisoa Andriamandranto Patrick LinkedIn account."}
               >
                 <FontAwesomeIcon icon={faLinkedin} />
+              </Link>
+
+              <Link
+                href={"tel:+261329919806"}
+                className={"link"}
+                passHref={true}
+                target={"_blank"}
+                title={"Ramiandrisoa Andriamandranto Patrick WhatsApp number."}
+              >
+                <FontAwesomeIcon icon={faWhatsapp} />
               </Link>
             </motion.div>
             <motion.div
