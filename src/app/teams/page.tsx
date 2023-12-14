@@ -118,7 +118,7 @@ export default function Page() {
               className="card-part-photo"
             />
             <Image
-              src={"/images/teams/gallery/akata-cto-coding.avif"}
+              src={"/images/teams/gallery/team-akata-sortie-ivelany.avif"}
               alt="akata-team"
               width={1920}
               height={1920}
@@ -164,13 +164,15 @@ export default function Page() {
               className="part-photo"
             >
               <Image
-                src={"/images/teams/akata-team.png"}
+                src={"/images/teams/gallery/team-akata-sortie-ivelany.avif"}
                 alt="akata-team"
                 width={800}
                 height={800}
                 className="card-part-photo"
                 onClick={() =>
-                  handleOpenGallery("/images/teams/akata-team.png")
+                  handleOpenGallery(
+                    "/images/teams/gallery/team-akata-sortie-ivelany.avif",
+                  )
                 }
               />
             </motion.div>
