@@ -6,7 +6,7 @@ import projectData from "@/data/projects.json";
 const Projects: React.FC = () => {
   return (
     <section
-      className="akata-projects   d-flex-center flex-col fill-view"
+      className="akata-projects   d-flex-center flex-col w-100"
       id="projects"
     >
       <Image

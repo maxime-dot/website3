@@ -1,5 +1,6 @@
 .akata-articles {
   position: relative;
+  padding-top: 180px;
   .robot-hand {
     position: absolute;
     top: 30%;
@@ -9,8 +10,8 @@
     z-index: -1;
   }
   .article-content {
-    min-height: 100vh;
-    gap: 100px;
+
+    gap: 50px;
     .content-title {
       gap: 10px;
       h2,

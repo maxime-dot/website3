@@ -1,9 +1,9 @@
 "use client";
-import React, {useState} from "react";
+import React, { useState } from "react";
 import "./contacts.scss";
-import {AnimatePresence, motion} from "framer-motion";
-import {Formik} from "formik";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import { AnimatePresence, motion } from "framer-motion";
+import { Formik } from "formik";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faUser,
   faEnvelope,
@@ -44,7 +44,7 @@ const Contacts: React.FC = () => {
     }, 2000);
   };
   return (
-    <section className="akata-contacts fill-view container" id="contacts">
+    <section className="akata-contacts  container" id="contacts">
       <div className="contacts form d-flex flex-col">
         <div className="form-title d-flex flex-col">
           <h2 className="akata-title-medium">
@@ -81,7 +81,7 @@ const Contacts: React.FC = () => {
               }
               return errors;
             }}
-            onSubmit={async (values, {setSubmitting, resetForm}) => {
+            onSubmit={async (values, { setSubmitting, resetForm }) => {
               try {
                 const data = new FormData();
                 data.append("EMAIL", values.EMAIL);
@@ -96,7 +96,7 @@ const Contacts: React.FC = () => {
                     headers: {
                       "Content-Type": "multipart/form-data",
                     },
-                  }
+                  },
                 );
 
                 if (response.data.success) {
@@ -204,9 +204,9 @@ const Contacts: React.FC = () => {
                 <AnimatePresence>
                   {submited && (
                     <motion.div
-                      initial={{opacity: 0, x: 30}}
-                      animate={{opacity: 1, x: 0}}
-                      exit={{opacity: 0, x: -30}}
+                      initial={{ opacity: 0, x: 30 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      exit={{ opacity: 0, x: -30 }}
                       className="submit-indicator akata-text-medium d-flex flex-row"
                     >
                       <FontAwesomeIcon
@@ -220,8 +220,8 @@ const Contacts: React.FC = () => {
                 </AnimatePresence>
                 {error && (
                   <motion.div
-                    initial={{opacity: 0, x: 30}}
-                    animate={{opacity: 1, x: 0}}
+                    initial={{ opacity: 0, x: 30 }}
+                    animate={{ opacity: 1, x: 0 }}
                     className="submit-indicator error akata-text-medium "
                   >
                     <FontAwesomeIcon
@@ -252,7 +252,7 @@ const Contacts: React.FC = () => {
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d928.3581826809302!2d47.08791706963868!3d-21.451530998769098!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x21e7bff95fe4d15f%3A0xa014a6be6e4ab6d0!2sAKATA-GOAVANA!5e0!3m2!1sfr!2smg!4v1698663351553!5m2!1sfr!2smg"
             width="100%"
             height="361"
-            style={{border: 0}}
+            style={{ border: 0 }}
             loading="lazy"
             title="Akata Goavana position in Maps. "
           ></iframe>

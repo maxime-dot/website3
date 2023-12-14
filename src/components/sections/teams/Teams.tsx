@@ -64,7 +64,7 @@ const Teams: React.FC = () => {
     router.push("/teams");
   };
   return (
-    <section className="akata-teams fill-view  container" id="teams">
+    <section className="akata-teams w-100  container" id="teams">
       {openModal && <ModalLetsTalk onClose={handleCloseModal} />}
       <AnimatePresence>
         {openSlider && <TeamSlider onClose={handleCloseSlider} />}

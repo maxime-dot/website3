@@ -32,7 +32,7 @@ const Articles: React.FC = () => {
     }
   }, [openArticle]);
   return (
-    <section className="akata-articles fill-view" id="articles">
+    <section className="akata-articles w-100" id="articles">
       <AnimatePresence mode="wait">
         {openArticle && (
           <ArticleViewer onClose={handleCloseArticle} data={selecteArticle} />
