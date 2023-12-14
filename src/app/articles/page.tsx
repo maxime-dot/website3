@@ -69,13 +69,12 @@ export default function Page() {
           <div className="header-title d-flex flex-col">
             <div className="title-text d-flex flex-col">
               <h1 className="akata-title-strong">
-                Explore the <span> World of Innovation</span>
+                WHAT’s <span>New</span> !
               </h1>
               <p className="content akata-text-big">
-                Dive into our captivating articles to stay at the forefront of
-                technology and innovation. Explore exciting topics and in-depth
-                analyses that will inspire you to push boundaries. Join us on
-                our quest for knowledge and inspiration
+                Explore the latest news and updates in our dedicated section,
+                stay informed about the significant events of our company and
+                the industry.
               </p>
             </div>
             <Button
