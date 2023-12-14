@@ -23,6 +23,7 @@ import LoadingModal from "../modal-lets-talk/LoadingModal";
 
 const navigationLinks = [
   { name: "Home", path: "#home" },
+  { name: "Testimonial", path: "#testimonial" },
   { name: "Services", path: "#services" },
   { name: "Projects", path: "#projects" },
   { name: "Teams", path: "#teams" },
