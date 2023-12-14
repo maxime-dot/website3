@@ -57,6 +57,9 @@
         gap: 20px;
         align-items: center;
 
+        &:nth-child(2){
+          margin-top: 20px;
+        }
 
         .read-more {
           position: absolute;

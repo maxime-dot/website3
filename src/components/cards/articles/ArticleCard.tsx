@@ -36,7 +36,7 @@ const ArticleCard: React.FC<ArticleCardProps> = ({
         <div className="article-card-body d-flex flex-col">
           <div className="title d-flex flex-col">
             <p className="article-card-date">{date}</p>
-            <h4 className="article-card-title">{title}</h4>
+            <h4 className="article-card-title">{truncate(title, 60)} </h4>
           </div>
           <p className="article-card-text">{truncate(smallContent, 277)}</p>
         </div>
