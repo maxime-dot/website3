@@ -1,10 +1,14 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import "./gallery.scss";
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCircleXmark } from "@fortawesome/free-solid-svg-icons";
+import {
+  faCircleXmark,
+  faArrowLeft,
+  faArrowRight,
+} from "@fortawesome/free-solid-svg-icons";
 import GalleryData from "@/data/team-gallery.json";
 
 interface GalleryProps {
@@ -14,6 +18,22 @@ interface GalleryProps {
 
 const Gallery: React.FC<GalleryProps> = ({ onClose, initalPics }) => {
   const [selectedImage, setSelectedImage] = useState(initalPics);
+
+  const galleryRef = useRef(null);
+
+  const handleScroll = (direction: "left" | "right") => {
+    const scrollAmount = 200; // You can adjust this value based on your needs
+    const container: any = galleryRef.current;
+
+    if (container) {
+      if (direction === "left") {
+        container.scrollLeft -= scrollAmount;
+      } else if (direction === "right") {
+        container.scrollLeft += scrollAmount;
+      }
+    }
+  };
+
   return (
     <div className="akata-gallery fill-view d-flex-center">
       <motion.div
@@ -52,8 +72,22 @@ const Gallery: React.FC<GalleryProps> = ({ onClose, initalPics }) => {
               />
             </motion.div>
           </motion.div>
+          <div className="control-button">
+            <button
+              className={"btn-control"}
+              onClick={() => handleScroll("left")}
+            >
+              <FontAwesomeIcon icon={faArrowLeft} />
+            </button>
+            <button
+              className={"btn-control"}
+              onClick={() => handleScroll("right")}
+            >
+              <FontAwesomeIcon icon={faArrowRight} />
+            </button>
+          </div>
         </div>
-        <div className="picture-list">
+        <div className="picture-list" ref={galleryRef}>
           {GalleryData &&
             GalleryData.length > 0 &&
             GalleryData.map((data) => (
