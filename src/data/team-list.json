@@ -1,10 +1,10 @@
 [
   {
     "id": 1,
-    "firstName": "RAMIANDRISOA",
+    "firstName": "RAMIANDRISOA    ",
     "lastName": "(BODGE)",
     "post": "CEO",
-    "profileImage": "/images/teams/Bodge.avif",
+    "profileImage": "/images/teams/team-profile/bodge-profile.png",
     "socialLink": {
       "facebook": "https://www.facebook.com/profile.php?id=61553836774106",
       "linkedin": "https://www.linkedin.com/in/ramiandrisoa-andriamandranto-patrick-bodge-9a273310b/",
@@ -16,7 +16,7 @@
     "firstName": "RAZAFIMANDIMBY",
     "lastName": "Fabrice",
     "post": "Marketing & Financial Director",
-    "profileImage": "/images/teams/team-profile/fabrice-akata.avif",
+    "profileImage": "/images/teams/team-profile/fabrice.png",
     "socialLink": {
       "facebook": "",
       "linkedin": "https://www.linkedin.com"
@@ -27,7 +27,7 @@
     "firstName": "RASAMIMANANA",
     "lastName": "Ny Andrianina",
     "post": "Communications Manager",
-    "profileImage": "/images/teams/team-profile/ny-andrianina-akata.avif",
+    "profileImage": "/images/teams/team-profile/andrianina.png",
     "socialLink": {
       "facebook": "",
       "linkedin": "https://www.linkedin.com/in/ny-andrianina-rasamimanana-bb448b261/",
@@ -50,7 +50,7 @@
     "id": 1,
     "firstName": "RAMIANDRISOA ",
     "lastName": "Michel",
-    "profileImage": "/images/teams/team-profile/michel-akata.avif",
+    "profileImage": "/images/teams/team-profile/ramc.png",
     "post": "Accountant",
     "socialLink": {
       "facebook": "",
