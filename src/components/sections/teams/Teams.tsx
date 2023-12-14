@@ -165,9 +165,9 @@ const Teams: React.FC = () => {
           </div>
           <p className="profile-words akata-text-medium">
             Your most sacred dreams hold the key to an extraordinary life —
-            wealth, influence, legacy and more. Boldly share them with the right
-            people and witness their transformation into resounding success you
-            never thought possible.
+            wealth, influence, legacy and more. Boldly share them with us and
+            witness their transformation into resounding success you never
+            thought possible.
           </p>
           <div className="profile-pics">
             <Image
