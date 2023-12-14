@@ -32,13 +32,9 @@ const TeamList: React.FC = () => {
         viewport={{ once: true }}
         className="akata-text-medium team-title-description"
       >
-        Beyond talent, our team is a dynamic force that shapes the future of
-        digital solutions. Excellence and innovation define our work ethic. Our
-        workflow is a symphony of precision and creativity. From concept to
-        execution, we immerse ourselves in your project. As we said, your
-        success is not just a goal; it&apos;s a guarantee. We are driven by a
-        singular focus – to maximize your return on investment and deliver
-        results that exceed expectations.
+        Our team of dedicated experts transforms ambitious visions into
+        game-changing digital solutions, fueled by ingenuity and a commitment to
+        exceed expectations.
       </motion.p>
       <div className="list-content container">
         {TeamData.map((data, index) => (
