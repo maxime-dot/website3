@@ -2,7 +2,7 @@
   {
     "id": 1,
     "firstName": "RAMIANDRISOA",
-    "lastName": "Andriamandranto Patrick (BODGE)",
+    "lastName": "(BODGE)",
     "post": "CEO",
     "profileImage": "/images/teams/Bodge.avif",
     "socialLink": {
@@ -14,7 +14,7 @@
   {
     "id": 1,
     "firstName": "RAZAFIMANDIMBY",
-    "lastName": "Fabrice José",
+    "lastName": "Fabrice",
     "post": "Marketing & Financial Director",
     "profileImage": "/images/teams/team-profile/fabrice-akata.avif",
     "socialLink": {
@@ -37,7 +37,7 @@
   {
     "id": 1,
     "firstName": "RAKOTONIAINA",
-    "lastName": "Pety Ialimijoro",
+    "lastName": "Pety",
     "post": "Chef Technologie Officiel",
     "profileImage": "/images/teams/team-profile/mijoro-akata.avif",
     "socialLink": {
@@ -49,7 +49,7 @@
   {
     "id": 1,
     "firstName": "RAMIANDRISOA ",
-    "lastName": "Andriamandranto Michel",
+    "lastName": "Michel",
     "profileImage": "/images/teams/team-profile/michel-akata.avif",
     "post": "Accountant",
     "socialLink": {
