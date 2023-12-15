@@ -170,8 +170,8 @@ const Teams: React.FC = () => {
           <div className="profile-pics">
             <Image
               src={"/images/teams/team-profile/bodge-profile.png"}
-              width={800}
-              height={800}
+              width={1024}
+              height={1024}
               alt={`CEO Profile pics`}
               className="profile-image"
             />
