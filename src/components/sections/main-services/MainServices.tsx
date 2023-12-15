@@ -86,8 +86,8 @@ const MainServices: React.FC = () => {
           >
             <FontAwesomeIcon icon={faGift} className="gift-icon  fa-shake" />{" "}
             <span>
-              Can't stop thinking about the price? Free quotes here, claim yours
-              ASAP!
+              Can&apos;t stop thinking about the price? Free quotes here, claim
+              yours ASAP!
             </span>
           </motion.div>
           {ServiceData.map((data, index) => (
