@@ -61,7 +61,7 @@ const TeamSlider: React.FC<SliderProps> = ({ onClose }) => {
             key={"animated-title"}
             className={"akata-title-medium team-name"}
           >
-            RAMIANDRISOA Andriamandranto Patrick (BODGE)
+            RAMIANDRISOA BODGE
           </motion.h4>
           <div className="team-more-info d-flex flex-col">
             <motion.div
@@ -138,16 +138,6 @@ const TeamSlider: React.FC<SliderProps> = ({ onClose }) => {
                 title={"Ramiandrisoa Andriamandranto Patrick LinkedIn account."}
               >
                 <FontAwesomeIcon icon={faLinkedin} />
-              </Link>
-
-              <Link
-                href={"tel:+261329919806"}
-                className={"link"}
-                passHref={true}
-                target={"_blank"}
-                title={"Ramiandrisoa Andriamandranto Patrick WhatsApp number."}
-              >
-                <FontAwesomeIcon icon={faWhatsapp} />
               </Link>
             </motion.div>
             <motion.div

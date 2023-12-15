@@ -49,13 +49,13 @@ export default function Page() {
       </button>
       <div className="team-page-content w-100">
         <div className="content-text">
-          <motion.h1
+          <motion.h2
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             className="akata-title-strong text-title"
           >
             <span>breakthrough</span>, not frustration
-          </motion.h1>
+          </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
