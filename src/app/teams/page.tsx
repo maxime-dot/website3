@@ -49,13 +49,13 @@ export default function Page() {
       </button>
       <div className="team-page-content w-100">
         <div className="content-text">
-          <motion.h1
+          <motion.h2
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             className="akata-title-strong text-title"
           >
-            <span>Business expansion</span>, not frustration
-          </motion.h1>
+            <span>breakthrough</span>, not frustration
+          </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -63,9 +63,8 @@ export default function Page() {
             className="akata-text-big text-description"
           >
             <span> Outsourced IT getting you down?</span> <br />
-            Bankruptcy-inducing budget annihilation, operations frozen dead,
-            soul-crushing incompetence - the IT horror stories are enough to
-            keep you awake at night.
+            Bankruptcy-level budget issues, operational stagnations, and
+            incompetence nightmares being too familiar?
           </motion.p>
           <motion.p
             initial={{ opacity: 0, y: 30 }}
@@ -73,23 +72,14 @@ export default function Page() {
             transition={{ delay: 0.1 }}
             className="akata-text-big text-description"
           >
-            That&apos;s why we embrace agile project management to deliver
-            maximum transparency and accountability every step of the way. Using
-            scrum and kanban frameworks, we establish clear project parameters
-            upfront - scope locked, budget set, timeline fixed, quality assured.
-            This eliminates any ugly surprises down the road.
+            Let’s end all of this now! We implement agile project management,
+            using scrum and kanban frameworks for upfront clarity: scope,
+            budget, timeline, and quality assured. Our team of IT engineers,
+            Devops and Cloud specialists, QA testers, project managers, AI and
+            Web Design experts have years of experience collaborating with
+            international clients.
           </motion.p>
 
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            className="akata-text-big text-description"
-          >
-            AKATA GOAVANA&apos;s team of IT engineers, Devops and Cloud
-            specialists, QA testers, project managers, AI and Web Design experts
-            have years of experience collaborating with international clients.
-          </motion.p>
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -101,7 +91,7 @@ export default function Page() {
             <br />
             <span>
               {" "}
-              Join forces with us and make IT work for you, not against you.
+              Join forces with us and make IT work for you, not against you.{" "}
             </span>
           </motion.p>
           <motion.div

@@ -6,7 +6,9 @@ import {
   faFacebook,
   faInstagram,
   faLinkedin,
+  faWhatsapp,
 } from "@fortawesome/free-brands-svg-icons";
+
 import "./footer.scss";
 import contactData from "@/data/contacts.json";
 import serviceList from "@/data/services.json";
@@ -53,6 +55,17 @@ const Footer: React.FC = () => {
                   style={{ marginRight: "5px" }}
                 />{" "}
                 {contactData.phone}
+              </Link>
+            </li>
+            <li className="akata-text-small">
+              <Link href={"tel:+261346757384"}>
+                {" "}
+                <FontAwesomeIcon
+                  icon={faWhatsapp}
+                  className="link-icon"
+                  style={{ marginRight: "5px" }}
+                />{" "}
+                {contactData.whatapp}
               </Link>
             </li>
           </ul>
@@ -108,19 +121,11 @@ const Footer: React.FC = () => {
             <Link href={contactData.socialLink.facebook} target="_blank">
               <FontAwesomeIcon icon={faFacebook} className="link-icon" />
             </Link>
-            <Link href={contactData.socialLink.instagram}>
-              <FontAwesomeIcon
-                icon={faInstagram}
-                target="_blank"
-                className="link-icon"
-              />
+            <Link href={contactData.socialLink.instagram} target="_blank">
+              <FontAwesomeIcon icon={faInstagram} className="link-icon" />
             </Link>
-            <Link href={contactData.socialLink.linkedin}>
-              <FontAwesomeIcon
-                icon={faLinkedin}
-                target="_blank"
-                className="link-icon"
-              />
+            <Link href={contactData.socialLink.linkedin} target="_blank">
+              <FontAwesomeIcon icon={faLinkedin} className="link-icon" />
             </Link>
           </div>
         </div>

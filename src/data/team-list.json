@@ -1,24 +1,24 @@
 [
   {
     "id": 1,
-    "firstName": "RAMIANDRISOA",
-    "lastName": "Andriamandranto Patrick (BODGE)",
-    "post": "CEO",
-    "profileImage": "/images/teams/Bodge.avif",
+    "firstName": "RAMIANDRISOA    ",
+    "lastName": "BODGE",
+    "post": "Co-Founder & Chef Executive Officer",
+    "profileImage": "/images/teams/team-profile/bodge-profile.png",
     "socialLink": {
-      "facebook": "https://www.facebook.com",
-      "linkedin": "https://www.linkedin.com",
-      "github": "https://www.github.com"
+      "facebook": "https://www.facebook.com/profile.php?id=61553836774106",
+      "linkedin": "https://www.linkedin.com/in/ramiandrisoa-andriamandranto-patrick-bodge-9a273310b/",
+      "whatapp": ""
     }
   },
   {
     "id": 1,
     "firstName": "RAZAFIMANDIMBY",
-    "lastName": "Fabrice José",
+    "lastName": "Fabrice",
     "post": "Marketing & Financial Director",
-    "profileImage": "/images/teams/team-profile/fabrice-akata.avif",
+    "profileImage": "/images/teams/team-profile/fabrice.png",
     "socialLink": {
-      "facebook": "https://www.facebook.com",
+      "facebook": "",
       "linkedin": "https://www.linkedin.com"
     }
   },
@@ -27,35 +27,35 @@
     "firstName": "RASAMIMANANA",
     "lastName": "Ny Andrianina",
     "post": "Communications Manager",
-    "profileImage": "/images/teams/team-profile/ny-andrianina-akata.avif",
+    "profileImage": "/images/teams/team-profile/andrianina.png",
     "socialLink": {
-      "facebook": "https://www.facebook.com/nyandrianina.rasamimananaii?mibextid=kFxxJD",
+      "facebook": "",
       "linkedin": "https://www.linkedin.com/in/ny-andrianina-rasamimanana-bb448b261/",
-      "github": ""
+      "whatapp": ""
     }
   },
   {
     "id": 1,
     "firstName": "RAKOTONIAINA",
-    "lastName": "Pety Ialimijoro",
+    "lastName": "Pety",
     "post": "Chef Technologie Officiel",
     "profileImage": "/images/teams/team-profile/mijoro-akata.avif",
     "socialLink": {
-      "facebook": "https://www.facebook.com",
+      "facebook": "",
       "linkedin": "https://www.linkedin.com",
-      "github": "https://www.github.com"
+      "whatapp": ""
     }
   },
   {
     "id": 1,
     "firstName": "RAMIANDRISOA ",
-    "lastName": "Andriamandranto Michel",
-    "profileImage": "/images/teams/team-profile/michel-akata.avif",
+    "lastName": "Michel",
+    "profileImage": "/images/teams/team-profile/ramc.png",
     "post": "Accountant",
     "socialLink": {
-      "facebook": "https://www.facebook.com",
+      "facebook": "",
       "linkedin": "https://www.linkedin.com",
-      "github": ""
+      "whatapp": ""
     }
   }
 ]

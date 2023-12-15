@@ -24,7 +24,7 @@ const Header: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [playVideo, setPlayVideo] = useState(false);
   return (
-    <header
+    <div
       className="akata-header fill-view d-flex-space-between container"
       id="home"
     >
@@ -97,7 +97,7 @@ const Header: React.FC = () => {
           height={600}
         />
       </motion.div>
-    </header>
+    </div>
   );
 };
 

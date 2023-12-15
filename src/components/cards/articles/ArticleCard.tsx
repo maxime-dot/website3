@@ -27,7 +27,7 @@ const ArticleCard: React.FC<ArticleCardProps> = ({
     >
       <Image
         src={imgSrc}
-        alt="piv fianarantsoa"
+        alt={`${title} image`}
         width={300}
         height={165}
         className="article-image"

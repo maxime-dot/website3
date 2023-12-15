@@ -3,10 +3,11 @@ import Image from "next/image";
 import "./projects.scss";
 import Link from "next/link";
 import projectData from "@/data/projects.json";
+
 const Projects: React.FC = () => {
   return (
     <section
-      className="akata-projects   d-flex-center flex-col fill-view"
+      className="akata-projects  fill-view  d-flex flex-col w-100"
       id="projects"
     >
       <Image
@@ -37,8 +38,8 @@ const Projects: React.FC = () => {
             >
               <Image
                 src={data.imageSrc}
-                width={300}
-                height={162}
+                width={300 * 2}
+                height={162 * 2}
                 alt={`Service`}
                 className="project-logo"
               />

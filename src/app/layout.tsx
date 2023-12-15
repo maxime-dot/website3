@@ -3,6 +3,7 @@ import { config } from "@fortawesome/fontawesome-svg-core";
 import "./globals.scss";
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
+import Head from "next/head";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -11,12 +12,19 @@ const poppins = Poppins({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 });
 
-export const metadata: Metadata = {
-  title: "Akata Goavana - IT agency from Madagascar",
-  description:
-    "Discover AKATA GOAVANA's innovative digital solutions to boost your online business. Affordable, but more than efficient for many businesses - and why not yours?",
-};
 config.autoAddCss = false;
+
+interface ExtendedMetadata extends Metadata {
+  "google-site-verification": string;
+}
+
+export const metadata: ExtendedMetadata = {
+  title: "Akata Goavana - IT company from Madagascar",
+  description:
+    "The rules of success changed yesterday. Our cutting-edge solutions from Madagascar can get your business caught up today and dominating tomorrow.",
+  "google-site-verification": "rt0uj5tdNaTdLWR9UCrdpPvHNZBEHwUeRawmIbNISGw",
+} as Metadata & { "google-site-verification": string };
+
 export default function RootLayout({
   children,
 }: {

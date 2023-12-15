@@ -8,6 +8,8 @@ import {
   faCircleXmark,
   faArrowLeft,
   faArrowRight,
+  faChevronLeft,
+  faChevronRight,
 } from "@fortawesome/free-solid-svg-icons";
 import GalleryData from "@/data/team-gallery.json";
 
@@ -77,13 +79,16 @@ const Gallery: React.FC<GalleryProps> = ({ onClose, initalPics }) => {
               className={"btn-control"}
               onClick={() => handleScroll("left")}
             >
-              <FontAwesomeIcon icon={faArrowLeft} />
+              <FontAwesomeIcon icon={faChevronLeft} className={"icon-button"} />
             </button>
             <button
               className={"btn-control"}
               onClick={() => handleScroll("right")}
             >
-              <FontAwesomeIcon icon={faArrowRight} />
+              <FontAwesomeIcon
+                icon={faChevronRight}
+                className={"icon-button"}
+              />
             </button>
           </div>
         </div>

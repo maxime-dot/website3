@@ -6,7 +6,11 @@ import "./team-slider.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import dynamic from "next/dynamic";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
-import { faFacebook, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import {
+  faFacebook,
+  faLinkedin,
+  faWhatsapp,
+} from "@fortawesome/free-brands-svg-icons";
 import Link from "next/link";
 import Button from "@/components/button/normal/Button";
 import LoadingModal from "@/components/modal-lets-talk/LoadingModal";
@@ -57,7 +61,7 @@ const TeamSlider: React.FC<SliderProps> = ({ onClose }) => {
             key={"animated-title"}
             className={"akata-title-medium team-name"}
           >
-            RAMIANDRISOA Andriamandranto Patrick (BODGE)
+            RAMIANDRISOA BODGE
           </motion.h4>
           <div className="team-more-info d-flex flex-col">
             <motion.div

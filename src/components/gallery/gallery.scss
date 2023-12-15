@@ -5,7 +5,7 @@
   background: rgba(0, 0, 0, .85);
   backdrop-filter: blur(5px);
   color: var(--light);
-  z-index: 1;
+  z-index: 6;
 
   .gallery-container {
     width: 100%;
@@ -17,30 +17,37 @@
       width: 100%;
       height: 534px;
       position: relative;
-      .control-button {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: auto;
-        height: 50px;
-        gap: 20px;
 
-        position: absolute;
-        bottom: -50px;
-        right: 0;
-       .btn-control{
-         border: 0;
-         outline: 0;
-         background: 0;
-         color: var(--light);
-         font-size:15px;
-         opacity: .4;
-         transition: opacity .2s ease;
-         cursor: pointer;
-         &:hover{
-           opacity: 1;
-         }
-       }
+      .control-button {
+        .btn-control {
+          border: 0;
+          outline: 0;
+          background: 0;
+          color: var(--light);
+          font-size: 30px;
+          padding: 20px;
+          opacity: .5;
+          transition: opacity .2s ease;
+          cursor: pointer;
+          position: absolute;
+          bottom: -180px;
+
+          .icon-button {
+            padding: 20px;
+          }
+
+          &:nth-child(1) {
+            left: -80px;
+          }
+
+          &:nth-child(2) {
+            right: -80px;
+          }
+
+          &:hover {
+            opacity: 1;
+          }
+        }
 
       }
 
@@ -78,16 +85,13 @@
       height: 120px;
       display: flex;
       flex-wrap: nowrap;
-      overflow-x: auto;
-      overflow-y: hidden;
+      white-space: nowrap;
+      overflow: auto;
       gap: 20px;
       -ms-scroll-snap-type: x mandatory;
-      scroll-snap-type: x mandatory;
-      scroll-behavior: smooth;
+      scroll-snap-type: x proximity;
+    scroll-behavior: smooth;
       position: relative;
-
-
-
 
       .list-thumb-container {
         border: 1px solid #dddddd;

@@ -64,7 +64,7 @@ const Teams: React.FC = () => {
     router.push("/teams");
   };
   return (
-    <section className="akata-teams fill-view  container" id="teams">
+    <section className="akata-teams w-100 fill-view container" id="teams">
       {openModal && <ModalLetsTalk onClose={handleCloseModal} />}
       <AnimatePresence>
         {openSlider && <TeamSlider onClose={handleCloseSlider} />}
@@ -78,7 +78,7 @@ const Teams: React.FC = () => {
             viewport={{ once: true }}
             className="akata-title-strong"
           >
-            Our Team,Your <span>success</span> guarantee
+            Your <span>success</span> guarantee
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, x: 100 }}
@@ -158,16 +158,14 @@ const Teams: React.FC = () => {
           onClick={handleOpenSlider}
         >
           <div className="profile-info">
-            <p className="ceo-name">
-              RAMIANDRISOA Andriamandranto Patrick ( BODGE)
-            </p>
+            <p className="ceo-name">RAMIANDRISOA BODGE</p>
             <p className="ceo-post">CEO</p>
           </div>
           <p className="profile-words akata-text-medium">
             Your most sacred dreams hold the key to an extraordinary life —
-            wealth, influence, legacy and more. Boldly share them with the right
-            people and witness their transformation into resounding success you
-            never thought possible.
+            wealth, influence, legacy and more. Boldly share them with us and
+            witness their transformation into resounding success you never
+            thought possible.
           </p>
           <div className="profile-pics">
             <Image
