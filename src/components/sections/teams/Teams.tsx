@@ -168,8 +168,16 @@ const Teams: React.FC = () => {
             thought possible.
           </p>
           <div className="profile-pics">
+            {/*<Image*/}
+            {/*  src={"/images/teams/team-profile/bodge-profile.png"}*/}
+            {/*  width={1024}*/}
+            {/*  height={1024}*/}
+            {/*  alt={`CEO Profile pics`}*/}
+            {/*  className="profile-image"*/}
+            {/*/>*/}
+            {/* mobile design  */}
             <Image
-              src={"/images/teams/team-profile/bodge-profile.png"}
+              src={"/images/teams/team-profile/bodge-mobile.jpg"}
               width={1024}
               height={1024}
               alt={`CEO Profile pics`}
