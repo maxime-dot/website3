@@ -6,17 +6,17 @@ import "./testimonial.scss";
 import { motion } from "framer-motion";
 // data
 import testimonials from "@/data/testimonials.json";
-import { TestimonialDataType } from "../../../types/testimonial.type";
+import { TestimonialDataType } from "@/types/testimonial.type";
 
 // components
 import Button from "../../button/normal/Button";
-import ButtonOutline from "../../button/outline/ButtonOutline";
-import LoadingModal from "../../modal-lets-talk/LoadingModal";
-import TestimonialCard from "../../cards/testimonial/TestimonialCard";
-import TestimonialSlider from "../../sliders/testimonial-slider/TestimonialSlider";
+import ButtonOutline from "@/components/button/outline/ButtonOutline";
+import LoadingModal from "@/components/modal-lets-talk/LoadingModal";
+import TestimonialCard from "@/components/cards/testimonial/TestimonialCard";
+import TestimonialSlider from "@/components/sliders/testimonial-slider/TestimonialSlider";
 
 const ModalLetsTalk = dynamic(
-  () => import("../../modal-lets-talk/ModalLetsTalk"),
+  () => import("@/components/modal-lets-talk/ModalLetsTalk"),
   {
     loading: () => <LoadingModal />,
   },

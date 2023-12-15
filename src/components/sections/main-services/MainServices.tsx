@@ -57,7 +57,7 @@ const MainServices: React.FC = () => {
             >
               Digital technology is advancing. Even the smallest delay could put
               you out of business. We make your business ready for
-              tomorrow&apos;s challenges to keep yourself ahead of the game !
+              tomorrow&apos;s challenges, keeping you ahead of the game !
             </m.p>
           </LazyMotion>
         </div>
@@ -86,8 +86,8 @@ const MainServices: React.FC = () => {
           >
             <FontAwesomeIcon icon={faGift} className="gift-icon  fa-shake" />{" "}
             <span>
-              The quote request for your project is free of charge, take
-              advantage of it.
+              Can't stop thinking about the price? Free quotes here, claim yours
+              ASAP!
             </span>
           </motion.div>
           {ServiceData.map((data, index) => (

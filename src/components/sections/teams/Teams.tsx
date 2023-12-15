@@ -173,8 +173,9 @@ const Teams: React.FC = () => {
               width={1024}
               height={1024}
               alt={`CEO Profile pics`}
-              className="profile-image"
+              className="profile-image desk"
             />
+
             <Image
               src={"/images/teams/bodge-plant.avif"}
               width={211}
