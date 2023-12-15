@@ -21,6 +21,9 @@ variables:
   PASSWORD_SERVER: $PASSWORD_SERVER
   DEV_ENDPOINT: https://dev.goavana.com
   PROD_ENDPOINT: https://www.akata-goavana.com
+  KEYS: $KEYS
+  USER: $USER
+  IP: $IP
 
 run_unit_tests:
   stage: test
@@ -56,16 +59,16 @@ build_for_production:
       when: never
     - when: always
   stage: build
-  before_script:
-    - ssh -i $KEYS $USER@$IP
-    - su $NODEUSER
-    - cd
-    - cd website-3.0
   script:
-    - git pull origin prod
-    - npm install
-    - rm -rf .next
-    - npm run build
+    ssh -i $KEYS $USER@$IP "
+      su nodejs &&
+      cd &&
+      cd website-3.0 &&
+      git pull origin prod &&
+      npm install &&
+      rm -rf .next &&
+      npm run build
+      "
   environment:
     name: production
 
@@ -76,7 +79,9 @@ deploy_to_production:
     - when: always
   stage: build
   script:
-    - pm2 restart 0
+    ssh -i $KEYS $USER@$IP "
+      pm2 restart 0
+      "
   environment:
     name: production
     url: $PROD_ENDPOINT
