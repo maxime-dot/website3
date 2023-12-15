@@ -108,19 +108,11 @@ const Footer: React.FC = () => {
             <Link href={contactData.socialLink.facebook} target="_blank">
               <FontAwesomeIcon icon={faFacebook} className="link-icon" />
             </Link>
-            <Link href={contactData.socialLink.instagram}>
-              <FontAwesomeIcon
-                icon={faInstagram}
-                target="_blank"
-                className="link-icon"
-              />
+            <Link href={contactData.socialLink.instagram} target="_blank">
+              <FontAwesomeIcon icon={faInstagram} className="link-icon" />
             </Link>
-            <Link href={contactData.socialLink.linkedin}>
-              <FontAwesomeIcon
-                icon={faLinkedin}
-                target="_blank"
-                className="link-icon"
-              />
+            <Link href={contactData.socialLink.linkedin} target="_blank">
+              <FontAwesomeIcon icon={faLinkedin} className="link-icon" />
             </Link>
           </div>
         </div>
