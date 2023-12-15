@@ -169,9 +169,9 @@ const Teams: React.FC = () => {
           </p>
           <div className="profile-pics">
             <Image
-              src={"/images/teams/Bodge.avif"}
-              width={211}
-              height={304}
+              src={"/images/teams/team-profile/bodge-profile.png"}
+              width={800}
+              height={800}
               alt={`CEO Profile pics`}
               className="profile-image"
             />
@@ -199,7 +199,7 @@ const Teams: React.FC = () => {
               key={`admin-team-${index}`}
             >
               <Image
-                src={data.roundProfile}
+                src={data.roundProfile ? data.roundProfile : ""}
                 width={600}
                 height={600}
                 alt={`${data.firstName} ${data.lastName} profile `}
