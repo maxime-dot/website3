@@ -18,6 +18,7 @@ import ButtonOutline from "../button/outline/ButtonOutline";
 import { TruncateText } from "@/helpers/truncate";
 import Image from "next/image";
 import FormData from "form-data";
+import ReCAPTCHA from "react-google-recaptcha";
 
 interface ModalLetsTalkProps {
   onClose: () => void;
@@ -40,12 +41,15 @@ const services = [
   "Desktop Applications",
 ];
 
+const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_KEY;
+
 const ModalLetsTalk: React.FC<ModalLetsTalkProps> = ({ onClose }) => {
   const [droppedFiles, setDroppedFiles] = useState<File[]>([]);
   const [sendError, setSendError] = useState(false);
   const [fileSizeError, setFileSizeError] = useState(false);
   const [sent, setSent] = useState(false);
-
+  const [captcha, setCaptcha] = useState<string | null>();
+  const [verified, setVerified] = useState(false);
   const handleKeyDown = (event: KeyboardEvent) => {
     if (event.keyCode === 27) {
       onClose();
@@ -89,6 +93,13 @@ const ModalLetsTalk: React.FC<ModalLetsTalkProps> = ({ onClose }) => {
     setSent(true);
     setTimeout(() => {
       setSent(false);
+    }, 3000);
+  };
+
+  const toogleCaptcha = () => {
+    setVerified(true);
+    setTimeout(() => {
+      setVerified(false);
     }, 3000);
   };
 
@@ -184,36 +195,40 @@ const ModalLetsTalk: React.FC<ModalLetsTalkProps> = ({ onClose }) => {
                     return errors;
                   }}
                   onSubmit={async (values, { setSubmitting, resetForm }) => {
-                    try {
-                      const data = new FormData();
-                      data.append("NAME", values.NAME);
-                      data.append("EMAIL", values.EMAIL);
-                      data.append("SERVICE", values.THEME);
+                    if (captcha) {
+                      try {
+                        const data = new FormData();
+                        data.append("NAME", values.NAME);
+                        data.append("EMAIL", values.EMAIL);
+                        data.append("SERVICE", values.THEME);
 
-                      droppedFiles.forEach((file) => {
-                        data.append(`FILE`, file);
-                      });
-                      const response = await axios.post(
-                        "/send-mail/modal/api",
-                        data,
-                        {
-                          headers: {
-                            "Content-Type": "multipart/form-data",
+                        droppedFiles.forEach((file) => {
+                          data.append(`FILE`, file);
+                        });
+                        const response = await axios.post(
+                          "/send-mail/modal/api",
+                          data,
+                          {
+                            headers: {
+                              "Content-Type": "multipart/form-data",
+                            },
                           },
-                        },
-                      );
+                        );
 
-                      if (response.data.success) {
-                        toogleSend();
-                        resetForm();
-                        setDroppedFiles([]);
-                      } else {
+                        if (response.data.success) {
+                          toogleSend();
+                          resetForm();
+                          setDroppedFiles([]);
+                        } else {
+                          toggleSendError();
+                        }
+                      } catch (error) {
                         toggleSendError();
+                      } finally {
+                        setSubmitting(false);
                       }
-                    } catch (error) {
-                      toggleSendError();
-                    } finally {
-                      setSubmitting(false);
+                    } else {
+                      toogleCaptcha();
                     }
                   }}
                 >
@@ -412,6 +427,20 @@ const ModalLetsTalk: React.FC<ModalLetsTalkProps> = ({ onClose }) => {
                             <span>
                               File exceeds the maximum allowed size of 40MB,
                             </span>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                      <ReCAPTCHA className={"w-100"} sitekey={siteKey!} />
+                      <AnimatePresence>
+                        {verified && (
+                          <motion.div
+                            initial={{ opacity: 0, x: 30 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ delay: 0.3 }}
+                            exit={{ opacity: 0 }}
+                            className="error-send-message d-flex-center"
+                          >
+                            <span>Please, check the captcha....</span>
                           </motion.div>
                         )}
                       </AnimatePresence>
