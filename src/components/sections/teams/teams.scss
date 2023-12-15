@@ -99,6 +99,7 @@
           width: auto;
           height: 260px;
           object-fit: cover;
+
         }
 
         .plant-pics {
@@ -209,6 +210,7 @@
       .admin-ceo-words {
         margin-top: 90px;
         padding-top: 60px;
+
         .profile-words{
           max-width: 768px;
         }
@@ -217,16 +219,18 @@
           height: 93px;
           background: var(--card-background);
           border-radius: 100%;
-          top: calc(-93px /2);
+          top: calc(-93px / 2);
           outline: 8px solid var(--card-background);
           overflow: hidden;
-          left: 0;
+          left: 8px;
+
           .profile-image {
-            width: 100%;
-            height: 100%;
+            width: inherit;
+            height: inherit;
             border-radius: inherit;
             background: inherit;
-            object-fit: cover;
+            object-fit: contain;
+         
           }
 
           .plant-pics {
