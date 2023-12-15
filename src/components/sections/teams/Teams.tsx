@@ -12,9 +12,9 @@ import {
 import Link from "next/link";
 import Image from "next/image";
 import LoadingModal from "../../modal-lets-talk/LoadingModal";
-import AdminTeamData from "@/data/admin-teams.json";
+import AdminTeamData from "@/data/team-list.json";
 import ContactData from "@/data/contacts.json";
-
+import profileData from "@/data/team-list.json";
 const ModalLetsTalk = dynamic(
   () => import("../../modal-lets-talk/ModalLetsTalk"),
   {
@@ -158,8 +158,8 @@ const Teams: React.FC = () => {
           onClick={handleOpenSlider}
         >
           <div className="profile-info">
-            <p className="ceo-name">RAMIANDRISOA BODGE</p>
-            <p className="ceo-post">CEO</p>
+            <p className="ceo-name">{`${profileData[0].firstName} ${profileData[0].lastName}`}</p>
+            <p className="ceo-post akata-text-small">{profileData[0].post}</p>
           </div>
           <p className="profile-words akata-text-medium">
             Your most sacred dreams hold the key to an extraordinary life —
@@ -169,9 +169,9 @@ const Teams: React.FC = () => {
           </p>
           <div className="profile-pics">
             <Image
-              src={"/images/teams/Bodge.avif"}
-              width={211}
-              height={304}
+              src={"/images/teams/team-profile/bodge-profile.png"}
+              width={800}
+              height={800}
               alt={`CEO Profile pics`}
               className="profile-image"
             />
@@ -186,7 +186,7 @@ const Teams: React.FC = () => {
         </motion.div>
         {/* team member list */}
         <div className="admin-teams-list d-flex flex-col">
-          {AdminTeamData.map((data, index) => (
+          {AdminTeamData.slice(1).map((data, index) => (
             <motion.div
               initial={{ opacity: 0, y: 100 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -199,14 +199,14 @@ const Teams: React.FC = () => {
               key={`admin-team-${index}`}
             >
               <Image
-                src={data.profileSrc}
+                src={data.roundProfile ? data.roundProfile : ""}
                 width={600}
                 height={600}
-                alt={`${data.name}`}
+                alt={`${data.firstName} ${data.lastName} profile `}
                 className="profile-pics"
               />
               <div className="team-info d-flex flex-col">
-                <p className="info-name akata-title-medium">{data.name}</p>
+                <p className="info-name akata-title-medium">{`${data.firstName} ${data.lastName}`}</p>
                 <p className="info-post akata-text-small">{data.post}</p>
               </div>
             </motion.div>

@@ -1,10 +1,11 @@
 [
   {
     "id": 1,
-    "firstName": "RAMIANDRISOA    ",
+    "firstName": "RAMIANDRISOA ",
     "lastName": "BODGE",
     "post": "Co-Founder & Chef Executive Officer",
     "profileImage": "/images/teams/team-profile/bodge-profile.png",
+
     "socialLink": {
       "facebook": "https://www.facebook.com/profile.php?id=61553836774106",
       "linkedin": "https://www.linkedin.com/in/ramiandrisoa-andriamandranto-patrick-bodge-9a273310b/",
@@ -13,8 +14,22 @@
   },
   {
     "id": 1,
+    "firstName": "RAKOTONIAINA",
+    "lastName": "Pety",
+    "post": "Chef Technology Officiel",
+    "profileImage": "/images/teams/team-profile/mijoro-akata.avif",
+    "roundProfile": "/images/teams/mijoro.avif",
+    "socialLink": {
+      "facebook": "",
+      "linkedin": "https://www.linkedin.com",
+      "whatapp": ""
+    }
+  },
+  {
+    "id": 1,
     "firstName": "RAZAFIMANDIMBY",
     "lastName": "Fabrice",
+    "roundProfile": "/images/teams/jose.avif",
     "post": "Marketing & Financial Director",
     "profileImage": "/images/teams/team-profile/fabrice.png",
     "socialLink": {
@@ -27,6 +42,7 @@
     "firstName": "RASAMIMANANA",
     "lastName": "Ny Andrianina",
     "post": "Communications Manager",
+    "roundProfile": "/images/teams/andrianina.avif",
     "profileImage": "/images/teams/team-profile/andrianina.png",
     "socialLink": {
       "facebook": "",
@@ -34,23 +50,13 @@
       "whatapp": ""
     }
   },
-  {
-    "id": 1,
-    "firstName": "RAKOTONIAINA",
-    "lastName": "Pety",
-    "post": "Chef Technologie Officiel",
-    "profileImage": "/images/teams/team-profile/mijoro-akata.avif",
-    "socialLink": {
-      "facebook": "",
-      "linkedin": "https://www.linkedin.com",
-      "whatapp": ""
-    }
-  },
+
   {
     "id": 1,
     "firstName": "RAMIANDRISOA ",
     "lastName": "Michel",
     "profileImage": "/images/teams/team-profile/ramc.png",
+    "roundProfile": "/images/teams/misa.avif",
     "post": "Accountant",
     "socialLink": {
       "facebook": "",

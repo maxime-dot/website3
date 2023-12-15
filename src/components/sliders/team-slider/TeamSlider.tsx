@@ -170,10 +170,10 @@ const TeamSlider: React.FC<SliderProps> = ({ onClose }) => {
               />
 
               <Image
-                src={"/images/teams/ceo.avif"}
+                src={"/images/teams/team-profile/bodge-profile.png"}
                 alt={"CEO Profile..."}
-                width={680}
-                height={873}
+                width={1024}
+                height={1204}
                 className={"picture"}
               />
             </div>
