@@ -22,7 +22,7 @@ const TeamList: React.FC = () => {
         viewport={{ once: true }}
         className="akata-title-medium"
       >
-        Together towards your triumph !
+        Together towards <span>your triumph</span> !
       </motion.h2>
       <motion.p
         initial={{ opacity: 0, y: 20 }}
