@@ -6,8 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFacebook,
   faLinkedin,
-  faGithub,
-  faDribbble,
+  faWhatsapp,
 } from "@fortawesome/free-brands-svg-icons";
 import TeamData from "@/data/team-list.json";
 import Link from "next/link";
@@ -85,14 +84,14 @@ const TeamList: React.FC = () => {
                   <FontAwesomeIcon icon={faLinkedin} />
                 </Link>
               )}
-              {data.socialLink.github && (
+              {data.socialLink.whatapp && (
                 <Link
-                  href={data.socialLink.github}
+                  href={`tel:${data.socialLink.whatapp}`}
                   passHref={true}
                   target={"_blank"}
                   className={"link-item"}
                 >
-                  <FontAwesomeIcon icon={faGithub} />
+                  <FontAwesomeIcon icon={faWhatsapp} />
                 </Link>
               )}
             </div>
