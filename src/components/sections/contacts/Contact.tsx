@@ -15,6 +15,8 @@ import {
   faMapLocationDot,
 } from "@fortawesome/free-solid-svg-icons";
 
+import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
+
 import Button from "../../button/normal/Button";
 import contactData from "@/data/contacts.json";
 import axios from "axios";
@@ -270,6 +272,15 @@ const Contacts: React.FC = () => {
             {" "}
             <FontAwesomeIcon icon={faPhone} className="list-icon" />{" "}
             {contactData.phone}
+          </li>
+          <li className="text-item akata-text-medium d-flex">
+            {" "}
+            <FontAwesomeIcon
+              icon={faWhatsapp}
+              className="list-icon"
+              style={{ fontSize: "20px" }}
+            />{" "}
+            {contactData.whatapp}
           </li>
         </ul>
       </div>
