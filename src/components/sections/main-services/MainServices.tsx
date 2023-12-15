@@ -57,7 +57,7 @@ const MainServices: React.FC = () => {
             >
               Digital technology is advancing. Even the smallest delay could put
               you out of business. We make your business ready for
-              tomorrow&apos;s challenges to keep yourself ahead of the game !
+              tomorrow&apos;s challenges, keeping you ahead of the game !
             </m.p>
           </LazyMotion>
         </div>
