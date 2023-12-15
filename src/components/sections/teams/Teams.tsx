@@ -158,9 +158,7 @@ const Teams: React.FC = () => {
           onClick={handleOpenSlider}
         >
           <div className="profile-info">
-            <p className="ceo-name">
-              RAMIANDRISOA Andriamandranto Patrick ( BODGE)
-            </p>
+            <p className="ceo-name">RAMIANDRISOA BODGE</p>
             <p className="ceo-post">CEO</p>
           </div>
           <p className="profile-words akata-text-medium">
