@@ -3,6 +3,7 @@ import Image from "next/image";
 import "./projects.scss";
 import Link from "next/link";
 import projectData from "@/data/projects.json";
+
 const Projects: React.FC = () => {
   return (
     <section
@@ -37,8 +38,8 @@ const Projects: React.FC = () => {
             >
               <Image
                 src={data.imageSrc}
-                width={300}
-                height={162}
+                width={300 * 2}
+                height={162 * 2}
                 alt={`Service`}
                 className="project-logo"
               />

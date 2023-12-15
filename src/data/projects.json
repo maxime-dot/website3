@@ -2,35 +2,35 @@
   {
     "name" : "Indemniflight",
     "website": "https://www.indemniflight.com/",
-    "imageSrc": "/images/customer/society-logo/indemnflight-brands.avif"
+    "imageSrc": "/images/customer/society-logo/indemflight.png"
   },
 
   {
     "name" : "Far Frontier Studio",
     "website": "https://farfrontierstudios.com/",
-    "imageSrc": "/images/customer/society-logo/far-frontier-studio-brand.avif"
+    "imageSrc": "/images/customer/society-logo/far-frontier.png"
   },
 
   {
     "name": "Up Skills",
     "website": "https://upskilling.com/",
-    "imageSrc": "/images/customer/society-logo/up-skilling-brands.avif"
+    "imageSrc": "/images/customer/society-logo/upskilling.png"
   },
 
   {
     "name": "Urbidesk",
     "website": "https://www.urbidesk.com",
-    "imageSrc": "/images/customer/society-logo/urbidesk-brand.avif"
+    "imageSrc": "/images/customer/society-logo/urbidesk.png"
   },
   {
     "name" : "Power Digital",
     "website": "",
-    "imageSrc": "/images/customer/society-logo/power-digital-brand.avif"
+    "imageSrc": "/images/customer/society-logo/power-digital.png"
   },
 
   {
     "name" : "Top Loan Canada",
     "website": "https://toploanscanada.ca/",
-    "imageSrc": "/images/customer/society-logo/loans-canada-brand.avif"
+    "imageSrc": "/images/customer/society-logo/loans-canada.png"
   }
 ]
