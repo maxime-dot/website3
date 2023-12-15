@@ -13,18 +13,14 @@ const poppins = Poppins({
 });
 
 config.autoAddCss = false;
-
-interface ExtendedMetadata extends Metadata {
-  "google-site-verification": string;
-}
-
-export const metadata: ExtendedMetadata = {
+export const metadata: Metadata = {
   title: "Akata Goavana - IT company from Madagascar",
   description:
     "The rules of success changed yesterday. Our cutting-edge solutions from Madagascar can get your business caught up today and dominating tomorrow.",
-  "google-site-verification": "rt0uj5tdNaTdLWR9UCrdpPvHNZBEHwUeRawmIbNISGw",
-} as Metadata & { "google-site-verification": string };
-
+  other: {
+    "google-site-verification": "rt0uj5tdNaTdLWR9UCrdpPvHNZBEHwUeRawmIbNISGw",
+  },
+};
 export default function RootLayout({
   children,
 }: {
