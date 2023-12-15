@@ -80,6 +80,8 @@ deploy_to_production:
   stage: build
   script:
     ssh -i $KEYS $USER@$IP "
+      su nodejs &&
+      cd &&
       pm2 restart 0
       "
   environment:
