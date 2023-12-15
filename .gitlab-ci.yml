@@ -20,11 +20,23 @@ variables:
   HOST: $HOST
   PASSWORD_SERVER: $PASSWORD_SERVER
   DEV_ENDPOINT: https://dev.goavana.com
+  PROD_ENDPOINT: https://www.akata-goavana.com
 
 run_unit_tests:
   stage: test
   script:
     - echo "Running unit test"
+
+run_test_performance:
+  rules:
+    - if: $CI_COMMIT_BRANCH != "prod"
+      when: never
+    - when: always
+  stage: test
+  script:
+    - echo "Running performance test"
+  environment:
+    name: production
 
 build_image:
   stage: build
@@ -37,6 +49,37 @@ build_image:
   artifacts:
     paths:
       - version.txt
+
+build_for_production:
+  rules:
+    - if: $CI_COMMIT_BRANCH != "prod"
+      when: never
+    - when: always
+  stage: build
+  before_script:
+    - ssh -i $KEYS $USER@$IP
+    - su $NODEUSER
+    - cd
+    - cd website-3.0
+  script:
+    - git pull origin prod
+    - npm install
+    - rm -rf .next
+    - npm run build
+  environment:
+    name: production
+
+deploy_to_production:
+  rules:
+    - if: $CI_COMMIT_BRANCH != "prod"
+      when: never
+    - when: always
+  stage: build
+  script:
+    - pm2 restart 0
+  environment:
+    name: production
+    url: $PROD_ENDPOINT
 
 push_image:
   stage: build
