@@ -1,7 +1,7 @@
 "use client";
 import axios from "axios";
-import React, {useState, KeyboardEvent} from "react";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import React, { useState, KeyboardEvent } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faXmark,
   faUser,
@@ -10,12 +10,12 @@ import {
   faCircleCheck,
 } from "@fortawesome/free-solid-svg-icons";
 import Dropzone from "react-dropzone";
-import {Formik} from "formik";
-import {motion, AnimatePresence} from "framer-motion";
+import { Formik } from "formik";
+import { motion, AnimatePresence } from "framer-motion";
 import "./modal-lets-talk.scss";
 import Button from "../button/normal/Button";
 import ButtonOutline from "../button/outline/ButtonOutline";
-import {TruncateText} from "@/helpers/truncate";
+import { TruncateText } from "@/helpers/truncate";
 import Image from "next/image";
 import FormData from "form-data";
 
@@ -40,9 +40,10 @@ const services = [
   "Desktop Applications",
 ];
 
-const ModalLetsTalk: React.FC<ModalLetsTalkProps> = ({onClose}) => {
+const ModalLetsTalk: React.FC<ModalLetsTalkProps> = ({ onClose }) => {
   const [droppedFiles, setDroppedFiles] = useState<File[]>([]);
   const [sendError, setSendError] = useState(false);
+  const [fileSizeError, setFileSizeError] = useState(false);
   const [sent, setSent] = useState(false);
 
   const handleKeyDown = (event: KeyboardEvent) => {
@@ -54,7 +55,12 @@ const ModalLetsTalk: React.FC<ModalLetsTalkProps> = ({onClose}) => {
     const updatedFiles: File[] = [];
 
     files.forEach((file) => {
-      updatedFiles.push(file);
+      // Check if the file size is less than or equal to 40MB (40 * 1024 * 1024 bytes)
+      if (file.size <= 40 * 1024 * 1024) {
+        updatedFiles.push(file);
+      } else {
+        toogleFileSizeError();
+      }
     });
 
     setDroppedFiles([...droppedFiles, ...updatedFiles]);
@@ -62,7 +68,7 @@ const ModalLetsTalk: React.FC<ModalLetsTalkProps> = ({onClose}) => {
 
   const handleRemoveFile = (indexToRemove: number) => {
     setDroppedFiles((prevFiles) =>
-      prevFiles.filter((_, index) => index !== indexToRemove)
+      prevFiles.filter((_, index) => index !== indexToRemove),
     );
   };
 
@@ -70,6 +76,12 @@ const ModalLetsTalk: React.FC<ModalLetsTalkProps> = ({onClose}) => {
     setSendError(true);
     setTimeout(() => {
       setSendError(false);
+    }, 3000);
+  };
+  const toogleFileSizeError = () => {
+    setFileSizeError(true);
+    setTimeout(() => {
+      setFileSizeError(false);
     }, 3000);
   };
 
@@ -87,9 +99,9 @@ const ModalLetsTalk: React.FC<ModalLetsTalkProps> = ({onClose}) => {
         <AnimatePresence>
           {sent && (
             <motion.div
-              initial={{opacity: 0, y: 30}}
-              animate={{opacity: 1, y: 0}}
-              exit={{opacity: 0, x: -30}}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, x: -30 }}
               className={"form-sent d-flex-center flex-col"}
             >
               <Image
@@ -123,9 +135,9 @@ const ModalLetsTalk: React.FC<ModalLetsTalkProps> = ({onClose}) => {
             <motion.div
               tabIndex={0}
               onKeyDown={handleKeyDown}
-              initial={{opacity: 0, y: 40}}
-              animate={{opacity: 1, y: 0}}
-              exit={{opacity: 0}}
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0 }}
               className="modal-content w-100  d-flex flex-col"
             >
               <div className="modal-header d-flex flex-col">
@@ -163,7 +175,7 @@ const ModalLetsTalk: React.FC<ModalLetsTalkProps> = ({onClose}) => {
                         "Email address is required. Please specify it.";
                     } else if (
                       !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(
-                        values.EMAIL
+                        values.EMAIL,
                       )
                     ) {
                       errors.EMAIL =
@@ -171,7 +183,7 @@ const ModalLetsTalk: React.FC<ModalLetsTalkProps> = ({onClose}) => {
                     }
                     return errors;
                   }}
-                  onSubmit={async (values, {setSubmitting, resetForm}) => {
+                  onSubmit={async (values, { setSubmitting, resetForm }) => {
                     try {
                       const data = new FormData();
                       data.append("NAME", values.NAME);
@@ -188,7 +200,7 @@ const ModalLetsTalk: React.FC<ModalLetsTalkProps> = ({onClose}) => {
                           headers: {
                             "Content-Type": "multipart/form-data",
                           },
-                        }
+                        },
                       );
 
                       if (response.data.success) {
@@ -299,7 +311,7 @@ const ModalLetsTalk: React.FC<ModalLetsTalkProps> = ({onClose}) => {
                             handleDropFile(uploadedFile)
                           }
                         >
-                          {({getRootProps, getInputProps}) => (
+                          {({ getRootProps, getInputProps }) => (
                             <section className="drop-zone-section">
                               <div
                                 {...getRootProps()}
@@ -319,7 +331,7 @@ const ModalLetsTalk: React.FC<ModalLetsTalkProps> = ({onClose}) => {
                               </div>
                               <div className="file-type-indicator d-flex-space-between">
                                 <p className="akata-text-small file-extension">
-                                  Supported formats: DOCX, PDF, XLS
+                                  Supported formats: DOCX, PDF, ect...
                                 </p>
                                 <p className="akata-text-small file-size">
                                   Maximum file size: 40MB
@@ -334,9 +346,9 @@ const ModalLetsTalk: React.FC<ModalLetsTalkProps> = ({onClose}) => {
                         <AnimatePresence>
                           {droppedFiles.map((file, index) => (
                             <motion.div
-                              initial={{opacity: 0, x: 30}}
-                              animate={{opacity: 1, x: 0}}
-                              exit={{opacity: 0, x: 30}}
+                              initial={{ opacity: 0, x: 30 }}
+                              animate={{ opacity: 1, x: 0 }}
+                              exit={{ opacity: 0, x: 30 }}
                               key={index}
                               className="file w-100 d-flex-space-between"
                             >
@@ -376,14 +388,29 @@ const ModalLetsTalk: React.FC<ModalLetsTalkProps> = ({onClose}) => {
                       <AnimatePresence>
                         {sendError && (
                           <motion.div
-                            initial={{opacity: 0, x: 30}}
-                            animate={{opacity: 1, x: 0}}
-                            transition={{delay: 0.3}}
-                            exit={{opacity: 0}}
+                            initial={{ opacity: 0, x: 30 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ delay: 0.3 }}
+                            exit={{ opacity: 0 }}
                             className="error-send-message d-flex-center"
                           >
                             <span>
                               There is something wrong, please retry later...
+                            </span>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                      <AnimatePresence>
+                        {fileSizeError && (
+                          <motion.div
+                            initial={{ opacity: 0, x: 30 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ delay: 0.3 }}
+                            exit={{ opacity: 0 }}
+                            className="error-send-message d-flex-center"
+                          >
+                            <span>
+                              File exceeds the maximum allowed size of 40MB,
                             </span>
                           </motion.div>
                         )}
